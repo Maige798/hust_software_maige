@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/CAT_Desktop_System/CAT_Desktop_System.iml" filepath="$PROJECT_DIR$/CAT_Desktop_System/CAT_Desktop_System.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/hust_software_maige.iml" filepath="$PROJECT_DIR$/.idea/hust_software_maige.iml" />
     </modules>
   </component>
