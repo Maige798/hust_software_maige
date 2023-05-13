@@ -74,7 +74,7 @@ public class MemoryLibrary {
         return translationItems;
     }
 
-    // 根据存储的信息生成对象
+    // 根据获取的存储的信息生成对象
     public void SetUpLibrary(String message){
         char[] messages=message.toCharArray();
         int pointer=0;

@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76dc47c8-1276-4c92-8a0a-26a856359a03" name="变更" comment="Maige-提交代码">
-      <change afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/TermLibrarySystem/TermLibrary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/TermLibrarySystem/TermLibraryManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/SystemUtil/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/SystemUtil/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/MemoryLibrarySystem/MemoryLibrary.java" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/MemoryLibrarySystem/MemoryLibrary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/TermLibrarySystem/TermLibrary.java" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/TermLibrarySystem/TermLibrary.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683983135312</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Maige-提交代码">
+      <created>1683995556557</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1683995556557</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
