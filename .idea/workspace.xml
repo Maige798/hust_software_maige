@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76dc47c8-1276-4c92-8a0a-26a856359a03" name="变更" comment="Maige-提交代码">
-      <change afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/MemoryLibrarySystem/memlib.mlib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/TermLibrarySystem/TermLibrary.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/MemoryLibrarySystem/MemoryLibrary.java" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/MemoryLibrarySystem/MemoryLibrary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/MemoryLibrarySystem/MemoryLibraryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/MemoryLibrarySystem/MemoryLibraryManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/SystemUtil/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/SystemUtil/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/MemoryLibrarySystem/MemoryLibrary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/MemoryLibrarySystem/MemoryLibrary.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +238,28 @@
       <option name="project" value="LOCAL" />
       <updated>1683963351753</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Maige-提交代码">
+      <created>1683982757007</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1683982757007</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Maige-提交代码">
+      <created>1683982821749</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1683982821749</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Maige-提交代码">
+      <created>1683983135312</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1683983135312</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
