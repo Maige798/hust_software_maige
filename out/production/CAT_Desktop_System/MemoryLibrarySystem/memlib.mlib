@@ -1,0 +1,40 @@
+@Name {memTest}
+
+@Save {D:\hust_software_maige\CAT_Desktop_System\src\MemoryLibrarySystem\memlib.mlib}
+
+@TranItem{
+	<ori> [Chinese] 小牛马
+	<tran> [English] big cow horse
+}
+
+@Blank
+
+@TranItem{
+	<ori> [Chinese] 反恐精英全球总决赛冠军
+	<tran> [English] Junit
+}
+
+@Table
+
+@TranItem{
+	<ori> [Chinese] 虫族领袖
+	<tran> [English] 3073702249
+}
+
+@TranItem{
+	<ori> [Chinese] 诸葛呼吸
+	<tran> [English] HooXi
+}
+
+@Return
+
+@TranItem{
+	<ori> [Chinese] 这个没有翻译
+	<blank>
+}
+
+@TranItem{
+	<ori> [Chinese] 夜店小王子
+	<tran> [English] NiKo
+}
+
