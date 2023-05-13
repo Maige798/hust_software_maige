@@ -1,8 +1,8 @@
 package SystemUtil;
 
 public class TranslationItem {
-    Sentence origin;
-    Sentence translation;
+    public Sentence origin;
+    public Sentence translation;
 
     @Override
     public String toString() {
