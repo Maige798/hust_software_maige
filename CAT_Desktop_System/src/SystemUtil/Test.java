@@ -7,7 +7,6 @@ public class Test {
         TestMemoryLibrarySave();
     }
 
-    // 1234
     public static void TestMemoryLibraryRead(){
         String myMemoryLibrary="D:\\hust_software_maige\\CAT_Desktop_System\\src\\MemoryLibrarySystem\\memlib.mlib";
         MemoryLibrary library= MemoryLibraryManager.LoadLibrary(myMemoryLibrary);
