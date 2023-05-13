@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76dc47c8-1276-4c92-8a0a-26a856359a03" name="变更" comment="Maige-提交代码">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/SystemUtil/Language.java" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/SystemUtil/Language.java" afterDir="false" />
-    </list>
+    <list default="true" id="76dc47c8-1276-4c92-8a0a-26a856359a03" name="变更" comment="Maige-提交代码" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -194,6 +191,11 @@
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="a242412b-2c2c-42ab-9ed3-2fa72b4aead5" value="TOOL_WINDOW" />
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -204,7 +206,6 @@
         <entry key="a242412b-2c2c-42ab-9ed3-2fa72b4aead5">
           <value>
             <State>
-              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
               <option name="FILTERS">
                 <map>
                   <entry key="branch">
@@ -223,14 +224,10 @@
                   </entry>
                 </map>
               </option>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
             </State>
           </value>
         </entry>
-      </map>
-    </option>
-    <option name="OPEN_GENERIC_TABS">
-      <map>
-        <entry key="a242412b-2c2c-42ab-9ed3-2fa72b4aead5" value="TOOL_WINDOW" />
       </map>
     </option>
   </component>
