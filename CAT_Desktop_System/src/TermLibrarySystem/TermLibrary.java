@@ -43,6 +43,14 @@ public class TermLibrary {
         // todo
     }
 
+    // 返回第一个符合title的TermItem
+    public TermItem GetItem(String title){
+        for(TermItem item:this.itemsList)
+            if(item.title.equals(title))
+                return item;
+        return null;
+    }
+
     // 寻找title包含目标字符串的全部术语条目
     public TermItem[] SearchItem(String target){
         List<TermItem> targetList=new ArrayList<>();

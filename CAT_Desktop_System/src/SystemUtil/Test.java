@@ -6,7 +6,7 @@ import TermLibrarySystem.TermLibraryManager;
 
 public class Test {
     public static void main(String[] args) {
-        TestTermLibraryRead();
+        TestTermLibrarySave();
     }
 
     public static void TestMemoryLibraryRead(){
@@ -31,5 +31,21 @@ public class Test {
         String myTermLibrary="D:\\hust_software_maige\\CAT_Desktop_System\\src\\TermLibrarySystem\\termlib.tlib";
         TermLibrary library= TermLibraryManager.LoadLibrary(myTermLibrary);
         System.out.println(library);
+    }
+
+    public static void TestTermLibrarySave() {
+        TestTermLibraryRead();
+        TermLibrary library = TermLibraryManager.GetTermLibrary("术语库");
+        if (library != null) {
+            library.GetItem("Maige").title = "Meinstein";
+            library.GetItem("Meinstein").GetTerm(Language.GetLanguage("Russian")).text = "mAINESY";
+            TermItem item = new TermItem("诸葛呼吸");
+            item.AddTerm(new Sentence(Language.English, "HooXi"));
+            item.AddTerm(new Sentence(Language.Chinese, "诸葛呼吸"));
+            library.AddItem(item);
+        }
+        System.out.println("Something has changed...\n" + library);
+        if (library != null)
+            TermLibraryManager.SaveLibrary(library);
     }
 }

@@ -10,6 +10,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class TermLibraryManager {
     public List<TermLibrary> termLibraryList=new ArrayList<>();
@@ -63,5 +64,13 @@ public class TermLibraryManager {
         } catch (IOException e){
             e.printStackTrace();
         }
+    }
+
+    // 根据name获取TermLibrary
+    public static TermLibrary GetTermLibrary(String name){
+        for(TermLibrary library: instance.termLibraryList)
+            if(library.name.equals(name))
+                return library;
+        return null;
     }
 }
