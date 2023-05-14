@@ -7,8 +7,6 @@ public enum Language {
 
     public final String name;
 
-    //what
-
     Language(String Name) {
         this.name = Name;
     }

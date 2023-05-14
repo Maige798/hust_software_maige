@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TermItem {
-    String title;
-    List<Sentence> termList;
+    public String title;
+    public List<Sentence> termList;
 
     // 构造方法
     public TermItem(String Title) {
