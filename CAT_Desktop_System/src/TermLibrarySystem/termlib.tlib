@@ -1,0 +1,25 @@
+@Name {术语库}
+
+@Save {D:\hust_software_maige\CAT_Desktop_System\src\TermLibrarySystem\termlib.tlib}
+
+@TermItem {
+    <Title> Maige
+    <term> [Chinese] 麦哥
+    <term> [English] Maige
+    <term> [Russian] Майк
+}
+
+@TermItem {
+    <Title> lcwzy
+    <term> [Chinese] 大牛马
+}
+
+@TermItem {
+    <Title> sing-ban
+    <term> [Chinese] 虫族领袖
+}
+
+@TermItem {
+    <Title> junit
+    <term> [Chinese] 李培楠
+}

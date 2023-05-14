@@ -15,7 +15,7 @@ public class TermLibraryManager {
     public List<TermLibrary> termLibraryList=new ArrayList<>();
 
     // 单例模式
-    public static TermLibraryManager instance;
+    public static TermLibraryManager instance=new TermLibraryManager();
 
     private TermLibraryManager(){
 

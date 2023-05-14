@@ -8,6 +8,10 @@ public class TermItem {
     public List<Sentence> termList;
 
     // 构造方法
+    public TermItem(){
+        this.termList=new ArrayList<>();
+    }
+
     public TermItem(String Title) {
         this.title = Title;
         this.termList = new ArrayList<>();
@@ -15,7 +19,7 @@ public class TermItem {
 
     @Override
     public String toString() {
-        StringBuilder content = new StringBuilder("@TermItem{\r\n" + "\t<title> " + this.title);
+        StringBuilder content = new StringBuilder("@TermItem {\r\n" + "\t<title> " + this.title+"\r\n");
         for (Sentence listItem : termList)
             content.append("\t<term> ").append(listItem.toString()).append("\r\n");
         content.append("}\r\n");

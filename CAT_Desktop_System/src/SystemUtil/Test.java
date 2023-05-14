@@ -1,17 +1,18 @@
 package SystemUtil;
 
 import MemoryLibrarySystem.*;
+import TermLibrarySystem.TermLibrary;
+import TermLibrarySystem.TermLibraryManager;
 
 public class Test {
     public static void main(String[] args) {
-        TestMemoryLibrarySave();
+        TestTermLibraryRead();
     }
 
     public static void TestMemoryLibraryRead(){
         String myMemoryLibrary="D:\\hust_software_maige\\CAT_Desktop_System\\src\\MemoryLibrarySystem\\memlib.mlib";
         MemoryLibrary library= MemoryLibraryManager.LoadLibrary(myMemoryLibrary);
-        for(TranslationItem item:library.itemsList)
-            System.out.println(item);
+        System.out.println(library);
     }
 
     public static void TestMemoryLibrarySave(){
@@ -24,5 +25,11 @@ public class Test {
         library.itemsList.add(newItem);
         System.out.println("Something has changed...\n"+library);
         MemoryLibraryManager.SaveLibrary(MemoryLibraryManager.GetMemoryLibrary(0));
+    }
+
+    public static void TestTermLibraryRead(){
+        String myTermLibrary="D:\\hust_software_maige\\CAT_Desktop_System\\src\\TermLibrarySystem\\termlib.tlib";
+        TermLibrary library= TermLibraryManager.LoadLibrary(myTermLibrary);
+        System.out.println(library);
     }
 }

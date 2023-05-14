@@ -3,7 +3,8 @@ package SystemUtil;
 public enum Language {
     Default("_Default_"),
     Chinese("Chinese"),
-    English("English");
+    English("English"),
+    Russian("Russian");
 
     public final String name;
 
