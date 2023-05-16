@@ -89,7 +89,7 @@ public class TranslationFile {
         }
     }
 
-    // 将paragraphsList中的translation合并为一个
+    // 将paragraphsList中的translation合并为一个字符串
     public String GetMergedParagraphs(){
         StringBuffer buffer=new StringBuffer();
         for(TranslationItem item:this.paragraphsList){
