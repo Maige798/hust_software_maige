@@ -3,23 +3,30 @@
 @Save {D:\hust_software_maige\CAT_Desktop_System\src\TermLibrarySystem\termlib.tlib}
 
 @TermItem {
-    <Title> Maige
-    <term> [Chinese] 麦哥
-    <term> [English] Maige
-    <term> [Russian] Майк
+	<title> Maige
+	<term> [Chinese] 麦哥
+	<term> [English] Maige
+	<term> [Russian] mAINESY?
 }
 
 @TermItem {
-    <Title> lcwzy
-    <term> [Chinese] 大牛马
+	<title> lcwzy
+	<term> [Chinese] 大牛马
 }
 
 @TermItem {
-    <Title> sing-ban
-    <term> [Chinese] 虫族领袖
+	<title> sing-ban
+	<term> [Chinese] 虫族领袖
 }
 
 @TermItem {
-    <Title> junit
-    <term> [Chinese] 李培楠
+	<title> junit
+	<term> [Chinese] 李培楠
 }
+
+@TermItem {
+	<title> 诸葛呼吸
+	<term> [English] HooXi
+	<term> [Chinese] 诸葛呼吸
+}
+
