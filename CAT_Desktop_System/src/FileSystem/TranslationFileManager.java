@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class TranslationFileManager {
     // 实现单例模式
-    public TranslationFileManager instance = new TranslationFileManager();
+    public static TranslationFileManager instance = new TranslationFileManager();
 
     private TranslationFileManager() {
 
