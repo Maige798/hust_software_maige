@@ -2,6 +2,10 @@ package FileSystem;
 
 import SystemUtil.Sentence;
 
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class TranslationFileManager {
     // 实现单例模式
     public TranslationFileManager instance = new TranslationFileManager();
@@ -10,46 +14,47 @@ public class TranslationFileManager {
 
     }
 
-    public static TranslationFile ReadFile(){
+    public static TranslationFile ReadFile() {
         // todo
         return null;
     }
 
-    public static void SaveFile(){
+    public static void SaveFile(TranslationFile translationFile) {
         // todo
     }
 
-    public static void DeriveFile(){
+    public static void DeriveFile(TranslationFile translationFile) {
         // todo
     }
 
-    public static void SetUpFile(){
+    public static void SetUpFile(TranslationFile translationFile) {
+        if (translationFile != null) {
+            try {
+                FileReader in = new FileReader(translationFile.sourceFile);
+                int charGet; // 读取的字符
+                StringBuffer buffer = new StringBuffer();
+                while ((charGet = in.read()) != -1)
+                    buffer.append((char) charGet);
+                translationFile.SetUpParagraphs(buffer.toString());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            System.err.println("TranslationFile is null");
+        }
+    }
+
+    public static void SetUpParagraph(TranslationFile translationFile) {
         // todo
     }
 
-    public static void SetUpParagraph(){
-        // todo
-    }
-
-    public static Sentence[] DivideParagraphs(String content){
+    public static Sentence[] DivideParagraphs(String content) {
         // todo
         return null;
     }
 
-    public static String MergeParagraphs(TranslationFile translationFile){
+    public static String MergeParagraphs(TranslationFile translationFile) {
         // todo
         return null;
-    }
-
-    // 判断遇到该符号是否需要分段
-    private static int isSeparator(char c) {
-        return switch (c) {
-            case '，', '。', '？', '！', '：', '；', '…',
-                    ',', '.', '?', '!', ':', ';' -> 1; // 纯标点符号
-            case ' ', '\t' -> 2; // 空格符
-            case '\r' -> 3; // 回车符
-            case '\n' -> 4; // 换行符
-            default -> 0; // 不用分段
-        };
     }
 }
