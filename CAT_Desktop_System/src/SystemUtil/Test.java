@@ -1,12 +1,14 @@
 package SystemUtil;
 
+import FileSystem.TranslationFile;
+import FileSystem.TranslationFileManager;
 import MemoryLibrarySystem.*;
 import TermLibrarySystem.TermLibrary;
 import TermLibrarySystem.TermLibraryManager;
 
 public class Test {
     public static void main(String[] args) {
-        TestTermLibrarySave();
+        TestDivideParagraph();
     }
 
     public static void TestMemoryLibraryRead(){
@@ -47,5 +49,13 @@ public class Test {
         System.out.println("Something has changed...\n" + library);
         if (library != null)
             TermLibraryManager.SaveLibrary(library);
+    }
+
+    public static void TestDivideParagraph() {
+        String fileName = "D:\\hust_software_maige\\CAT_Desktop_System\\src\\FileSystem\\TestDivideParagraph.txt";
+        TranslationFile translationFile = new TranslationFile("transFile", null, fileName, Language.Chinese, Language.English);
+        TranslationFileManager.SetUpFile(translationFile);
+        for(TranslationItem item:translationFile.paragraphsList)
+            System.out.println(item);
     }
 }
