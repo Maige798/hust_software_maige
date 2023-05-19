@@ -1,6 +1,7 @@
 package FileSystem;
 
 import SystemUtil.Sentence;
+import SystemUtil.TranslationItem;
 
 import java.io.File;
 import java.io.FileReader;
@@ -8,7 +9,7 @@ import java.io.IOException;
 
 public class TranslationFileManager {
     // 实现单例模式
-    public TranslationFileManager instance = new TranslationFileManager();
+    public static TranslationFileManager instance = new TranslationFileManager();
 
     private TranslationFileManager() {
 
@@ -23,8 +24,8 @@ public class TranslationFileManager {
         // todo
     }
 
-    public static void DeriveFile(TranslationFile translationFile) {
-        // todo
+    public static void DeriveFile(TranslationFile translationFile,String targetSave) {
+        // todo: to derive a file that contains the return value of TranslationFileManager.MergeParagraphs(translationFile) at targetSave
     }
 
     public static void SetUpFile(TranslationFile translationFile) {
@@ -45,16 +46,17 @@ public class TranslationFileManager {
     }
 
     public static void SetUpParagraph(TranslationFile translationFile) {
-        // todo
+        // maybe this method is useless
     }
 
+    // 文档分段
     public static Sentence[] DivideParagraphs(String content) {
-        // todo
+        // maybe this method is useless
         return null;
     }
 
+    // 文档合并
     public static String MergeParagraphs(TranslationFile translationFile) {
-        // todo
-        return null;
+        return translationFile.GetMergedParagraphs();
     }
 }

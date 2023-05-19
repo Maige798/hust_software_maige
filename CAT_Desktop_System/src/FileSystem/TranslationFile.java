@@ -89,6 +89,18 @@ public class TranslationFile {
         }
     }
 
+    // 将paragraphsList中的translation合并为一个字符串
+    public String GetMergedParagraphs(){
+        StringBuffer buffer=new StringBuffer();
+        for(TranslationItem item:this.paragraphsList){
+            if(item.translation!=null)
+                buffer.append(item.translation.text);
+            else
+                buffer.append(item.origin.text);
+        }
+        return buffer.toString();
+    }
+
     // 判断遇到该符号是否需要分段
     private static int isSeparator(char c) {
         return switch (c) {

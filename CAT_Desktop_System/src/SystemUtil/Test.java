@@ -8,7 +8,7 @@ import TermLibrarySystem.TermLibraryManager;
 
 public class Test {
     public static void main(String[] args) {
-        TestDivideParagraph();
+        TestMergeParagraph();
     }
 
     public static void TestMemoryLibraryRead(){
@@ -51,11 +51,27 @@ public class Test {
             TermLibraryManager.SaveLibrary(library);
     }
 
-    public static void TestDivideParagraph() {
+    public static TranslationFile TestDivideParagraph(boolean print) {
         String fileName = "D:\\hust_software_maige\\CAT_Desktop_System\\src\\FileSystem\\TestDivideParagraph.txt";
         TranslationFile translationFile = new TranslationFile("transFile", null, fileName, Language.Chinese, Language.English);
         TranslationFileManager.SetUpFile(translationFile);
-        for(TranslationItem item:translationFile.paragraphsList)
+        if (print)
+            for (int i=0;i<translationFile.paragraphsList.size();i++)
+                System.out.println("#"+i+translationFile.paragraphsList.get(i));
+        return translationFile;
+    }
+
+    public static void TestMergeParagraph() {
+        TranslationFile translationFile = TestDivideParagraph(true);
+        translationFile.TranslateParagraph(0,"This file is used to test file division");
+        translationFile.TranslateParagraph(2,"HUST examination rules");
+        translationFile.TranslateParagraph(4,"--Copy From<<HUST Undergraduate Examination Management Work Rules>>");
+        translationFile.TranslateParagraph(6,"No.19");
+        translationFile.TranslateParagraph(9,"Students who are 30 minutes or more late for exam,");
+        translationFile.TranslateParagraph(10,"are not allowed to take the exam.");
+        translationFile.TranslateParagraph(11,"This course is punished as a lack of examination.");
+        for (TranslationItem item : translationFile.paragraphsList)
             System.out.println(item);
+        System.out.println(TranslationFileManager.MergeParagraphs(translationFile));
     }
 }
