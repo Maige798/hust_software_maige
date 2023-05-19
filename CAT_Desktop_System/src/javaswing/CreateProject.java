@@ -44,6 +44,7 @@ public class CreateProject {
 //        String[] listData=new String[]{"English","Chinese"};
 //        JComboBox<String> comboBox=new JComboBox<String>(listData);
 //        comboBox.setSelectedIndex(2);
+        //布局
 //左上角
         panel.add(alabel);
         panel.add(blabel);
