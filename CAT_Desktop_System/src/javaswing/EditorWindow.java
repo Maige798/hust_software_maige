@@ -48,11 +48,11 @@ public class EditorWindow extends JFrame{
         JPanel formerText = new JPanel(new FlowLayout());
 
 
-
+        return null;
     }
 
     private JPanel createMemoryLibraryPanel(){
-
+    return null;
     }
 
 }
