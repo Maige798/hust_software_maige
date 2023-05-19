@@ -1,0 +1,28 @@
+@Name {
+	<name> 名字
+}
+
+@Save {
+	<save> 路径
+}
+
+@Item {
+	<abc> ABC
+	<def> DEF
+	<maige> 麦哥
+}
+
+@TransItem {
+	<ori> [Chinese] 麦哥
+	<tran> [English] Maige
+}
+
+@Blank
+
+@Return
+
+@Table
+
+@AAA {
+	<aaa> AAA
+}
