@@ -37,6 +37,7 @@ class CAT_FileControllerTest {
                        \r
                        @AAA {\r
                        \t<aaa> AAA\r
+                       \t<blank> \r
                        }\r
                        \r
                        """;

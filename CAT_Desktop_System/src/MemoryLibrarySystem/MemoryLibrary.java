@@ -1,5 +1,6 @@
 package MemoryLibrarySystem;
 
+import SystemUtil.CAT_FileItem;
 import SystemUtil.Language;
 import SystemUtil.Sentence;
 import SystemUtil.TranslationItem;
@@ -74,7 +75,7 @@ public class MemoryLibrary {
         return translationItems;
     }
 
-    // 根据获取的存储的信息生成对象
+    // 根据获取的存储的信息生成对象（旧方法，暂时弃用）
     public void SetUpLibrary(String message){
         char[] messages=message.toCharArray();
         int pointer=0;
@@ -197,11 +198,55 @@ public class MemoryLibrary {
         }
     }
 
+    // 根据获得的文件条目生成对象
+    public void SetUpLibrary(CAT_FileItem[] items) {
+        for (CAT_FileItem item : items) {
+            switch (item.label) {
+                case "Name" -> this.name = item.GetContain(0);
+                case "Save" -> this.save = item.GetContain(0);
+                case "TranItem" -> {
+                    TranslationItem translationItem = new TranslationItem();
+                    if (item.GetItem(0).equals("ori"))
+                        translationItem.origin = DealWithSentence(item.GetContain(0));
+                    else
+                        System.err.println("Expected: ori, wrong in TranItem:" + item.GetItem(0));
+                    if (item.GetItem(1).equals("tran"))
+                        translationItem.translation = DealWithSentence(item.GetContain(1));
+                    else
+                        System.err.println("Expected: tran, wrong in TransItem:" + item.GetItem(1));
+                    this.AddItem(translationItem);
+                }
+                default -> System.err.println("Wrong item:" + item.label);
+            }
+        }
+    }
+
+    // 根据条目内容，拆分language和text生成一个Sentence
+    private static Sentence DealWithSentence(String message) {
+        Sentence sentence=new Sentence();
+        String[] strings=BreakSentence(message); // 这里strings.length必定为2
+        sentence.language=Language.GetLanguage(strings[0]);
+        sentence.text=strings[1];
+        return sentence;
+    }
+
+    // 将信息中的[语言]与内容分开
+    private static String[] BreakSentence(String message){
+        String[] results=new String[2];
+        char[] messages=message.toCharArray();
+        int pointer=0;
+        while (messages[pointer]!=' ')
+            pointer++;
+        results[0]=message.substring(1,pointer-1);
+        results[1]=message.substring(pointer+1);
+        return results;
+    }
+
     @Override
     public String toString() {
         StringBuffer buffer = new StringBuffer();
-        buffer.append("@Name {").append(this.name).append("}\r\n\r\n");
-        buffer.append("@Save {").append(this.save).append("}\r\n\r\n");
+        buffer.append("@Name {\r\n\t<name> ").append(this.name).append("\r\n}\r\n\r\n");
+        buffer.append("@Save {\r\n\t<save> ").append(this.save).append("\r\n}\r\n\r\n");
         for (TranslationItem item : this.itemsList) {
             if (item.origin.language.EqualsTo(Language.Default)) {
                 switch (item.origin.text) {

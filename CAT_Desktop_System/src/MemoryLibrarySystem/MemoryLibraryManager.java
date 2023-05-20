@@ -1,5 +1,7 @@
 package MemoryLibrarySystem;
 
+import SystemUtil.CAT_FileController;
+import SystemUtil.CAT_FileItem;
 import SystemUtil.Sentence;
 
 import java.io.File;
@@ -40,7 +42,8 @@ public class MemoryLibraryManager {
         }
     }
 
-    public static MemoryLibrary LoadLibrary(String save) {
+    // 旧版本，暂时弃用
+    public static MemoryLibrary Old_LoadLibrary(String save) {
         File file = new File(save);
         MemoryLibrary library = null;
         try {
@@ -55,6 +58,14 @@ public class MemoryLibraryManager {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        instance.memoryLibraryList.add(library);
+        return library;
+    }
+
+    public static MemoryLibrary LoadLibrary(String save) {
+        CAT_FileItem[] items = CAT_FileController.ReadFile(save);
+        MemoryLibrary library = new MemoryLibrary(null);
+        library.SetUpLibrary(items);
         instance.memoryLibraryList.add(library);
         return library;
     }

@@ -5,9 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76dc47c8-1276-4c92-8a0a-26a856359a03" name="变更" comment="Maige-提交代码&#10;（采用测试驱动开发，读取文件内容用于生成对象功能已实现，&#10;用于之后各模块LoadXXX()方法重构）">
+      <change afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/MemoryLibrarySystem/MemoryLibraryManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/_2023_5_13_14_55____.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2023_5_13_14_55_取消提交了变更_[变更]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/ProjectSystem/CAT_Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/ProjectSystem/CAT_Project.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/ProjectSystem/ProjectManagerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/MemoryLibrarySystem/MemoryLibrary.java" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/MemoryLibrarySystem/MemoryLibrary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/MemoryLibrarySystem/MemoryLibraryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/MemoryLibrarySystem/MemoryLibraryManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/MemoryLibrarySystem/memlib.mlib" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/MemoryLibrarySystem/memlib.mlib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/MemoryLibrarySystem/记忆库条目存储格式.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/MemoryLibrarySystem/记忆库条目存储格式.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/SystemUtil/CAT_FileControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/SystemUtil/CAT_FileControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/SystemUtil/MyFileItem.fitem" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/SystemUtil/MyFileItem.fitem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/SystemUtil/TranslationItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/SystemUtil/TranslationItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/MemoryLibrarySystem/MemoryLibrary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/MemoryLibrarySystem/MemoryLibrary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/MemoryLibrarySystem/MemoryLibraryManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/MemoryLibrarySystem/MemoryLibraryManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/SystemUtil/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/SystemUtil/Test.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,10 +94,11 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="MemoryLibrarySystem" />
       <recent name="ProjectSystem" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CAT_FileControllerTest">
+  <component name="RunManager" selected="JUnit.MemoryLibraryManagerTest.loadLibrary">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SystemUtil.Test" />
       <module name="CAT_Desktop_System" />
@@ -131,10 +143,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MemoryLibraryManagerTest.loadLibrary" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CAT_Desktop_System" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="MemoryLibrarySystem.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="MemoryLibrarySystem" />
+      <option name="MAIN_CLASS_NAME" value="MemoryLibrarySystem.MemoryLibraryManagerTest" />
+      <option name="METHOD_NAME" value="loadLibrary" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CAT_FileControllerTest" />
+        <item itemvalue="JUnit.MemoryLibraryManagerTest.loadLibrary" />
         <item itemvalue="JUnit.CAT_FileControllerTest.readFile" />
+        <item itemvalue="应用程序.Test" />
+        <item itemvalue="JUnit.CAT_FileControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -399,7 +429,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684490187706</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Maige-提交代码&#10;（采用测试驱动开发，读取文件内容用于生成对象功能已实现，&#10;用于之后各模块LoadXXX()方法重构）">
+      <created>1684490545270</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1684490545270</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -453,6 +490,17 @@
     <MESSAGE value="刘闯-提交代码" />
     <MESSAGE value="Maige-提交代码&#10;（采用测试驱动开发，读取文件内容用于生成对象功能已实现，&#10;用于之后各模块LoadXXX()方法重构）" />
     <option name="LAST_COMMIT_MESSAGE" value="Maige-提交代码&#10;（采用测试驱动开发，读取文件内容用于生成对象功能已实现，&#10;用于之后各模块LoadXXX()方法重构）" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/CAT_Desktop_System/src/SystemUtil/CAT_FileControllerTest.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>

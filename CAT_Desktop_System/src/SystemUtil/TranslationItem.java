@@ -7,7 +7,7 @@ public class TranslationItem {
     @Override
     public String toString() {
         StringBuffer buffer = new StringBuffer();
-        buffer.append("@TranItem{\r\n").append("\t<ori> ").append(origin).append("\r\n");
+        buffer.append("@TranItem {\r\n").append("\t<ori> ").append(origin).append("\r\n");
         if (this.translation != null)
             buffer.append("\t<tran> ").append(translation).append("\r\n");
         else
