@@ -1,12 +1,16 @@
-@Name {术语库}
+@Name {
+	<name> 术语库
+}
 
-@Save {D:\hust_software_maige\CAT_Desktop_System\src\TermLibrarySystem\termlib.tlib}
+@Save {
+	<save> D:\hust_software_maige\CAT_Desktop_System\src\TermLibrarySystem\termlib.tlib
+}
 
 @TermItem {
 	<title> Maige
 	<term> [Chinese] 麦哥
 	<term> [English] Maige
-	<term> [Russian] mAINESY?
+	<term> [Russian] mAINESY
 }
 
 @TermItem {
