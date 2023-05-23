@@ -1,6 +1,5 @@
 package TermLibrarySystem;
 
-import MemoryLibrarySystem.MemoryLibrary;
 import SystemUtil.CAT_FileController;
 import SystemUtil.CAT_FileItem;
 import SystemUtil.Sentence;
@@ -12,7 +11,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class TermLibraryManager {
     public List<TermLibrary> termLibraryList=new ArrayList<>();
