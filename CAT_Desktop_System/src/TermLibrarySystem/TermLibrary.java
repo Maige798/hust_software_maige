@@ -1,8 +1,6 @@
 package TermLibrarySystem;
 
-import SystemUtil.Language;
-import SystemUtil.Sentence;
-import SystemUtil.TermItem;
+import SystemUtil.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,8 +20,8 @@ public class TermLibrary {
     @Override
     public String toString(){
         StringBuffer buffer=new StringBuffer();
-        buffer.append("@Name {").append(this.name).append("}\r\n\r\n");
-        buffer.append("@Save {").append(this.save).append("}\r\n\r\n");
+        buffer.append("@Name {\r\n\t<name> ").append(this.name).append("\r\n}\r\n\r\n");
+        buffer.append("@Save {\r\n\t<save> ").append(this.save).append("\r\n}\r\n\r\n");
         for(TermItem item:this.itemsList)
             buffer.append(item).append("\r\n");
         return buffer.toString();
@@ -62,7 +60,7 @@ public class TermLibrary {
         return termItems;
     }
 
-    // 根据获取的信息生成对象
+    // 根据获取的信息生成对象（旧方法，暂时弃用）
     public void SetUpLibrary(String message){
         char[] messages=message.toCharArray();
         int pointer=0;
@@ -163,5 +161,49 @@ public class TermLibrary {
         }
     }
 
+    // 根据获取的文件条目生成对象
+    public void SetUpLibrary(CAT_FileItem[] items) {
+        for (CAT_FileItem item : items) {
+            switch (item.label) {
+                case "Name" -> this.name = item.GetContain(0);
+                case "Save" -> this.save = item.GetContain(0);
+                case "TermItem" -> {
+                    TermItem termItem = new TermItem();
+                    if (item.GetItem(0).equals("title"))
+                        termItem.title = item.GetContain(0);
+                    else
+                        System.err.println("Expected <title>, wrong:" + item.GetItem(0));
+                    for (int i = 1; i < item.GetLength(); i++) {
+                        if (item.GetItem(i).equals("term"))
+                            termItem.AddTerm(DealWithSentence(item.GetContain(i)));
+                        else
+                            System.err.println("Expected <term>, wrong:" + item.GetItem(i));
+                    }
+                    this.AddItem(termItem);
+                }
+                default -> System.err.println("Wrong item:" + item.label);
+            }
+        }
+    }
 
+    // 根据条目内容，拆分language和text生成一个Sentence
+    private static Sentence DealWithSentence(String message) {
+        Sentence sentence=new Sentence();
+        String[] strings=BreakSentence(message); // 这里strings.length必定为2
+        sentence.language=Language.GetLanguage(strings[0]);
+        sentence.text=strings[1];
+        return sentence;
+    }
+
+    // 将信息中的[语言]与内容分开
+    private static String[] BreakSentence(String message){
+        String[] results=new String[2];
+        char[] messages=message.toCharArray();
+        int pointer=0;
+        while (messages[pointer]!=' ')
+            pointer++;
+        results[0]=message.substring(1,pointer-1);
+        results[1]=message.substring(pointer+1);
+        return results;
+    }
 }

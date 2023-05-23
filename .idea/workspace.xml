@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76dc47c8-1276-4c92-8a0a-26a856359a03" name="变更" comment="Maige-提交代码&#10;（采用测试驱动开发，重构术语库文件读取功能）">
-      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/MemoryLibrarySystem/memlib.mlib" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/MemoryLibrarySystem/memlib.mlib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/MemoryLibrarySystem/记忆库条目存储格式.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/MemoryLibrarySystem/记忆库条目存储格式.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/SystemUtil/TranslationItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/SystemUtil/TranslationItem.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/TermLibrarySystem/TermLibraryManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/_2023_5_14_0_31____.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2023_5_14_0_31_取消提交了变更_[变更]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/SystemUtil/CAT_FileItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/SystemUtil/CAT_FileItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/TermLibrarySystem/TermLibrary.java" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/TermLibrarySystem/TermLibrary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/TermLibrarySystem/TermLibraryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/TermLibrarySystem/TermLibraryManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/TermLibrarySystem/termlib.tlib" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/TermLibrarySystem/termlib.tlib" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,11 +88,12 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="TermLibrarySystem" />
       <recent name="MemoryLibrarySystem" />
       <recent name="ProjectSystem" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MemoryLibraryManagerTest.loadLibrary">
+  <component name="RunManager" selected="JUnit.TermLibraryManagerTest.loadLibrary">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SystemUtil.Test" />
       <module name="CAT_Desktop_System" />
@@ -148,8 +154,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TermLibraryManagerTest.loadLibrary" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CAT_Desktop_System" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TermLibrarySystem.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="TermLibrarySystem" />
+      <option name="MAIN_CLASS_NAME" value="TermLibrarySystem.TermLibraryManagerTest" />
+      <option name="METHOD_NAME" value="loadLibrary" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TermLibraryManagerTest.loadLibrary" />
         <item itemvalue="JUnit.MemoryLibraryManagerTest.loadLibrary" />
         <item itemvalue="JUnit.CAT_FileControllerTest.readFile" />
         <item itemvalue="应用程序.Test" />
@@ -432,7 +455,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684593944511</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Maige-提交代码&#10;（采用测试驱动开发，重构术语库文件读取功能）">
+      <created>1684594452489</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1684594452489</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -487,17 +517,6 @@
     <MESSAGE value="Maige-提交代码&#10;（采用测试驱动开发，读取文件内容用于生成对象功能已实现，&#10;用于之后各模块LoadXXX()方法重构）" />
     <MESSAGE value="Maige-提交代码&#10;（采用测试驱动开发，重构术语库文件读取功能）" />
     <option name="LAST_COMMIT_MESSAGE" value="Maige-提交代码&#10;（采用测试驱动开发，重构术语库文件读取功能）" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/CAT_Desktop_System/src/SystemUtil/CAT_FileControllerTest.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>

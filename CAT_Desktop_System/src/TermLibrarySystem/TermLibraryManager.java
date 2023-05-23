@@ -1,6 +1,8 @@
 package TermLibrarySystem;
 
 import MemoryLibrarySystem.MemoryLibrary;
+import SystemUtil.CAT_FileController;
+import SystemUtil.CAT_FileItem;
 import SystemUtil.Sentence;
 import SystemUtil.TermItem;
 
@@ -35,7 +37,7 @@ public class TermLibraryManager {
     }
 
     // 导入术语库
-    public static TermLibrary LoadLibrary(String save) {
+    public static TermLibrary Old_LoadLibrary(String save) {
         File file = new File(save);
         TermLibrary library = null;
         try {
@@ -50,6 +52,14 @@ public class TermLibraryManager {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        instance.termLibraryList.add(library);
+        return library;
+    }
+
+    public static TermLibrary LoadLibrary(String save){
+        CAT_FileItem[] items = CAT_FileController.ReadFile(save);
+        TermLibrary library = new TermLibrary(null,null);
+        library.SetUpLibrary(items);
         instance.termLibraryList.add(library);
         return library;
     }

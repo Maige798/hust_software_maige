@@ -43,4 +43,10 @@ public class CAT_FileItem {
     public String GetContain(int num) {
         return this.contains.get(num);
     }
+
+    public int GetLength(){
+        if(this.items.size()!=this.contains.size())
+            System.err.println("wrong: items:"+items.size()+"\tcontains:"+contains.size());
+        return items.size();
+    }
 }
