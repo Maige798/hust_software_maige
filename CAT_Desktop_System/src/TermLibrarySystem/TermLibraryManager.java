@@ -34,14 +34,13 @@ public class TermLibraryManager {
         return termLibrary;
     }
 
-    // 导入术语库
+    // 导入术语库，旧方法，弃用
     public static TermLibrary Old_LoadLibrary(String save) {
         File file = new File(save);
         TermLibrary library = null;
-        try {
+        try (FileReader in = new FileReader(file)) {
             int charGet; // 读取的字符
             StringBuffer buffer = new StringBuffer();
-            FileReader in = new FileReader(file);
             while ((charGet = in.read()) != -1) {
                 buffer.append((char) charGet);
             }

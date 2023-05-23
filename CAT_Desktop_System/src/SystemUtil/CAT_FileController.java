@@ -10,8 +10,7 @@ public class CAT_FileController {
     public static CAT_FileItem[] ReadFile(String save) {
         File file = new File(save);
         CAT_FileItem[] fileItems = null;
-        try {
-            FileReader in = new FileReader(file);
+        try (FileReader in = new FileReader(file)) {
             int charGet;
             StringBuffer buffer = new StringBuffer();
             while ((charGet = in.read()) != -1)

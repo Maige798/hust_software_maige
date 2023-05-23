@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76dc47c8-1276-4c92-8a0a-26a856359a03" name="变更" comment="Maige-提交代码&#10;（采用测试驱动开发，重构术语库文件读取功能）">
+    <list default="true" id="76dc47c8-1276-4c92-8a0a-26a856359a03" name="变更" comment="Maige-提交代码">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/SystemUtil/CAT_FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/SystemUtil/CAT_FileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/TermLibrarySystem/TermLibraryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/TermLibrarySystem/TermLibraryManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +88,7 @@
       <recent name="ProjectSystem" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TermLibraryManagerTest.loadLibrary">
+  <component name="RunManager" selected="JUnit.MemoryLibraryManagerTest.loadLibrary">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SystemUtil.Test" />
       <module name="CAT_Desktop_System" />
@@ -166,8 +167,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TermLibraryManagerTest.loadLibrary" />
         <item itemvalue="JUnit.MemoryLibraryManagerTest.loadLibrary" />
+        <item itemvalue="JUnit.TermLibraryManagerTest.loadLibrary" />
         <item itemvalue="JUnit.CAT_FileControllerTest.readFile" />
         <item itemvalue="应用程序.Test" />
         <item itemvalue="JUnit.CAT_FileControllerTest" />
@@ -470,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684826752085</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Maige-提交代码">
+      <created>1684827436252</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1684827436252</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -520,11 +528,11 @@
     <MESSAGE value="12345" />
     <MESSAGE value="1234545" />
     <MESSAGE value="提交代码" />
-    <MESSAGE value="Maige-提交代码" />
     <MESSAGE value="刘闯-提交代码" />
     <MESSAGE value="Maige-提交代码&#10;（采用测试驱动开发，读取文件内容用于生成对象功能已实现，&#10;用于之后各模块LoadXXX()方法重构）" />
     <MESSAGE value="Maige-提交代码&#10;（采用测试驱动开发，重构术语库文件读取功能）" />
-    <option name="LAST_COMMIT_MESSAGE" value="Maige-提交代码&#10;（采用测试驱动开发，重构术语库文件读取功能）" />
+    <MESSAGE value="Maige-提交代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="Maige-提交代码" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>
