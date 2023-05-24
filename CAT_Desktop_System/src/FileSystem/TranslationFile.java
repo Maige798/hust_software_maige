@@ -1,6 +1,8 @@
 package FileSystem;
 
+import SystemUtil.CAT_FileItem;
 import SystemUtil.Language;
+import SystemUtil.Sentence;
 import SystemUtil.TranslationItem;
 
 import java.io.File;
@@ -16,6 +18,10 @@ public class TranslationFile {
     public List<TranslationItem> paragraphsList = new ArrayList<>();
 
     // 构造方法
+    public TranslationFile(){
+
+    }
+
     public TranslationFile(String name, String save, File sourceFile, Language originLanguage, Language targetLanguage) {
         this.name = name;
         this.save = save;
@@ -32,6 +38,10 @@ public class TranslationFile {
         this.targetLanguage = targetLanguage;
     }
 
+    public void AddItem(TranslationItem item){
+        this.paragraphsList.add(item);
+    }
+
     // 翻译某一段话，即设置paragraphsList中的某个成员的translation
     public void TranslateParagraph(int num, String text) {
         if (num > paragraphsList.size()) // 越界报错
@@ -39,9 +49,86 @@ public class TranslationFile {
         paragraphsList.get(num).SetTranslation(this.targetLanguage, text);
     }
 
+    @Override
+    public String toString(){
+        // todo
+        return null;
+    }
+
     // 保存文件
     public void SaveFile() {
         // todo
+    }
+
+    public void SetUpTranslationFile(CAT_FileItem[] items){
+        for (CAT_FileItem item : items) {
+            switch (item.label) {
+                case "Name" -> this.name = item.GetContain(0);
+                case "Save" -> this.save = item.GetContain(0);
+                case "Language" -> {
+                    if (item.GetItem(0).equals("ori"))
+                        this.originLanguage = Language.GetLanguage(item.GetContain(0));
+                    else
+                        System.err.println("Expected: ori, wrong in TranItem:" + item.GetItem(0));
+                    if (item.GetItem(1).equals("tran"))
+                        this.targetLanguage = Language.GetLanguage(item.GetContain(1));
+                    else
+                        System.err.println("Expected: tran, wrong in TranItem:" + item.GetItem(1));
+                }
+                case "TranItem" -> {
+                    TranslationItem translationItem = new TranslationItem();
+                    if (item.GetItem(0).equals("ori"))
+                        translationItem.origin = DealWithSentence(item.GetContain(0));
+                    else
+                        System.err.println("Expected: ori, wrong in TranItem:" + item.GetItem(0));
+                    if (item.GetItem(1).equals("tran"))
+                        translationItem.translation = DealWithSentence(item.GetContain(1));
+                    else
+                        System.err.println("Expected: tran, wrong in TransItem:" + item.GetItem(1));
+                    this.AddItem(translationItem);
+                }
+                case "Blank"->{
+                    TranslationItem translationItem=new TranslationItem();
+                    translationItem.origin=new Sentence(Language.Default," ");
+                    translationItem.translation=new Sentence(Language.Default," ");
+                    this.AddItem(translationItem);
+                }
+                case "Table"->{
+                    TranslationItem translationItem=new TranslationItem();
+                    translationItem.origin=new Sentence(Language.Default,"\t");
+                    translationItem.translation=new Sentence(Language.Default,"\t");
+                    this.AddItem(translationItem);
+                }
+                case "Return"->{
+                    TranslationItem translationItem=new TranslationItem();
+                    translationItem.origin=new Sentence(Language.Default,"\r\n");
+                    translationItem.translation=new Sentence(Language.Default,"\r\n");
+                    this.AddItem(translationItem);
+                }
+                default -> System.err.println("Wrong item:" + item.label);
+            }
+        }
+    }
+
+    // 根据条目内容，拆分language和text生成一个Sentence
+    private static Sentence DealWithSentence(String message) {
+        Sentence sentence=new Sentence();
+        String[] strings=BreakSentence(message); // 这里strings.length必定为2
+        sentence.language=Language.GetLanguage(strings[0]);
+        sentence.text=strings[1];
+        return sentence;
+    }
+
+    // 将信息中的[语言]与内容分开
+    private static String[] BreakSentence(String message){
+        String[] results=new String[2];
+        char[] messages=message.toCharArray();
+        int pointer=0;
+        while (messages[pointer]!=' ')
+            pointer++;
+        results[0]=message.substring(1,pointer-1);
+        results[1]=message.substring(pointer+1);
+        return results;
     }
 
     // 向paragraphsList中新增一条TranslationItem

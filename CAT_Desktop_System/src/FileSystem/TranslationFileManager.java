@@ -1,5 +1,8 @@
 package FileSystem;
 
+import MemoryLibrarySystem.MemoryLibrary;
+import SystemUtil.CAT_FileController;
+import SystemUtil.CAT_FileItem;
 import SystemUtil.Sentence;
 import SystemUtil.TranslationItem;
 
@@ -43,6 +46,14 @@ public class TranslationFileManager {
         } else {
             System.err.println("TranslationFile is null");
         }
+    }
+
+    // 根据路径读取翻译文件内容
+    public static TranslationFile LoadFile(String save) {
+        CAT_FileItem[] items = CAT_FileController.ReadFile(save);
+        TranslationFile translationFile=new TranslationFile();
+
+        return translationFile;
     }
 
     public static void SetUpParagraph(TranslationFile translationFile) {
