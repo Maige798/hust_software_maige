@@ -48,9 +48,13 @@ public class EditorWindow extends JFrame{
         setJMenuBar(menuBar);
         ContentPanel.setLayout(null);
         ContentPanel.add(EditPanel);
+        ContentPanel.add(MemoryLibraryPanel);
+        ContentPanel.add(TermLibraryPanel);
         ContentPanel.add(ProjectInformationPanel);
         ContentPanel.add(InterfaceSwitchingPanel);
         EditPanel.setBounds(200,180,800,450);
+        MemoryLibraryPanel.setBounds(200,0,500,200);
+        TermLibraryPanel.setBounds(700,0,300,200);
         ProjectInformationPanel.setBounds(0,0,200,400);
         InterfaceSwitchingPanel.setBounds(0,400,200,250);
         setContentPane(ContentPanel);
@@ -114,17 +118,18 @@ public class EditorWindow extends JFrame{
         editLabels2.setBounds(435,10,30,30);
         bookPrint.setBounds(620,380,40,20);
 
-        int yBegin = 45;
+        int yBegin = 55;
         for(int i=0;i<states.length;i++)
         {
             states[i].setBounds(390,yBegin+i*40,30,30);
         }
 
-        int yFirst =45;
-        int ySecond = 45;
+        int yFirst =55;
+        int ySecond = 55;
         for(int i=0;i<texts.length;i+=2)
         {
             texts[i].setBounds(45,yFirst+i*20,320,30);
+            texts[i].setEditable(false);
         }
         for(int i=1;i<texts.length;i+=2)
         {
@@ -141,11 +146,48 @@ public class EditorWindow extends JFrame{
     }
 
     private JPanel createMemoryLibraryPanel(){
-        return null;
+
+        JPanel panel = new JPanel();
+        panel.setLayout(null);
+        Color PinkColor = new Color(219,141,241);
+        panel.setBackground(PinkColor);
+
+        JTextArea textArea = new JTextArea();
+        Color BlueColor = new Color(140,240,240);
+        textArea.setBackground(BlueColor);
+        textArea.setEditable(false);
+
+        JButton jButton = new JButton("应用翻译结果");
+
+        panel.add(textArea);
+        panel.add(jButton);
+
+        textArea.setBounds(20,15,460,130);
+        jButton.setBounds(360,150,120,20);
+
+        return panel;
     }
 
     private JPanel createTermLibraryPanel(){
-        return null;
+        JPanel panel = new JPanel();
+        panel.setLayout(null);
+        Color DarkBlueColor = new Color(47,116,208);
+        panel.setBackground(DarkBlueColor);
+
+        JTextArea textArea = new JTextArea();
+        Color BlueColor = new Color(140,240,240);
+        textArea.setBackground(BlueColor);
+        textArea.setEditable(false);
+
+        JButton jButton = new JButton("添加术语");
+
+        panel.add(textArea);
+        panel.add(jButton);
+
+        textArea.setBounds(20,15,250,130);
+        jButton.setBounds(180,150,90,20);
+
+        return panel;
     }
 
     public JMenuBar createJMenuBar() {
