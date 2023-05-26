@@ -6,6 +6,24 @@ import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 
 public class MemoryLibraryWindow extends JFrame {
+    //创建顶部菜单栏
+    JMenuBar menuBar;
+
+    //创建翻译记忆库列表
+    JPanel MemoryLibraryListPanel;
+
+    //创建主界面切换栏
+    JPanel InterfaceSwitchingPanel;
+
+    //创建记忆库条目栏
+    JPanel MemoryLibraryItemsPanel;
+
+    //创建条目筛选栏
+    JPanel ItemSelectionPanel;
+
+    //创建内容面板
+    JPanel ContentPanel;
+
     public static void main(String[] args){
         MemoryLibraryWindow windows = new MemoryLibraryWindow();
         windows.setVisible(true);
@@ -25,22 +43,22 @@ public class MemoryLibraryWindow extends JFrame {
         setResizable(false);
 
         //创建顶部菜单栏
-        JMenuBar menuBar=createJMenuBar();
+        menuBar=createJMenuBar();
 
         //创建翻译记忆库列表
-        JPanel MemoryLibraryListPanel=createMemoryLibraryListPanel();
+        MemoryLibraryListPanel=createMemoryLibraryListPanel();
 
         //创建主界面切换栏
-        JPanel InterfaceSwitchingPanel=createInterfaceSwitchingPanel();
+        InterfaceSwitchingPanel=createInterfaceSwitchingPanel();
 
         //创建记忆库条目栏
-        JPanel MemoryLibraryItemsPanel = createMemoryLibraryItemsPanel();
+        MemoryLibraryItemsPanel = createMemoryLibraryItemsPanel();
 
         //创建条目筛选栏
-        JPanel ItemSelectionPanel = createItemSelectionPanel();
+        ItemSelectionPanel = createItemSelectionPanel();
 
         //创建内容面板
-        JPanel ContentPanel = new JPanel();
+        ContentPanel = new JPanel();
         ContentPanel.setLayout(null);
 
         setJMenuBar(menuBar);
