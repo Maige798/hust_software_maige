@@ -5,6 +5,8 @@ import SystemUtil.CAT_FileController;
 import SystemUtil.CAT_FileItem;
 import SystemUtil.TranslationItem;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,7 +42,11 @@ public class ProjectManager {
     }
 
     public static void SaveProject(CAT_Project project) {
-        // todo
+        try (FileWriter out = new FileWriter(project.save)) {
+            out.write(project.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void OpenProject(CAT_Project project){

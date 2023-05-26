@@ -1,8 +1,6 @@
 package FileSystem;
 
-import SystemUtil.CAT_FileController;
-import SystemUtil.CAT_FileItem;
-import SystemUtil.Sentence;
+import SystemUtil.*;
 
 import java.io.File;
 import java.io.FileReader;
@@ -17,9 +15,11 @@ public class TranslationFileManager {
 
     }
 
-    public static TranslationFile ReadFile() {
-        // todo
-        return null;
+    // 读取目标文件后创建相应的翻译文件对象
+    public static TranslationFile ReadFile(String save, String sourceFile, Language origin, Language target) {
+        TranslationFile translationFile = new TranslationFile(null, save, sourceFile, origin, target);
+        SetUpFile(translationFile);
+        return translationFile;
     }
 
     // 保存翻译文件

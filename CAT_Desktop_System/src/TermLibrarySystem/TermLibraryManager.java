@@ -22,9 +22,24 @@ public class TermLibraryManager {
 
     }
 
-    public static TermItem[] MatchTerms(TermLibrary library, Sentence sentence){
-        // todo
-        return null;
+    // 根据目标字符串匹配需要的术语条目
+    public static TermItem[] MatchTerms(TermLibrary library, String text) {
+        List<TermItem> matchedItems = new ArrayList<>();
+        for (TermItem item : library.itemsList) {
+            if (text.contains(item.title)) {
+                matchedItems.add(item);
+            } else {
+                for (Sentence sentence : item.termList) {
+                    if (text.contains(sentence.text)) {
+                        matchedItems.add(item);
+                        break;
+                    }
+                }
+            }
+        }
+        TermItem[] match = new TermItem[matchedItems.size()];
+        matchedItems.toArray(match);
+        return match;
     }
 
     // 创建一个TermLibrary
@@ -35,7 +50,7 @@ public class TermLibraryManager {
     }
 
     // 导入术语库，旧方法，弃用
-    public static TermLibrary Old_LoadLibrary(String save) {
+    private static TermLibrary Old_LoadLibrary(String save) {
         File file = new File(save);
         TermLibrary library = null;
         try (FileReader in = new FileReader(file)) {

@@ -2,7 +2,6 @@ package MemoryLibrarySystem;
 
 import SystemUtil.CAT_FileController;
 import SystemUtil.CAT_FileItem;
-import SystemUtil.Sentence;
 
 import java.io.File;
 import java.io.FileReader;
@@ -21,14 +20,12 @@ public class MemoryLibraryManager {
 
     }
 
-    public static String MatchItem(Sentence sentence){
-        // todo
-        return null;
+    public static String MatchItem(MemoryLibrary memoryLibrary,String text){
+        return memoryLibrary.Match(text);
     }
 
-    public static MemoryLibrary CreateMemoryLibrary(String name){
-        // todo
-        return null;
+    public static MemoryLibrary CreateMemoryLibrary(String name,String save){
+        return new MemoryLibrary(name,save);
     }
 
     public static void SaveLibrary(MemoryLibrary library){
