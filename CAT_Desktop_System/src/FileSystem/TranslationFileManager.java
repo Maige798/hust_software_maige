@@ -60,12 +60,12 @@ public class TranslationFileManager {
         return translationFile;
     }
 
-    public static void SetUpParagraph(TranslationFile translationFile) {
+    private static void SetUpParagraph(TranslationFile translationFile) {
         // maybe this method is useless
     }
 
-    // 文档分段
-    public static Sentence[] DivideParagraphs(String content) {
+    // 文档分段，这个方法貌似没用，暂时丢弃
+    private static Sentence[] DivideParagraphs(String content) {
         // maybe this method is useless
         return null;
     }
