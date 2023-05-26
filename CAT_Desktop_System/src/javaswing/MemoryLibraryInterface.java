@@ -6,7 +6,10 @@ import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 
 public class MemoryLibraryInterface extends JFrame {
-
+    public static void main(String[] args){
+        MemoryLibraryInterface windows = new MemoryLibraryInterface();
+        windows.setVisible(true);
+    }
     public MemoryLibraryInterface()
     {
         init();
@@ -20,37 +23,43 @@ public class MemoryLibraryInterface extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBackground(Color.decode("#EAECF2"));
         setResizable(false);
+
         //创建顶部菜单栏
         JMenuBar menuBar=createJMenuBar();
 
-        //创建左中区域
-        JPanel panel1=createProjectInformationPanel();
+        //创建翻译记忆库列表
+        JPanel MemoryLibraryListPanel=createMemoryLibraryListPanel();
 
+        //创建主界面切换栏
+        JPanel InterfaceSwitchingPanel=createInterfaceSwitchingPanel();
 
+        //创建记忆库条目栏
+        JPanel MemoryLibraryItemsPanel = createMemoryLibraryItemsPanel();
 
-        //创建左下菜单栏
-        JPanel panel2=createInterfaceSwitchingPanel();
-
-
+        //创建条目筛选栏
+        JPanel ItemSelectionPanel = createItemSelectionPanel();
 
         //创建内容面板
-        setJMenuBar(menuBar);
         JPanel ContentPanel = new JPanel();
         ContentPanel.setLayout(null);
-        ContentPanel.add(panel1);
-        ContentPanel.add(panel2);
-        panel1.setBounds(0,0,200,400);
-        panel2.setBounds(0,400,200,250);
 
+        setJMenuBar(menuBar);
+        ContentPanel.add(MemoryLibraryListPanel);
+        ContentPanel.add(InterfaceSwitchingPanel);
+        ContentPanel.add(MemoryLibraryItemsPanel);
+        ContentPanel.add(ItemSelectionPanel);
+
+        MemoryLibraryListPanel.setBounds(0,0,200,400);
+        InterfaceSwitchingPanel.setBounds(0,400,200,250);
+        MemoryLibraryItemsPanel.setBounds(200,100,800,500);
+        ItemSelectionPanel.setBounds(200,0,800,150);
 
         setContentPane(ContentPanel);
         setLocationRelativeTo(null);
         setVisible(true);
-
     }
 
-    public JMenuBar createJMenuBar()
-    {
+    public JMenuBar createJMenuBar() {
         JMenuBar menuBar=new JMenuBar();
 
         JMenu menu1=new JMenu("文件");
@@ -80,20 +89,15 @@ public class MemoryLibraryInterface extends JFrame {
         return menuBar;
     }
 
-    public JPanel createProjectInformationPanel()
-    {
+    public JPanel createMemoryLibraryListPanel() {
         JPanel panel1=new JPanel();
         panel1.setLayout(null);
 
         panel1.setBackground(Color.yellow);
 
-
-
         JLabel label=new JLabel("创建记忆库列表");
         label.setBounds(25,50,100,50);
         panel1.add(label);
-
-
 
         //创建列表
 
@@ -134,7 +138,6 @@ public class MemoryLibraryInterface extends JFrame {
         // 添加到内容面板容器
         panel1.add(list);
 
-
         //添加换页按钮
         JButton[] changePage=new JButton[]{new JButton("上一页"),new JButton("下一页")};
         //给换页按钮设置坐标
@@ -146,13 +149,10 @@ public class MemoryLibraryInterface extends JFrame {
         panel1.add(changePage[0]);
         panel1.add(changePage[1]);
 
-
         return panel1;
     }
 
-
-    public JPanel createInterfaceSwitchingPanel()
-    {
+    public JPanel createInterfaceSwitchingPanel() {
         JPanel panel2=new JPanel();
         //panel2.setLayout(null);
 
@@ -209,6 +209,90 @@ public class MemoryLibraryInterface extends JFrame {
         return panel2;
     }
 
+    public JPanel createMemoryLibraryItemsPanel(){
+        JPanel panel = new JPanel();
+        panel.setLayout(null);
+        Color Green = new Color(204,255,128);
+        panel.setBackground(Green);
 
+        JLabel label = new JLabel("记忆库条目");
+        label.setFont(new Font("思源黑体", Font.BOLD, 25));
+        Color Blue = new Color(64,0,128);
+        label.setForeground(Blue);
+        JLabel bookPrint = new JLabel("?/?");
+        bookPrint.setForeground(Color.BLACK);
 
+        JTable table = new JTable(18,2);
+        table.setRowHeight(21);
+        table.setGridColor(new Color(192,192,192));
+        table.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+
+        JButton btn1 = new JButton("标记删除");
+        JButton btn2 = new JButton("取消更改");
+        JButton btn3 = new JButton("保存更改");
+        JButton formerPage = new JButton("上一页");
+        JButton nextPage = new JButton("下一页");
+
+        panel.add(label);
+        panel.add(bookPrint);
+        panel.add(table);
+        panel.add(btn1);
+        panel.add(btn2);
+        panel.add(btn3);
+        panel.add(formerPage);
+        panel.add(nextPage);
+
+        label.setBounds(10,5,200,40);
+        bookPrint.setBounds(660,450,40,20);
+        table.setBounds(30,50,740,378);
+        formerPage.setBounds(570,450,80,20);
+        nextPage.setBounds(690,450,80,20);
+        btn1.setBounds(200,450,90,20);
+        btn2.setBounds(310,450,90,20);
+        btn3.setBounds(420,450,90,20);
+
+        return panel;
+    }
+
+    public JPanel createItemSelectionPanel(){
+        JPanel panel = new JPanel();
+        panel.setLayout(null);
+        Color Orange = new Color(246, 154, 113);
+        panel.setBackground(Orange);
+
+        JLabel label = new JLabel("条目筛选");
+        label.setFont(new Font("思源黑体", Font.BOLD, 25));
+        Color Blue = new Color(64,0,128);
+        label.setForeground(Blue);
+
+        JLabel origin = new JLabel("原文文本");
+        origin.setForeground(Color.BLACK);
+        origin.setFont(new Font("思源黑体", Font.BOLD, 20));
+        JLabel translation = new JLabel("译文文本");
+        translation.setForeground(Color.BLACK);
+        translation.setFont(new Font("思源黑体", Font.BOLD, 20));
+
+        JTextField field1 = new JTextField(8);
+        field1.setFont(new Font(null,Font.PLAIN,20));
+        JTextField field2 = new JTextField(8);
+        field2.setFont(new Font(null,Font.PLAIN,20));
+
+        JButton selectButton = new JButton("筛选");
+
+        panel.add(label);
+        panel.add(origin);
+        panel.add(translation);
+        panel.add(field1);
+        panel.add(field2);
+        panel.add(selectButton);
+
+        label.setBounds(10,0,200,30);
+        origin.setBounds(70,30,100,32);
+        field1.setBounds(70,65,250,25);
+        translation.setBounds(360,30,100,32);
+        field2.setBounds(360,65,250,25);
+        selectButton.setBounds(650,40,100,30);
+
+        return panel;
+    }
 }

@@ -47,21 +47,28 @@ public class EditorWindow extends JFrame{
         JPanel ContentPanel = new JPanel();
         setJMenuBar(menuBar);
         ContentPanel.setLayout(null);
+
         ContentPanel.add(EditPanel);
         ContentPanel.add(MemoryLibraryPanel);
         ContentPanel.add(TermLibraryPanel);
         ContentPanel.add(ProjectInformationPanel);
         ContentPanel.add(InterfaceSwitchingPanel);
+
         EditPanel.setBounds(200,180,800,450);
         MemoryLibraryPanel.setBounds(200,0,500,200);
         TermLibraryPanel.setBounds(700,0,300,200);
         ProjectInformationPanel.setBounds(0,0,200,400);
         InterfaceSwitchingPanel.setBounds(0,400,200,250);
+
         setContentPane(ContentPanel);
         setLocationRelativeTo(null);
         setVisible(true);
     }
     private JPanel createEditPanel(){
+        JPanel panel = new JPanel();
+        panel.setLayout(null);
+        Color BlueColor = new Color(128,255,255);
+        panel.setBackground(BlueColor);
 
         JLabel editLabels0 = new JLabel("原文");
         editLabels0.setForeground(Color.BLACK);
@@ -89,11 +96,6 @@ public class EditorWindow extends JFrame{
         JButton btn2 = new JButton("开始机械翻译");
         JButton btn3 = new JButton("上一页");
         JButton btn4 = new JButton("下一页");
-
-        JPanel panel = new JPanel();
-        panel.setLayout(null);
-        Color BlueColor = new Color(128,255,255);
-        panel.setBackground(BlueColor);
 
         panel.add(editLabels0);
         panel.add(editLabels1);
@@ -140,7 +142,6 @@ public class EditorWindow extends JFrame{
         btn2.setBounds(605,15,130,20);
         btn3.setBounds(505,380,90,20);
         btn4.setBounds(665,380,90,20);
-
 
         return panel;
     }
