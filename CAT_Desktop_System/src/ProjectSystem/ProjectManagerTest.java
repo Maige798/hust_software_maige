@@ -10,7 +10,7 @@ class ProjectManagerTest {
 
     @Test
     void loadProject() {
-        String myFile="D:\\hust_software_maige\\CAT_Desktop_System\\src\\ProjectSystem";
+        String myFile="D:\\hust_software_maige\\CAT_Desktop_System\\src\\ProjectSystem\\MyProject.catp";
         String source= SystemUtil.Test.GetText(myFile);
         CAT_Project project= ProjectManager.LoadProject(myFile);
         System.out.println("Memory library:\n"+ MemoryLibraryManager.GetMemoryLibrary(0));
