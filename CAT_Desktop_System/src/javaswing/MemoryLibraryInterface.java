@@ -24,12 +24,12 @@ public class MemoryLibraryInterface extends JFrame {
         JMenuBar menuBar=createJMenuBar();
 
         //创建左中区域
-        JPanel panel1=createPanel1();
+        JPanel panel1=createProjectInformationPanel();
 
 
 
         //创建左下菜单栏
-        JPanel panel2=createPanel2();
+        JPanel panel2=createInterfaceSwitchingPanel();
 
 
 
@@ -80,7 +80,7 @@ public class MemoryLibraryInterface extends JFrame {
         return menuBar;
     }
 
-    public JPanel createPanel1()
+    public JPanel createProjectInformationPanel()
     {
         JPanel panel1=new JPanel();
         panel1.setLayout(null);
@@ -151,7 +151,7 @@ public class MemoryLibraryInterface extends JFrame {
     }
 
 
-    public JPanel createPanel2()
+    public JPanel createInterfaceSwitchingPanel()
     {
         JPanel panel2=new JPanel();
         //panel2.setLayout(null);
