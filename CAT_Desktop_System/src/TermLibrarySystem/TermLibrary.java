@@ -49,6 +49,10 @@ public class TermLibrary {
         return null;
     }
 
+    public TermItem GetItem(int num){
+        return itemsList.get(num);
+    }
+
     // 寻找title包含目标字符串的全部术语条目
     public TermItem[] SearchItem(String target){
         List<TermItem> targetList=new ArrayList<>();
