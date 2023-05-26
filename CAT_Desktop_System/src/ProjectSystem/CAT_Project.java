@@ -28,26 +28,26 @@ public class CAT_Project {
 
     }
 
-    public CAT_Project(String name,String save) {
+    public CAT_Project(String name, String save) {
         this.name = name;
         this.save = save;
     }
 
-    public CAT_Project(CAT_FileItem[] items){
+    public CAT_Project(CAT_FileItem[] items) {
         this.SetUpProject(items);
     }
 
     @Override
-    public String toString(){
-        StringBuffer buffer=new StringBuffer();
+    public String toString() {
+        StringBuffer buffer = new StringBuffer();
         buffer.append("@Name {\r\n\t<name> ").append(this.name).append("\r\n}\r\n\r\n");
         buffer.append("@Save {\r\n\t<save> ").append(this.save).append("\r\n}\r\n\r\n");
         buffer.append("@Language {\r\n\t").append("<ori> ").append(this.originLanguage).append("\r\n");
         buffer.append("\t<tran> ").append(this.targetLanguage).append("\r\n}\r\n\r\n");
         buffer.append("@MemLib {\r\n\t<save> ").append(this.memoryLibrary.save).append("\r\n}\r\n\r\n");
-        for(TermLibrary termLibrary:termLibraryList)
+        for (TermLibrary termLibrary : termLibraryList)
             buffer.append("@TermLib {\r\n\t<save> ").append(termLibrary.save).append("\r\n}\r\n\r\n");
-        for(TranslationFile translationFile:translationFileList)
+        for (TranslationFile translationFile : translationFileList)
             buffer.append("@TranFile {\r\n\t<save> ").append(translationFile.save).append("\r\n}\r\n\r\n");
         return buffer.toString();
     }
@@ -81,7 +81,7 @@ public class CAT_Project {
     }
 
     public void SetMemoryLibrary(MemoryLibrary library) {
-        this.memoryLibrary=library;
+        this.memoryLibrary = library;
     }
 
     public void AddTermLibrary(TermLibrary library) {
@@ -89,14 +89,14 @@ public class CAT_Project {
     }
 
     public void DeleteTermLibrary(TermLibrary library) {
-        // todo
+        this.termLibraryList.removeIf(termLibrary -> termLibrary.equals(library));
     }
 
     public void AddTranslationFile(TranslationFile translationFile) {
         this.translationFileList.add(translationFile);
     }
 
-    public void RemoveTranslationFile(TranslationFile translationFile) {
-        // todo
+    public void RemoveTranslationFile(TranslationFile tranFile) {
+        this.translationFileList.removeIf(translationFile -> translationFile.equals(tranFile));
     }
 }
