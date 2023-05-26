@@ -15,11 +15,11 @@ public class EditorWindow extends JFrame{
         init();
     }
 
-    private void init(){
+    public void init(){
         //窗口设置
         setSize(1000,650);
         setTitle("编辑器");
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBackground(Color.decode("#EAECF2"));
         setResizable(false);
 
@@ -27,7 +27,10 @@ public class EditorWindow extends JFrame{
         JPanel EditPanel = createEditPanel();
 
         //创建记忆库面板
-        JPanel MemoryLibraryPanel=createMemoryLibraryPanel();
+        JPanel MemoryLibraryPanel = createMemoryLibraryPanel();
+
+        //创建术语库面板
+        JPanel TermLibraryPanel = createTermLibraryPanel();
 
         //创建内容面板
         JPanel ContentPanel = new JPanel();
@@ -35,12 +38,12 @@ public class EditorWindow extends JFrame{
         ContentPanel.add(EditPanel);
         EditPanel.setBounds(200,200,800,450);
 
-
         setContentPane(ContentPanel);
         setLocationRelativeTo(null);
-
+        setVisible(true);
     }
     private JPanel createEditPanel(){
+
         JLabel editLabels0 = new JLabel("原文");
         editLabels0.setForeground(Color.BLACK);
         JLabel editLabels1 = new JLabel("状态");
@@ -50,64 +53,18 @@ public class EditorWindow extends JFrame{
         JLabel bookPrint = new JLabel("?/?");
         editLabels2.setForeground(Color.BLACK);
 
-        JLabel status1 = new JLabel("*");
-        status1.setForeground(Color.BLACK);
-        status1.setFont(new Font("宋体", Font.BOLD, 15));
-        JLabel status2 = new JLabel("*");
-        status2.setForeground(Color.BLACK);
-        status2.setFont(new Font("宋体", Font.BOLD, 15));
-        JLabel status3 = new JLabel("*");
-        status3.setForeground(Color.BLACK);
-        status3.setFont(new Font("宋体", Font.BOLD, 15));
-        JLabel status4 = new JLabel("*");
-        status4.setForeground(Color.BLACK);
-        status4.setFont(new Font("宋体", Font.BOLD, 15));
-        JLabel status5 = new JLabel("*");
-        status5.setForeground(Color.BLACK);
-        status5.setFont(new Font("宋体", Font.BOLD, 15));
-        JLabel status6 = new JLabel("*");
-        status6.setForeground(Color.BLACK);
-        status6.setFont(new Font("宋体", Font.BOLD, 15));
-        JLabel status7 = new JLabel("*");
-        status7.setForeground(Color.BLACK);
-        status7.setFont(new Font("宋体", Font.BOLD, 15));
-        JLabel status8 = new JLabel("*");
-        status8.setForeground(Color.BLACK);
-        status8.setFont(new Font("宋体", Font.BOLD, 15));
+        JLabel[] states = new JLabel[8];
+        for(int i=0;i<states.length;i++) {
+            states[i] = new JLabel("*");
+            states[i].setFont(new Font("宋体", Font.BOLD, 15));
+            states[i].setForeground(Color.BLACK);
+        }
 
-        TextField text1=new TextField(8);
-        text1.setFont(new Font(null,Font.PLAIN,20));
-        TextField text2=new TextField(8);
-        text2.setFont(new Font(null,Font.PLAIN,20));
-        TextField text3=new TextField(8);
-        text3.setFont(new Font(null,Font.PLAIN,20));
-        TextField text4=new TextField(8);
-        text4.setFont(new Font(null,Font.PLAIN,20));
-        TextField text5=new TextField(8);
-        text5.setFont(new Font(null,Font.PLAIN,20));
-        TextField text6=new TextField(8);
-        text6.setFont(new Font(null,Font.PLAIN,20));
-        TextField text7=new TextField(8);
-        text7.setFont(new Font(null,Font.PLAIN,20));
-        TextField text8=new TextField(8);
-        text8.setFont(new Font(null,Font.PLAIN,20));
-        TextField text9=new TextField(8);
-        text9.setFont(new Font(null,Font.PLAIN,20));
-        TextField text10=new TextField(8);
-        text10.setFont(new Font(null,Font.PLAIN,20));
-        TextField text11=new TextField(8);
-        text11.setFont(new Font(null,Font.PLAIN,20));
-        TextField text12=new TextField(8);
-        text12.setFont(new Font(null,Font.PLAIN,20));
-        TextField text13=new TextField(8);
-        text13.setFont(new Font(null,Font.PLAIN,20));
-        TextField text14=new TextField(8);
-        text14.setFont(new Font(null,Font.PLAIN,20));
-        TextField text15=new TextField(8);
-        text15.setFont(new Font(null,Font.PLAIN,20));
-        TextField text16=new TextField(8);
-        text16.setFont(new Font(null,Font.PLAIN,20));
-
+        TextField[] texts = new TextField[16];
+        for(int i=0;i<texts.length;i++) {
+            texts[i] =new TextField(8);
+            texts[i].setFont(new Font(null,Font.PLAIN,20));
+        }
 
         JButton btn1 = new JButton("确认翻译");
         JButton btn2 = new JButton("开始机械翻译");
@@ -123,32 +80,14 @@ public class EditorWindow extends JFrame{
         panel.add(editLabels1);
         panel.add(editLabels2);
         panel.add(bookPrint);
-        panel.add(status1);
-        panel.add(status2);
-        panel.add(status3);
-        panel.add(status4);
-        panel.add(status5);
-        panel.add(status6);
-        panel.add(status7);
-        panel.add(status8);
 
+        for(JLabel jLabel:states){
+            panel.add(jLabel);
+        }
 
-        panel.add(text1);
-        panel.add(text2);
-        panel.add(text3);
-        panel.add(text4);
-        panel.add(text5);
-        panel.add(text6);
-        panel.add(text7);
-        panel.add(text8);
-        panel.add(text9);
-        panel.add(text10);
-        panel.add(text11);
-        panel.add(text12);
-        panel.add(text13);
-        panel.add(text14);
-        panel.add(text15);
-        panel.add(text16);
+        for(TextField textField:texts){
+            panel.add(textField);
+        }
 
         panel.add(btn1);
         panel.add(btn2);
@@ -160,31 +99,22 @@ public class EditorWindow extends JFrame{
         editLabels2.setBounds(435,10,30,30);
         bookPrint.setBounds(620,380,40,20);
 
-        status1.setBounds(390,45,30,30);
-        status2.setBounds(390,85,30,30);
-        status3.setBounds(390,125,30,30);
-        status4.setBounds(390,165,30,30);
-        status5.setBounds(390,205,30,30);
-        status6.setBounds(390,245,30,30);
-        status7.setBounds(390,285,30,30);
-        status8.setBounds(390,325,30,30);
+        int yBegin = 45;
+        for(int i=0;i<states.length;i++)
+        {
+            states[i].setBounds(390,yBegin+i*40,30,30);
+        }
 
-        text1.setBounds(45,45,320,30);
-        text2.setBounds(415,45,320,30);
-        text3.setBounds(45,85,320,30);
-        text4.setBounds(415,85,320,30);
-        text5.setBounds(45,125,320,30);
-        text6.setBounds(415,125,320,30);
-        text7.setBounds(45,165,320,30);
-        text8.setBounds(415,165,320,30);
-        text9.setBounds(45,205,320,30);
-        text10.setBounds(415,205,320,30);
-        text11.setBounds(45,245,320,30);
-        text12.setBounds(415,245,320,30);
-        text13.setBounds(45,285,320,30);
-        text14.setBounds(415,285,320,30);
-        text15.setBounds(45,325,320,30);
-        text16.setBounds(415,325,320,30);
+        int yFirst =45;
+        int ySecond = 45;
+        for(int i=0;i<texts.length;i+=2)
+        {
+            texts[i].setBounds(45,yFirst+i*20,320,30);
+        }
+        for(int i=1;i<texts.length;i+=2)
+        {
+            texts[i].setBounds(415,yFirst+(i-1)*20,320,30);
+        }
 
         btn1.setBounds(485,15,100,20);
         btn2.setBounds(605,15,130,20);
@@ -196,7 +126,10 @@ public class EditorWindow extends JFrame{
     }
 
     private JPanel createMemoryLibraryPanel(){
-    return null;
+        return null;
     }
 
+    private JPanel createTermLibraryPanel(){
+        return null;
+    }
 }
