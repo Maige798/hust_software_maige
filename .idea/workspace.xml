@@ -4,8 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76dc47c8-1276-4c92-8a0a-26a856359a03" name="变更" comment="Maige-提交代码&#10;（完成翻译文件的载入与保存功能，优化部分细节）">
-      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/FileSystem/TranslationFileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/FileSystem/TranslationFileManager.java" afterDir="false" />
+    <list default="true" id="76dc47c8-1276-4c92-8a0a-26a856359a03" name="变更" comment="Maige-提交代码">
+      <change afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/javaswing/MemoryLibraryInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/CAT_Desktop_System.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/CAT_Desktop_System.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/FileSystem/TranslationFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/FileSystem/TranslationFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/FileSystem/TranslationFileManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/FileSystem/TranslationFileManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/MemoryLibrarySystem/MemoryLibrary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/MemoryLibrarySystem/MemoryLibrary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/MemoryLibrarySystem/MemoryLibraryManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/MemoryLibrarySystem/MemoryLibraryManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/MemoryLibrarySystem/MemoryLibraryManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/MemoryLibrarySystem/MemoryLibraryManagerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/ProjectSystem/CAT_Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/ProjectSystem/CAT_Project.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/ProjectSystem/ProjectManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/ProjectSystem/ProjectManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/SystemUtil/CAT_FileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/SystemUtil/CAT_FileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/SystemUtil/CAT_FileControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/SystemUtil/CAT_FileControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/SystemUtil/CAT_FileItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/SystemUtil/CAT_FileItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/SystemUtil/Language.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/SystemUtil/Language.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/SystemUtil/Sentence.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/SystemUtil/Sentence.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/SystemUtil/TermItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/SystemUtil/TermItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/SystemUtil/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/SystemUtil/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/SystemUtil/TranslationItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/SystemUtil/TranslationItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/TermLibrarySystem/TermLibrary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/TermLibrarySystem/TermLibrary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/TermLibrarySystem/TermLibraryManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/TermLibrarySystem/TermLibraryManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/TermLibrarySystem/TermLibraryManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/TermLibrarySystem/TermLibraryManagerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/classpath.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/CalcMainWindow$ActionListenerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/CalcMainWindow$ActionListenerImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/CalcMainWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/CalcMainWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/CreateProject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/CreateProject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/EditorWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/EditorWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/MainMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/ProjectInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/ProjectInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/TranslationMemoryLibrary.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,13 +109,12 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="FileSystem" />
       <recent name="TermLibrarySystem" />
       <recent name="MemoryLibrarySystem" />
       <recent name="ProjectSystem" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TranslationFileManagerTest.loadFile">
+  <component name="RunManager" selected="JUnit.MemoryLibraryManagerTest.loadLibrary">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SystemUtil.Test" />
       <module name="CAT_Desktop_System" />
@@ -97,6 +124,21 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CAT_FileControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CAT_Desktop_System" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="SystemUtil.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="SystemUtil" />
+      <option name="MAIN_CLASS_NAME" value="SystemUtil.CAT_FileControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -149,29 +191,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TranslationFileManagerTest.loadFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CAT_Desktop_System" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="FileSystem.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="FileSystem" />
-      <option name="MAIN_CLASS_NAME" value="FileSystem.TranslationFileManagerTest" />
-      <option name="METHOD_NAME" value="loadFile" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TranslationFileManagerTest.loadFile" />
         <item itemvalue="JUnit.MemoryLibraryManagerTest.loadLibrary" />
         <item itemvalue="JUnit.TermLibraryManagerTest.loadLibrary" />
         <item itemvalue="JUnit.CAT_FileControllerTest.readFile" />
-        <item itemvalue="应用程序.Test" />
+        <item itemvalue="JUnit.CAT_FileControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -478,38 +503,15 @@
       <option name="project" value="LOCAL" />
       <updated>1684827436252</updated>
     </task>
-    <task id="LOCAL-00043" summary="Maige-提交代码">
-      <created>1684829969682</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1684829969682</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Maige-提交代码">
-      <created>1684830065216</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1684830065216</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Maige-提交代码">
-      <created>1684936435533</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1684936435533</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Maige-提交代码&#10;（完成翻译文件的载入与保存功能，优化部分细节）">
-      <created>1685081173863</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1685081173863</updated>
-    </task>
-    <option name="localTasksCounter" value="47" />
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="a242412b-2c2c-42ab-9ed3-2fa72b4aead5" value="TOOL_WINDOW" />
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -520,7 +522,6 @@
         <entry key="a242412b-2c2c-42ab-9ed3-2fa72b4aead5">
           <value>
             <State>
-              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
               <option name="FILTERS">
                 <map>
                   <entry key="branch">
@@ -539,14 +540,10 @@
                   </entry>
                 </map>
               </option>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
             </State>
           </value>
         </entry>
-      </map>
-    </option>
-    <option name="OPEN_GENERIC_TABS">
-      <map>
-        <entry key="a242412b-2c2c-42ab-9ed3-2fa72b4aead5" value="TOOL_WINDOW" />
       </map>
     </option>
   </component>
@@ -560,8 +557,7 @@
     <MESSAGE value="Maige-提交代码&#10;（采用测试驱动开发，读取文件内容用于生成对象功能已实现，&#10;用于之后各模块LoadXXX()方法重构）" />
     <MESSAGE value="Maige-提交代码&#10;（采用测试驱动开发，重构术语库文件读取功能）" />
     <MESSAGE value="Maige-提交代码" />
-    <MESSAGE value="Maige-提交代码&#10;（完成翻译文件的载入与保存功能，优化部分细节）" />
-    <option name="LAST_COMMIT_MESSAGE" value="Maige-提交代码&#10;（完成翻译文件的载入与保存功能，优化部分细节）" />
+    <option name="LAST_COMMIT_MESSAGE" value="Maige-提交代码" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>
@@ -576,5 +572,10 @@
       </path>
     </expand>
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/hust_software_maige$MemoryLibrary.ic" NAME="MemoryLibrary Coverage Results" MODIFIED="1684935502433" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>javaswing.*</FILTER>
+    </SUITE>
   </component>
 </project>
