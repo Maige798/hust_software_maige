@@ -70,7 +70,7 @@ public class EditorWindow extends JFrame{
         JLabel editLabels2 = new JLabel("译文");
         editLabels2.setForeground(Color.BLACK);
         JLabel bookPrint = new JLabel("?/?");
-        editLabels2.setForeground(Color.BLACK);
+        bookPrint.setForeground(Color.BLACK);
 
         JLabel[] states = new JLabel[8];
         for(int i=0;i<states.length;i++) {
