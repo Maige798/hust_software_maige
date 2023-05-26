@@ -1,10 +1,8 @@
 package FileSystem;
 
-import MemoryLibrarySystem.MemoryLibrary;
 import SystemUtil.CAT_FileController;
 import SystemUtil.CAT_FileItem;
 import SystemUtil.Sentence;
-import SystemUtil.TranslationItem;
 
 import java.io.File;
 import java.io.FileReader;
