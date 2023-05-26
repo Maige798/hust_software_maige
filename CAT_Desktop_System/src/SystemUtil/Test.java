@@ -6,6 +6,9 @@ import MemoryLibrarySystem.*;
 import TermLibrarySystem.TermLibrary;
 import TermLibrarySystem.TermLibraryManager;
 
+import java.io.FileReader;
+import java.io.IOException;
+
 public class Test {
     public static void main(String[] args) {
         TestMergeParagraph();
@@ -73,5 +76,18 @@ public class Test {
         for (TranslationItem item : translationFile.paragraphsList)
             System.out.println(item);
         System.out.println(TranslationFileManager.MergeParagraphs(translationFile));
+    }
+
+    // 读取某个文件的内容
+    public static String GetText(String save){
+        StringBuilder builder = new StringBuilder();
+        try (FileReader reader = new FileReader(save)) {
+            int charGet;
+            while ((charGet = reader.read()) != -1)
+                builder.append((char) charGet);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return builder.toString();
     }
 }

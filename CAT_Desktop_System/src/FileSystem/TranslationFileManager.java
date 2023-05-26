@@ -55,7 +55,7 @@ public class TranslationFileManager {
     // 根据路径读取翻译文件内容
     public static TranslationFile LoadFile(String save) {
         CAT_FileItem[] items = CAT_FileController.ReadFile(save);
-        TranslationFile translationFile=new TranslationFile();
+        TranslationFile translationFile = new TranslationFile();
         translationFile.SetUpTranslationFile(items);
         return translationFile;
     }

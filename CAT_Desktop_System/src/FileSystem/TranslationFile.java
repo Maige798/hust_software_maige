@@ -76,7 +76,7 @@ public class TranslationFile {
 
     }
 
-    // 跟去读取的条目信息初始化对象
+    // 根据读取的条目信息初始化对象
     public void SetUpTranslationFile(CAT_FileItem[] items) {
         for (CAT_FileItem item : items) {
             switch (item.label) {

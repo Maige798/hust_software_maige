@@ -1,0 +1,25 @@
+@Name {
+	<name> MyTransFile.tran
+}
+
+@Save {
+	<save> D:\hust_software_maige\CAT_Desktop_System\src\ProjectSystem
+}
+
+@Language {
+	<ori> Chinese
+	<tran> English
+}
+
+@MemLib {
+	<save> D:\hust_software_maige\CAT_Desktop_System\src\MemoryLibrarySystem\memlib.mlib
+}
+
+@TermLib {
+	<save> D:\hust_software_maige\CAT_Desktop_System\src\TermLibrarySystem\termlib.tlib
+}
+
+@TranFile {
+	<save> D:\hust_software_maige\CAT_Desktop_System\src\FileSystem\MyTransFile.tran
+}
+

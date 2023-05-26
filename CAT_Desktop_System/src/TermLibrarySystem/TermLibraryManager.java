@@ -78,4 +78,8 @@ public class TermLibraryManager {
                 return library;
         return null;
     }
+
+    public static TermLibrary GetTermLibrary(int num){
+        return instance.termLibraryList.get(num);
+    }
 }
