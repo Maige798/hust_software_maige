@@ -32,11 +32,9 @@ public class MemoryLibraryManager {
     }
 
     public static void SaveLibrary(MemoryLibrary library){
-        try {
-            File file=new File(library.save);
-            FileWriter out=new FileWriter(file);
+        File file=new File(library.save);
+        try (FileWriter out=new FileWriter(file)){
             out.write(library.toString());
-            out.close();
         } catch (IOException e){
             e.printStackTrace();
         }

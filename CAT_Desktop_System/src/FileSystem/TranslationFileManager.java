@@ -8,6 +8,7 @@ import SystemUtil.TranslationItem;
 
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class TranslationFileManager {
@@ -23,8 +24,14 @@ public class TranslationFileManager {
         return null;
     }
 
+    // 保存翻译文件
     public static void SaveFile(TranslationFile translationFile) {
-        // todo
+        File file=new File(translationFile.save);
+        try(FileWriter out=new FileWriter(file)){
+            out.write(translationFile.toString());
+        } catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
     public static void DeriveFile(TranslationFile translationFile,String targetSave) {
@@ -33,8 +40,7 @@ public class TranslationFileManager {
 
     public static void SetUpFile(TranslationFile translationFile) {
         if (translationFile != null) {
-            try {
-                FileReader in = new FileReader(translationFile.sourceFile);
+            try (FileReader in = new FileReader(translationFile.sourceFile)) {
                 int charGet; // 读取的字符
                 StringBuffer buffer = new StringBuffer();
                 while ((charGet = in.read()) != -1)
@@ -52,7 +58,7 @@ public class TranslationFileManager {
     public static TranslationFile LoadFile(String save) {
         CAT_FileItem[] items = CAT_FileController.ReadFile(save);
         TranslationFile translationFile=new TranslationFile();
-
+        translationFile.SetUpTranslationFile(items);
         return translationFile;
     }
 

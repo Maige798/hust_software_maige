@@ -50,17 +50,34 @@ public class TranslationFile {
     }
 
     @Override
-    public String toString(){
-        // todo
-        return null;
+    public String toString() {
+        StringBuffer buffer = new StringBuffer();
+        buffer.append("@Name {\r\n\t<name> ").append(this.name).append("\r\n}\r\n\r\n");
+        buffer.append("@Save {\r\n\t<save> ").append(this.save).append("\r\n}\r\n\r\n");
+        buffer.append("@Language {\r\n\t").append("<ori> ").append(this.originLanguage).append("\r\n");
+        buffer.append("\t<tran> ").append(this.targetLanguage).append("\r\n}\r\n\r\n");
+        for (TranslationItem item : this.paragraphsList) {
+            if (item.origin.language.EqualsTo(Language.Default)) {
+                switch (item.origin.text) {
+                    case " " -> buffer.append("@Blank\r\n\r\n");
+                    case "\t" -> buffer.append("@Table\r\n\r\n");
+                    case "\r\n" -> buffer.append("@Return\r\n\r\n");
+                    default -> System.err.println("Wrong in text of Default kind:" + item.origin.text);
+                }
+            } else {
+                buffer.append(item).append("\r\n");
+            }
+        }
+        return buffer.toString();
     }
 
     // 保存文件
     public void SaveFile() {
-        // todo
+
     }
 
-    public void SetUpTranslationFile(CAT_FileItem[] items){
+    // 跟去读取的条目信息初始化对象
+    public void SetUpTranslationFile(CAT_FileItem[] items) {
         for (CAT_FileItem item : items) {
             switch (item.label) {
                 case "Name" -> this.name = item.GetContain(0);
@@ -83,26 +100,28 @@ public class TranslationFile {
                         System.err.println("Expected: ori, wrong in TranItem:" + item.GetItem(0));
                     if (item.GetItem(1).equals("tran"))
                         translationItem.translation = DealWithSentence(item.GetContain(1));
+                    else if (item.GetItem(1).equals("blank"))
+                        translationItem.translation = null;
                     else
                         System.err.println("Expected: tran, wrong in TransItem:" + item.GetItem(1));
                     this.AddItem(translationItem);
                 }
-                case "Blank"->{
-                    TranslationItem translationItem=new TranslationItem();
-                    translationItem.origin=new Sentence(Language.Default," ");
-                    translationItem.translation=new Sentence(Language.Default," ");
+                case "Blank" -> {
+                    TranslationItem translationItem = new TranslationItem();
+                    translationItem.origin = new Sentence(Language.Default, " ");
+                    translationItem.translation = new Sentence(Language.Default, " ");
                     this.AddItem(translationItem);
                 }
-                case "Table"->{
-                    TranslationItem translationItem=new TranslationItem();
-                    translationItem.origin=new Sentence(Language.Default,"\t");
-                    translationItem.translation=new Sentence(Language.Default,"\t");
+                case "Table" -> {
+                    TranslationItem translationItem = new TranslationItem();
+                    translationItem.origin = new Sentence(Language.Default, "\t");
+                    translationItem.translation = new Sentence(Language.Default, "\t");
                     this.AddItem(translationItem);
                 }
-                case "Return"->{
-                    TranslationItem translationItem=new TranslationItem();
-                    translationItem.origin=new Sentence(Language.Default,"\r\n");
-                    translationItem.translation=new Sentence(Language.Default,"\r\n");
+                case "Return" -> {
+                    TranslationItem translationItem = new TranslationItem();
+                    translationItem.origin = new Sentence(Language.Default, "\r\n");
+                    translationItem.translation = new Sentence(Language.Default, "\r\n");
                     this.AddItem(translationItem);
                 }
                 default -> System.err.println("Wrong item:" + item.label);

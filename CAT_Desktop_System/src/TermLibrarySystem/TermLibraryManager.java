@@ -63,11 +63,9 @@ public class TermLibraryManager {
 
     // 保存术语库
     public static void SaveLibrary(TermLibrary library){
-        try {
-            File file=new File(library.save);
-            FileWriter out=new FileWriter(file);
+        File file=new File(library.save);
+        try (FileWriter out=new FileWriter(file)){
             out.write(library.toString());
-            out.close();
         } catch (IOException e){
             e.printStackTrace();
         }

@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76dc47c8-1276-4c92-8a0a-26a856359a03" name="变更" comment="Maige-提交代码">
-      <change afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/FileSystem/MyTransFile.tran" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/FileSystem/TranslationFileManagerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/FileSystem/MyTransFile.tran" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/FileSystem/MyTransFile.tran" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/FileSystem/TranslationFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/FileSystem/TranslationFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/FileSystem/TranslationFileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/FileSystem/TranslationFileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/MemoryLibrarySystem/MemoryLibraryManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/MemoryLibrarySystem/MemoryLibraryManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/TermLibrarySystem/TermLibraryManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/TermLibrarySystem/TermLibraryManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/MemoryLibrarySystem/MemoryLibraryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/MemoryLibrarySystem/MemoryLibraryManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/TermLibrarySystem/TermLibraryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/TermLibrarySystem/TermLibraryManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/FileSystem/TranslationFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/FileSystem/TranslationFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/FileSystem/TranslationFileManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/FileSystem/TranslationFileManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/classpath.index" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/classpath.index" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,12 +90,13 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="FileSystem" />
       <recent name="TermLibrarySystem" />
       <recent name="MemoryLibrarySystem" />
       <recent name="ProjectSystem" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MemoryLibraryManagerTest.loadLibrary">
+  <component name="RunManager" selected="JUnit.TranslationFileManagerTest.loadFile">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SystemUtil.Test" />
       <module name="CAT_Desktop_System" />
@@ -101,21 +106,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CAT_FileControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CAT_Desktop_System" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="SystemUtil.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="SystemUtil" />
-      <option name="MAIN_CLASS_NAME" value="SystemUtil.CAT_FileControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -168,13 +158,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TranslationFileManagerTest.loadFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CAT_Desktop_System" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="FileSystem.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="FileSystem" />
+      <option name="MAIN_CLASS_NAME" value="FileSystem.TranslationFileManagerTest" />
+      <option name="METHOD_NAME" value="loadFile" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TranslationFileManagerTest.loadFile" />
         <item itemvalue="JUnit.MemoryLibraryManagerTest.loadLibrary" />
         <item itemvalue="JUnit.TermLibraryManagerTest.loadLibrary" />
         <item itemvalue="JUnit.CAT_FileControllerTest.readFile" />
         <item itemvalue="应用程序.Test" />
-        <item itemvalue="JUnit.CAT_FileControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -495,7 +501,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684830065216</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Maige-提交代码">
+      <created>1684936435533</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1684936435533</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
