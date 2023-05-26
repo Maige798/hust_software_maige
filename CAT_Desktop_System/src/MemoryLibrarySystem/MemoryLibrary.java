@@ -1,9 +1,6 @@
 package MemoryLibrarySystem;
 
-import SystemUtil.CAT_FileItem;
-import SystemUtil.Language;
-import SystemUtil.Sentence;
-import SystemUtil.TranslationItem;
+import SystemUtil.*;
 
 import java.io.File;
 import java.io.FileReader;
@@ -73,6 +70,26 @@ public class MemoryLibrary {
         TranslationItem[] translationItems = new TranslationItem[targetList.size()];
         targetList.toArray(translationItems);
         return translationItems;
+    }
+
+    // 遍历当前记忆库所有条目，筛选出与text匹配程度最高的条目的translation
+    public String Match(String text) {
+        if (itemsList.isEmpty())
+            return "[Nothing to match]";
+        TranslationItem item = itemsList.get(0);
+        double maxValue = Similarity(item.origin.text, text);
+        for (TranslationItem translationItem : itemsList) {
+            if (Similarity(translationItem.origin.text, text) > maxValue) {
+                maxValue = Similarity(translationItem.origin.text, text);
+                item = translationItem;
+            }
+        }
+        return "MaxValue:" + maxValue + "\n" + item.translation.text;
+    }
+
+    // 计算相似度
+    private double Similarity(String memory,String text) {
+        return (double) new LCS_Helper(memory, text).Get_LCS_Length() / (double) memory.length();
     }
 
     // 根据获取的存储的信息生成对象（旧方法，暂时弃用）
