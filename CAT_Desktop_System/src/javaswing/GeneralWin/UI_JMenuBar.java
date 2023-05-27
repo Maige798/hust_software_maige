@@ -1,4 +1,4 @@
-package javaswing.MemLibWin;
+package javaswing.GeneralWin;
 
 import javax.swing.*;
 
