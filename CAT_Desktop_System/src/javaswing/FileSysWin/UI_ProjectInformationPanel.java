@@ -1,19 +1,21 @@
-package javaswing.TermLibWin;
+package javaswing.FileSysWin;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 
-public class UI_TermLibraryListPanel extends JPanel {
+public class UI_ProjectInformationPanel extends JPanel {
     public JLabel label;
     public JList<String> list;
-    public JButton[] changePage;
-    public UI_TermLibraryListPanel() {
+
+    public UI_ProjectInformationPanel() {
+
         setLayout(null);
+
         setBackground(Color.yellow);
 
-        label = new JLabel("创建术语库列表");
+        label = new JLabel("项目信息");
         label.setBounds(25, 50, 100, 50);
         add(label);
 
@@ -50,16 +52,5 @@ public class UI_TermLibraryListPanel extends JPanel {
 
         // 添加到内容面板容器
         add(list);
-
-        //添加换页按钮
-        changePage = new JButton[]{new JButton("上一页"), new JButton("下一页")};
-        //给换页按钮设置坐标
-        changePage[0].setBounds(25, 350, 50, 25);
-        changePage[1].setBounds(125, 350, 50, 25);
-        //添加按钮
-        changePage[0].setMargin(new Insets(0, 0, 0, 0));
-        changePage[1].setMargin(new Insets(0, 0, 0, 0));
-        add(changePage[0]);
-        add(changePage[1]);
     }
 }

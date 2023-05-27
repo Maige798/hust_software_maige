@@ -9,7 +9,6 @@ public class UI_ItemSelectionPanel extends JPanel {
     public JLabel label;
     public JTextField field1;
     public JButton selectButton;
-
     public UI_ItemSelectionPanel() {
         setLayout(null);
         setBackground(Orange);

@@ -9,7 +9,6 @@ public class UI_TermLibWin_ContentPanel extends JPanel {
     public JPanel UI_InterfaceSwitchingPanel;
     public JPanel UI_TermLibraryPanel;
     public JPanel UI_ItemSelectionPanel;
-
     public UI_TermLibWin_ContentPanel() {
         UI_TermLibraryListPanel = new UI_TermLibraryListPanel();
         UI_ItemSelectionPanel = new UI_ItemSelectionPanel();

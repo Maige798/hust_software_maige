@@ -13,10 +13,8 @@ public class UI_TermLibraryPanel extends JPanel {
     public JButton btn4;
     public JButton btn2;
     public JButton btn3;
-
     public JButton formerPage;
     public JButton nextPage;
-
     public UI_TermLibraryPanel() {
         setLayout(null);
         setBackground(Green);
