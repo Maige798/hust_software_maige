@@ -3,16 +3,16 @@ package javaswing.MemLibWin;
 import javax.swing.*;
 
 public class UI_JMenuBar extends JMenuBar {
-    JMenu menu1;
-    JMenu menu2;
-    JMenu menu3;
-    JMenu menu4;
-    JMenu menu5;
-    JMenu menu6;
+    public JMenu menu1;
+    public JMenu menu2;
+    public JMenu menu3;
+    public JMenu menu4;
+    public JMenu menu5;
+    public JMenu menu6;
 
-    JMenuItem item1;
-    JMenuItem item2;
-    JMenuItem item3;
+    public JMenuItem item1;
+    public JMenuItem item2;
+    public JMenuItem item3;
 
     public UI_JMenuBar() {
         menu1 = new JMenu("文件");

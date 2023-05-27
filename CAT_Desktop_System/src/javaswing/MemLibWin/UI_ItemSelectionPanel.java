@@ -4,16 +4,16 @@ import javax.swing.*;
 import java.awt.*;
 
 public class UI_ItemSelectionPanel extends JPanel {
-    Color Orange = new Color(246, 154, 113);
-    Color Blue = new Color(64,0,128);
-    JLabel label;
-    JLabel origin;
-    JLabel translation;
-    JTextField field1;
-    JTextField field2;
-    JButton selectButton;
+    public Color Orange = new Color(246, 154, 113);
+    public Color Blue = new Color(64, 0, 128);
+    public JLabel label;
+    public JLabel origin;
+    public JLabel translation;
+    public JTextField field1;
+    public JTextField field2;
+    public JButton selectButton;
 
-    public UI_ItemSelectionPanel(){
+    public UI_ItemSelectionPanel() {
         setLayout(null);
         setBackground(Orange);
 
@@ -29,9 +29,9 @@ public class UI_ItemSelectionPanel extends JPanel {
         translation.setFont(new Font("思源黑体", Font.BOLD, 20));
 
         field1 = new JTextField(8);
-        field1.setFont(new Font(null,Font.PLAIN,20));
+        field1.setFont(new Font(null, Font.PLAIN, 20));
         field2 = new JTextField(8);
-        field2.setFont(new Font(null,Font.PLAIN,20));
+        field2.setFont(new Font(null, Font.PLAIN, 20));
 
         selectButton = new JButton("筛选");
         selectButton.addActionListener(e -> System.out.println(field1.getText()));
@@ -43,11 +43,11 @@ public class UI_ItemSelectionPanel extends JPanel {
         add(field2);
         add(selectButton);
 
-        label.setBounds(10,0,200,30);
-        origin.setBounds(70,30,100,32);
-        field1.setBounds(70,65,250,25);
-        translation.setBounds(360,30,100,32);
-        field2.setBounds(360,65,250,25);
-        selectButton.setBounds(650,40,100,30);
+        label.setBounds(10, 0, 200, 30);
+        origin.setBounds(70, 30, 100, 32);
+        field1.setBounds(70, 65, 250, 25);
+        translation.setBounds(360, 30, 100, 32);
+        field2.setBounds(360, 65, 250, 25);
+        selectButton.setBounds(650, 40, 100, 30);
     }
 }

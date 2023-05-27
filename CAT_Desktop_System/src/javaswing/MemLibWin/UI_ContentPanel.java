@@ -8,22 +8,22 @@ import javax.swing.*;
 public class UI_ContentPanel extends JPanel {
 
     //创建翻译记忆库列表
-    JPanel MemoryLibraryListPanel;
+    public JPanel MemoryLibraryListPanel;
 
     //创建主界面切换栏
-    JPanel InterfaceSwitchingPanel;
+    public JPanel InterfaceSwitchingPanel;
 
     //创建记忆库条目栏
-    JPanel MemoryLibraryItemsPanel;
+    public JPanel MemoryLibraryItemsPanel;
 
     //创建条目筛选栏
-    JPanel ItemSelectionPanel;
+    public JPanel ItemSelectionPanel;
 
-    public UI_ContentPanel(){
-        MemoryLibraryListPanel= new  UI_MemoryLibraryListPanel();
-        InterfaceSwitchingPanel=new UI_InterfaceSwitchingPanel();
-        MemoryLibraryItemsPanel=new UI_MemoryLibraryItemsPanel();
-        ItemSelectionPanel=new UI_ItemSelectionPanel();
+    public UI_ContentPanel() {
+        MemoryLibraryListPanel = new UI_MemoryLibraryListPanel();
+        InterfaceSwitchingPanel = new UI_InterfaceSwitchingPanel();
+        MemoryLibraryItemsPanel = new UI_MemoryLibraryItemsPanel();
+        ItemSelectionPanel = new UI_ItemSelectionPanel();
 
         setLayout(null);
 
@@ -32,9 +32,9 @@ public class UI_ContentPanel extends JPanel {
         add(MemoryLibraryItemsPanel);
         add(ItemSelectionPanel);
 
-        MemoryLibraryListPanel.setBounds(0,0,200,400);
-        InterfaceSwitchingPanel.setBounds(0,400,200,250);
-        MemoryLibraryItemsPanel.setBounds(200,100,800,500);
-        ItemSelectionPanel.setBounds(200,0,800,150);
+        MemoryLibraryListPanel.setBounds(0, 0, 200, 400);
+        InterfaceSwitchingPanel.setBounds(0, 400, 200, 250);
+        MemoryLibraryItemsPanel.setBounds(200, 100, 800, 500);
+        ItemSelectionPanel.setBounds(200, 0, 800, 150);
     }
 }

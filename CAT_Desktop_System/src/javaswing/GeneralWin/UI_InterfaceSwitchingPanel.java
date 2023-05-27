@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class UI_InterfaceSwitchingPanel extends JPanel {
-    JList<String> list2;
+    public JList<String> list2;
 
     public UI_InterfaceSwitchingPanel() {
 
