@@ -14,16 +14,17 @@ public class UI_ContentPanel extends JPanel {
     public JPanel InterfaceSwitchingPanel;
 
     //创建记忆库条目栏
-    public JPanel MemoryLibraryItemsPanel;
+    public UI_MemoryLibraryItemsPanel MemoryLibraryItemsPanel;
 
     //创建条目筛选栏
-    public JPanel ItemSelectionPanel;
+    public UI_ItemSelectionPanel ItemSelectionPanel;
 
     public UI_ContentPanel() {
         MemoryLibraryListPanel = new UI_MemoryLibraryListPanel();
         InterfaceSwitchingPanel = new UI_InterfaceSwitchingPanel();
         MemoryLibraryItemsPanel = new UI_MemoryLibraryItemsPanel();
         ItemSelectionPanel = new UI_ItemSelectionPanel();
+        ItemSelectionPanel.itemsPanel=MemoryLibraryItemsPanel;
 
         setLayout(null);
 

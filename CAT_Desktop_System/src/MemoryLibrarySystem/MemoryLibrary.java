@@ -72,6 +72,17 @@ public class MemoryLibrary {
         return translationItems;
     }
 
+    // 按照原文和译文筛选条目
+    public TranslationItem[] SearchItemByBoth(String originTarget,String TranslationTarget) {
+        List<TranslationItem> targetList = new ArrayList<>();
+        for (TranslationItem item : itemsList)
+            if (item.origin.text.contains(originTarget) && item.translation.text.contains(TranslationTarget))
+                targetList.add(item);
+        TranslationItem[] translationItems = new TranslationItem[targetList.size()];
+        targetList.toArray(translationItems);
+        return translationItems;
+    }
+
     // 遍历当前记忆库所有条目，筛选出与text匹配程度最高的条目的translation
     public String Match(String text) {
         if (itemsList.isEmpty())

@@ -1,5 +1,7 @@
 package javaswing.MemLibWin;
 
+import SystemUtil.TranslationItem;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -55,5 +57,16 @@ public class UI_MemoryLibraryItemsPanel extends JPanel{
         btn1.setBounds(200,450,90,20);
         btn2.setBounds(310,450,90,20);
         btn3.setBounds(420,450,90,20);
+    }
+
+    public void UpdateItemTable(TranslationItem[] items) {
+        for (int i = 0; i < 17; i++) {
+            table.setValueAt("", i, 0);
+            table.setValueAt("", i, 1);
+        }
+        for (int i = 0; i < items.length; i++) {
+            table.setValueAt(items[i].origin.text, i, 0);
+            table.setValueAt(items[i].translation.text, i, 1);
+        }
     }
 }

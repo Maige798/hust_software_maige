@@ -1,5 +1,7 @@
 package javaswing;
 
+import ProjectSystem.CAT_Project;
+import ProjectSystem.ProjectManager;
 import javaswing.MemLibWin.UI_ContentPanel;
 import javaswing.MemLibWin.UI_JMenuBar;
 import javaswing.MemLibWin.UI_MemoryLibraryListPanel;
@@ -18,6 +20,9 @@ public class MemoryLibraryWindow extends JFrame {
     JPanel ContentPanel;
 
     public static void main(String[] args) {
+        String myFile="D:\\hust_software_maige\\CAT_Desktop_System\\src\\ProjectSystem\\MyProject.catp";
+        CAT_Project project= ProjectManager.LoadProject(myFile);
+        ProjectManager.OpenProject(project);
         MemoryLibraryWindow windows = new MemoryLibraryWindow();
         windows.setVisible(true);
     }

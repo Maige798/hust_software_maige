@@ -1,5 +1,8 @@
 package javaswing.MemLibWin;
 
+import ProjectSystem.ProjectManager;
+import SystemUtil.TranslationItem;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -12,6 +15,8 @@ public class UI_ItemSelectionPanel extends JPanel {
     public JTextField field1;
     public JTextField field2;
     public JButton selectButton;
+
+    public UI_MemoryLibraryItemsPanel itemsPanel;
 
     public UI_ItemSelectionPanel() {
         setLayout(null);
@@ -34,7 +39,10 @@ public class UI_ItemSelectionPanel extends JPanel {
         field2.setFont(new Font(null, Font.PLAIN, 20));
 
         selectButton = new JButton("筛选");
-        selectButton.addActionListener(e -> System.out.println(field1.getText()));
+        selectButton.addActionListener(e -> {
+            TranslationItem[] items=ProjectManager.instance.currentProject.memoryLibrary.SearchItemByBoth(field1.getText(),field2.getText());
+            itemsPanel.UpdateItemTable(items);
+        });
 
         add(label);
         add(origin);
