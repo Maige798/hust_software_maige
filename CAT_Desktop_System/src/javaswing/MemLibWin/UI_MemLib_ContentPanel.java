@@ -1,11 +1,10 @@
 package javaswing.MemLibWin;
 
 import javaswing.GeneralWin.UI_InterfaceSwitchingPanel;
-import javaswing.MemoryLibraryWindow;
 
 import javax.swing.*;
 
-public class UI_ContentPanel extends JPanel {
+public class UI_MemLib_ContentPanel extends JPanel {
 
     //创建翻译记忆库列表
     public JPanel MemoryLibraryListPanel;
@@ -19,7 +18,7 @@ public class UI_ContentPanel extends JPanel {
     //创建条目筛选栏
     public UI_ItemSelectionPanel ItemSelectionPanel;
 
-    public UI_ContentPanel() {
+    public UI_MemLib_ContentPanel() {
         MemoryLibraryListPanel = new UI_MemoryLibraryListPanel();
         InterfaceSwitchingPanel = new UI_InterfaceSwitchingPanel();
         MemoryLibraryItemsPanel = new UI_MemoryLibraryItemsPanel();
