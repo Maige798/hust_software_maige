@@ -2,9 +2,9 @@ package javaswing;
 
 import ProjectSystem.CAT_Project;
 import ProjectSystem.ProjectManager;
-import javaswing.MemLibWin.UI_ContentPanel;
-import javaswing.MemLibWin.UI_JMenuBar;
-import javaswing.MemLibWin.UI_MemoryLibraryListPanel;
+import javaswing.GeneralWin.UI_JMenuBar;
+import javaswing.MemLibWin.UI_MemLib_ContentPanel;
+
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -43,7 +43,7 @@ public class MemoryLibraryWindow extends JFrame {
         menuBar = new UI_JMenuBar();
 
         //创建内容面板
-        ContentPanel = new UI_ContentPanel();
+        ContentPanel = new UI_MemLib_ContentPanel();
 
         setJMenuBar(menuBar);
 
