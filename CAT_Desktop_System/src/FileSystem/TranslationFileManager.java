@@ -32,8 +32,20 @@ public class TranslationFileManager {
         }
     }
 
-    public static void DeriveFile(TranslationFile translationFile,String targetSave) {
-        // todo: to derive a file that contains the return value of TranslationFileManager.MergeParagraphs(translationFile) at targetSave
+    // 导出并生成一个合并翻译后所有段落的文件
+    public static void DeriveFile(TranslationFile translationFile,String targetSave,String targetSaveName) {
+        File outFile = new File(targetSave + targetSaveName);
+        try {
+            if (!outFile.createNewFile())
+                System.out.println("File already exist!");
+            else {
+                FileWriter out = new FileWriter(outFile);
+                out.write(MergeParagraphs(translationFile));
+                out.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void SetUpFile(TranslationFile translationFile) {
