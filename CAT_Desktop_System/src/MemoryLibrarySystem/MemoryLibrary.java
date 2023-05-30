@@ -41,8 +41,8 @@ public class MemoryLibrary {
     }
 
     // 编辑一条项目
-    public void EditItem(TranslationItem item){
-        // todo
+    public void EditItem(int num, TranslationItem newItem) {
+        itemsList.set(num, newItem);
     }
 
     // 获取对应序号的条目

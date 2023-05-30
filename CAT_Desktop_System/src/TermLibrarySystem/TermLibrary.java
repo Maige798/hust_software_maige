@@ -37,8 +37,9 @@ public class TermLibrary {
         itemsList.removeIf(term -> term.equals(termItem));
     }
 
-    public void EditItem(TermItem termItem) {
-        // todo
+    // 编辑一条术语条目
+    public void EditItem(int num, TermItem newItem) {
+        itemsList.set(num, newItem);
     }
 
     // 返回第一个符合title的TermItem
