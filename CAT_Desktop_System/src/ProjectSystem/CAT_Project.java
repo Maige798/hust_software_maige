@@ -52,10 +52,6 @@ public class CAT_Project {
         return buffer.toString();
     }
 
-    public void Save() {
-        // todo
-    }
-
     // 根据读取的文件条目生成对象
     public void SetUpProject(CAT_FileItem[] items) {
         for (CAT_FileItem item : items) {

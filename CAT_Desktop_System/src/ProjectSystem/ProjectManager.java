@@ -1,6 +1,7 @@
 package ProjectSystem;
 
 import FileSystem.TranslationFile;
+import FileSystem.TranslationFileManager;
 import SystemUtil.CAT_FileController;
 import SystemUtil.CAT_FileItem;
 import SystemUtil.TranslationItem;
@@ -59,10 +60,14 @@ public class ProjectManager {
     }
 
     public static void OpenProject(CAT_Project project) {
+        if(instance.currentProject!=null)
+            SaveProject(instance.currentProject);
         instance.currentProject = project;
     }
 
     public static void TranslateFile(TranslationFile translationFile) {
+        if(instance.currentProject!=null)
+            TranslationFileManager.SaveFile(instance.currentTranslationFile);
         instance.currentTranslationFile = translationFile;
     }
 }
