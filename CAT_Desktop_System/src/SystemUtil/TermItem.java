@@ -26,6 +26,14 @@ public class TermItem {
         return content.toString();
     }
 
+    // 用于术语匹配时返回的字符串
+    public String toString_2(){
+        StringBuilder content = new StringBuilder(this.title+"\r\n");
+        for (Sentence listItem : termList)
+            content.append(listItem.toString()).append("\r\n");
+        return content.toString();
+    }
+
     // 当一个新条目使用语言未出现在termList中时，在termList中添加此新条目
     public void AddTerm(Sentence sentence){
         for(Sentence listItem:termList) {

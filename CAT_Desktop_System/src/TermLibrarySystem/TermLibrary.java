@@ -11,24 +11,24 @@ public class TermLibrary {
     public List<TermItem> itemsList;
 
     // 构造方法
-    public TermLibrary(String Name,String Save){
-        this.name=Name;
-        this.save=Save;
-        this.itemsList=new ArrayList<>();
+    public TermLibrary(String Name, String Save) {
+        this.name = Name;
+        this.save = Save;
+        this.itemsList = new ArrayList<>();
     }
 
     @Override
-    public String toString(){
-        StringBuffer buffer=new StringBuffer();
+    public String toString() {
+        StringBuffer buffer = new StringBuffer();
         buffer.append("@Name {\r\n\t<name> ").append(this.name).append("\r\n}\r\n\r\n");
         buffer.append("@Save {\r\n\t<save> ").append(this.save).append("\r\n}\r\n\r\n");
-        for(TermItem item:this.itemsList)
+        for (TermItem item : this.itemsList)
             buffer.append(item).append("\r\n");
         return buffer.toString();
     }
 
     // 添加一条术语条目
-    public void AddItem(TermItem termItem){
+    public void AddItem(TermItem termItem) {
         itemsList.add(termItem);
     }
 
@@ -43,41 +43,81 @@ public class TermLibrary {
     }
 
     // 返回第一个符合title的TermItem
-    public TermItem GetItem(String title){
-        for(TermItem item:this.itemsList)
-            if(item.title.equals(title))
+    public TermItem GetItem(String title) {
+        for (TermItem item : this.itemsList)
+            if (item.title.equals(title))
                 return item;
         return null;
     }
 
-    public TermItem GetItem(int num){
+    public TermItem GetItem(int num) {
         return itemsList.get(num);
     }
 
-    // 寻找title包含目标字符串的全部术语条目
-    public TermItem[] SearchItem(String target){
-        List<TermItem> targetList=new ArrayList<>();
-        for(TermItem term:itemsList)
-            if(term.title.contains(target))
+    // 寻找包含目标字符串的全部术语条目
+    public TermItem[] SearchItem(String target) {
+        List<TermItem> targetList = new ArrayList<>();
+        for (TermItem term : itemsList) {
+            if (term.title.contains(target))
                 targetList.add(term);
-        TermItem[] termItems=new TermItem[targetList.size()];
+            else {
+                for(Sentence sentence:term.termList){
+                    if(sentence.text.contains(target)){
+                        targetList.add(term);
+                        break;
+                    }
+                }
+            }
+        }
+        TermItem[] termItems = new TermItem[targetList.size()];
         targetList.toArray(termItems);
         return termItems;
     }
 
+    // 寻找目标字符串所包含的全部术语条目
+    private TermItem[] MatchItem(String target) {
+        List<TermItem> targetList = new ArrayList<>();
+        for (TermItem term : itemsList) {
+            if (target.contains(term.title))
+                targetList.add(term);
+            else {
+                for (Sentence sentence : term.termList) {
+                    if (target.contains(sentence.text)) {
+                        targetList.add(term);
+                        break;
+                    }
+                }
+            }
+        }
+        TermItem[] termItems = new TermItem[targetList.size()];
+        targetList.toArray(termItems);
+        return termItems;
+    }
+
+    // 遍历当前术语库的全部条目，以字符串的形式，返回目标字符串所包含的所有术语条目
+    public String Match(String target) {
+        StringBuffer buffer = new StringBuffer();
+        int i = 1;
+        for (TermItem item : this.MatchItem(target)) {
+            buffer.append("[").append(i).append("]").append(item.toString_2());
+            i++;
+        }
+        return buffer.toString();
+    }
+
     // 根据获取的信息生成对象（旧方法，暂时弃用）
-    public void SetUpLibrary(String message){
-        char[] messages=message.toCharArray();
-        int pointer=0;
-        StringBuffer buffer=new StringBuffer();
-        while (pointer<messages.length){
-            if(messages[pointer]=='@'){
+    public void SetUpLibrary(String message) {
+        char[] messages = message.toCharArray();
+        int pointer = 0;
+        StringBuffer buffer = new StringBuffer();
+        while (pointer < messages.length) {
+            if (messages[pointer] == '@') {
                 pointer++; // 指向@下一个字符
                 while (Character.isLetter(messages[pointer])) {
                     buffer.append(messages[pointer]);
                     pointer++;
                 }
-                if(buffer.toString().equals("Name")){ // 匹配到@Name
+                if (buffer.toString().equals("Name")) { // 匹配到@Name
                     buffer.delete(0, buffer.length());
                     while (messages[pointer] != '{')
                         pointer++; // 省略{
@@ -87,9 +127,8 @@ public class TermLibrary {
                         pointer++;
                     }
                     this.name = buffer.toString();
-                    buffer.delete(0,buffer.length());
-                }
-                else if(buffer.toString().equals("Save")){ // 匹配到@save
+                    buffer.delete(0, buffer.length());
+                } else if (buffer.toString().equals("Save")) { // 匹配到@save
                     buffer.delete(0, buffer.length());
                     while (messages[pointer] != '{')
                         pointer++;
@@ -99,7 +138,7 @@ public class TermLibrary {
                         pointer++;
                     }
                     this.save = buffer.toString();
-                    buffer.delete(0,buffer.length());
+                    buffer.delete(0, buffer.length());
                 } else if (buffer.toString().equals("TermItem")) {
                     TermItem item = new TermItem();
                     buffer.delete(0, buffer.length());
@@ -123,10 +162,10 @@ public class TermLibrary {
                         System.err.println("Wrong item:" + buffer);
                     }
                     buffer.delete(0, buffer.length());
-                    while (messages[pointer]!='}') { // 没有读到}则说明该术语库仍然有term条目
-                        while (messages[pointer] != '<'&&messages[pointer]!='}')
+                    while (messages[pointer] != '}') { // 没有读到}则说明该术语库仍然有term条目
+                        while (messages[pointer] != '<' && messages[pointer] != '}')
                             pointer++;
-                        if(messages[pointer]=='<'){
+                        if (messages[pointer] == '<') {
                             pointer++;
                             while (messages[pointer] != '>') {
                                 buffer.append(messages[pointer]);
@@ -154,9 +193,9 @@ public class TermLibrary {
                                 term.text = buffer.toString();
                                 item.AddTerm(term);
                             } else {
-                                System.err.println("Wrong item: "+buffer);
+                                System.err.println("Wrong item: " + buffer);
                             }
-                            buffer.delete(0,buffer.length());
+                            buffer.delete(0, buffer.length());
                         }
                     }
                     this.itemsList.add(item);
@@ -193,22 +232,22 @@ public class TermLibrary {
 
     // 根据条目内容，拆分language和text生成一个Sentence
     private static Sentence DealWithSentence(String message) {
-        Sentence sentence=new Sentence();
-        String[] strings=BreakSentence(message); // 这里strings.length必定为2
-        sentence.language=Language.GetLanguage(strings[0]);
-        sentence.text=strings[1];
+        Sentence sentence = new Sentence();
+        String[] strings = BreakSentence(message); // 这里strings.length必定为2
+        sentence.language = Language.GetLanguage(strings[0]);
+        sentence.text = strings[1];
         return sentence;
     }
 
     // 将信息中的[语言]与内容分开
-    private static String[] BreakSentence(String message){
-        String[] results=new String[2];
-        char[] messages=message.toCharArray();
-        int pointer=0;
-        while (messages[pointer]!=' ')
+    private static String[] BreakSentence(String message) {
+        String[] results = new String[2];
+        char[] messages = message.toCharArray();
+        int pointer = 0;
+        while (messages[pointer] != ' ')
             pointer++;
-        results[0]=message.substring(1,pointer-1);
-        results[1]=message.substring(pointer+1);
+        results[0] = message.substring(1, pointer - 1);
+        results[1] = message.substring(pointer + 1);
         return results;
     }
 }
