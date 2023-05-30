@@ -18,6 +18,10 @@ public class UI_ItemSelectionPanel extends JPanel {
 
     public UI_MemoryLibraryItemsPanel itemsPanel;
 
+    public void SetItemsPanel(UI_MemoryLibraryItemsPanel panel){
+        this.itemsPanel=panel;
+    }
+
     public UI_ItemSelectionPanel() {
         setLayout(null);
         setBackground(Orange);
