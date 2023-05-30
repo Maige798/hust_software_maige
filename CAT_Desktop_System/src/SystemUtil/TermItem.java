@@ -8,8 +8,8 @@ public class TermItem {
     public List<Sentence> termList;
 
     // 构造方法
-    public TermItem(){
-        this.termList=new ArrayList<>();
+    public TermItem() {
+        this.termList = new ArrayList<>();
     }
 
     public TermItem(String Title) {
@@ -19,7 +19,7 @@ public class TermItem {
 
     @Override
     public String toString() {
-        StringBuilder content = new StringBuilder("@TermItem {\r\n" + "\t<title> " + this.title+"\r\n");
+        StringBuilder content = new StringBuilder("@TermItem {\r\n" + "\t<title> " + this.title + "\r\n");
         for (Sentence listItem : termList)
             content.append("\t<term> ").append(listItem.toString()).append("\r\n");
         content.append("}\r\n");
@@ -27,16 +27,16 @@ public class TermItem {
     }
 
     // 用于术语匹配时返回的字符串
-    public String toString_2(){
-        StringBuilder content = new StringBuilder(this.title+"\r\n");
+    public String toString_2() {
+        StringBuilder content = new StringBuilder(this.title + "\r\n");
         for (Sentence listItem : termList)
             content.append(listItem.toString()).append("\r\n");
         return content.toString();
     }
 
     // 当一个新条目使用语言未出现在termList中时，在termList中添加此新条目
-    public void AddTerm(Sentence sentence){
-        for(Sentence listItem:termList) {
+    public void AddTerm(Sentence sentence) {
+        for (Sentence listItem : termList) {
             if (listItem.language.EqualsTo(sentence.language)) {
                 System.err.println("Language:" + sentence.language.toString() + " already exists in TermItem:" + this.title);
                 return;
@@ -46,7 +46,7 @@ public class TermItem {
     }
 
     // 根据语言类型移除特定的条目
-    public void RemoveTerm(Language language){
+    public void RemoveTerm(Language language) {
         termList.removeIf(listItem -> listItem.language.EqualsTo(language));
     }
 
