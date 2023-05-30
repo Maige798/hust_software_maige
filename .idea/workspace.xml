@@ -4,15 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76dc47c8-1276-4c92-8a0a-26a856359a03" name="变更" comment="Maige-提交代码">
-      <change afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/ProjectSystem/MyProject.catp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/ProjectSystem/ProjectManagerTest.java" afterDir="false" />
+    <list default="true" id="76dc47c8-1276-4c92-8a0a-26a856359a03" name="变更" comment="singban-提交代码">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/FileSystem/TranslationFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/FileSystem/TranslationFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/FileSystem/TranslationFileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/FileSystem/TranslationFileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/FileSystem/TranslationFileManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/FileSystem/TranslationFileManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/SystemUtil/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/SystemUtil/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/TermLibrarySystem/TermLibraryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/TermLibrarySystem/TermLibraryManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/CAT_Desktop_System.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/CAT_Desktop_System.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/javaswing/TermLibraryWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/javaswing/TermLibraryWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/FileSystem/TranslationFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/FileSystem/TranslationFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/FileSystem/TranslationFileManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/FileSystem/TranslationFileManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/FileSystem/TranslationFileManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/FileSystem/TranslationFileManagerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/MemoryLibrarySystem/MemoryLibrary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/MemoryLibrarySystem/MemoryLibrary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/MemoryLibrarySystem/MemoryLibraryManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/MemoryLibrarySystem/MemoryLibraryManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/MemoryLibrarySystem/MemoryLibraryManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/MemoryLibrarySystem/MemoryLibraryManagerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/ProjectSystem/CAT_Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/ProjectSystem/CAT_Project.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/ProjectSystem/ProjectManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/ProjectSystem/ProjectManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/ProjectSystem/ProjectManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/ProjectSystem/ProjectManagerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/SystemUtil/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/SystemUtil/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/TermLibrarySystem/TermLibrary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/TermLibrarySystem/TermLibrary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/TermLibrarySystem/TermLibraryManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/TermLibrarySystem/TermLibraryManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/TermLibrarySystem/TermLibraryManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/TermLibrarySystem/TermLibraryManagerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/EditorWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/EditorWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/MainMenu.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,13 +98,38 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="ProjectSystem" />
-      <recent name="FileSystem" />
       <recent name="TermLibrarySystem" />
       <recent name="MemoryLibrarySystem" />
+      <recent name="ProjectSystem" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TranslationFileManagerTest.loadFile">
+  <component name="RunManager" selected="Application.MemoryLibraryWindow">
+    <configuration name="EditorWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="javaswing.EditorWindow" />
+      <module name="CAT_Desktop_System" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="javaswing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MemoryLibraryWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="javaswing.MemoryLibraryWindow" />
+      <module name="CAT_Desktop_System" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="javaswing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CAT_FileControllerTest.readFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CAT_Desktop_System" />
       <extension name="coverage">
@@ -127,22 +162,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProjectManagerTest.loadProject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CAT_Desktop_System" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ProjectSystem.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ProjectSystem" />
-      <option name="MAIN_CLASS_NAME" value="ProjectSystem.ProjectManagerTest" />
-      <option name="METHOD_NAME" value="loadProject" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TermLibraryManagerTest.loadLibrary" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CAT_Desktop_System" />
       <extension name="coverage">
@@ -159,26 +178,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TranslationFileManagerTest.loadFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CAT_Desktop_System" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="FileSystem.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="FileSystem" />
-      <option name="MAIN_CLASS_NAME" value="FileSystem.TranslationFileManagerTest" />
-      <option name="METHOD_NAME" value="loadFile" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TranslationFileManagerTest.loadFile" />
-        <item itemvalue="JUnit.ProjectManagerTest.loadProject" />
+        <item itemvalue="Application.MemoryLibraryWindow" />
+        <item itemvalue="Application.EditorWindow" />
         <item itemvalue="JUnit.MemoryLibraryManagerTest.loadLibrary" />
         <item itemvalue="JUnit.TermLibraryManagerTest.loadLibrary" />
         <item itemvalue="JUnit.CAT_FileControllerTest.readFile" />
@@ -488,52 +491,22 @@
       <option name="project" value="LOCAL" />
       <updated>1684827436252</updated>
     </task>
-    <task id="LOCAL-00043" summary="Maige-提交代码">
-      <created>1684829969682</created>
+    <task id="LOCAL-00043" summary="singban-提交代码">
+      <created>1685088131655</created>
       <option name="number" value="00043" />
       <option name="presentableId" value="LOCAL-00043" />
       <option name="project" value="LOCAL" />
-      <updated>1684829969682</updated>
+      <updated>1685088131655</updated>
     </task>
-    <task id="LOCAL-00044" summary="Maige-提交代码">
-      <created>1684830065216</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1684830065216</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Maige-提交代码">
-      <created>1684936435533</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1684936435533</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Maige-提交代码&#10;（完成翻译文件的载入与保存功能，优化部分细节）">
-      <created>1685081173863</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1685081173863</updated>
-    </task>
-    <task id="LOCAL-00047" summary="Maige-提交代码">
-      <created>1685081230163</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1685081230163</updated>
-    </task>
-    <task id="LOCAL-00048" summary="Maige-提交代码">
-      <created>1685086372431</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1685086372432</updated>
-    </task>
-    <option name="localTasksCounter" value="49" />
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="a242412b-2c2c-42ab-9ed3-2fa72b4aead5" value="TOOL_WINDOW" />
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -544,7 +517,6 @@
         <entry key="a242412b-2c2c-42ab-9ed3-2fa72b4aead5">
           <value>
             <State>
-              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
               <option name="FILTERS">
                 <map>
                   <entry key="branch">
@@ -563,14 +535,10 @@
                   </entry>
                 </map>
               </option>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
             </State>
           </value>
         </entry>
-      </map>
-    </option>
-    <option name="OPEN_GENERIC_TABS">
-      <map>
-        <entry key="a242412b-2c2c-42ab-9ed3-2fa72b4aead5" value="TOOL_WINDOW" />
       </map>
     </option>
   </component>
@@ -583,9 +551,9 @@
     <MESSAGE value="刘闯-提交代码" />
     <MESSAGE value="Maige-提交代码&#10;（采用测试驱动开发，读取文件内容用于生成对象功能已实现，&#10;用于之后各模块LoadXXX()方法重构）" />
     <MESSAGE value="Maige-提交代码&#10;（采用测试驱动开发，重构术语库文件读取功能）" />
-    <MESSAGE value="Maige-提交代码&#10;（完成翻译文件的载入与保存功能，优化部分细节）" />
     <MESSAGE value="Maige-提交代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="Maige-提交代码" />
+    <MESSAGE value="singban-提交代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="singban-提交代码" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>
@@ -600,5 +568,10 @@
       </path>
     </expand>
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/hust_software_maige$MemoryLibrary.ic" NAME="MemoryLibrary Coverage Results" MODIFIED="1684935502433" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>javaswing.*</FILTER>
+    </SUITE>
   </component>
 </project>
