@@ -6,8 +6,10 @@ import java.awt.*;
 public class UI_FileListPanel extends JPanel {
     public Color Green = new Color(61, 232, 213);
     public Color Blue = new Color(52, 89, 183);
+
     public JLabel label;
     public JLabel bookPrint;
+
     public JTable table ;
     public JButton formerPage ;
     public JButton nextPage ;
