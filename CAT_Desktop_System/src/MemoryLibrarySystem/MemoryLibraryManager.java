@@ -24,8 +24,17 @@ public class MemoryLibraryManager {
         return memoryLibrary.Match(text);
     }
 
-    public static MemoryLibrary CreateMemoryLibrary(String name,String save){
-        return new MemoryLibrary(name,save);
+    // 新建一个记忆库文件，并返回该文件的对象
+    public static MemoryLibrary CreateMemoryLibrary(String name,String save) {
+        File outFile = new File(save + name + ".mlib");
+        try {
+            if (!outFile.createNewFile()) {
+                System.out.println("File already exist!");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return new MemoryLibrary(name, save);
     }
 
     public static void SaveLibrary(MemoryLibrary library){

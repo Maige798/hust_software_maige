@@ -34,13 +34,12 @@ public class TranslationFileManager {
 
     // 导出并生成一个合并翻译后所有段落的文件
     public static int DeriveFile(TranslationFile translationFile,String targetSave,String targetSaveName) {
-        File outFile = new File(targetSave + targetSaveName);
+        File outFile = new File(targetSave + targetSaveName + ".txt");
         try {
             if (!outFile.createNewFile()) {
                 System.out.println("File already exist!");
                 return -1;
-            }
-            else {
+            } else {
                 FileWriter out = new FileWriter(outFile);
                 out.write(MergeParagraphs(translationFile));
                 out.close();
