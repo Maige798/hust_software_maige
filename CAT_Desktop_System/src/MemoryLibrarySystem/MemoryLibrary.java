@@ -285,15 +285,4 @@ public class MemoryLibrary {
         }
         return buffer.toString();
     }
-
-    public static void TestSave(){
-        final String fileName = "C:\\Users\\123\\IdeaProjects\\CAT SYSTEM\\src\\Core\\memTest.memlib";
-        MemoryLibrary myLibrary = new MemoryLibrary(fileName);
-        myLibrary.itemsList.get(0).origin.text="小牛马";
-        TranslationItem newItem=new TranslationItem();
-        newItem.origin=new Sentence(Language.Chinese,"夜店小王子");
-        newItem.translation=new Sentence(Language.English,"NiKo");
-        MemoryLibraryManager.SaveLibrary(MemoryLibraryManager.instance.memoryLibraryList.get(0));
-        myLibrary.itemsList.add(newItem);
-    }
 }
