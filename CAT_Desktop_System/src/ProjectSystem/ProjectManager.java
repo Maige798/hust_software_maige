@@ -5,6 +5,7 @@ import SystemUtil.CAT_FileController;
 import SystemUtil.CAT_FileItem;
 import SystemUtil.TranslationItem;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -23,16 +24,24 @@ public class ProjectManager {
 
     }
 
-    // 新建一个项目
-    public static CAT_Project CreateProject(String name,String save) {
+    // 新建一个项目，生成对应文件，返回其对象
+    public static CAT_Project CreateProject(String name, String save) {
+        File outFile = new File(save + name + ".catp");
+        try {
+            if (!outFile.createNewFile()) {
+                System.out.println("File already exist!");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         CAT_Project project = new CAT_Project(name, save);
         instance.projectList.add(project);
         return project;
     }
 
-    public static CAT_Project LoadProject (String save) {
+    public static CAT_Project LoadProject(String save) {
         CAT_FileItem[] items = CAT_FileController.ReadFile(save);
-        CAT_Project project=new CAT_Project(items);
+        CAT_Project project = new CAT_Project(items);
         instance.projectList.add(project);
         return project;
     }
@@ -49,8 +58,8 @@ public class ProjectManager {
         }
     }
 
-    public static void OpenProject(CAT_Project project){
-        instance.currentProject=project;
+    public static void OpenProject(CAT_Project project) {
+        instance.currentProject = project;
     }
 
     public static void TranslateFile(TranslationFile translationFile) {
