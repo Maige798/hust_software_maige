@@ -33,11 +33,13 @@ public class TranslationFileManager {
     }
 
     // 导出并生成一个合并翻译后所有段落的文件
-    public static void DeriveFile(TranslationFile translationFile,String targetSave,String targetSaveName) {
+    public static int DeriveFile(TranslationFile translationFile,String targetSave,String targetSaveName) {
         File outFile = new File(targetSave + targetSaveName);
         try {
-            if (!outFile.createNewFile())
+            if (!outFile.createNewFile()) {
                 System.out.println("File already exist!");
+                return -1;
+            }
             else {
                 FileWriter out = new FileWriter(outFile);
                 out.write(MergeParagraphs(translationFile));
@@ -46,6 +48,7 @@ public class TranslationFileManager {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return 0;
     }
 
     public static void SetUpFile(TranslationFile translationFile) {
