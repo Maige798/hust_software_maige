@@ -1,9 +1,9 @@
 @Name {
-	<name> MyTransFile.tran
+	<name> MyProject.catp
 }
 
 @Save {
-	<save> D:\hust_software_maige\CAT_Desktop_System\src\ProjectSystem
+	<save> D:\hust_software_maige\CAT_Desktop_System\src\ProjectSystem\MyProject.catp
 }
 
 @Language {

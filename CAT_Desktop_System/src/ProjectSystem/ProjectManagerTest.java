@@ -1,6 +1,7 @@
 package ProjectSystem;
 
 import MemoryLibrarySystem.MemoryLibraryManager;
+import SystemUtil.CAT_FileItem;
 import TermLibrarySystem.TermLibraryManager;
 import org.junit.jupiter.api.Test;
 
@@ -17,5 +18,14 @@ class ProjectManagerTest {
         System.out.println("Term library:\n"+ TermLibraryManager.GetTermLibrary(0));
         System.out.println("TranslationFile:\n"+project.translationFileList.get(0));
         assertEquals(source,project.toString());
+    }
+
+    @Test
+    void readProjectList() {
+        for (CAT_Project project : ProjectManager.instance.projectList)
+            System.out.println(project);
+        String source = SystemUtil.Test.GetText(ProjectManager.listSavePath + ProjectManager.fileName);
+        String result = ProjectManager.SaveProjectList();
+        assertEquals(source, result);
     }
 }
