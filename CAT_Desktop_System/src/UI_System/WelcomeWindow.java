@@ -6,21 +6,18 @@ import java.awt.*;
 
 public class WelcomeWindow extends JFrame {
 
-    public WelcomeWindow()
-    {
+    public WelcomeWindow() {
         init();
     }
 
-    public void init()
-    {
-        setSize(350,400);
+    public void init() {
+        setSize(350, 400);
         setTitle("记忆库导入");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBackground(Color.decode("#EAECF2"));
         setResizable(false);
 
-        JPanel contentPanel=new UI_ContentPanel();
-
+        JPanel contentPanel = new UI_ContentPanel();
 
         setContentPane(contentPanel);
         setLocationRelativeTo(null);
@@ -28,7 +25,6 @@ public class WelcomeWindow extends JFrame {
     }
 
     public static void main(String[] args) {
-        WelcomeWindow me=new WelcomeWindow();
+        WelcomeWindow me = new WelcomeWindow();
     }
-
 }

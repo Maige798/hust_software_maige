@@ -99,6 +99,14 @@ public class ProjectManager {
         return instance.projectList.get(num);
     }
 
+    public static CAT_Project GetProject(String name) {
+        for (CAT_Project project : instance.projectList)
+            if (project.name.equals(name))
+                return project;
+        System.out.println("Could not find project: " + name);
+        return null;
+    }
+
     public static void SaveProject(CAT_Project project) {
         try (FileWriter out = new FileWriter(project.save)) {
             out.write(project.toString());
@@ -117,5 +125,15 @@ public class ProjectManager {
         if (instance.currentProject != null)
             TranslationFileManager.SaveFile(instance.currentTranslationFile);
         instance.currentTranslationFile = translationFile;
+    }
+
+    // 将instance.projectList中的全部CAT_Project转换为String提供给WelcomeWindow
+    public static String[] SendWelcomeWindowMessage() {
+        String[] messages = new String[instance.projectList.size()];
+        for (int i = 0; i < instance.projectList.size(); i++) {
+            CAT_Project project = instance.projectList.get(i);
+            messages[i] = project.name;
+        }
+        return messages;
     }
 }
