@@ -1,5 +1,5 @@
 package UI_System;
-import UI_System.CreateProject.UI_ContentPanel;
+import UI_System.WelcomeWin.UI_ContentPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -27,8 +27,8 @@ public class WelcomeWindow extends JFrame {
         setVisible(true);
     }
 
-//    public static void main(String[] args) {
-//        WelcomeToUse me=new WelcomeToUse();
-//    }
+    public static void main(String[] args) {
+        WelcomeWindow me=new WelcomeWindow();
+    }
 
 }
