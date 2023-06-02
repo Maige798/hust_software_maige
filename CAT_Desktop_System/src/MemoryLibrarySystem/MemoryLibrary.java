@@ -103,19 +103,15 @@ public class MemoryLibrary {
         if (itemsList.isEmpty())
             return "[Nothing to match]";
         TranslationItem item = itemsList.get(0);
-        double maxValue = Similarity(item.origin.text, text);
+        double maxValue = new LCS_Helper(item.origin.text,text).GetSimilarity();
         for (TranslationItem translationItem : itemsList) {
-            if (Similarity(translationItem.origin.text, text) > maxValue) {
-                maxValue = Similarity(translationItem.origin.text, text);
+            double similarity = new LCS_Helper(translationItem.origin.text, text).GetSimilarity();
+            if (similarity > maxValue) {
+                maxValue = similarity;
                 item = translationItem;
             }
         }
         return "MaxValue:" + maxValue + "\n" + item.translation.text;
-    }
-
-    // 计算相似度
-    private double Similarity(String memory,String text) {
-        return (double) new LCS_Helper(memory, text).Get_LCS_Length() / (double) memory.length();
     }
 
     // 根据获取的存储的信息生成对象（旧方法，暂时弃用）
