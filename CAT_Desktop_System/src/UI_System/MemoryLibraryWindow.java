@@ -18,11 +18,15 @@ public class MemoryLibraryWindow extends JFrame {
     JPanel ContentPanel;
 
     public static void main(String[] args) {
+        ProjectManager.OpenProject(ProjectManager.GetProject(0));
+        MemoryLibraryWindow windows = new MemoryLibraryWindow();
+    }
+
+    public static void test() {
         String myFile="D:\\hust_software_maige\\CAT_Desktop_System\\src\\ProjectSystem\\MyProject.catp";
         CAT_Project project= ProjectManager.LoadProject(myFile);
         ProjectManager.OpenProject(project);
         MemoryLibraryWindow windows = new MemoryLibraryWindow();
-        windows.setVisible(true);
     }
 
     public MemoryLibraryWindow() {

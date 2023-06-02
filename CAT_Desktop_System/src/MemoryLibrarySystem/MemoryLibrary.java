@@ -46,6 +46,13 @@ public class MemoryLibrary {
         return itemsList.get(num);
     }
 
+    // 获取当前记忆库所有条目
+    public TranslationItem[] GetAllItems() {
+        TranslationItem[] items=new TranslationItem[itemsList.size()];
+        itemsList.toArray(items);
+        return items;
+    }
+
     // 按照原文筛选条目
     public TranslationItem[] SearchItemByOrigin(String target) {
         List<TranslationItem> targetList = new ArrayList<>();

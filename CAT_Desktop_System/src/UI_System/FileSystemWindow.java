@@ -12,7 +12,6 @@ public class FileSystemWindow extends JFrame {
 
     public static void main(String[] args) {
         FileSystemWindow win = new FileSystemWindow();
-        win.setVisible(true);
     }
 
     public FileSystemWindow() {
