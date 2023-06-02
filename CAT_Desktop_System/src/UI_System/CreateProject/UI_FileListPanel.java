@@ -21,6 +21,7 @@ public class UI_FileListPanel extends JPanel {
     public JButton deleteFileButton = new JButton();
 
     public List<String> fileNames = new ArrayList<>();
+    public List<String> filePaths=new ArrayList<>();
     public JTable fileTable = new JTable(4, 1);
     public JButton previousPage = new JButton();
     public JTextField pageNumber = new JTextField();
@@ -66,6 +67,17 @@ public class UI_FileListPanel extends JPanel {
         importFileButton.setMargin(new Insets(0, 0, 0, 0));
         deleteFileButton.setText("删除文件");
         deleteFileButton.setMargin(new Insets(0, 0, 0, 0));
+        deleteFileButton.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int a=fileTable.getSelectedRow();
+                Object selectedRow=fileTable.getValueAt(a,0);
+                OnDeleteButtonDown((String)selectedRow);
+            }
+        });
+
+
+
         previousPage.setText("上一页");
         previousPage.setFont(new Font(null, Font.PLAIN, 10));
         previousPage.setMargin(new Insets(0, 0, 0, 0));
@@ -87,6 +99,8 @@ public class UI_FileListPanel extends JPanel {
         importFileButton.setBounds(60, 260, 60, 20);
         deleteFileButton.setBounds(130, 260, 60, 20);
         fileTable.setBounds(60, 300, 180, 80);
+        //设置table的内容不可编辑
+       // fileTable.setEnabled(false);
 
         previousPage.setBounds(80, 400, 40, 20);
         nextPage.setBounds(170, 400, 40, 20);
@@ -126,9 +140,9 @@ public class UI_FileListPanel extends JPanel {
                 JFileChooser fileChooser = new JFileChooser();
                 int option = fileChooser.showOpenDialog(new UI_FileListPanel());
                 if (option == JFileChooser.APPROVE_OPTION) {
-                    fileNames.add(fileChooser.getSelectedFile().getAbsolutePath());
-                    System.out.println(fileNames.get(0));
-                    UpdateSavePathButton(fileNames);
+                    filePaths.add(fileChooser.getSelectedFile().getAbsolutePath());
+                    System.out.println(filePaths.get(0));
+                    UpdateSavePathButton(filePaths);
                 }
             }
         });
@@ -159,7 +173,6 @@ public class UI_FileListPanel extends JPanel {
             Language target = Language.GetLanguage((String) targetLanguageComboBox.getSelectedItem());
             CAT_Project project = ProjectManager.CreateProject(projectName, savePath, origin, target);
             LoadTranslationFiles(project, origin, target);
-            ProjectManager.SaveProject(project);
         } else {
             System.err.println("Something has not finished, cannot create a new project.");
         }
@@ -191,11 +204,24 @@ public class UI_FileListPanel extends JPanel {
     }
 
     private void UpdateTable(List<String> fileNames) {
-        for (int i = 0; i < fileNames.size(); i++)
+        for (int i = 0; i <4; i++)
+            fileTable.setValueAt("", i, 0);
+
+        for (int i = 0; i <fileNames.size(); i++)
             fileTable.setValueAt(fileNames.get(i), i, 0);
     }
 
     private void UpdateSavePathButton(List<String> fileNames) {
-        savePathField.setText(fileNames.get(fileNames.size() - 1));
+        savePathField.setText(filePaths.get(filePaths.size() - 1));
     }
+
+    private void OnDeleteButtonDown(String selectedString)
+    {
+        fileNames.removeIf(s->s.equals(selectedString));
+        UpdateTable(fileNames);
+//        for (int i = 0; i <fileNames.size(); i++)
+//            System.out.println(fileNames.get(i));;
+    }
+
+
 }
