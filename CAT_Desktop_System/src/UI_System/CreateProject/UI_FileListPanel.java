@@ -21,7 +21,7 @@ public class UI_FileListPanel extends JPanel {
     public JButton deleteFileButton = new JButton();
 
     public List<String> fileNames = new ArrayList<>();
-    public List<String> filePaths=new ArrayList<>();
+    public List<String> filePaths = new ArrayList<>();
     public JTable fileTable = new JTable(4, 1);
     public JButton previousPage = new JButton();
     public JTextField pageNumber = new JTextField();
@@ -70,12 +70,11 @@ public class UI_FileListPanel extends JPanel {
         deleteFileButton.addActionListener(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int a=fileTable.getSelectedRow();
-                Object selectedRow=fileTable.getValueAt(a,0);
-                OnDeleteButtonDown((String)selectedRow);
+                int a = fileTable.getSelectedRow();
+                Object selectedRow = fileTable.getValueAt(a, 0);
+                OnDeleteButtonDown((String) selectedRow);
             }
         });
-
 
 
         previousPage.setText("上一页");
@@ -100,7 +99,7 @@ public class UI_FileListPanel extends JPanel {
         deleteFileButton.setBounds(130, 260, 60, 20);
         fileTable.setBounds(60, 300, 180, 80);
         //设置table的内容不可编辑
-       // fileTable.setEnabled(false);
+        // fileTable.setEnabled(false);
 
         previousPage.setBounds(80, 400, 40, 20);
         nextPage.setBounds(170, 400, 40, 20);
@@ -190,7 +189,7 @@ public class UI_FileListPanel extends JPanel {
     }
 
     // 将
-    private void LoadTranslationFiles(CAT_Project project,Language origin,Language target) {
+    private void LoadTranslationFiles(CAT_Project project, Language origin, Language target) {
         for (String save : fileNames) {
             TranslationFile file = TranslationFileManager.ReadFile(GetPureName(save), save, origin, target);
             project.AddTranslationFile(file);
@@ -204,10 +203,10 @@ public class UI_FileListPanel extends JPanel {
     }
 
     private void UpdateTable(List<String> fileNames) {
-        for (int i = 0; i <4; i++)
+        for (int i = 0; i < 4; i++)
             fileTable.setValueAt("", i, 0);
 
-        for (int i = 0; i <fileNames.size(); i++)
+        for (int i = 0; i < fileNames.size(); i++)
             fileTable.setValueAt(fileNames.get(i), i, 0);
     }
 
@@ -215,13 +214,8 @@ public class UI_FileListPanel extends JPanel {
         savePathField.setText(filePaths.get(filePaths.size() - 1));
     }
 
-    private void OnDeleteButtonDown(String selectedString)
-    {
-        fileNames.removeIf(s->s.equals(selectedString));
+    private void OnDeleteButtonDown(String selectedString) {
+        fileNames.removeIf(s -> s.equals(selectedString));
         UpdateTable(fileNames);
-//        for (int i = 0; i <fileNames.size(); i++)
-//            System.out.println(fileNames.get(i));;
     }
-
-
 }
