@@ -10,8 +10,8 @@ public class UI_CreatePanel4 extends JPanel {
         //设置表头并创建表格
         String[] tableHead=new String[]{"项目语言","所选术语库中已映射语言"};
         Object[][] rowData={{"junit","Crusader Kings"},
-                {"lcwzy","Celestial orbit"},
-                {"435","csgo"}};
+                {"lcwzy","Celestial orbit"}
+               };
 
         table=new JTable(rowData,tableHead);
 
