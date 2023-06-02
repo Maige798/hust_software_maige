@@ -4,27 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76dc47c8-1276-4c92-8a0a-26a856359a03" name="变更" comment="singban-提交代码&#10;术语库创建和导入">
-      <change afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/javaswing/CreateProject/UI_ContentPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/javaswing/CreateProject/UI_FileListPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/javaswing/CreateProjectInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/javaswing/MemoryLibraryCreateInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/javaswing/MemoryLibraryCreateWin/UI_MemoryLibraryCreatePanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/javaswing/MemoryLibraryImportInterWin/UI_MemoryLibraryImportPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/javaswing/MemoryLibraryImportInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/javaswing/TermLibCre/UI_ContentPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/javaswing/TermLibCre/UI_TermCreatePanel1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/javaswing/TermLibInput/UI_ContentPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/javaswing/TermLibInput/UI_CreatePanel1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/javaswing/TermLibInput/UI_CreatePanel2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/javaswing/TermLibInput/UI_CreatePanel3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/javaswing/TermLibInput/UI_CreatePanel4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/javaswing/WelcomeWin/UI_ContentPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/javaswing/WelcomeWindow.java" afterDir="false" />
+    <list default="true" id="76dc47c8-1276-4c92-8a0a-26a856359a03" name="变更" comment="singban-提交代码&#10;项目创建和导入&#10;术语库创建及导入的重构">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/javaswing/CreateProject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/javaswing/TermLibraryCreateInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/javaswing/TermLibraryCreateInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/javaswing/TermLibraryInputInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/javaswing/TermLibraryInputInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CAT_Desktop_System/src/UI_System/CreateProject/UI_FileListPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/CAT_Desktop_System/src/UI_System/CreateProject/UI_FileListPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/FileSystem/TranslationFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/FileSystem/TranslationFile.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/FileSystem/TranslationFileManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/FileSystem/TranslationFileManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/FileSystem/TranslationFileManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/FileSystem/TranslationFileManagerTest.class" afterDir="false" />
@@ -34,26 +16,35 @@
       <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/ProjectSystem/CAT_Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/ProjectSystem/CAT_Project.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/ProjectSystem/ProjectManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/ProjectSystem/ProjectManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/ProjectSystem/ProjectManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/ProjectSystem/ProjectManagerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/SystemUtil/Language.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/SystemUtil/Language.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/SystemUtil/TermItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/SystemUtil/TermItem.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/SystemUtil/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/SystemUtil/Test.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/TermLibrarySystem/TermLibrary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/TermLibrarySystem/TermLibrary.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/TermLibrarySystem/TermLibraryManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/TermLibrarySystem/TermLibraryManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/TermLibrarySystem/TermLibraryManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/TermLibrarySystem/TermLibraryManagerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/CalcMainWindow$ActionListenerImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/CalcMainWindow.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/CreateProject.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/EditorWindow$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/EditorWindow$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/EditorWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/EditorWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/EditorWindow.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/FileSystemWindow$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/FileSystemWindow$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/FileSystemWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/FileSystemWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/FileSystemWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/GeneralWin/UI_InterfaceSwitchingPanel.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/MainMenu.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/MemLibWin/UI_ContentPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/MemLibWin/UI_ItemSelectionPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/MemLibWin/UI_ItemSelectionPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/MemLibWin/UI_ItemSelectionPanel.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/MemLibWin/UI_JMenuBar.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/MemLibWin/UI_MemoryLibraryItemsPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/MemLibWin/UI_MemoryLibraryItemsPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/MemoryLibraryWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/MemoryLibraryWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/MemLibWin/UI_MemoryLibraryItemsPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/MemLibWin/UI_MemoryLibraryListPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/MemoryLibraryWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/ProjectInterface.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/ProjectWindow$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/ProjectWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/ProjectWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/ProjectWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/TermLibraryWindow$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/TermLibraryWindow$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAT_Desktop_System/javaswing/TermLibraryWindow.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,22 +129,9 @@
       <recent name="ProjectSystem" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TermLibraryCreateInterface">
+  <component name="RunManager" selected="Application.UI_System.CreateProjectInterface">
     <configuration name="CreateProjectInterface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="javaswing.CreateProjectInterface" />
-      <module name="CAT_Desktop_System" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="javaswing.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProjectWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="javaswing.ProjectWindow" />
       <module name="CAT_Desktop_System" />
       <extension name="coverage">
         <pattern>
@@ -204,13 +182,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UI_System.CreateProjectInterface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UI_System.CreateProjectInterface" />
+      <module name="CAT_Desktop_System" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="UI_System.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.UI_System.CreateProjectInterface" />
         <item itemvalue="Application.TermLibraryCreateInterface" />
         <item itemvalue="Application.TermLibraryInputInterface" />
         <item itemvalue="Application.TermLibraryWindow" />
         <item itemvalue="Application.CreateProjectInterface" />
-        <item itemvalue="Application.ProjectWindow" />
       </list>
     </recent_temporary>
   </component>
@@ -531,7 +522,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685422556682</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="singban-提交代码&#10;项目创建和导入&#10;术语库创建及导入的重构">
+      <created>1685553772130</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1685553772130</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -587,7 +585,8 @@
     <MESSAGE value="Maige-提交代码" />
     <MESSAGE value="singban-提交代码" />
     <MESSAGE value="singban-提交代码&#10;术语库创建和导入" />
-    <option name="LAST_COMMIT_MESSAGE" value="singban-提交代码&#10;术语库创建和导入" />
+    <MESSAGE value="singban-提交代码&#10;项目创建和导入&#10;术语库创建及导入的重构" />
+    <option name="LAST_COMMIT_MESSAGE" value="singban-提交代码&#10;项目创建和导入&#10;术语库创建及导入的重构" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>
