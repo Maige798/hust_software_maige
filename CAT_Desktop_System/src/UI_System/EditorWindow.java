@@ -8,10 +8,11 @@ import java.awt.*;
 
 public class EditorWindow extends JFrame {
     public UI_EditWin_contentPanel EditWin_contentPanel;
+
     public static void main(String[] args) {
         EditorWindow win = new EditorWindow();
-        win.setVisible(true);
     }
+
     public EditorWindow() {
         init();
     }

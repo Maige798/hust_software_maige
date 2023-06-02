@@ -44,8 +44,9 @@ public class UI_ItemSelectionPanel extends JPanel {
 
         selectButton = new JButton("筛选");
         selectButton.addActionListener(e -> {
-            TranslationItem[] items=ProjectManager.instance.currentProject.memoryLibrary.SearchItemByBoth(field1.getText(),field2.getText());
-            itemsPanel.UpdateItemTable(items);
+            itemsPanel.currentMemoryLibraryItems =
+                    ProjectManager.instance.currentProject.memoryLibrary.SearchItemByBoth(field1.getText(), field2.getText());
+            itemsPanel.UpdateItemTable();
         });
 
         add(label);
