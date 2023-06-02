@@ -16,7 +16,7 @@ public class UI_FileListPanel extends JPanel {
     public JButton importFileButton = new JButton();
     public JButton deleteFileButton = new JButton();
 
-    public List<String> fileNames=new ArrayList<>();
+    public List<String> fileNames = new ArrayList<>();
     public JTable fileTable = new JTable(4, 1);
     public JButton previousPage = new JButton();
     public JTextField pageNumber = new JTextField();
@@ -45,21 +45,18 @@ public class UI_FileListPanel extends JPanel {
 //左下
         projectFileLabel.setText("项目文件");
         importFileButton.setText("导入文件");
-       importFileButton.addActionListener(new AbstractAction() {
+        importFileButton.addActionListener(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFileChooser fileChooser=new JFileChooser();
-                int option =fileChooser.showOpenDialog(new UI_FileListPanel());
-                if(option==JFileChooser.APPROVE_OPTION){
+                JFileChooser fileChooser = new JFileChooser();
+                int option = fileChooser.showOpenDialog(new UI_FileListPanel());
+                if (option == JFileChooser.APPROVE_OPTION) {
                     fileNames.add(fileChooser.getSelectedFile().getAbsolutePath());
-                    System.out.println(fileNames.get(fileNames.size()-1));
+                    System.out.println(fileNames.get(fileNames.size() - 1));
                     UpdateTable(fileNames);
                 }
-
             }
         });
-
-
 
         importFileButton.setMargin(new Insets(0, 0, 0, 0));
         deleteFileButton.setText("删除文件");
@@ -120,18 +117,17 @@ public class UI_FileListPanel extends JPanel {
         this.add(browseButton);
         browseButton.setMargin(new Insets(0, 0, 0, 0));
         browseButton.setBounds(280, 180, 60, 30);
-          //创建监听器
+        //创建监听器
         browseButton.addActionListener(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFileChooser fileChooser=new JFileChooser();
-                int option =fileChooser.showOpenDialog(new UI_FileListPanel());
-                if(option==JFileChooser.APPROVE_OPTION){
+                JFileChooser fileChooser = new JFileChooser();
+                int option = fileChooser.showOpenDialog(new UI_FileListPanel());
+                if (option == JFileChooser.APPROVE_OPTION) {
                     fileNames.add(fileChooser.getSelectedFile().getAbsolutePath());
                     System.out.println(fileNames.get(0));
                     UpdateSavePathButton(fileNames);
                 }
-
             }
         });
 
@@ -176,19 +172,18 @@ public class UI_FileListPanel extends JPanel {
     }
 
     // 将
-    private void LoadTranslationFiles(){
+    private void LoadTranslationFiles() {
 
     }
 
 
-   private void UpdateTable(List<String> fileNames) {
-        for (int i = 0; i <fileNames.size(); i++)
+    private void UpdateTable(List<String> fileNames) {
+        for (int i = 0; i < fileNames.size(); i++)
             fileTable.setValueAt(fileNames.get(i), i, 0);
     }
 
-    private void UpdateSavePathButton(List<String> fileNames)
-    {
-        savePathField.setText(fileNames.get(fileNames.size()-1));
+    private void UpdateSavePathButton(List<String> fileNames) {
+        savePathField.setText(fileNames.get(fileNames.size() - 1));
     }
 
 }
