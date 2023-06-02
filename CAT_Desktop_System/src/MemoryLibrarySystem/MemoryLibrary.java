@@ -22,7 +22,13 @@ public class MemoryLibrary {
     }
 
     // 添加一条翻译条目
-    public void AddItem(TranslationItem item){
+    public void AddItem(TranslationItem item) {
+        for (TranslationItem memItem : itemsList) {
+            if (memItem.origin.text.equals(item.origin.text)) {
+                memItem.translation.text = item.translation.text;
+                return;
+            }
+        }
         itemsList.add(item);
     }
 

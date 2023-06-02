@@ -15,22 +15,22 @@
 
 @TranItem {
 	<ori> [Chinese] 在读到江姐宁死不屈也要反抗时的片段，
-	<blank>
+	<tran> [English] abcd
 }
 
 @TranItem {
 	<ori> [Chinese] 心，
-	<blank>
+	<tran> [English] bcde
 }
 
 @TranItem {
 	<ori> [Chinese] 也在不知不觉中有些隐隐作痛，
-	<blank>
+	<tran> [English] abcabc
 }
 
 @TranItem {
 	<ori> [Chinese] 在我读《红岩》之前，
-	<blank>
+	<tran> [English] abcd
 }
 
 @TranItem {
@@ -263,7 +263,7 @@
 
 @TranItem {
 	<ori> [Chinese] 可我却发现实在是困难，
-	<blank>
+	<tran> [English] but I found it too difficult.
 }
 
 @TranItem {

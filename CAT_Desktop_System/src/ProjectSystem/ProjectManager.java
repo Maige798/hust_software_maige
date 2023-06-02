@@ -125,7 +125,7 @@ public class ProjectManager {
     }
 
     public static void TranslateFile(TranslationFile translationFile) {
-        if (instance.currentProject != null)
+        if (instance.currentTranslationFile != null)
             TranslationFileManager.SaveFile(instance.currentTranslationFile);
         instance.currentTranslationFile = translationFile;
     }

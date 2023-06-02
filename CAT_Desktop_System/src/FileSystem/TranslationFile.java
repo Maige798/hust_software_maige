@@ -49,6 +49,28 @@ public class TranslationFile {
         paragraphsList.get(num).SetTranslation(this.targetLanguage, text);
     }
 
+    public void TranslateParagraph(TranslationItem item,String text) {
+        for (TranslationItem translationItem : paragraphsList) {
+            if (translationItem.equals(item)) {
+                if (translationItem.translation == null)
+                    translationItem.SetTranslation(new Sentence(targetLanguage, text));
+                else
+                    translationItem.translation.text = text;
+            }
+        }
+    }
+
+    // 获得全部原文语言不为default的条目
+    public TranslationItem[] GetPureTranslationItem() {
+        List<TranslationItem> items = new ArrayList<>();
+        for (TranslationItem item : paragraphsList)
+            if (!item.origin.language.EqualsTo(Language.Default))
+                items.add(item);
+        TranslationItem[] pureItems = new TranslationItem[items.size()];
+        items.toArray(pureItems);
+        return pureItems;
+    }
+
     @Override
     public String toString() {
         StringBuffer buffer = new StringBuffer();

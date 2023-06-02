@@ -98,4 +98,8 @@ public class CAT_Project {
     public void RemoveTranslationFile(TranslationFile tranFile) {
         this.translationFileList.removeIf(translationFile -> translationFile.equals(tranFile));
     }
+
+    public TranslationFile GetTranslationFile(int num){
+        return translationFileList.get(num);
+    }
 }

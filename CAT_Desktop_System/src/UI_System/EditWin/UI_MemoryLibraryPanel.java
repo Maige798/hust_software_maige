@@ -7,6 +7,7 @@ public class UI_MemoryLibraryPanel extends JPanel {
     public Color PinkColor = new Color(219, 141, 241);
     public Color BlueColor = new Color(140, 240, 240);
     public JTextArea textArea;
+
     public JButton applyTranslationResultButton;
 
     public UI_MemoryLibraryPanel() {
@@ -24,6 +25,9 @@ public class UI_MemoryLibraryPanel extends JPanel {
 
         textArea.setBounds(20, 15, 460, 130);
         applyTranslationResultButton.setBounds(360, 150, 120, 20);
+    }
 
+    public void SetTextArea(String message) {
+        textArea.setText(message);
     }
 }
