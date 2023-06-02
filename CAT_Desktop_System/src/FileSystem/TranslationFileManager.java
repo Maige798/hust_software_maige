@@ -8,6 +8,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class TranslationFileManager {
+    public static final String savePath = "D:\\hust_software_maige\\CAT_Desktop_System\\src\\System_File\\TranslationFilePackage\\";
     // 实现单例模式
     public static TranslationFileManager instance = new TranslationFileManager();
 
@@ -16,24 +17,24 @@ public class TranslationFileManager {
     }
 
     // 读取目标文件后创建相应的翻译文件对象
-    public static TranslationFile ReadFile(String save, String sourceFile, Language origin, Language target) {
-        TranslationFile translationFile = new TranslationFile(null, save, sourceFile, origin, target);
+    public static TranslationFile ReadFile(String name, String sourceFile, Language origin, Language target) {
+        TranslationFile translationFile = new TranslationFile(name, savePath + name + ".tran", sourceFile, origin, target);
         SetUpFile(translationFile);
         return translationFile;
     }
 
     // 保存翻译文件
     public static void SaveFile(TranslationFile translationFile) {
-        File file=new File(translationFile.save);
-        try(FileWriter out=new FileWriter(file)){
+        File file = new File(translationFile.save);
+        try (FileWriter out = new FileWriter(file)) {
             out.write(translationFile.toString());
-        } catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     // 导出并生成一个合并翻译后所有段落的文件
-    public static int DeriveFile(TranslationFile translationFile,String targetSave,String targetSaveName) {
+    public static int DeriveFile(TranslationFile translationFile, String targetSave, String targetSaveName) {
         File outFile = new File(targetSave + targetSaveName + ".txt");
         try {
             if (!outFile.createNewFile()) {
