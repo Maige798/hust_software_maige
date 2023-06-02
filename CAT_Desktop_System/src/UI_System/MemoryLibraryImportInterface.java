@@ -26,4 +26,8 @@ public class MemoryLibraryImportInterface extends JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
     }
+
+    public static void main(String[] args) {
+        MemoryLibraryImportInterface me=new MemoryLibraryImportInterface();
+    }
 }

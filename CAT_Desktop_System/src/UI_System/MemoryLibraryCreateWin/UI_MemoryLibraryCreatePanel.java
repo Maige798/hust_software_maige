@@ -2,6 +2,9 @@ package UI_System.MemoryLibraryCreateWin;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UI_MemoryLibraryCreatePanel extends JPanel {
     JLabel memoryLibraryNameLabel=new JLabel();
@@ -13,6 +16,7 @@ public class UI_MemoryLibraryCreatePanel extends JPanel {
     TextField text2=new TextField();
 
     JButton browseButton=new JButton();
+    List<String> memoryLibPaths=new ArrayList<>();
 
     public UI_MemoryLibraryCreatePanel()
     {
@@ -41,5 +45,31 @@ public class UI_MemoryLibraryCreatePanel extends JPanel {
         this.add(browseButton);
         browseButton.setMargin(new Insets(0,0,0,0));
         browseButton.setBounds(50+350+10,180,100,40);
+        //创建监听器
+        browseButton.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser fileChooser=new JFileChooser();
+                int option=fileChooser.showOpenDialog(new UI_MemoryLibraryCreatePanel());
+                if(option==JFileChooser.APPROVE_OPTION)
+                {
+                    memoryLibPaths.add(fileChooser.getSelectedFile().getAbsolutePath());
+                    UpdateSavePathButton(memoryLibPaths);
+                }
+
+            }
+        });
     }
+//    JFileChooser fileChooser=new JFileChooser();
+//    int option =fileChooser.showOpenDialog(new UI_MemoryLibraryCreatePanel());
+//                if(option==JFileChooser.APPROVE_OPTION){
+//        memoryLibPaths.add(fileChooser.getSelectedFile().getAbsolutePath());
+//        System.out.println(memoryLibPaths.get(memoryLibPaths.size()-1));
+//        UpdateSa(memoryLibPaths);
+
+    private void UpdateSavePathButton(List<String> fileNames)
+    {
+        text2.setText(memoryLibPaths.get(memoryLibPaths.size()-1));
+    }
+
 }
