@@ -11,6 +11,7 @@ public class UI_MemoryLibraryItemsPanel extends JPanel{
 
     public JLabel label;
     public JLabel bookPrint;
+
     public JTable table;
 
     public JButton btn1;
