@@ -44,6 +44,7 @@ public class UI_MemoryLibraryItemsPanel extends JPanel {
         table.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 
         deleteButton = new JButton("标记删除");
+        deleteButton.addActionListener(e -> OnDeleteButtonDown());
         cancelButton = new JButton("取消更改");
         cancelButton.addActionListener(e -> OnCancelButtonDown());
         saveButton = new JButton("保存更改");
@@ -122,5 +123,19 @@ public class UI_MemoryLibraryItemsPanel extends JPanel {
 
     private void OnCancelButtonDown(){
         UpdateItemTable();
+    }
+
+    private void OnDeleteButtonDown() {
+        int index = table.getSelectedRow() + currentPageNum * tableRows;
+        if (index < currentMemoryLibraryItems.length) {
+            ProjectManager.instance.currentProject.memoryLibrary.RemoveItem(currentMemoryLibraryItems[index]);
+            currentMemoryLibraryItems=ProjectManager.instance.currentProject.memoryLibrary.GetAllItems();
+            UpdateItemTable();
+        }
+    }
+
+    private void OnSaveButtonDown(){
+        int BeginIndex=currentPageNum*tableRows;
+
     }
 }
