@@ -2,11 +2,13 @@ package UI_System.FileSysWin;
 
 import FileSystem.TranslationFile;
 import ProjectSystem.ProjectManager;
+import SystemUtil.TranslationItem;
 
 import javax.swing.*;
 import javax.swing.table.TableColumn;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class UI_FileListPanel extends JPanel {
@@ -66,12 +68,19 @@ public class UI_FileListPanel extends JPanel {
             saves.add(file.save);
         }
     }
+
+    private List<String> GetCurrentPageNameItems() {
+        return names.subList(currentPageNum * tableRow, Integer.min((currentPageNum + 1) * tableRow,names.size()));
+    }
+    private List<String> GetCurrentPageSaveItems() {
+        return names.subList(currentPageNum * tableRow, Integer.min((currentPageNum + 1) * tableRow,names.size()));
+    }
     private void updateFileTable(){
-        UpdateFileItemTableByCurrentPage();
+        UpdateFileItemTableByCurrentPage(GetCurrentPageNameItems(),GetCurrentPageSaveItems());
         UpDateBookPrint();
     }
 
-    public void UpdateFileItemTableByCurrentPage(){
+    public void UpdateFileItemTableByCurrentPage(List<String> names,List<String> saves){
         if (names.size() > tableRow)
             System.err.println("Expected length: <=12, actual length: " + names.size());
         for (int i = 0; i < tableRow; i++) {
