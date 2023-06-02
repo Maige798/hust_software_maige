@@ -10,11 +10,11 @@ public class UI_EditPanel extends JPanel {
     public JLabel editLabels2;
     public JLabel bookPrint;
     public JLabel[] states;
-    public TextField[] texts;
-    public JButton btn1;
-    public JButton btn2;
-    public JButton btn3;
-    public JButton btn4;
+    public TextField[] texts;        //数组长度16，偶数左，奇数右
+    public JButton confirmTranslationButton;
+    public JButton startMachineTranslation;
+    public JButton frontPageButton;
+    public JButton nextPageButton;
 
     public UI_EditPanel() {
 
@@ -27,6 +27,7 @@ public class UI_EditPanel extends JPanel {
         editLabels1.setForeground(Color.BLACK);
         editLabels2 = new JLabel("译文");
         editLabels2.setForeground(Color.BLACK);
+
         bookPrint = new JLabel("?/?");
         bookPrint.setForeground(Color.BLACK);
 
@@ -43,10 +44,10 @@ public class UI_EditPanel extends JPanel {
             texts[i].setFont(new Font(null, Font.PLAIN, 20));
         }
 
-        btn1 = new JButton("确认翻译");
-        btn2 = new JButton("开始机械翻译");
-        btn3 = new JButton("上一页");
-        btn4 = new JButton("下一页");
+        confirmTranslationButton = new JButton("确认翻译");
+        startMachineTranslation = new JButton("开始机械翻译");
+        frontPageButton = new JButton("上一页");
+        nextPageButton = new JButton("下一页");
 
         add(editLabels0);
         add(editLabels1);
@@ -61,10 +62,10 @@ public class UI_EditPanel extends JPanel {
             add(textField);
         }
 
-        add(btn1);
-        add(btn2);
-        add(btn3);
-        add(btn4);
+        add(confirmTranslationButton);
+        add(startMachineTranslation);
+        add(frontPageButton);
+        add(nextPageButton);
 
         editLabels0.setBounds(45, 10, 300, 30);
         editLabels1.setBounds(380, 10, 30, 30);
@@ -86,9 +87,9 @@ public class UI_EditPanel extends JPanel {
             texts[i].setBounds(415, yFirst + (i - 1) * 20, 320, 30);
         }
 
-        btn1.setBounds(485, 15, 100, 20);
-        btn2.setBounds(605, 15, 130, 20);
-        btn3.setBounds(505, 380, 90, 20);
-        btn4.setBounds(665, 380, 90, 20);
+        confirmTranslationButton.setBounds(485, 15, 100, 20);
+        startMachineTranslation.setBounds(605, 15, 130, 20);
+        frontPageButton.setBounds(505, 380, 90, 20);
+        nextPageButton.setBounds(665, 380, 90, 20);
     }
 }
