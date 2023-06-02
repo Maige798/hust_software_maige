@@ -1,0 +1,298 @@
+@Name {
+	<name> 文本.txt
+}
+
+@Save {
+	<save> D:\hust_software_maige\CAT_Desktop_System\src\System_File\TranslationFilePackage\文本.txt.tran
+}
+
+@Language {
+	<ori> Chinese
+	<tran> English
+}
+
+@Table
+
+@TranItem {
+	<ori> [Chinese] 在读到江姐宁死不屈也要反抗时的片段，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 心，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 也在不知不觉中有些隐隐作痛，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 在我读《红岩》之前，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 从未如此清晰的了解过那段狰狞的岁月，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 只是隐约的知道些事情，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 并未放在心上。
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 我不想了解过也不想试图去了解，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 可在我看完《红岩》后，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 心中不禁生出一股后悔之情，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 那段狰狞的岁月之前的我竟然浑然不知。
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 它描写了众多革命英雄：
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 成岗临危不惧，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 视死如归；
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 许云峰英勇斗敌，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 舍己为人；
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 江姐受尽酷刑，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 从不畏惧；
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 刘思扬出身豪门却参与革命；
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 成瑶在共产党的熏陶下，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 渐渐成长，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 懂得处理各种事；
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 渣滓洞的难友们，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 相互帮助，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 智斗敌人；
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 白公馆的人们战胜敌人，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 最终迎来新中国的一段艰难路程。
+	<blank>
+}
+
+@Return
+
+@Table
+
+@TranItem {
+	<ori> [Chinese] 猛然想起在《建国大业》中新中国成立之前在选定国歌时，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 由于有人对“中国到了最危险的时刻”这句歌词觉得不适合现在的局势，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 认为需要改词。
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 最后周总结：
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] “我们前面还有着帝国主义敌人，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 我们建设越进展，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 帝国主义将越加嫉恨我们，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 破坏我们、进攻我们，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 你能说我们就不危险了吗？
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 还不如留下这句话，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 经常保持警惕的好！
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] ”毛主席也表示赞同。
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 现在虽然是一派和谐、人们都快快乐乐的生活着，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 可是我们不能够忘却的是曾经的耻辱。
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 我们应该牢记每一段历史，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 并将其铭记于心。
+	<blank>
+}
+
+@Return
+
+@Table
+
+@TranItem {
+	<ori> [Chinese] 最欣赏江姐的那句话：
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 毒刑拷打是太小的考验，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 竹签子是竹做的，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 共产党员的意志是钢铁做的。
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 我试着想过她当时的情感，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 可我却发现实在是困难，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 因为我并没有真正读懂这个女人坚强的心，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 却并未经历她那样的凄惨之事。
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 生于世，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 又是女子，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 在得知丈夫死去的那一瞬间，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 便是把她内心仅存的希望所熄灭。
+	<blank>
+}
+
