@@ -87,8 +87,6 @@ public class UI_FileListPanel extends JPanel {
         importFileButton.setBounds(60, 260, 60, 20);
         deleteFileButton.setBounds(130, 260, 60, 20);
         fileTable.setBounds(60, 300, 180, 80);
-        //设置table的内容不可编辑
-        fileTable.setEnabled(false);
 
         previousPage.setBounds(80, 400, 40, 20);
         nextPage.setBounds(170, 400, 40, 20);
@@ -161,6 +159,7 @@ public class UI_FileListPanel extends JPanel {
             Language target = Language.GetLanguage((String) targetLanguageComboBox.getSelectedItem());
             CAT_Project project = ProjectManager.CreateProject(projectName, savePath, origin, target);
             LoadTranslationFiles(project, origin, target);
+            ProjectManager.SaveProject(project);
         } else {
             System.err.println("Something has not finished, cannot create a new project.");
         }

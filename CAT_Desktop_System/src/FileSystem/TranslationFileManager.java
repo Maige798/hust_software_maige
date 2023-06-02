@@ -59,6 +59,7 @@ public class TranslationFileManager {
                 while ((charGet = in.read()) != -1)
                     buffer.append((char) charGet);
                 translationFile.SetUpParagraphs(buffer.toString());
+                SaveFile(translationFile);
             } catch (IOException e) {
                 e.printStackTrace();
             }
