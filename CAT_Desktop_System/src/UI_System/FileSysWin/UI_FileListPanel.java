@@ -1,10 +1,13 @@
 package UI_System.FileSysWin;
 
+import FileSystem.TranslationFile;
 import ProjectSystem.ProjectManager;
 
 import javax.swing.*;
 import javax.swing.table.TableColumn;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UI_FileListPanel extends JPanel {
     public Color Green = new Color(61, 232, 213);
@@ -14,9 +17,15 @@ public class UI_FileListPanel extends JPanel {
 
     public JLabel label;
     public JLabel bookPrint;
+
+    public List<String> names=new ArrayList<>();
+    public List<String> saves=new ArrayList<>();
+
     public JTable table;
     public JButton formerPage;
     public JButton nextPage;
+
+    public int currentPageNum = 0;
 
     public UI_FileListPanel() {
         setLayout(null);
@@ -51,12 +60,45 @@ public class UI_FileListPanel extends JPanel {
         table.setBounds(30, 50, 740, 300);
         formerPage.setBounds(500, 370, 90, 20);
         nextPage.setBounds(655, 370, 90, 20);
+
+        for(TranslationFile file: ProjectManager.instance.currentProject.translationFileList) {
+            names.add(file.name);
+            saves.add(file.save);
+        }
+    }
+    private void updateFileTable(){
+        UpdateFileItemTableByCurrentPage();
+        UpDateBookPrint();
     }
 
-    public void UpdateTableItem(){
+    public void UpdateFileItemTableByCurrentPage(){
+        if (names.size() > tableRow)
+            System.err.println("Expected length: <=12, actual length: " + names.size());
         for (int i = 0; i < tableRow; i++) {
-            table.setValueAt(ProjectManager.instance.currentProject.translationFileList.get(i).name, i, 0);
-            table.setValueAt(ProjectManager.instance.currentProject.translationFileList.get(i).save, i, 1);
+            table.setValueAt("", i, 0);
+            table.setValueAt("", i, 1);
+        }
+        for (int i = 0; i < names.size(); i++) {
+            table.setValueAt(names.get(i), i, 0);
+            table.setValueAt(saves.get(i), i, 1);
+        }
+    }
+
+    private void UpDateBookPrint(){
+        bookPrint.setText((currentPageNum + 1) + "/" + (names.size() / tableRow + 1));
+    }
+
+    private void OnFormerPageButtonDown() {
+        if (currentPageNum > 0) {
+            currentPageNum--;
+            updateFileTable();
+        }
+    }
+
+    private void OnNextPageButtonDown() {
+        if (currentPageNum < names.size() / tableRow) {
+            currentPageNum++;
+            updateFileTable();
         }
     }
 }
