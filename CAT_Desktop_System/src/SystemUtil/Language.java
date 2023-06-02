@@ -29,4 +29,12 @@ public enum Language {
         System.err.println("Cannot find language:" + name);
         return null;
     }
+
+    // 获得全部语言的名称，以String数组的形式
+    public static String[] GetAllLanguageNames() {
+        String[] names = new String[values().length];
+        for (int i = 0; i < values().length; i++)
+            names[i] = values()[i].name;
+        return names;
+    }
 }

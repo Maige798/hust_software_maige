@@ -28,9 +28,11 @@ public class CAT_Project {
 
     }
 
-    public CAT_Project(String name, String save) {
+    public CAT_Project(String name, String save,Language originLanguage,Language targetLanguage) {
         this.name = name;
         this.save = save;
+        this.originLanguage = originLanguage;
+        this.targetLanguage = targetLanguage;
     }
 
     public CAT_Project(CAT_FileItem[] items) {
@@ -44,7 +46,8 @@ public class CAT_Project {
         buffer.append("@Save {\r\n\t<save> ").append(this.save).append("\r\n}\r\n\r\n");
         buffer.append("@Language {\r\n\t").append("<ori> ").append(this.originLanguage).append("\r\n");
         buffer.append("\t<tran> ").append(this.targetLanguage).append("\r\n}\r\n\r\n");
-        buffer.append("@MemLib {\r\n\t<save> ").append(this.memoryLibrary.save).append("\r\n}\r\n\r\n");
+        if (this.memoryLibrary != null)
+            buffer.append("@MemLib {\r\n\t<save> ").append(this.memoryLibrary.save).append("\r\n}\r\n\r\n");
         for (TermLibrary termLibrary : termLibraryList)
             buffer.append("@TermLib {\r\n\t<save> ").append(termLibrary.save).append("\r\n}\r\n\r\n");
         for (TranslationFile translationFile : translationFileList)

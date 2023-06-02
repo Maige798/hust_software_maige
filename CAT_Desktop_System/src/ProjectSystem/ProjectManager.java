@@ -4,6 +4,7 @@ import FileSystem.TranslationFile;
 import FileSystem.TranslationFileManager;
 import SystemUtil.CAT_FileController;
 import SystemUtil.CAT_FileItem;
+import SystemUtil.Language;
 import SystemUtil.TranslationItem;
 
 import java.io.File;
@@ -66,7 +67,7 @@ public class ProjectManager {
     }
 
     // 新建一个项目，生成对应文件，返回其对象
-    public static CAT_Project CreateProject(String name, String save) {
+    public static CAT_Project CreateProject(String name, String save, Language origin,Language target) {
         File outFile = new File(save + name + ".catp");
         try {
             if (!outFile.createNewFile()) {
@@ -75,9 +76,10 @@ public class ProjectManager {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        CAT_Project project = new CAT_Project(name, save);
+        CAT_Project project = new CAT_Project(name, save + name + ".catp", origin, target);
         instance.projectList.add(project);
         SaveProjectList();
+        SaveProject(project);
         return project;
     }
 
@@ -108,6 +110,7 @@ public class ProjectManager {
     }
 
     public static void SaveProject(CAT_Project project) {
+        System.out.println(project.save);
         try (FileWriter out = new FileWriter(project.save)) {
             out.write(project.toString());
         } catch (IOException e) {
