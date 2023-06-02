@@ -15,7 +15,7 @@ public class UI_TermCreatePanel1 extends JPanel {
     public  JButton[] buttons2;
     public JTextField textField;
     //
-    public List<String> fileNames=new ArrayList<>();
+    public List<String> filePaths=new ArrayList<>();
     public UI_TermCreatePanel1()
     {
         this.setLayout(null);
@@ -41,19 +41,19 @@ public class UI_TermCreatePanel1 extends JPanel {
 
         //给浏览设置监听器
         //创建监听器
-//        buttons[1].addActionListener(new AbstractAction() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                JFileChooser fileChooser=new JFileChooser();
-//                int option =fileChooser.showOpenDialog(new UI_TermCreatePanel1());
-//                if(option==JFileChooser.APPROVE_OPTION){
-//                    fileNames.add(fileChooser.getSelectedFile().getAbsolutePath());
-//                    System.out.println(fileNames.get(0));
-//                    UpdateSavePathButton(fileNames);
-//                }
-//
-//            }
-//        });
+        buttons[0].addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser fileChooser=new JFileChooser();
+                int option =fileChooser.showOpenDialog(new UI_TermCreatePanel1());
+                if(option==JFileChooser.APPROVE_OPTION){
+                    filePaths.add(fileChooser.getSelectedFile().getAbsolutePath());
+                    System.out.println(filePaths.get(0));
+                    UpdateSavePathButton(filePaths);
+                }
+
+            }
+        });
 
 
 
@@ -101,5 +101,12 @@ public class UI_TermCreatePanel1 extends JPanel {
 
         this.add(buttons2[3]);
         buttons2[3].setBounds(50+200+40+80+120,560,100,40);
+    }
+
+
+
+    private void UpdateSavePathButton(List<String> fileNames)
+    {
+       textFields[1].setText(filePaths.get(filePaths.size()-1));
     }
 }

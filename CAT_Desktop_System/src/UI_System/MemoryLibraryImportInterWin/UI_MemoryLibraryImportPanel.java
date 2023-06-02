@@ -2,6 +2,9 @@ package UI_System.MemoryLibraryImportInterWin;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UI_MemoryLibraryImportPanel extends JPanel {
     JLabel memoryLibraryImportLabel =new JLabel();
@@ -9,6 +12,7 @@ public class UI_MemoryLibraryImportPanel extends JPanel {
     TextField createTextField=new TextField();
 
     JButton browseButton=new JButton();
+    List<String> memoryLibPaths=new ArrayList<>();
     JButton newCreateButton=new JButton();
     JButton importButton=new JButton();
 
@@ -30,8 +34,25 @@ public class UI_MemoryLibraryImportPanel extends JPanel {
         this.add(browseButton);
         browseButton.setMargin(new Insets(0,0,0,0));
         browseButton.setBounds(425,130,50,30);
-
-        newCreateButton.setText("新建");
+        //设置浏览监听器
+        browseButton.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser fileChooser=new JFileChooser();
+                int option=fileChooser.showOpenDialog(new UI_MemoryLibraryImportPanel());
+                if(option==JFileChooser.APPROVE_OPTION){
+                    memoryLibPaths.add(fileChooser.getSelectedFile().getAbsolutePath());
+                    UpdateSavePathButton(memoryLibPaths);
+                }
+            }
+        });
+//        JFileChooser fileChooser=new JFileChooser();
+//        int option =fileChooser.showOpenDialog(new UI_FileListPanel());
+//        if(option==JFileChooser.APPROVE_OPTION){
+//            fileNames.add(fileChooser.getSelectedFile().getAbsolutePath());
+//            System.out.println(fileNames.get(fileNames.size()-1));
+//            UpdateTable(fileNames);
+newCreateButton.setText("新建");
         this.add(newCreateButton);
         newCreateButton.setMargin(new Insets(0,0,0,0));
         newCreateButton.setBounds(130,250,100,30);
@@ -44,4 +65,9 @@ public class UI_MemoryLibraryImportPanel extends JPanel {
 
 
     }
+    private void UpdateSavePathButton(List<String> fileNames)
+    {
+        createTextField.setText(fileNames.get(fileNames.size()-1));
+    }
+
 }
