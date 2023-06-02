@@ -52,7 +52,7 @@ public class UI_FileListPanel extends JPanel {
                 int option =fileChooser.showOpenDialog(new UI_FileListPanel());
                 if(option==JFileChooser.APPROVE_OPTION){
                     fileNames.add(fileChooser.getSelectedFile().getAbsolutePath());
-                    System.out.println(fileNames.get(fileNames.size()-1));
+                 //   System.out.println(fileNames.get(fileNames.size()-1));
                     UpdateTable(fileNames);
                 }
 
@@ -64,6 +64,16 @@ public class UI_FileListPanel extends JPanel {
         importFileButton.setMargin(new Insets(0, 0, 0, 0));
         deleteFileButton.setText("删除文件");
         deleteFileButton.setMargin(new Insets(0, 0, 0, 0));
+        deleteFileButton.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+
+
+
         previousPage.setText("上一页");
         previousPage.setFont(new Font(null, Font.PLAIN, 10));
         previousPage.setMargin(new Insets(0, 0, 0, 0));
@@ -86,7 +96,7 @@ public class UI_FileListPanel extends JPanel {
         deleteFileButton.setBounds(130, 260, 60, 20);
         fileTable.setBounds(60, 300, 180, 80);
         //设置table的内容不可编辑
-        fileTable.setEnabled(false);
+        //fileTable.setEnabled(false);
 
 
         previousPage.setBounds(80, 400, 40, 20);
@@ -181,7 +191,10 @@ public class UI_FileListPanel extends JPanel {
     }
 
 
-   private void UpdateTable(List<String> fileNames) {
+    private void UpdateTable(List<String> fileNames) {
+        for (int i = 0; i <4; i++)
+            fileTable.setValueAt("", i, 0);
+
         for (int i = 0; i <fileNames.size(); i++)
             fileTable.setValueAt(fileNames.get(i), i, 0);
     }
@@ -190,5 +203,16 @@ public class UI_FileListPanel extends JPanel {
     {
         savePathField.setText(fileNames.get(fileNames.size()-1));
     }
+
+    private void OnDeleteButtonDown(String selectedString)
+    {
+        fileNames.removeIf(s->s.equals(selectedString));
+        UpdateTable(fileNames);
+        for (int i = 0; i <fileNames.size(); i++)
+            System.out.println(fileNames.get(i));;
+    }
+
+
+
 
 }

@@ -9,11 +9,11 @@ public class UI_CreatePanel2 extends JPanel {
     {
 
         //设置表头并创建表格
-        String[] tableHead=new String[]{"术语库名称","已启用"};
-        Object[][] rowData={{"singban","tkf"},
-                {"merge","Appointment for War"}};
+//        String[] tableHead=new String[]{"术语库名称","已启用"};
+//        Object[][] rowData={{"singban","tkf"},
+//                {"merge","Appointment for War"}};
 
-        table=new JTable(rowData,tableHead);
+        table=new JTable(8,2);
 
         //设置单元格行高列宽
         table.setRowHeight(25);
@@ -36,7 +36,7 @@ public class UI_CreatePanel2 extends JPanel {
         table.getTableHeader().setReorderingAllowed(false);             // 设置不允许拖动重新排序各列
 
         // 设置滚动面板视口大小（超过该大小的行数据，需要拖动滚动条才能看到）
-        table.setPreferredScrollableViewportSize(new Dimension(600, 75));
+        table.setPreferredScrollableViewportSize(new Dimension(600,150));
 
         // 把 表格 放到 滚动面板 中（表头将自动添加到滚动面板顶部）
         JScrollPane scrollPane = new JScrollPane(table);

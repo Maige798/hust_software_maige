@@ -29,12 +29,12 @@ public class UI_ContentPanel extends JPanel {
 
         panel1.setBounds(100, 50, 600, 50);
 
-        panel2.setBounds(100, 100, 600, 75);
+        panel2.setBounds(100, 100, 600, 125);
 
-        panel3.setBounds(100, 175, 600, 50);
+        panel3.setBounds(100, 225, 600, 50);
 
-        panel4.setBounds(100, 225, 600, 100);
+        panel4.setBounds(100, 275, 600, 100);
 
-        panel5.setBounds(100, 325, 600, 50);
+        panel5.setBounds(100, 375, 600, 50);
     }
 }

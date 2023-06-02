@@ -2,6 +2,9 @@ package UI_System.TermLibCre;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UI_TermCreatePanel1 extends JPanel {
     public  JLabel[] labels;
@@ -11,6 +14,8 @@ public class UI_TermCreatePanel1 extends JPanel {
     public JTable table;
     public  JButton[] buttons2;
     public JTextField textField;
+    //
+    public List<String> fileNames=new ArrayList<>();
     public UI_TermCreatePanel1()
     {
         this.setLayout(null);
@@ -32,6 +37,25 @@ public class UI_TermCreatePanel1 extends JPanel {
             this.add(buttons[i]);
             buttons[i].setBounds(50+350+10,30+50*3+100*i,100,40);
         }
+
+
+        //给浏览设置监听器
+        //创建监听器
+//        buttons[1].addActionListener(new AbstractAction() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                JFileChooser fileChooser=new JFileChooser();
+//                int option =fileChooser.showOpenDialog(new UI_TermCreatePanel1());
+//                if(option==JFileChooser.APPROVE_OPTION){
+//                    fileNames.add(fileChooser.getSelectedFile().getAbsolutePath());
+//                    System.out.println(fileNames.get(0));
+//                    UpdateSavePathButton(fileNames);
+//                }
+//
+//            }
+//        });
+
+
 
 //第二部分
         label=new JLabel("已添加语言");
