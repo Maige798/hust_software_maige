@@ -26,6 +26,7 @@ public class UI_FileListPanel extends JPanel {
     public JTable table;
     public JButton formerPage;
     public JButton nextPage;
+    public JButton open;
 
     public int currentPageNum = 0;
 
@@ -52,18 +53,21 @@ public class UI_FileListPanel extends JPanel {
         formerPage.addActionListener(e -> OnFormerPageButtonDown());
         nextPage = new JButton("下一页");
         nextPage.addActionListener(e -> OnNextPageButtonDown());
+        open=new JButton("打开");
 
         add(label);
         add(bookPrint);
         add(table);
         add(formerPage);
         add(nextPage);
+        add(open);
 
         label.setBounds(10, 5, 200, 40);
         bookPrint.setBounds(615, 370, 40, 20);
         table.setBounds(30, 50, 740, 300);
         formerPage.setBounds(500, 370, 90, 20);
         nextPage.setBounds(655, 370, 90, 20);
+        open.setBounds(280,370,80,20);
 
         if(ProjectManager.instance.currentProject!=null) {
             for (TranslationFile file : ProjectManager.instance.currentProject.translationFileList) {
