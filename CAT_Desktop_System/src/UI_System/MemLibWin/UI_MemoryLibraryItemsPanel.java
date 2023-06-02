@@ -134,8 +134,7 @@ public class UI_MemoryLibraryItemsPanel extends JPanel {
         }
     }
 
-    private void OnSaveButtonDown(){
-        int BeginIndex=currentPageNum*tableRows;
-
+    private void OnSaveButtonDown() {
+        int BeginIndex = currentPageNum * tableRows;
     }
 }

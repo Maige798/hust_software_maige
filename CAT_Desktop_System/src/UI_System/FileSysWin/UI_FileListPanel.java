@@ -49,7 +49,9 @@ public class UI_FileListPanel extends JPanel {
         table.doLayout();
 
         formerPage = new JButton("上一页");
+        formerPage.addActionListener(e -> OnFormerPageButtonDown());
         nextPage = new JButton("下一页");
+        nextPage.addActionListener(e -> OnNextPageButtonDown());
 
         add(label);
         add(bookPrint);
