@@ -41,6 +41,11 @@ public class MemoryLibrary {
         itemsList.set(num, newItem);
     }
 
+    // 编辑一条项目
+    public void EditItem(TranslationItem item,String originText,String translationText){
+
+    }
+
     // 获取对应序号的条目
     public TranslationItem GetItem(int num){
         return itemsList.get(num);
