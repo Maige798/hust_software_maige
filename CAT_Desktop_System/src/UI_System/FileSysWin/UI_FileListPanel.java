@@ -73,7 +73,7 @@ public class UI_FileListPanel extends JPanel {
         return names.subList(currentPageNum * tableRow, Integer.min((currentPageNum + 1) * tableRow,names.size()));
     }
     private List<String> GetCurrentPageSaveItems() {
-        return names.subList(currentPageNum * tableRow, Integer.min((currentPageNum + 1) * tableRow,names.size()));
+        return saves.subList(currentPageNum * tableRow, Integer.min((currentPageNum + 1) * tableRow,names.size()));
     }
     private void updateFileTable(){
         UpdateFileItemTableByCurrentPage(GetCurrentPageNameItems(),GetCurrentPageSaveItems());
