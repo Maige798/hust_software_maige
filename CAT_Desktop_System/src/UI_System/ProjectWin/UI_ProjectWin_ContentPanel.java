@@ -13,10 +13,10 @@ public class UI_ProjectWin_ContentPanel extends JPanel {
     public JPanel InterfaceSwitchingPanel;
 
     //创建文件列表
-    public JPanel FileListPanel;
+    public JPanel ProjectListPanel;
 
     //创建文件详情面板
-    public JPanel FileDetailsPanel;
+    public JPanel ProjectDetailsPanel;
 
     public UI_ProjectWin_ContentPanel() {
         //创建项目信息栏
@@ -26,19 +26,19 @@ public class UI_ProjectWin_ContentPanel extends JPanel {
         InterfaceSwitchingPanel = new UI_InterfaceSwitchingPanel();
 
         //创建文件列表
-        FileListPanel = new UI_FileListPanel();
+        ProjectListPanel = new UI_FileListPanel();
 
         //创建文件详情面板
-        FileDetailsPanel = new UI_FileDetailsPanel();
+        ProjectDetailsPanel = new UI_FileDetailsPanel();
 
         setLayout(null);
-        add(FileListPanel);
-        add(FileDetailsPanel);
+        add(ProjectListPanel);
+        add(ProjectDetailsPanel);
         add(ProjectInformationPanel);
         add(InterfaceSwitchingPanel);
 
-        FileListPanel.setBounds(200, 0, 800, 400);
-        FileDetailsPanel.setBounds(200, 400, 800, 250);
+        ProjectListPanel.setBounds(200, 0, 800, 400);
+        ProjectDetailsPanel.setBounds(200, 400, 800, 250);
         ProjectInformationPanel.setBounds(0, 0, 200, 400);
         InterfaceSwitchingPanel.setBounds(0, 400, 200, 250);
 

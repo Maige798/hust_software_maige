@@ -18,9 +18,9 @@ public class UI_MemoryLibraryItemsPanel extends JPanel {
 
     public JTable table;
 
-    public JButton btn1;
-    public JButton btn2;
-    public JButton btn3;
+    public JButton deleteButton;
+    public JButton cancelButton;
+    public JButton saveButton;
     public int currentPageNum = 0;
     public JButton formerPage;
     public JButton nextPage;
@@ -43,9 +43,10 @@ public class UI_MemoryLibraryItemsPanel extends JPanel {
         table.setGridColor(new Color(192, 192, 192));
         table.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 
-        btn1 = new JButton("标记删除");
-        btn2 = new JButton("取消更改");
-        btn3 = new JButton("保存更改");
+        deleteButton = new JButton("标记删除");
+        cancelButton = new JButton("取消更改");
+        cancelButton.addActionListener(e -> OnCancelButtonDown());
+        saveButton = new JButton("保存更改");
 
         formerPage = new JButton("上一页");
         formerPage.addActionListener(e -> OnFormerPageButtonDown());
@@ -55,9 +56,9 @@ public class UI_MemoryLibraryItemsPanel extends JPanel {
         add(label);
         add(bookPrint);
         add(table);
-        add(btn1);
-        add(btn2);
-        add(btn3);
+        add(deleteButton);
+        add(cancelButton);
+        add(saveButton);
         add(formerPage);
         add(nextPage);
 
@@ -66,9 +67,9 @@ public class UI_MemoryLibraryItemsPanel extends JPanel {
         table.setBounds(30, 50, 740, 378);
         formerPage.setBounds(570, 450, 80, 20);
         nextPage.setBounds(690, 450, 80, 20);
-        btn1.setBounds(200, 450, 90, 20);
-        btn2.setBounds(310, 450, 90, 20);
-        btn3.setBounds(420, 450, 90, 20);
+        deleteButton.setBounds(200, 450, 90, 20);
+        cancelButton.setBounds(310, 450, 90, 20);
+        saveButton.setBounds(420, 450, 90, 20);
 
         if (ProjectManager.instance.currentProject != null) {
             if (ProjectManager.instance.currentProject.memoryLibrary != null) {
@@ -117,5 +118,9 @@ public class UI_MemoryLibraryItemsPanel extends JPanel {
             currentPageNum++;
             UpdateItemTable();
         }
+    }
+
+    private void OnCancelButtonDown(){
+        UpdateItemTable();
     }
 }

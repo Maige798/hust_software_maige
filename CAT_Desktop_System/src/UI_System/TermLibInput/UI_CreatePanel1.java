@@ -4,23 +4,18 @@ import javax.swing.*;
 import java.awt.*;
 
 public class UI_CreatePanel1 extends JPanel {
-    JButton[] buttons;
-public UI_CreatePanel1()
-{
-           this.setBackground(Color.BLUE);
-    //网格袋布局
-    GridLayout layout=new GridLayout(1,3);
+    public JButton CreateButton=new JButton("创建");
+    public JButton DeleteButton=new JButton("删除");
+    public JButton UseButton=new JButton("使用");
 
-    this.setLayout(layout);
+    public UI_CreatePanel1() {
+        this.setBackground(Color.BLUE);
+        //网格袋布局
+        GridLayout layout = new GridLayout(1, 3);
 
-    buttons=new JButton[]{new JButton("创建"),new JButton("删除"),new JButton("使用")};
-
-
-        for(int i=0;i<3;i++)
-    {
-        this.add(buttons[i]);
+        this.setLayout(layout);
+        this.add(CreateButton);
+        this.add(DeleteButton);
+        this.add(UseButton);
     }
-}
-
-
 }
