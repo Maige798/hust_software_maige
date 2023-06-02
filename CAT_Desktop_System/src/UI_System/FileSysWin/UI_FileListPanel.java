@@ -63,9 +63,20 @@ public class UI_FileListPanel extends JPanel {
         formerPage.setBounds(500, 370, 90, 20);
         nextPage.setBounds(655, 370, 90, 20);
 
-        for(TranslationFile file: ProjectManager.instance.currentProject.translationFileList) {
-            names.add(file.name);
-            saves.add(file.save);
+        if(ProjectManager.instance.currentProject!=null) {
+            for (TranslationFile file : ProjectManager.instance.currentProject.translationFileList) {
+                names.add(file.name);
+                saves.add(file.save);
+            }
+            for(int i=0;i<20;i++){
+                names.add("abc");
+                saves.add("efg");
+            }
+            for(int i=0;i<20;i++){
+                names.add("123");
+                saves.add("456");
+            }
+            UpdateFileTable();
         }
     }
 
@@ -75,7 +86,7 @@ public class UI_FileListPanel extends JPanel {
     private List<String> GetCurrentPageSaveItems() {
         return saves.subList(currentPageNum * tableRow, Integer.min((currentPageNum + 1) * tableRow,names.size()));
     }
-    private void updateFileTable(){
+    private void UpdateFileTable(){
         UpdateFileItemTableByCurrentPage(GetCurrentPageNameItems(),GetCurrentPageSaveItems());
         UpDateBookPrint();
     }
@@ -100,14 +111,14 @@ public class UI_FileListPanel extends JPanel {
     private void OnFormerPageButtonDown() {
         if (currentPageNum > 0) {
             currentPageNum--;
-            updateFileTable();
+            UpdateFileTable();
         }
     }
 
     private void OnNextPageButtonDown() {
         if (currentPageNum < names.size() / tableRow) {
             currentPageNum++;
-            updateFileTable();
+            UpdateFileTable();
         }
     }
 }
