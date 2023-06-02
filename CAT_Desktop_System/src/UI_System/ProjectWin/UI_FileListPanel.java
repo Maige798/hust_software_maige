@@ -64,14 +64,6 @@ public class UI_FileListPanel extends JPanel {
                 names.add(project.name);
                 saves.add(project.save);
             }
-            for(int i=0;i<20;i++){
-                names.add("abc");
-                saves.add("efg");
-            }
-            for(int i=0;i<20;i++){
-                names.add("123");
-                saves.add("456");
-            }
             UpdateFileTable();
         }
     }
