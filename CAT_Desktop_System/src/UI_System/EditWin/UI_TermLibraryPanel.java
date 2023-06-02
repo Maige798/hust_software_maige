@@ -7,7 +7,7 @@ public class UI_TermLibraryPanel extends JPanel {
     public Color DarkBlueColor = new Color(47, 116, 208);
     public Color BlueColor = new Color(140, 240, 240);
     public JTextArea textArea;
-    JButton jButton;
+    JButton addTermsButton;
 
     public UI_TermLibraryPanel() {
         setLayout(null);
@@ -17,12 +17,12 @@ public class UI_TermLibraryPanel extends JPanel {
         textArea.setBackground(BlueColor);
         textArea.setEditable(false);
 
-        jButton = new JButton("添加术语");
+        addTermsButton = new JButton("添加术语");
 
         add(textArea);
-        add(jButton);
+        add(addTermsButton);
 
         textArea.setBounds(20, 15, 250, 130);
-        jButton.setBounds(180, 150, 90, 20);
+        addTermsButton.setBounds(180, 150, 90, 20);
     }
 }

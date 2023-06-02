@@ -7,7 +7,7 @@ public class UI_MemoryLibraryPanel extends JPanel {
     public Color PinkColor = new Color(219, 141, 241);
     public Color BlueColor = new Color(140, 240, 240);
     public JTextArea textArea;
-    public JButton jButton;
+    public JButton applyTranslationResultButton;
 
     public UI_MemoryLibraryPanel() {
         setLayout(null);
@@ -17,13 +17,13 @@ public class UI_MemoryLibraryPanel extends JPanel {
         textArea.setBackground(BlueColor);
         textArea.setEditable(false);
 
-        jButton = new JButton("应用翻译结果");
+        applyTranslationResultButton = new JButton("应用翻译结果");
 
         add(textArea);
-        add(jButton);
+        add(applyTranslationResultButton);
 
         textArea.setBounds(20, 15, 460, 130);
-        jButton.setBounds(360, 150, 120, 20);
+        applyTranslationResultButton.setBounds(360, 150, 120, 20);
 
     }
 }
