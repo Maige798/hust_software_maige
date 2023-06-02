@@ -15,8 +15,6 @@ public class FileSystemWindow extends JFrame {
 
     public static void main(String[] args) {
         ProjectManager.OpenProject(ProjectManager.GetProject(0));
-        for(TranslationFile file:ProjectManager.GetProject(0).translationFileList)
-            System.out.println(file);
         FileSystemWindow win = new FileSystemWindow();
     }
 

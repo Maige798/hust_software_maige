@@ -48,6 +48,7 @@ public class UI_MemoryLibraryItemsPanel extends JPanel {
         cancelButton = new JButton("取消更改");
         cancelButton.addActionListener(e -> OnCancelButtonDown());
         saveButton = new JButton("保存更改");
+        saveButton.addActionListener(e -> OnSaveButtonDown());
 
         formerPage = new JButton("上一页");
         formerPage.addActionListener(e -> OnFormerPageButtonDown());
@@ -135,6 +136,14 @@ public class UI_MemoryLibraryItemsPanel extends JPanel {
     }
 
     private void OnSaveButtonDown() {
-        int BeginIndex = currentPageNum * tableRows;
+        int beginIndex = currentPageNum * tableRows;
+        for (int i = 0; i < tableRows && (beginIndex + i) < currentMemoryLibraryItems.length; i++) {
+            String origin = (String) table.getValueAt(i, 0);
+            String translation = (String) table.getValueAt(i, 1);
+            ProjectManager.instance.currentProject.memoryLibrary.
+                    EditItem(currentMemoryLibraryItems[beginIndex + i], origin, translation);
+        }
+        currentMemoryLibraryItems = ProjectManager.instance.currentProject.memoryLibrary.GetAllItems();
+        UpdateItemTable();
     }
 }

@@ -43,7 +43,8 @@ public class MemoryLibrary {
 
     // 编辑一条项目
     public void EditItem(TranslationItem item,String originText,String translationText){
-
+        item.origin.text=originText;
+        item.translation.text=translationText;
     }
 
     // 获取对应序号的条目
