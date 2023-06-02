@@ -74,7 +74,7 @@ public class UI_EditPanel extends JPanel {
 
         int yBegin = 55;
         for (int i = 0; i < states.length; i++) {
-            states[i].setBounds(390, yBegin + i * 40, 30, 30);
+            states[i].setBounds(385, yBegin + i * 40, 20, 30);
         }
 
         int yFirst = 55;
