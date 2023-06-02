@@ -5,6 +5,8 @@ import SystemUtil.Language;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class UI_FileListPanel extends JPanel {
@@ -12,7 +14,9 @@ public class UI_FileListPanel extends JPanel {
     public JLabel projectFileLabel = new JLabel();
     public JButton importFileButton = new JButton();
     public JButton deleteFileButton = new JButton();
-    public JTable table = new JTable(4, 1);
+
+    public List<String> fileNames=new ArrayList<>();
+    public JTable fileTable = new JTable(4, 1);
     public JButton previousPage = new JButton();
     public JTextField pageNumber = new JTextField();
     public JButton nextPage = new JButton();
@@ -55,7 +59,7 @@ public class UI_FileListPanel extends JPanel {
         this.add(projectFileLabel);
         this.add(importFileButton);
         this.add(deleteFileButton);
-        this.add(table);
+        this.add(fileTable);
         this.add(previousPage);
         this.add(nextPage);
         this.add(pageNumber);
@@ -63,7 +67,7 @@ public class UI_FileListPanel extends JPanel {
         projectFileLabel.setBounds(60, 230, 60, 30);
         importFileButton.setBounds(60, 260, 60, 20);
         deleteFileButton.setBounds(130, 260, 60, 20);
-        table.setBounds(60, 300, 180, 80);
+        fileTable.setBounds(60, 300, 180, 80);
         previousPage.setBounds(80, 400, 40, 20);
         nextPage.setBounds(170, 400, 40, 20);
         pageNumber.setBounds(130, 400, 30, 20);
@@ -121,6 +125,7 @@ public class UI_FileListPanel extends JPanel {
             Language origin = Language.GetLanguage((String) originLanguageComboBox.getSelectedItem());
             Language target = Language.GetLanguage((String) targetLanguageComboBox.getSelectedItem());
             ProjectManager.CreateProject(projectName, savePath, origin, target);
+            LoadTranslationFiles();
         }
     }
 
@@ -133,5 +138,10 @@ public class UI_FileListPanel extends JPanel {
         else if (Objects.equals(originLanguageComboBox.getSelectedItem(), Language.Default.name))
             return false;
         else return !Objects.equals(targetLanguageComboBox.getSelectedItem(), Language.Default.name);
+    }
+
+    // 将
+    private void LoadTranslationFiles(){
+
     }
 }
