@@ -13,6 +13,7 @@ import java.util.Arrays;
 
 public class UI_EditPanel extends JPanel {
     public UI_MemoryLibraryPanel memoryLibraryPanel;
+    public UI_TermLibraryPanel termLibraryPanel;
 
     public Color BlueColor = new Color(128, 255, 255);
 

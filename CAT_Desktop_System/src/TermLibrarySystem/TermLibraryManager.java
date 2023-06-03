@@ -18,28 +18,13 @@ public class TermLibraryManager {
     // 单例模式
     public static TermLibraryManager instance=new TermLibraryManager();
 
-    private TermLibraryManager(){
+    private TermLibraryManager() {
 
     }
 
     // 根据目标字符串匹配需要的术语条目
-    public static TermItem[] MatchTerms(TermLibrary library, String text) {
-        List<TermItem> matchedItems = new ArrayList<>();
-        for (TermItem item : library.itemsList) {
-            if (text.contains(item.title)) {
-                matchedItems.add(item);
-            } else {
-                for (Sentence sentence : item.termList) {
-                    if (text.contains(sentence.text)) {
-                        matchedItems.add(item);
-                        break;
-                    }
-                }
-            }
-        }
-        TermItem[] match = new TermItem[matchedItems.size()];
-        matchedItems.toArray(match);
-        return match;
+    public static String MatchTerms(TermLibrary library, String text) {
+        return library.Match(text);
     }
 
     // 创建一个术语库，生成相应文件，返回其对象
@@ -76,9 +61,9 @@ public class TermLibraryManager {
         return library;
     }
 
-    public static TermLibrary LoadLibrary(String save){
+    public static TermLibrary LoadLibrary(String save) {
         CAT_FileItem[] items = CAT_FileController.ReadFile(save);
-        TermLibrary library = new TermLibrary(null,null);
+        TermLibrary library = new TermLibrary(null, null);
         library.SetUpLibrary(items);
         instance.termLibraryList.add(library);
         return library;
