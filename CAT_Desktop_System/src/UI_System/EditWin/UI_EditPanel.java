@@ -33,6 +33,7 @@ public class UI_EditPanel extends JPanel {
     public JButton startMachineTranslation;
     public JButton formerPageButton;
     public JButton nextPageButton;
+    public JButton openButton;
 
     public UI_EditPanel() {
 
@@ -79,6 +80,7 @@ public class UI_EditPanel extends JPanel {
             });
         }
 
+        openButton = new JButton("打开");
         confirmTranslationButton = new JButton("确认翻译");
         startMachineTranslation = new JButton("开始机械翻译");
 
@@ -98,6 +100,7 @@ public class UI_EditPanel extends JPanel {
             add(textField);
         }
 
+        add(openButton);
         add(confirmTranslationButton);
         add(startMachineTranslation);
         add(formerPageButton);
@@ -123,6 +126,7 @@ public class UI_EditPanel extends JPanel {
             texts[i].setBounds(415, yFirst + (i - 1) * 20, 320, 30);
         }
 
+        openButton.setBounds(415, 15, 50, 20);
         confirmTranslationButton.setBounds(485, 15, 100, 20);
         confirmTranslationButton.addActionListener(e -> OnConfirmTranslationButtonDown());
         startMachineTranslation.setBounds(605, 15, 130, 20);
