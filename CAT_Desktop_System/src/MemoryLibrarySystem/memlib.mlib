@@ -6,6 +6,11 @@
 	<save> D:\hust_software_maige\CAT_Desktop_System\src\MemoryLibrarySystem\memlib.mlib
 }
 
+@Language {
+	<ori> Chinese
+	<tran> English
+}
+
 @TranItem {
 	<ori> [Chinese] 在读到江姐宁死不屈也要反抗时的片段，
 	<tran> [English] When I read her story,

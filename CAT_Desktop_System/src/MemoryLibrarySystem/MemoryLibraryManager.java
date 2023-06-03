@@ -2,6 +2,7 @@ package MemoryLibrarySystem;
 
 import SystemUtil.CAT_FileController;
 import SystemUtil.CAT_FileItem;
+import SystemUtil.Language;
 
 import java.io.File;
 import java.io.FileReader;
@@ -25,8 +26,8 @@ public class MemoryLibraryManager {
     }
 
     // 新建一个记忆库文件，并返回该文件的对象
-    public static MemoryLibrary CreateMemoryLibrary(String name,String save) {
-        MemoryLibrary library=new MemoryLibrary(name,save);
+    public static MemoryLibrary CreateMemoryLibrary(String name, String save, Language origin,Language translation) {
+        MemoryLibrary library = new MemoryLibrary(name, save + name + ".mlib", origin, translation);
         File outFile = new File(save + name + ".mlib");
         try {
             if (!outFile.createNewFile()) {
@@ -36,6 +37,7 @@ public class MemoryLibraryManager {
             e.printStackTrace();
         }
         instance.memoryLibraryList.add(library);
+        SaveLibrary(library);
         return library;
     }
 

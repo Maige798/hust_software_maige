@@ -8,6 +8,8 @@ import java.util.List;
 public class MemoryLibrary {
     public String name; // 记忆库的名称
     public String save; // 记忆库的存储路径
+    public Language originLanguage; // 原文语言
+    public Language translationLanguage; // 译文语言
     public List<TranslationItem> itemsList = new ArrayList<>();
 
     // 构造方法
@@ -16,9 +18,11 @@ public class MemoryLibrary {
         this.name = null;
     }
 
-    public MemoryLibrary(String name,String save) {
+    public MemoryLibrary(String name,String save,Language originLanguage,Language translationLanguage) {
         this.name = name;
         this.save = save;
+        this.originLanguage=originLanguage;
+        this.translationLanguage=translationLanguage;
     }
 
     // 添加一条翻译条目
@@ -243,6 +247,16 @@ public class MemoryLibrary {
             switch (item.label) {
                 case "Name" -> this.name = item.GetContain(0);
                 case "Save" -> this.save = item.GetContain(0);
+                case "Language" -> {
+                    if (item.GetItem(0).equals("ori"))
+                        this.originLanguage = Language.GetLanguage(item.GetContain(0));
+                    else
+                        System.err.println("Expected: ori, wrong in TranItem:" + item.GetItem(0));
+                    if (item.GetItem(1).equals("tran"))
+                        this.translationLanguage = Language.GetLanguage(item.GetContain(1));
+                    else
+                        System.err.println("Expected: tran, wrong in TranItem:" + item.GetItem(1));
+                }
                 case "TranItem" -> {
                     TranslationItem translationItem = new TranslationItem();
                     if (item.GetItem(0).equals("ori"))
@@ -286,6 +300,8 @@ public class MemoryLibrary {
         StringBuffer buffer = new StringBuffer();
         buffer.append("@Name {\r\n\t<name> ").append(this.name).append("\r\n}\r\n\r\n");
         buffer.append("@Save {\r\n\t<save> ").append(this.save).append("\r\n}\r\n\r\n");
+        buffer.append("@Language {\r\n\t").append("<ori> ").append(this.originLanguage).append("\r\n");
+        buffer.append("\t<tran> ").append(this.translationLanguage).append("\r\n}\r\n\r\n");
         for (TranslationItem item : this.itemsList) {
             if (item.origin.language.EqualsTo(Language.Default)) {
                 switch (item.origin.text) {
