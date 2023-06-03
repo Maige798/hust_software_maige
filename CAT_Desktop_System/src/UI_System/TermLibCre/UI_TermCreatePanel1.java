@@ -16,7 +16,7 @@ public class UI_TermCreatePanel1 extends JPanel {
     public TextField nameField;
     public TextField saveField;
     public JButton browseButton;
-    public List<String> filePaths=new ArrayList<>();
+    public List<String> filePaths = new ArrayList<>();
 
     public JButton createButton;
 
@@ -40,7 +40,7 @@ public class UI_TermCreatePanel1 extends JPanel {
                 if (option == JFileChooser.APPROVE_OPTION) {
                     filePaths.add(fileChooser.getSelectedFile().getAbsolutePath());
                     System.out.println(filePaths.get(0));
-                    UpdateSavePathButton(filePaths);
+                    UpdateSavePathButton();
                 }
             }
         });
@@ -65,7 +65,7 @@ public class UI_TermCreatePanel1 extends JPanel {
         createButton.addActionListener(e -> OnCreateButtonDown());
     }
 
-    private void UpdateSavePathButton(List<String> fileNames) {
+    private void UpdateSavePathButton() {
         saveField.setText(filePaths.get(filePaths.size() - 1));
     }
 

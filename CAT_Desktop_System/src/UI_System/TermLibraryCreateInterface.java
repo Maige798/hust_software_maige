@@ -1,5 +1,6 @@
 package UI_System;
 
+import ProjectSystem.ProjectManager;
 import UI_System.TermLibCre.UI_TermCreatePanel1;
 
 import javax.swing.*;
@@ -25,7 +26,7 @@ public class TermLibraryCreateInterface extends JFrame {
         setResizable(false);
 
         //创建上方文本框
-        JPanel panel1=new UI_TermCreatePanel1();
+        JPanel panel1 = new UI_TermCreatePanel1();
 
         setContentPane(panel1);
 
@@ -34,7 +35,7 @@ public class TermLibraryCreateInterface extends JFrame {
     }
 
     public static void main(String[] args) {
-        TermLibraryCreateInterface me=new TermLibraryCreateInterface();
+        ProjectManager.OpenProject(ProjectManager.GetProject(1));
+        TermLibraryCreateInterface me = new TermLibraryCreateInterface();
     }
-
 }

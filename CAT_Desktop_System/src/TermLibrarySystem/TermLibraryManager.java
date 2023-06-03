@@ -39,6 +39,7 @@ public class TermLibraryManager {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        SaveLibrary(termLibrary);
         return termLibrary;
     }
 
