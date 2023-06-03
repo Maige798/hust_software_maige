@@ -18,6 +18,7 @@ public class UI_EditWin_contentPanel extends JPanel {
         TermLibraryPanel = new UI_TermLibraryPanel();
         EditPanel = new UI_EditPanel();
         EditPanel.memoryLibraryPanel=MemoryLibraryPanel;
+        EditPanel.termLibraryPanel=TermLibraryPanel;
         MemoryLibraryPanel.editPanel=EditPanel;
 
         setLayout(null);
