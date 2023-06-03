@@ -27,8 +27,14 @@ public class TermLibrary {
         return buffer.toString();
     }
 
-    // 添加一条术语条目
+    // 添加一条术语条目，若存在相同title则合并术语条目
     public void AddItem(TermItem termItem) {
+        for (TermItem item : itemsList) {
+            if (item.title.equals(termItem.title)) {
+                item.Merge(termItem);
+                return;
+            }
+        }
         itemsList.add(termItem);
     }
 

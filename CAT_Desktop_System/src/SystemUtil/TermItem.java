@@ -59,4 +59,20 @@ public class TermItem {
         System.err.println("Language:" + language + " doesn't exist in TermItem:" + this.title);
         return null;
     }
+
+    // 将另外一个TermItem的内容以高优先级合并入此TermItem
+    public void Merge(TermItem other) {
+        for (Sentence otherTerms : other.termList) {
+            boolean hasSameLanguage = false;
+            for (Sentence terms : this.termList) {
+                if (terms.language.EqualsTo(otherTerms.language)) {
+                    terms.text = otherTerms.text;
+                    hasSameLanguage = true;
+                    break;
+                }
+            }
+            if (!hasSameLanguage)
+                AddTerm(otherTerms);
+        }
+    }
 }
