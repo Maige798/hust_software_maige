@@ -1,5 +1,6 @@
 package UI_System.MemLibWin;
 
+import MemoryLibrarySystem.MemoryLibraryManager;
 import ProjectSystem.ProjectManager;
 import SystemUtil.TranslationItem;
 
@@ -122,7 +123,7 @@ public class UI_MemoryLibraryItemsPanel extends JPanel {
         }
     }
 
-    private void OnCancelButtonDown(){
+    private void OnCancelButtonDown() {
         UpdateItemTable();
     }
 
@@ -130,7 +131,8 @@ public class UI_MemoryLibraryItemsPanel extends JPanel {
         int index = table.getSelectedRow() + currentPageNum * tableRows;
         if (index < currentMemoryLibraryItems.length) {
             ProjectManager.instance.currentProject.memoryLibrary.RemoveItem(currentMemoryLibraryItems[index]);
-            currentMemoryLibraryItems=ProjectManager.instance.currentProject.memoryLibrary.GetAllItems();
+            MemoryLibraryManager.SaveLibrary(ProjectManager.instance.currentProject.memoryLibrary);
+            currentMemoryLibraryItems = ProjectManager.instance.currentProject.memoryLibrary.GetAllItems();
             UpdateItemTable();
         }
     }

@@ -27,11 +27,6 @@
 }
 
 @TranItem {
-	<ori> [Chinese] 在我读《红岩》之前，
-	<tran> [English] before I read this book,
-}
-
-@TranItem {
 	<ori> [Chinese] 从未如此清晰的了解过那段狰狞的岁月，
 	<tran> [English] I have never known about that period of time.
 }
@@ -39,10 +34,5 @@
 @TranItem {
 	<ori> [Chinese] 只是隐约的知道些事情，
 	<tran> [English] only to know something unclearly,
-}
-
-@TranItem {
-	<ori> [Chinese] 并未放在心上。
-	<tran> [English] and never put it into my heart.
 }
 
