@@ -2,6 +2,8 @@ package UI_System;
 
 import javax.swing.*;
 import java.awt.*;
+
+import ProjectSystem.ProjectManager;
 import UI_System.TermAddWin.UI_ContentPanel;
 
 public class TermAddWindow extends JFrame {
@@ -27,6 +29,7 @@ public class TermAddWindow extends JFrame {
     }
 
     public static void main(String[] args) {
+        ProjectManager.OpenProject(ProjectManager.GetProject(1));
         TermAddWindow me = new TermAddWindow();
     }
 }

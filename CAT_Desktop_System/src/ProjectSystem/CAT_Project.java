@@ -111,8 +111,10 @@ public class CAT_Project {
         return buffer.toString();
     }
 
-    public void AddTermToAllTermLibraries(TermItem item){
-        for(TermLibrary library:termLibraryList)
+    public void AddTermToAllTermLibraries(TermItem item) {
+        for (TermLibrary library : termLibraryList) {
             library.AddItem(item);
+            TermLibraryManager.SaveLibrary(library);
+        }
     }
 }
