@@ -1,14 +1,9 @@
 package UI_System.TermLibInpu;
 
-import MemoryLibrarySystem.MemoryLibraryManager;
-import ProjectSystem.ProjectManager;
-import UI_System.MemoryLibraryImportInterWin.UI_MemoryLibraryImportPanel;
+import TermLibrarySystem.TermLibraryManager;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.util.ArrayList;
-import java.util.List;
 
 public class UI_TermLibInputContent extends JPanel {
     JLabel memoryLibraryImportLabel = new JLabel();
@@ -16,11 +11,10 @@ public class UI_TermLibInputContent extends JPanel {
     TextField createTextField = new TextField();
 
     JButton browseButton = new JButton();
-    java.util.List<String> memoryLibPaths = new ArrayList<>();
-    JButton newCreateButton = new JButton();
+
+    JButton createButton = new JButton();
 
     JButton importButton = new JButton();
-
 
     public UI_TermLibInputContent() {
         this.setLayout(null);
@@ -38,10 +32,10 @@ public class UI_TermLibInputContent extends JPanel {
         browseButton.setBounds(425, 130, 50, 30);
 
 
-        newCreateButton.setText("新建");
-        this.add(newCreateButton);
-        newCreateButton.setMargin(new Insets(0, 0, 0, 0));
-        newCreateButton.setBounds(130, 250, 100, 30);
+        createButton.setText("新建");
+        this.add(createButton);
+        createButton.setMargin(new Insets(0, 0, 0, 0));
+        createButton.setBounds(130, 250, 100, 30);
 
         importButton.setText("导入");
         this.add(importButton);
@@ -49,5 +43,9 @@ public class UI_TermLibInputContent extends JPanel {
         importButton.setBounds(300, 250, 100, 30);
     }
 
-
+    private void OnImportButtonDown(){
+        if(!createTextField.getText().equals("")) {
+            TermLibraryManager.LoadLibrary(createTextField.getText());
+        }
+    }
 }
