@@ -1,5 +1,7 @@
 package UI_System.TermLibInpu;
 
+import ProjectSystem.ProjectManager;
+import TermLibrarySystem.TermLibrary;
 import TermLibrarySystem.TermLibraryManager;
 
 import javax.swing.*;
@@ -41,11 +43,13 @@ public class UI_TermLibInputContent extends JPanel {
         this.add(importButton);
         importButton.setMargin(new Insets(0, 0, 0, 0));
         importButton.setBounds(300, 250, 100, 30);
+        importButton.addActionListener(e -> OnImportButtonDown());
     }
 
-    private void OnImportButtonDown(){
-        if(!createTextField.getText().equals("")) {
-            TermLibraryManager.LoadLibrary(createTextField.getText());
+    private void OnImportButtonDown() {
+        if (!createTextField.getText().equals("")) {
+            TermLibrary library = TermLibraryManager.LoadLibrary(createTextField.getText());
+            ProjectManager.instance.currentProject.AddTermLibrary(library);
         }
     }
 }
