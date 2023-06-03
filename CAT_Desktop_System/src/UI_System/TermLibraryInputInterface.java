@@ -1,34 +1,33 @@
 package UI_System;
 
-import UI_System.TermLibInput.UI_ContentPanel;
+import ProjectSystem.ProjectManager;
+import UI_System.TermLibInpu.UI_TermLibInputContent;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class TermLibraryInputInterface extends JFrame {
-    //创建。。。宽200，高50，x:100,y:50(一个导航栏高）
-    //表格：单元格宽300，高25
-    //按钮：宽50，高25，x：100+200，y:50+50+25*3+20 ，x:100+300+50,y:（中间宽度两个单元格高）
-    public TermLibraryInputInterface() {
+    TermLibraryInputInterface() {
         init();
     }
 
     public void init() {
         //窗口设置
-        setSize(800, 500);
-        setTitle("术语库导入");
+        setSize(500, 350);
+        setTitle("记忆库导入");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        //setBackground(Color.decode("#EAECF2"));
-        setResizable(false);
+        setBackground(Color.decode("#EAECF2"));
+        setResizable(false);    //窗口设置
 
-        //创建内容面板
-        JPanel ContentPanel = new UI_ContentPanel();
+        JPanel panel = new UI_TermLibInputContent();
 
-        setContentPane(ContentPanel);
+        setContentPane(panel);
         setLocationRelativeTo(null);
         setVisible(true);
     }
 
     public static void main(String[] args) {
+       // ProjectManager.OpenProject(ProjectManager.GetProject(1));
         TermLibraryInputInterface me = new TermLibraryInputInterface();
     }
 }
