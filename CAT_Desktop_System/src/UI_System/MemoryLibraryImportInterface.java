@@ -1,26 +1,25 @@
 package UI_System;
 
+import ProjectSystem.ProjectManager;
 import UI_System.MemoryLibraryImportInterWin.UI_MemoryLibraryImportPanel;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class MemoryLibraryImportInterface extends JFrame {
-    MemoryLibraryImportInterface()
-    {
+    MemoryLibraryImportInterface() {
         init();
     }
 
-    public void init()
-    {
+    public void init() {
         //窗口设置
-        setSize(500,350);
+        setSize(500, 350);
         setTitle("记忆库导入");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBackground(Color.decode("#EAECF2"));
         setResizable(false);    //窗口设置
 
-        JPanel panel=new UI_MemoryLibraryImportPanel();
+        JPanel panel = new UI_MemoryLibraryImportPanel();
 
         setContentPane(panel);
         setLocationRelativeTo(null);
@@ -28,6 +27,7 @@ public class MemoryLibraryImportInterface extends JFrame {
     }
 
     public static void main(String[] args) {
-        MemoryLibraryImportInterface me=new MemoryLibraryImportInterface();
+        ProjectManager.OpenProject(ProjectManager.GetProject(1));
+        MemoryLibraryImportInterface me = new MemoryLibraryImportInterface();
     }
 }
