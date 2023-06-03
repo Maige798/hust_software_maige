@@ -50,7 +50,7 @@
 
 @TranItem {
 	<ori> [Chinese] 我不想了解过也不想试图去了解，
-	<blank>
+	<tran> [English] I have never known about that period of time.
 }
 
 @TranItem {
@@ -65,7 +65,7 @@
 
 @TranItem {
 	<ori> [Chinese] 那段狰狞的岁月之前的我竟然浑然不知。
-	<blank>
+	<tran> [English] I have never known about that period of time.
 }
 
 @TranItem {

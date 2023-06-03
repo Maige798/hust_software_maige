@@ -1,9 +1,14 @@
 package UI_System.EditWin;
 
+import UI_System.EditorWindow;
+import UI_System.MemLibWin.UI_MemoryLibraryItemsPanel;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class UI_MemoryLibraryPanel extends JPanel {
+    public UI_EditPanel editPanel;
+
     public Color PinkColor = new Color(219, 141, 241);
     public Color BlueColor = new Color(140, 240, 240);
     public JTextArea textArea;
@@ -19,6 +24,7 @@ public class UI_MemoryLibraryPanel extends JPanel {
         textArea.setEditable(false);
 
         applyTranslationResultButton = new JButton("应用翻译结果");
+        applyTranslationResultButton.addActionListener(e -> OnApplyTranslationResultButtonDown());
 
         add(textArea);
         add(applyTranslationResultButton);
@@ -29,5 +35,14 @@ public class UI_MemoryLibraryPanel extends JPanel {
 
     public void SetTextArea(String message) {
         textArea.setText(message);
+    }
+
+    public void OnApplyTranslationResultButtonDown() {
+        editPanel.UseTranslateResult(GetPrueMatchedMessage());
+    }
+
+    private String GetPrueMatchedMessage() {
+        String[] results = textArea.getText().split("\n");
+        return results[results.length - 1];
     }
 }

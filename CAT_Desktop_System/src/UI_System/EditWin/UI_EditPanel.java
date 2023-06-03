@@ -201,4 +201,19 @@ public class UI_EditPanel extends JPanel {
         memoryLibraryPanel.SetTextArea(
                 ProjectManager.instance.currentProject.memoryLibrary.Match(translationItems[index].origin.text));
     }
+
+    public void UseTranslateResult(String message) {
+        if (focusNum != -1) {
+            int index = focusNum + itemFieldNum * currentPageNum;
+            ProjectManager.instance.currentTranslationFile.TranslateParagraph(
+                    translationItems[index], message);
+            translationItems = ProjectManager.instance.currentTranslationFile.GetPureTranslationItem();
+            if (ProjectManager.instance.currentProject.memoryLibrary != null) {
+                ProjectManager.instance.currentProject.memoryLibrary.AddItem(translationItems[index]);
+                MemoryLibraryManager.SaveLibrary(ProjectManager.instance.currentProject.memoryLibrary);
+            }
+            UpdateItemFields();
+            TranslationFileManager.SaveFile(ProjectManager.instance.currentTranslationFile);
+        }
+    }
 }
