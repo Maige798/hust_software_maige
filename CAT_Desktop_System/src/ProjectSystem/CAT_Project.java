@@ -6,6 +6,7 @@ import MemoryLibrarySystem.MemoryLibrary;
 import MemoryLibrarySystem.MemoryLibraryManager;
 import SystemUtil.CAT_FileItem;
 import SystemUtil.Language;
+import SystemUtil.TermItem;
 import SystemUtil.TranslationItem;
 import TermLibrarySystem.TermLibrary;
 import TermLibrarySystem.TermLibraryManager;
@@ -108,5 +109,10 @@ public class CAT_Project {
         for (TermLibrary library : termLibraryList)
             buffer.append(library.Match(text));
         return buffer.toString();
+    }
+
+    public void AddTermToAllTermLibraries(TermItem item){
+        for(TermLibrary library:termLibraryList)
+            library.AddItem(item);
     }
 }
