@@ -13,6 +13,8 @@ public class UI_TermCreatePanel1 extends JPanel {
     public JButton browseButton;
     public List<String> filePaths;
 
+    public JButton createButton;
+
     public UI_TermCreatePanel1() {
         this.setLayout(null);
 
@@ -22,6 +24,7 @@ public class UI_TermCreatePanel1 extends JPanel {
         browseButton = new JButton("浏览");
         text1 = new TextField();
         text2 = new TextField();
+        createButton=new JButton("完成创建");
 
         //创建监听器
         browseButton.addActionListener(new AbstractAction() {
@@ -42,12 +45,14 @@ public class UI_TermCreatePanel1 extends JPanel {
         this.add(text1);
         this.add(text2);
         this.add(browseButton);
+        this.add(createButton);
 
         termLibNameLabel.setBounds(50, 50, 75, 25);
         text1.setBounds(50, 75, 300, 25);
         savePathLabel.setBounds(50, 125, 75, 25);
         text2.setBounds(50, 150, 300, 25);
         browseButton.setBounds(360, 150, 75, 25);
+        createButton.setBounds(200,220,100,25);
     }
 
     private void UpdateSavePathButton(List<String> fileNames) {

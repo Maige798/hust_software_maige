@@ -18,7 +18,7 @@ public class TermLibraryCreateInterface extends JFrame {
     }
 
     public void init() {
-        setSize(500, 275);
+        setSize(500, 300);
         setTitle("术语库创建");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         //setBackground(Color.decode("#EAECF2"));
