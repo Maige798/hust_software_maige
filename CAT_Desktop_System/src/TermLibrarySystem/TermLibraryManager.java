@@ -28,9 +28,9 @@ public class TermLibraryManager {
     }
 
     // 创建一个术语库，生成相应文件，返回其对象
-    public static TermLibrary CreateTermLibrary(String name,String save){
-        TermLibrary termLibrary=new TermLibrary(name,save);
-        File outFile=new File(save+name+".tlib");
+    public static TermLibrary CreateTermLibrary(String name,String save) {
+        TermLibrary termLibrary = new TermLibrary(name, save + name + ".tlib");
+        File outFile = new File(save + name + ".tlib");
         instance.termLibraryList.add(termLibrary);
         try {
             if (!outFile.createNewFile()) {
