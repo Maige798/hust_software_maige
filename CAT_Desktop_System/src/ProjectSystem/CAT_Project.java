@@ -102,4 +102,11 @@ public class CAT_Project {
     public TranslationFile GetTranslationFile(int num){
         return translationFileList.get(num);
     }
+
+    public String GetTermLibraryMessages(String text) {
+        StringBuffer buffer = new StringBuffer();
+        for (TermLibrary library : termLibraryList)
+            buffer.append(library.Match(text));
+        return buffer.toString();
+    }
 }
