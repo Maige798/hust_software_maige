@@ -7,6 +7,7 @@ import TermLibrarySystem.TermLibraryManager;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
 import java.util.List;
 
 public class UI_TermCreatePanel1 extends JPanel {
@@ -15,7 +16,7 @@ public class UI_TermCreatePanel1 extends JPanel {
     public TextField nameField;
     public TextField saveField;
     public JButton browseButton;
-    public List<String> filePaths;
+    public List<String> filePaths=new ArrayList<>();
 
     public JButton createButton;
 

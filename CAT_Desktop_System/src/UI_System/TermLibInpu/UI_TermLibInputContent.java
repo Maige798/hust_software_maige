@@ -3,9 +3,13 @@ package UI_System.TermLibInpu;
 import ProjectSystem.ProjectManager;
 import TermLibrarySystem.TermLibrary;
 import TermLibrarySystem.TermLibraryManager;
+import UI_System.TermLibCre.UI_TermCreatePanel1;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UI_TermLibInputContent extends JPanel {
     JLabel memoryLibraryImportLabel = new JLabel();
@@ -17,6 +21,9 @@ public class UI_TermLibInputContent extends JPanel {
     JButton createButton = new JButton();
 
     JButton importButton = new JButton();
+
+    public List<String> filePaths=new ArrayList<>();
+
 
     public UI_TermLibInputContent() {
         this.setLayout(null);
@@ -32,6 +39,18 @@ public class UI_TermLibInputContent extends JPanel {
         this.add(browseButton);
         browseButton.setMargin(new Insets(0, 0, 0, 0));
         browseButton.setBounds(425, 130, 50, 30);
+        browseButton.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser fileChooser = new JFileChooser();
+                int option = fileChooser.showOpenDialog(new UI_TermLibInputContent());
+                if (option == JFileChooser.APPROVE_OPTION) {
+                    filePaths.add(fileChooser.getSelectedFile().getAbsolutePath());
+                    System.out.println(filePaths.get(0));
+                    UpdateSavePathButton(filePaths);
+                }
+            }
+        });
 
 
         createButton.setText("新建");
@@ -51,5 +70,9 @@ public class UI_TermLibInputContent extends JPanel {
             TermLibrary library = TermLibraryManager.LoadLibrary(createTextField.getText());
             ProjectManager.instance.currentProject.AddTermLibrary(library);
         }
+    }
+
+    private void UpdateSavePathButton(List<String> fileNames) {
+        createTextField.setText(filePaths.get(filePaths.size() - 1));
     }
 }
