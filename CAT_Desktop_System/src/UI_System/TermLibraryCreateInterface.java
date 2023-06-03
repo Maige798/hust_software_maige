@@ -27,7 +27,6 @@ public class TermLibraryCreateInterface extends JFrame {
         //创建上方文本框
         JPanel panel1=new UI_TermCreatePanel1();
 
-
         setContentPane(panel1);
 
         setLocationRelativeTo(null);
