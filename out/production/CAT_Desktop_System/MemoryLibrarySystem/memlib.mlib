@@ -6,33 +6,33 @@
 	<save> D:\hust_software_maige\CAT_Desktop_System\src\MemoryLibrarySystem\memlib.mlib
 }
 
-@TranItem {
-	<ori> [Chinese] 小牛马
-	<tran> [English] big cow horse
+@Language {
+	<ori> Chinese
+	<tran> English
 }
 
 @TranItem {
-	<ori> [Chinese] 反恐精英全球总决赛冠军
-	<tran> [English] Junit
+	<ori> [Chinese] 在读到江姐宁死不屈也要反抗时的片段，
+	<tran> [English] When I read her story,
 }
 
 @TranItem {
-	<ori> [Chinese] 虫族领袖
-	<tran> [English] SingBan
+	<ori> [Chinese] 心，
+	<tran> [English] my heart,
 }
 
 @TranItem {
-	<ori> [Chinese] 诸葛呼吸
-	<tran> [English] HooXi
+	<ori> [Chinese] 也在不知不觉中有些隐隐作痛，
+	<tran> [English] hurts without being noticed.
 }
 
 @TranItem {
-	<ori> [Chinese] 夜店小王子
-	<tran> [English] NiKo
+	<ori> [Chinese] 从未如此清晰的了解过那段狰狞的岁月，
+	<tran> [English] I have never known about that period of time.
 }
 
 @TranItem {
-	<ori> [Chinese] 人族领袖
-	<tran> [English] Li Ziyang
+	<ori> [Chinese] 只是隐约的知道些事情，
+	<tran> [English] only to know something unclearly,
 }
 
