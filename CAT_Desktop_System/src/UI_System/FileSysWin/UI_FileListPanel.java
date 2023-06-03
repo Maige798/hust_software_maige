@@ -2,13 +2,11 @@ package UI_System.FileSysWin;
 
 import FileSystem.TranslationFile;
 import ProjectSystem.ProjectManager;
-import SystemUtil.TranslationItem;
 
 import javax.swing.*;
 import javax.swing.table.TableColumn;
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class UI_FileListPanel extends JPanel {
@@ -26,7 +24,8 @@ public class UI_FileListPanel extends JPanel {
     public JTable table;
     public JButton formerPage;
     public JButton nextPage;
-    public JButton open;
+
+    public JButton openButton;
 
     public int currentPageNum = 0;
 
@@ -53,34 +52,28 @@ public class UI_FileListPanel extends JPanel {
         formerPage.addActionListener(e -> OnFormerPageButtonDown());
         nextPage = new JButton("下一页");
         nextPage.addActionListener(e -> OnNextPageButtonDown());
-        open=new JButton("打开");
+
+        openButton = new JButton("打开");
+        openButton.addActionListener(e -> OnOpenFileButtonDown());
 
         add(label);
         add(bookPrint);
         add(table);
         add(formerPage);
         add(nextPage);
-        add(open);
+        add(openButton);
 
         label.setBounds(10, 5, 200, 40);
         bookPrint.setBounds(615, 370, 40, 20);
         table.setBounds(30, 50, 740, 300);
         formerPage.setBounds(500, 370, 90, 20);
         nextPage.setBounds(655, 370, 90, 20);
-        open.setBounds(280,370,80,20);
+        openButton.setBounds(280, 370, 80, 20);
 
-        if(ProjectManager.instance.currentProject!=null) {
+        if (ProjectManager.instance.currentProject != null) {
             for (TranslationFile file : ProjectManager.instance.currentProject.translationFileList) {
                 names.add(file.name);
                 saves.add(file.save);
-            }
-            for(int i=0;i<20;i++){
-                names.add("abc");
-                saves.add("efg");
-            }
-            for(int i=0;i<20;i++){
-                names.add("123");
-                saves.add("456");
             }
             UpdateFileTable();
         }
@@ -125,6 +118,14 @@ public class UI_FileListPanel extends JPanel {
         if (currentPageNum < names.size() / tableRow) {
             currentPageNum++;
             UpdateFileTable();
+        }
+    }
+
+    private void OnOpenFileButtonDown() {
+        int index = currentPageNum * tableRow + table.getSelectedRow();
+        if (index < names.size()) {
+            ProjectManager.TranslateFile(ProjectManager.instance.currentProject.GetTranslationFile(index));
+            System.out.println(ProjectManager.instance.currentTranslationFile);
         }
     }
 }

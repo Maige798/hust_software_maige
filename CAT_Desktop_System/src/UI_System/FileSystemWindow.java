@@ -14,7 +14,7 @@ public class FileSystemWindow extends JFrame {
     public JMenuBar menuBar;
 
     public static void main(String[] args) {
-        ProjectManager.OpenProject(ProjectManager.GetProject(0));
+        ProjectManager.OpenProject(ProjectManager.GetProject(1));
         FileSystemWindow win = new FileSystemWindow();
     }
 

@@ -34,9 +34,6 @@ public class TermLibraryCreateInterface extends JFrame {
         setVisible(true);
     }
 
-
-
-
     public static void main(String[] args) {
         TermLibraryCreateInterface me=new TermLibraryCreateInterface();
     }
