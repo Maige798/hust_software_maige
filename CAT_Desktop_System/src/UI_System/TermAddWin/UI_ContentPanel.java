@@ -32,10 +32,9 @@ public class UI_ContentPanel extends JPanel {
 
         text1.setBounds(25,50,150,25);
         text2.setBounds(25,100,150,25);
-        languageLable.setBounds(200,50,25,25);
-        comboBox.setBounds(225,50,75,25);
-        confirm.setBounds(140,150,40,25);
-
+        languageLable.setBounds(195,100,25,25);
+        comboBox.setBounds(225,100,100,25);
+        confirm.setBounds(225,50,100,25);
     }
 
 
