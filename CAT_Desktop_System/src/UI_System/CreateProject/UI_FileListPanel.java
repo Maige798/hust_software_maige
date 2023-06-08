@@ -5,7 +5,6 @@ import FileSystem.TranslationFileManager;
 import ProjectSystem.CAT_Project;
 import ProjectSystem.ProjectManager;
 import SystemUtil.Language;
-import SystemUtil.TranslationItem;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,15 +14,18 @@ import java.util.List;
 import java.util.Objects;
 
 public class UI_FileListPanel extends JPanel {
+    public static final int tableSize = 4;
+
     //左下
     public JLabel projectFileLabel = new JLabel();
     public JButton importFileButton = new JButton();
     public JButton deleteFileButton = new JButton();
 
+    public int currentPage = 0;
     public List<String> fileNames = new ArrayList<>();
     public List<String> filePaths = new ArrayList<>();
     public JTable fileTable = new JTable(4, 1);
-    public JButton previousPage = new JButton();
+    public JButton formerPage = new JButton();
     public JTextField pageNumber = new JTextField();
     public JButton nextPage = new JButton();
     //左上
@@ -46,7 +48,6 @@ public class UI_FileListPanel extends JPanel {
 
     public UI_FileListPanel() {
         this.setLayout(null);
-        // this.setBackground(Color.blue);
 //左下
         projectFileLabel.setText("项目文件");
         importFileButton.setText("导入文件");
@@ -58,7 +59,7 @@ public class UI_FileListPanel extends JPanel {
                 if (option == JFileChooser.APPROVE_OPTION) {
                     fileNames.add(fileChooser.getSelectedFile().getAbsolutePath());
                     System.out.println(fileNames.get(fileNames.size() - 1));
-                    UpdateTable(fileNames);
+                    UpdateTable();
                 }
             }
         });
@@ -77,12 +78,14 @@ public class UI_FileListPanel extends JPanel {
         });
 
 
-        previousPage.setText("上一页");
-        previousPage.setFont(new Font(null, Font.PLAIN, 10));
-        previousPage.setMargin(new Insets(0, 0, 0, 0));
+        formerPage.setText("上一页");
+        formerPage.setFont(new Font(null, Font.PLAIN, 10));
+        formerPage.setMargin(new Insets(0, 0, 0, 0));
+        formerPage.addActionListener(e -> OnFormerPageButtonDown());
         nextPage.setText("下一页");
         nextPage.setFont(new Font(null, Font.PLAIN, 10));
         nextPage.setMargin(new Insets(0, 0, 0, 0));
+        nextPage.addActionListener(e -> OnNextPageButtonDown());
 
         pageNumber.setHorizontalAlignment(JTextField.CENTER);
 
@@ -90,7 +93,7 @@ public class UI_FileListPanel extends JPanel {
         this.add(importFileButton);
         this.add(deleteFileButton);
         this.add(fileTable);
-        this.add(previousPage);
+        this.add(formerPage);
         this.add(nextPage);
         this.add(pageNumber);
 
@@ -98,10 +101,8 @@ public class UI_FileListPanel extends JPanel {
         importFileButton.setBounds(60, 260, 60, 20);
         deleteFileButton.setBounds(130, 260, 60, 20);
         fileTable.setBounds(60, 300, 180, 80);
-        //设置table的内容不可编辑
-        // fileTable.setEnabled(false);
 
-        previousPage.setBounds(80, 400, 40, 20);
+        formerPage.setBounds(80, 400, 40, 20);
         nextPage.setBounds(170, 400, 40, 20);
         pageNumber.setBounds(130, 400, 30, 20);
 
@@ -141,7 +142,7 @@ public class UI_FileListPanel extends JPanel {
                 if (option == JFileChooser.APPROVE_OPTION) {
                     filePaths.add(fileChooser.getSelectedFile().getAbsolutePath());
                     System.out.println(filePaths.get(0));
-                    UpdateSavePathButton(filePaths);
+                    UpdateSavePathButton();
                 }
             }
         });
@@ -162,6 +163,7 @@ public class UI_FileListPanel extends JPanel {
         goalLabel.setBounds(400, 150, 50, 30);
         originLanguageComboBox.setBounds(450, 60, 100, 30);
         targetLanguageComboBox.setBounds(450, 150, 100, 30);
+        UpdateTable();
     }
 
     private void OnCreateButtonDown() {
@@ -202,20 +204,45 @@ public class UI_FileListPanel extends JPanel {
         return files[files.length - 1];
     }
 
-    private void UpdateTable(List<String> fileNames) {
-        for (int i = 0; i < 4; i++)
-            fileTable.setValueAt("", i, 0);
-
-        for (int i = 0; i < fileNames.size(); i++)
-            fileTable.setValueAt(fileNames.get(i), i, 0);
+    // 获得当前页的的全部名称
+    private String[] GetCurrentPageNames() {
+        String[] names = new String[tableSize];
+        for (int i = 0; i < tableSize && tableSize * currentPage + i < fileNames.size(); i++)
+            names[i] = fileNames.get(tableSize * currentPage + i);
+        return names;
     }
 
-    private void UpdateSavePathButton(List<String> fileNames) {
+    private void UpdatePageNumber() {
+        pageNumber.setText((currentPage + 1) + "/" + ((fileNames.size() - 1) / tableSize + 1));
+    }
+
+    private void OnFormerPageButtonDown() {
+        if (currentPage > 0)
+            currentPage--;
+        UpdateTable();
+    }
+
+    private void OnNextPageButtonDown() {
+        if (currentPage < (fileNames.size() - 1) / tableSize)
+            currentPage++;
+        UpdateTable();
+    }
+
+    private void UpdateTable() {
+        String[] names = GetCurrentPageNames();
+        for (int i = 0; i < tableSize; i++)
+            fileTable.setValueAt("", i, 0);
+        for (int i = 0; i < names.length; i++)
+            fileTable.setValueAt(names[i], i, 0);
+        UpdatePageNumber();
+    }
+
+    private void UpdateSavePathButton() {
         savePathField.setText(filePaths.get(filePaths.size() - 1));
     }
 
     private void OnDeleteButtonDown(String selectedString) {
         fileNames.removeIf(s -> s.equals(selectedString));
-        UpdateTable(fileNames);
+        UpdateTable();
     }
 }
