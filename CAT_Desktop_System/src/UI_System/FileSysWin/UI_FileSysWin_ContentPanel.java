@@ -5,17 +5,21 @@ import UI_System.GeneralWin.UI_InterfaceSwitchingPanel;
 import javax.swing.*;
 
 public class UI_FileSysWin_ContentPanel extends JPanel {
+    public JFrame frame;
 
-    public JPanel UI_FileDetailsPanel;
-    public JPanel UI_FileListPanel;
-    public JPanel UI_InterfaceSwitchingPanel;
-    public JPanel UI_ProjectInformationPanel;
+    public UI_FileDetailsPanel UI_FileDetailsPanel;
+    public UI_FileListPanel UI_FileListPanel;
+    public UI_InterfaceSwitchingPanel UI_InterfaceSwitchingPanel;
+    public UI_ProjectInformationPanel UI_ProjectInformationPanel;
 
-    public UI_FileSysWin_ContentPanel() {
+    public UI_FileSysWin_ContentPanel(JFrame frame) {
+        this.frame=frame;
         UI_ProjectInformationPanel = new UI_ProjectInformationPanel();
         UI_InterfaceSwitchingPanel = new UI_InterfaceSwitchingPanel();
         UI_FileListPanel = new UI_FileListPanel();
         UI_FileDetailsPanel = new UI_FileDetailsPanel();
+
+        UI_FileListPanel.frame = frame;
 
         setLayout(null);
         add(UI_FileListPanel);

@@ -5,6 +5,7 @@ import FileSystem.TranslationFileManager;
 import ProjectSystem.CAT_Project;
 import ProjectSystem.ProjectManager;
 import SystemUtil.Language;
+import UI_System.FileSystemWindow;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,6 +16,8 @@ import java.util.Objects;
 
 public class UI_FileListPanel extends JPanel {
     public static final int tableSize = 4;
+
+    public JFrame frame;
 
     //左下
     public JLabel projectFileLabel = new JLabel();
@@ -174,6 +177,8 @@ public class UI_FileListPanel extends JPanel {
             Language target = Language.GetLanguage((String) targetLanguageComboBox.getSelectedItem());
             CAT_Project project = ProjectManager.CreateProject(projectName, savePath, origin, target);
             LoadTranslationFiles(project, origin, target);
+            FileSystemWindow window=new FileSystemWindow();
+            frame.dispose();
         } else {
             System.err.println("Something has not finished, cannot create a new project.");
         }

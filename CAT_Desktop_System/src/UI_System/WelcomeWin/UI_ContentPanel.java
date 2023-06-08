@@ -3,15 +3,19 @@ package UI_System.WelcomeWin;
 import ProjectSystem.CAT_Project;
 import ProjectSystem.ProjectManager;
 import UI_System.CreateProjectInterface;
+import UI_System.FileSystemWindow;
+import UI_System.ProjectWindow;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class UI_ContentPanel extends JPanel {
-    JLabel welcomeLabel;
-    JButton createButton;
-    JButton openButton;
-    JTable table;
+    public JFrame frame;
+
+    public JLabel welcomeLabel;
+    public JButton createButton;
+    public JButton openButton;
+    public JTable table;
 
     public UI_ContentPanel() {
         this.setLayout(null);
@@ -58,9 +62,12 @@ public class UI_ContentPanel extends JPanel {
     private void OnOpenButtonDown() {
         int number = table.getSelectedRow();
         ProjectManager.OpenProject(ProjectManager.GetProject((String) table.getValueAt(number, 0)));
+        FileSystemWindow window =new FileSystemWindow();
+        frame.dispose();
     }
 
     private void OnCreateButtonDown() {
-        CreateProjectInterface createProjectInterface=new CreateProjectInterface();
+        CreateProjectInterface createProjectInterface = new CreateProjectInterface();
+        frame.dispose();
     }
 }

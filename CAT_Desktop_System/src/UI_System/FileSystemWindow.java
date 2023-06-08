@@ -30,7 +30,7 @@ public class FileSystemWindow extends JFrame {
         setBackground(Color.decode("#EAECF2"));
         setResizable(false);
 
-        FileSysWin_ContentPanel = new UI_FileSysWin_ContentPanel();
+        FileSysWin_ContentPanel = new UI_FileSysWin_ContentPanel(this);
 
         //创建顶部菜单栏
         menuBar = new UI_JMenuBar();
