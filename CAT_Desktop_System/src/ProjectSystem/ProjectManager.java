@@ -15,7 +15,8 @@ import java.util.List;
 
 public class ProjectManager {
     public static final String fileName = "CAT_System.proj"; // 项目管理器的文件名称
-    public static final String listSavePath = "D:\\hust_software_maige\\CAT_Desktop_System\\src\\System_File\\"; // 项目管理器文件的存储路径
+    public static final String listSavePath = "System Files\\"; // 项目管理器文件的存储路径
+    // 绝对路径：D:\hust_software_maige\CAT_Desktop_System\src\System_File\
 
     public List<CAT_Project> projectList = new ArrayList<>(); // 项目列表
     public CAT_Project currentProject; // 当前打开的项目
