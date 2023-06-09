@@ -19,6 +19,7 @@ public class UI_TermLibWin_ContentPanel extends JPanel {
         interfaceSwitchingPanel = new UI_InterfaceSwitchingPanel(frame, UI_System.GeneralWin.UI_InterfaceSwitchingPanel.TermLibrary_WIN_Index);
         termLibraryPanel = new UI_TermLibraryPanel();
         itemSelectionPanel.termLibraryPanel=termLibraryPanel;
+        termLibraryListPanel.termLibraryPanel=termLibraryPanel;
 
         setLayout(null);
 

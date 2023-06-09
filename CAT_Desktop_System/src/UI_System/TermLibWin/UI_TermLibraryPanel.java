@@ -97,6 +97,18 @@ public class UI_TermLibraryPanel extends JPanel {
         UpdateTableItems();
     }
 
+    public void OpenLibrary(String name) {
+        for (TermLibrary library : libraries) {
+            if (library.name.equals(name)) {
+                currentLibrary = library;
+                break;
+            }
+        }
+        currentPage = 0; // 每次打开新术语库时回到首页
+        UpdateMessagesByCurrentLibrary();
+        UpdateTableItems();
+    }
+
     public void UpdateTableItems() {
         if (currentLibrary != null) {
             for (int i = 0; i < tableRow; i++) {

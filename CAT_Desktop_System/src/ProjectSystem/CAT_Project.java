@@ -117,4 +117,11 @@ public class CAT_Project {
             TermLibraryManager.SaveLibrary(library);
         }
     }
+
+    public String[] GetAllTermLibraryNames() {
+        String[] names = new String[termLibraryList.size()];
+        for (int i = 0; i < termLibraryList.size(); i++)
+            names[i] = termLibraryList.get(i).name;
+        return names;
+    }
 }
