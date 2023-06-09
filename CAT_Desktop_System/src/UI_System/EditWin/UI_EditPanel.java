@@ -23,7 +23,7 @@ public class UI_EditPanel extends JPanel {
     public JLabel editLabels1;
     public JLabel editLabels2;
 
-    public int currentPageNum=0;
+    public int currentPageNum = 0;
     public JLabel bookPrint;
     public JLabel[] states;
     public TextField[] texts;        //数组长度16，偶数左，奇数右
@@ -57,8 +57,8 @@ public class UI_EditPanel extends JPanel {
             states[i].setFont(new Font("宋体", Font.BOLD, 15));
             states[i].setForeground(Color.BLACK);
         }
-
-        translationItems=ProjectManager.instance.currentTranslationFile.GetPureTranslationItem();
+        if (ProjectManager.instance.currentProject != null && ProjectManager.instance.currentTranslationFile != null)
+            translationItems = ProjectManager.instance.currentTranslationFile.GetPureTranslationItem();
 
         texts = new TextField[2 * itemFieldNum];
         for (int i = 0; i < texts.length; i++) {
@@ -142,7 +142,7 @@ public class UI_EditPanel extends JPanel {
     }
 
     public void UpdateItemFields() {
-        TranslationItem[] items=GetCurrentPageItems();
+        TranslationItem[] items = GetCurrentPageItems();
         UpdateItemFieldsByPage(items);
         UpdateBookPrint();
     }
@@ -187,7 +187,7 @@ public class UI_EditPanel extends JPanel {
     }
 
     private void OnConfirmTranslationButtonDown() {
-        if(focusNum!=-1) {
+        if (focusNum != -1) {
             int index = focusNum + itemFieldNum * currentPageNum;
             ProjectManager.instance.currentTranslationFile.TranslateParagraph(
                     translationItems[index], texts[2 * focusNum + 1].getText());
