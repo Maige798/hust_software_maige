@@ -8,7 +8,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class TranslationFileManager {
-    public static final String savePath = "D:\\hust_software_maige\\CAT_Desktop_System\\src\\System_File\\TranslationFilePackage\\";
+    public static final String savePath = "System Files\\Translation Files\\";
+    // 绝对路径：D:\hust_software_maige\CAT_Desktop_System\src\System_File\TranslationFilePackage\
+
     // 实现单例模式
     public static TranslationFileManager instance = new TranslationFileManager();
 
