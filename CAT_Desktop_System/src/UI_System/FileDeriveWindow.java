@@ -1,25 +1,23 @@
 package UI_System;
 
-import UI_System.FileWin.UI_File;
+import UI_System.FileDeriveWin.UI_FileDerivePanel;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class FileWindow extends JFrame {
-    public FileWindow()
-    {
+public class FileDeriveWindow extends JFrame {
+    public FileDeriveWindow() {
         init();
     }
 
-    public void init()
-    {
+    public void init() {
         setSize(520, 350);
         setTitle("文件界面");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBackground(Color.decode("#EAECF2"));
         setResizable(false);    //窗口设置
 
-        JPanel panel = new UI_File();
+        JPanel panel = new UI_FileDerivePanel();
 
         setContentPane(panel);
         setLocationRelativeTo(null);
@@ -27,6 +25,6 @@ public class FileWindow extends JFrame {
     }
 
     public static void main(String[] args) {
-        FileWindow me=new FileWindow();
+        FileDeriveWindow me = new FileDeriveWindow();
     }
 }

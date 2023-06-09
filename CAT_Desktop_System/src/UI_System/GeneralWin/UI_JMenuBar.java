@@ -8,6 +8,7 @@ import ProjectSystem.ProjectManager;
 import SystemUtil.TranslationItem;
 import TermLibrarySystem.TermLibrary;
 import TermLibrarySystem.TermLibraryManager;
+import UI_System.FileDeriveWindow;
 import UI_System.MemoryLibraryImportInterface;
 import UI_System.TermLibraryInputInterface;
 
@@ -46,7 +47,10 @@ public class UI_JMenuBar extends JMenuBar {
     }
 
     private void OnDeriveItemDown() {
-        System.out.println("This is file menu");
+        if (ProjectManager.instance.currentTranslationFile != null)
+            new FileDeriveWindow();
+        else
+            new UI_WarningWindow("Before derive file,\r\nyou have to OPEN a translation file!");
     }
 
     private void OnSaveItemDown() {
