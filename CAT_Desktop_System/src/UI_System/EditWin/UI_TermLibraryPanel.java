@@ -1,5 +1,8 @@
 package UI_System.EditWin;
 
+import UI_System.TermAddWindow;
+import UI_System.TermLibraryWindow;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -9,7 +12,7 @@ public class UI_TermLibraryPanel extends JPanel {
 
     public JTextArea textArea;
 
-    JButton addTermsButton;
+    public JButton addTermButton;
 
     public UI_TermLibraryPanel() {
         setLayout(null);
@@ -19,16 +22,21 @@ public class UI_TermLibraryPanel extends JPanel {
         textArea.setBackground(BlueColor);
         textArea.setEditable(false);
 
-        addTermsButton = new JButton("添加术语");
+        addTermButton = new JButton("添加术语");
 
         add(textArea);
-        add(addTermsButton);
+        add(addTermButton);
 
         textArea.setBounds(20, 15, 250, 130);
-        addTermsButton.setBounds(180, 150, 90, 20);
+        addTermButton.setBounds(180, 150, 90, 20);
+        addTermButton.addActionListener(e -> OnAddTermButtonDown());
     }
 
     public void SetTextArea(String message) {
         textArea.setText(message);
+    }
+
+    private void OnAddTermButtonDown() {
+        TermAddWindow window = new TermAddWindow();
     }
 }

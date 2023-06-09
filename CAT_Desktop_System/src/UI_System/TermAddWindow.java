@@ -17,7 +17,6 @@ public class TermAddWindow extends JFrame {
         //窗口设置
         setSize(350, 250);
         setTitle("术语添加");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBackground(Color.decode("#EAECF2"));
         setResizable(false);
 

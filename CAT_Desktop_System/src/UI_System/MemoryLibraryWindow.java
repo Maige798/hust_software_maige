@@ -11,11 +11,11 @@ import java.awt.*;
 
 public class MemoryLibraryWindow extends JFrame {
     //创建顶部菜单栏
-    JMenuBar menuBar;
+    public JMenuBar menuBar;
 
 
     //创建内容面板
-    JPanel ContentPanel;
+    public JPanel ContentPanel;
 
     public static void main(String[] args) {
         ProjectManager.OpenProject(ProjectManager.GetProject(0));
@@ -23,8 +23,8 @@ public class MemoryLibraryWindow extends JFrame {
     }
 
     public static void test() {
-        String myFile="D:\\hust_software_maige\\CAT_Desktop_System\\src\\ProjectSystem\\MyProject.catp";
-        CAT_Project project= ProjectManager.LoadProject(myFile);
+        String myFile = "D:\\hust_software_maige\\CAT_Desktop_System\\src\\ProjectSystem\\MyProject.catp";
+        CAT_Project project = ProjectManager.LoadProject(myFile);
         ProjectManager.OpenProject(project);
         MemoryLibraryWindow windows = new MemoryLibraryWindow();
     }
@@ -45,7 +45,7 @@ public class MemoryLibraryWindow extends JFrame {
         menuBar = new UI_JMenuBar();
 
         //创建内容面板
-        ContentPanel = new UI_MemLib_ContentPanel();
+        ContentPanel = new UI_MemLib_ContentPanel(this);
 
         setJMenuBar(menuBar);
 

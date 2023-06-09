@@ -5,6 +5,7 @@ import UI_System.GeneralWin.UI_InterfaceSwitchingPanel;
 import javax.swing.*;
 
 public class UI_MemLib_ContentPanel extends JPanel {
+    public JFrame jFrame;
 
     //创建翻译记忆库列表
     public JPanel MemoryLibraryListPanel;
@@ -18,9 +19,9 @@ public class UI_MemLib_ContentPanel extends JPanel {
     //创建条目筛选栏
     public UI_ItemSelectionPanel ItemSelectionPanel;
 
-    public UI_MemLib_ContentPanel() {
+    public UI_MemLib_ContentPanel(JFrame frame) {
         MemoryLibraryListPanel = new UI_MemoryLibraryListPanel();
-        InterfaceSwitchingPanel = new UI_InterfaceSwitchingPanel();
+        InterfaceSwitchingPanel = new UI_InterfaceSwitchingPanel(frame, UI_InterfaceSwitchingPanel.MemoryLibrary_WIN_Index);
         MemoryLibraryItemsPanel = new UI_MemoryLibraryItemsPanel();
         ItemSelectionPanel = new UI_ItemSelectionPanel();
         ItemSelectionPanel.SetItemsPanel(MemoryLibraryItemsPanel);

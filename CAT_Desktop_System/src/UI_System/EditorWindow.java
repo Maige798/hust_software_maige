@@ -30,7 +30,7 @@ public class EditorWindow extends JFrame {
         setBackground(Color.decode("#EAECF2"));
         setResizable(false);
 
-        EditWin_contentPanel = new UI_EditWin_contentPanel();
+        EditWin_contentPanel = new UI_EditWin_contentPanel(this);
 
         //创建顶部菜单栏
         JMenuBar menuBar = new UI_JMenuBar();

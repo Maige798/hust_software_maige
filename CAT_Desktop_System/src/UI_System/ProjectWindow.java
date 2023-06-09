@@ -27,7 +27,7 @@ public class ProjectWindow extends JFrame {
         setBackground(Color.decode("#EAECF2"));
         setResizable(false);
 
-        ProjectWin_ContentPanel = new UI_ProjectWin_ContentPanel();
+        ProjectWin_ContentPanel = new UI_ProjectWin_ContentPanel(this);
 
         menuBar = new UI_JMenuBar();
         setJMenuBar(menuBar);

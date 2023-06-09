@@ -15,7 +15,7 @@ public class UI_FileSysWin_ContentPanel extends JPanel {
     public UI_FileSysWin_ContentPanel(JFrame frame) {
         this.frame=frame;
         UI_ProjectInformationPanel = new UI_ProjectInformationPanel();
-        UI_InterfaceSwitchingPanel = new UI_InterfaceSwitchingPanel();
+        UI_InterfaceSwitchingPanel = new UI_InterfaceSwitchingPanel(frame, UI_System.GeneralWin.UI_InterfaceSwitchingPanel.File_WIN_Index);
         UI_FileListPanel = new UI_FileListPanel();
         UI_FileDetailsPanel = new UI_FileDetailsPanel();
 

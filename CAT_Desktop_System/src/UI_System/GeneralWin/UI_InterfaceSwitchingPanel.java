@@ -1,12 +1,26 @@
 package UI_System.GeneralWin;
 
+import UI_System.*;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class UI_InterfaceSwitchingPanel extends JPanel {
+    public static final int Project_WIN_Index = 0;
+    public static final int File_WIN_Index = 1;
+    public static final int Editor_WIN_Index = 2;
+    public static final int MemoryLibrary_WIN_Index = 3;
+    public static final int TermLibrary_WIN_Index = 4;
+
+    public int currentWindow;
+
+    public JFrame frame;
+
     public JList<String> list2;
 
-    public UI_InterfaceSwitchingPanel() {
+    public UI_InterfaceSwitchingPanel(JFrame frame, int currentWindow) {
+        this.frame = frame;
+        this.currentWindow = currentWindow;
 
         list2 = new JList<>();
 
@@ -14,7 +28,7 @@ public class UI_InterfaceSwitchingPanel extends JPanel {
         list2.setPreferredSize(new Dimension(200, 250));
 
         // 允许可间断的多选
-        list2.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+        list2.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
         // 设置选项数据（内部将自动封装成 ListModel ）
         list2.setListData(new String[]{"项目", "文件", "编辑器", "翻译记忆库", "术语库"});
@@ -28,23 +42,52 @@ public class UI_InterfaceSwitchingPanel extends JPanel {
         renderer.setHorizontalAlignment(SwingConstants.CENTER);
         list2.setCellRenderer(renderer);
 
+        // 设置默认选中项
+        list2.setSelectedIndex(currentWindow);
+
         // 添加选项选中状态被改变的监听器
         list2.addListSelectionListener(e -> {
-            // 获取所有被选中的选项索引
-            int[] indices = list2.getSelectedIndices();
-            // 获取选项数据的 ListModel
-            ListModel<String> listModel = list2.getModel();
-            // 输出选中的选项
-            for (int index : indices) {
-                System.out.println("选中: " + index + " = " + listModel.getElementAt(index));
+            if (!e.getValueIsAdjusting()) {
+                int index = list2.getSelectedIndex();
+                if (index != currentWindow) {
+                    switch (index) {
+                        case Project_WIN_Index -> ChangeToProjectWindow();
+                        case File_WIN_Index -> ChangeToFileWindow();
+                        case Editor_WIN_Index -> ChangeToEditorWindow();
+                        case MemoryLibrary_WIN_Index -> ChangeToMemoryLibraryWindow();
+                        case TermLibrary_WIN_Index -> ChangeToTermLibraryWindow();
+                        default -> System.err.println("Wrong list index in InterfaceSwitching panel! " + index);
+                    }
+                }
             }
-            System.out.println();
         });
-
-        // 设置默认选中项
-        list2.setSelectedIndex(1);
 
         //将list2添加到panel2中
         add(list2);
+    }
+
+    private void ChangeToProjectWindow() {
+        ProjectWindow window = new ProjectWindow();
+        frame.dispose();
+    }
+
+    private void ChangeToFileWindow() {
+        FileSystemWindow window = new FileSystemWindow();
+        frame.dispose();
+    }
+
+    private void ChangeToEditorWindow() {
+        EditorWindow window = new EditorWindow();
+        frame.dispose();
+    }
+
+    private void ChangeToMemoryLibraryWindow() {
+        MemoryLibraryWindow window = new MemoryLibraryWindow();
+        frame.dispose();
+    }
+
+    private void ChangeToTermLibraryWindow() {
+        TermLibraryWindow window = new TermLibraryWindow();
+        frame.dispose();
     }
 }
