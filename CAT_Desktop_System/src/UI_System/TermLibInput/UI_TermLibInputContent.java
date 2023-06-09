@@ -27,7 +27,7 @@ public class UI_TermLibInputContent extends JPanel {
     public UI_TermLibInputContent() {
         this.setLayout(null);
 
-        memoryLibraryImportLabel.setText("记忆库导入");
+        memoryLibraryImportLabel.setText("术语库导入");
         this.add(memoryLibraryImportLabel);
         memoryLibraryImportLabel.setBounds(25, 20, 175, 50);
 

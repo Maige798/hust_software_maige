@@ -63,7 +63,6 @@ public class UI_EditPanel extends JPanel {
         texts = new TextField[2 * itemFieldNum];
         for (int i = 0; i < texts.length; i++) {
             texts[i] = new TextField(8);
-            texts[i].setFont(new Font(null, Font.PLAIN, 20));
             int num = i;
             texts[i].addFocusListener(new FocusListener() {
                 public final int itemNumber = num / 2;
