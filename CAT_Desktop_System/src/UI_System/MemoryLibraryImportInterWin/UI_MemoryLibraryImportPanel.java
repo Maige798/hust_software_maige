@@ -2,6 +2,7 @@ package UI_System.MemoryLibraryImportInterWin;
 
 import MemoryLibrarySystem.MemoryLibraryManager;
 import ProjectSystem.ProjectManager;
+import UI_System.MemoryLibraryCreateInterface;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,7 +17,7 @@ public class UI_MemoryLibraryImportPanel extends JPanel {
 
     JButton browseButton = new JButton();
     List<String> memoryLibPaths = new ArrayList<>();
-    JButton newCreateButton = new JButton();
+    JButton createButton = new JButton();
 
     JButton importButton = new JButton();
 
@@ -48,10 +49,11 @@ public class UI_MemoryLibraryImportPanel extends JPanel {
             }
         });
 
-        newCreateButton.setText("新建");
-        this.add(newCreateButton);
-        newCreateButton.setMargin(new Insets(0, 0, 0, 0));
-        newCreateButton.setBounds(130, 250, 100, 30);
+        createButton.setText("新建");
+        this.add(createButton);
+        createButton.setMargin(new Insets(0, 0, 0, 0));
+        createButton.setBounds(130, 250, 100, 30);
+        createButton.addActionListener(e -> OnCreateButtonDown());
 
         importButton.setText("导入");
         this.add(importButton);
@@ -73,5 +75,9 @@ public class UI_MemoryLibraryImportPanel extends JPanel {
                 System.out.println(ProjectManager.instance.currentProject.memoryLibrary);
             }
         }
+    }
+
+    private void OnCreateButtonDown() {
+        MemoryLibraryCreateInterface window = new MemoryLibraryCreateInterface();
     }
 }

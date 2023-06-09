@@ -5,7 +5,6 @@ import FileSystem.TranslationFileManager;
 import SystemUtil.CAT_FileController;
 import SystemUtil.CAT_FileItem;
 import SystemUtil.Language;
-import SystemUtil.TranslationItem;
 
 import java.io.File;
 import java.io.FileWriter;
