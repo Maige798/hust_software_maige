@@ -12,7 +12,7 @@ public class EditorWindow extends JFrame {
     public UI_EditWin_contentPanel EditWin_contentPanel;
 
     public static void main(String[] args) {
-        CAT_Project project= ProjectManager.GetProject(1);
+        CAT_Project project= ProjectManager.GetProject(0);
         ProjectManager.OpenProject(project);
         ProjectManager.TranslateFile(project.GetTranslationFile(0));
         EditorWindow win = new EditorWindow();
