@@ -27,7 +27,7 @@ public class UI_FileListPanel extends JPanel {
     public int currentPage = 0;
     public List<String> fileNames = new ArrayList<>();
     public List<String> filePaths = new ArrayList<>();
-    public JTable fileTable = new JTable(4, 1);
+    public JTable fileTable = new JTable(tableSize, 1);
     public JButton formerPage = new JButton();
     public JTextField pageNumber = new JTextField();
     public JButton nextPage = new JButton();
@@ -103,7 +103,7 @@ public class UI_FileListPanel extends JPanel {
         projectFileLabel.setBounds(60, 230, 60, 30);
         importFileButton.setBounds(60, 260, 60, 20);
         deleteFileButton.setBounds(130, 260, 60, 20);
-        fileTable.setBounds(60, 300, 180, 80);
+        fileTable.setBounds(60, 300, 180, 64);
 
         formerPage.setBounds(80, 400, 40, 20);
         nextPage.setBounds(170, 400, 40, 20);
