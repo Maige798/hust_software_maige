@@ -5,7 +5,6 @@ import FileSystem.TranslationFileManager;
 import SystemUtil.CAT_FileController;
 import SystemUtil.CAT_FileItem;
 import SystemUtil.Language;
-import SystemUtil.TranslationItem;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -123,6 +122,15 @@ public class ProjectManager {
         if (instance.currentProject != null)
             SaveProject(instance.currentProject);
         instance.currentProject = project;
+    }
+
+    public static void OpenProject(String name) {
+        for (CAT_Project project : instance.projectList) {
+            if (project.name.equals(name)) {
+                OpenProject(project);
+                break;
+            }
+        }
     }
 
     public static void TranslateFile(TranslationFile translationFile) {

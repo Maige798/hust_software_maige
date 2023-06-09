@@ -1,5 +1,6 @@
 package UI_System;
 
+import ProjectSystem.ProjectManager;
 import UI_System.MemoryLibraryCreateWin.UI_MemoryLibraryCreatePanel;
 
 import javax.swing.*;
@@ -13,7 +14,6 @@ public class MemoryLibraryCreateInterface extends JFrame {
     public void init() {
         setSize(600, 350);
         setTitle("记忆库创建");
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         setResizable(false);
 
@@ -25,6 +25,7 @@ public class MemoryLibraryCreateInterface extends JFrame {
     }
 
     public static void main(String[] args) {
+        ProjectManager.OpenProject(ProjectManager.GetProject(1));
         MemoryLibraryCreateInterface me = new MemoryLibraryCreateInterface();
     }
 }

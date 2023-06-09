@@ -20,7 +20,7 @@ public class UI_MemLib_ContentPanel extends JPanel {
     public UI_ItemSelectionPanel ItemSelectionPanel;
 
     public UI_MemLib_ContentPanel(JFrame frame) {
-        MemoryLibraryListPanel = new UI_MemoryLibraryListPanel();
+        MemoryLibraryListPanel = new UI_MemoryLibraryDetailsPanel();
         InterfaceSwitchingPanel = new UI_InterfaceSwitchingPanel(frame, UI_InterfaceSwitchingPanel.MemoryLibrary_WIN_Index);
         MemoryLibraryItemsPanel = new UI_MemoryLibraryItemsPanel();
         ItemSelectionPanel = new UI_ItemSelectionPanel();

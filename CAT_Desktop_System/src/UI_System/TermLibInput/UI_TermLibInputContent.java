@@ -3,6 +3,7 @@ package UI_System.TermLibInput;
 import ProjectSystem.ProjectManager;
 import TermLibrarySystem.TermLibrary;
 import TermLibrarySystem.TermLibraryManager;
+import UI_System.TermLibraryCreateInterface;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,13 +22,13 @@ public class UI_TermLibInputContent extends JPanel {
 
     JButton importButton = new JButton();
 
-    public List<String> filePaths=new ArrayList<>();
+    public List<String> filePaths = new ArrayList<>();
 
 
     public UI_TermLibInputContent() {
         this.setLayout(null);
 
-        memoryLibraryImportLabel.setText("记忆库导入");
+        memoryLibraryImportLabel.setText("术语库导入");
         this.add(memoryLibraryImportLabel);
         memoryLibraryImportLabel.setBounds(25, 20, 175, 50);
 
@@ -46,7 +47,7 @@ public class UI_TermLibInputContent extends JPanel {
                 if (option == JFileChooser.APPROVE_OPTION) {
                     filePaths.add(fileChooser.getSelectedFile().getAbsolutePath());
                     System.out.println(filePaths.get(0));
-                    UpdateSavePathButton(filePaths);
+                    UpdateSavePathButton();
                 }
             }
         });
@@ -56,6 +57,7 @@ public class UI_TermLibInputContent extends JPanel {
         this.add(createButton);
         createButton.setMargin(new Insets(0, 0, 0, 0));
         createButton.setBounds(130, 250, 100, 30);
+        createButton.addActionListener(e -> OnCreateButtonDown());
 
         importButton.setText("导入");
         this.add(importButton);
@@ -71,7 +73,11 @@ public class UI_TermLibInputContent extends JPanel {
         }
     }
 
-    private void UpdateSavePathButton(List<String> fileNames) {
+    private void UpdateSavePathButton() {
         createTextField.setText(filePaths.get(filePaths.size() - 1));
+    }
+
+    private void OnCreateButtonDown() {
+        TermLibraryCreateInterface window = new TermLibraryCreateInterface();
     }
 }

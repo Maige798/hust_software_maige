@@ -7,7 +7,7 @@ import javax.swing.*;
 public class UI_EditWin_contentPanel extends JPanel {
     public JFrame frame;
 
-    public UI_ProjectInformationPanel ProjectInformationPanel;
+    public UI_EditorInformationPanel ProjectInformationPanel;
     public UI_InterfaceSwitchingPanel InterfaceSwitchingPanel;
     public UI_EditPanel EditPanel;
     public UI_MemoryLibraryPanel MemoryLibraryPanel;
@@ -15,7 +15,7 @@ public class UI_EditWin_contentPanel extends JPanel {
 
     public UI_EditWin_contentPanel(JFrame frame) {
         this.frame = frame;
-        ProjectInformationPanel = new UI_ProjectInformationPanel();
+        ProjectInformationPanel = new UI_EditorInformationPanel();
         InterfaceSwitchingPanel = new UI_InterfaceSwitchingPanel(frame, UI_InterfaceSwitchingPanel.Editor_WIN_Index);
         MemoryLibraryPanel = new UI_MemoryLibraryPanel();
         TermLibraryPanel = new UI_TermLibraryPanel();

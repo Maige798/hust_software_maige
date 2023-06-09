@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class TermLibraryInputInterface extends JFrame {
-    TermLibraryInputInterface() {
+    public TermLibraryInputInterface() {
         init();
     }
 
@@ -14,7 +14,7 @@ public class TermLibraryInputInterface extends JFrame {
         //窗口设置
         setSize(500, 350);
         setTitle("术语库导入");
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
         setBackground(Color.decode("#EAECF2"));
         setResizable(false);    //窗口设置
 
@@ -26,7 +26,7 @@ public class TermLibraryInputInterface extends JFrame {
     }
 
     public static void main(String[] args) {
-       // ProjectManager.OpenProject(ProjectManager.GetProject(1));
+        // ProjectManager.OpenProject(ProjectManager.GetProject(1));
         TermLibraryInputInterface me = new TermLibraryInputInterface();
     }
 }

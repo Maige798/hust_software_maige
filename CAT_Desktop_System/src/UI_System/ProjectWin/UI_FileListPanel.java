@@ -3,6 +3,7 @@ package UI_System.ProjectWin;
 import FileSystem.TranslationFile;
 import ProjectSystem.CAT_Project;
 import ProjectSystem.ProjectManager;
+import UI_System.FileSystemWindow;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,8 +11,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UI_FileListPanel extends JPanel {
+    public JFrame frame;
+
     public Color Green = new Color(61, 232, 213);
     public Color Blue = new Color(52, 89, 183);
+
     public static final int tableRow = 12;
     public static final int tableRaw = 12;
 
@@ -20,14 +24,17 @@ public class UI_FileListPanel extends JPanel {
 
     public JTable table;
 
-    public List<String> names=new ArrayList<>();
-    public List<String> saves=new ArrayList<>();
+    public List<String> names = new ArrayList<>();
+    public List<String> saves = new ArrayList<>();
     public JButton formerPage;
     public JButton nextPage;
 
+    public JButton openProject;
+
     public int currentPageNum = 0;
 
-    public UI_FileListPanel() {
+    public UI_FileListPanel(JFrame frame) {
+        this.frame=frame;
         setLayout(null);
         setBackground(Green);
 
@@ -47,11 +54,15 @@ public class UI_FileListPanel extends JPanel {
         nextPage = new JButton("下一页");
         nextPage.addActionListener(e -> OnNextPageButtonDown());
 
+        openProject = new JButton("打开");
+        openProject.addActionListener(e -> OnOpenProjectButtonDown());
+
         add(label);
         add(bookPrint);
         add(table);
         add(formerPage);
         add(nextPage);
+        add(openProject);
 
         label.setBounds(10, 5, 200, 40);
         bookPrint.setBounds(615, 370, 40, 20);
@@ -59,7 +70,9 @@ public class UI_FileListPanel extends JPanel {
         formerPage.setBounds(500, 370, 90, 20);
         nextPage.setBounds(655, 370, 90, 20);
 
-        if(ProjectManager.instance.projectList!=null) {
+        openProject.setBounds(300, 370, 90, 20);
+
+        if (ProjectManager.instance.projectList != null) {
             for (CAT_Project project : ProjectManager.instance.projectList) {
                 names.add(project.name);
                 saves.add(project.save);
@@ -69,17 +82,19 @@ public class UI_FileListPanel extends JPanel {
     }
 
     private List<String> GetCurrentPageNameItems() {
-        return names.subList(currentPageNum * tableRow, Integer.min((currentPageNum + 1) * tableRow,names.size()));
+        return names.subList(currentPageNum * tableRow, Integer.min((currentPageNum + 1) * tableRow, names.size()));
     }
+
     private List<String> GetCurrentPageSaveItems() {
-        return saves.subList(currentPageNum * tableRow, Integer.min((currentPageNum + 1) * tableRow,names.size()));
+        return saves.subList(currentPageNum * tableRow, Integer.min((currentPageNum + 1) * tableRow, names.size()));
     }
-    private void UpdateFileTable(){
-        UpdateFileItemTableByCurrentPage(GetCurrentPageNameItems(),GetCurrentPageSaveItems());
+
+    private void UpdateFileTable() {
+        UpdateFileItemTableByCurrentPage(GetCurrentPageNameItems(), GetCurrentPageSaveItems());
         UpDateBookPrint();
     }
 
-    public void UpdateFileItemTableByCurrentPage(List<String> names,List<String> saves){
+    public void UpdateFileItemTableByCurrentPage(List<String> names, List<String> saves) {
         if (names.size() > tableRow)
             System.err.println("Expected length: <=12, actual length: " + names.size());
         for (int i = 0; i < tableRow; i++) {
@@ -92,7 +107,7 @@ public class UI_FileListPanel extends JPanel {
         }
     }
 
-    private void UpDateBookPrint(){
+    private void UpDateBookPrint() {
         bookPrint.setText((currentPageNum + 1) + "/" + (names.size() / tableRow + 1));
     }
 
@@ -108,5 +123,12 @@ public class UI_FileListPanel extends JPanel {
             currentPageNum++;
             UpdateFileTable();
         }
+    }
+
+    private void OnOpenProjectButtonDown(){
+        int index=currentPageNum*tableRow+table.getSelectedRow();
+        ProjectManager.OpenProject(names.get(index));
+        FileSystemWindow window=new FileSystemWindow();
+        frame.dispose();
     }
 }

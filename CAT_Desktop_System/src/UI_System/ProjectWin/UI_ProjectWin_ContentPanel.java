@@ -28,7 +28,7 @@ public class UI_ProjectWin_ContentPanel extends JPanel {
         InterfaceSwitchingPanel = new UI_InterfaceSwitchingPanel(frame,UI_InterfaceSwitchingPanel.Project_WIN_Index);
 
         //创建文件列表
-        ProjectListPanel = new UI_FileListPanel();
+        ProjectListPanel = new UI_FileListPanel(frame);
 
         //创建文件详情面板
         ProjectDetailsPanel = new UI_FileDetailsPanel();

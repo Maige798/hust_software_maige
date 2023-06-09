@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MemoryLibraryImportInterface extends JFrame {
-    MemoryLibraryImportInterface() {
+    public MemoryLibraryImportInterface() {
         init();
     }
 
@@ -15,7 +15,7 @@ public class MemoryLibraryImportInterface extends JFrame {
         //窗口设置
         setSize(500, 350);
         setTitle("记忆库导入");
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
         setBackground(Color.decode("#EAECF2"));
         setResizable(false);    //窗口设置
 

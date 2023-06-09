@@ -1,5 +1,6 @@
 package UI_System.GeneralWin;
 
+import ProjectSystem.ProjectManager;
 import UI_System.*;
 
 import javax.swing.*;
@@ -77,8 +78,13 @@ public class UI_InterfaceSwitchingPanel extends JPanel {
     }
 
     private void ChangeToEditorWindow() {
-        EditorWindow window = new EditorWindow();
-        frame.dispose();
+        if (ProjectManager.instance.currentTranslationFile != null) {
+            EditorWindow window = new EditorWindow();
+            frame.dispose();
+        } else {
+            UI_WarningWindow warningWindow = new UI_WarningWindow("Before enter Editor Window,\r\nyou have to OPEN a translation file!");
+            list2.setSelectedIndex(currentWindow);
+        }
     }
 
     private void ChangeToMemoryLibraryWindow() {
