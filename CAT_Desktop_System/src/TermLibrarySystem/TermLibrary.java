@@ -72,8 +72,8 @@ public class TermLibrary {
             if (term.title.contains(target))
                 targetList.add(term);
             else {
-                for(Sentence sentence:term.termList){
-                    if(sentence.text.contains(target)){
+                for (Sentence sentence : term.termList) {
+                    if (sentence.text.contains(target)) {
                         targetList.add(term);
                         break;
                     }
@@ -270,11 +270,29 @@ public class TermLibrary {
         return titles;
     }
 
+    // 获得按目标字符串筛选后所有条目的title
+    public String[] GetAllTitles(String text) {
+        TermItem[] termItems = SearchItem(text);
+        String[] titles = new String[termItems.length];
+        for (int i = 0; i < termItems.length; i++)
+            titles[i] = termItems[i].title;
+        return titles;
+    }
+
     // 获得全部术语条目的术语
     public String[] GetAllTerms() {
         String[] contents = new String[itemsList.size()];
         for (int i = 0; i < itemsList.size(); i++)
             contents[i] = itemsList.get(i).GetTermsContent();
+        return contents;
+    }
+
+    // 获得按目标字符串筛选后所有条目的术语
+    public String[] GetAllTerms(String text) {
+        TermItem[] termItems = SearchItem(text);
+        String[] contents = new String[termItems.length];
+        for (int i = 0; i < termItems.length; i++)
+            contents[i] = termItems[i].GetTermsContent();
         return contents;
     }
 }

@@ -120,6 +120,13 @@ public class UI_TermLibraryPanel extends JPanel {
         }
     }
 
+    public void UpdateMessagesByCurrentLibrary(String text) {
+        if (currentLibrary != null) {
+            titles = currentLibrary.GetAllTitles(text);
+            contents = currentLibrary.GetAllTerms(text);
+        }
+    }
+
     private String[] GetCurrentPageTitles() {
         int index = currentPage * tableRow;
         int end = Integer.min((currentPage + 1) * tableRow, titles.length);
@@ -132,7 +139,7 @@ public class UI_TermLibraryPanel extends JPanel {
         return Arrays.copyOfRange(contents, index, end);
     }
 
-    public void UpdateBookPrint() {
+    private void UpdateBookPrint() {
         bookPrint.setText((currentPage + 1) + "/" + ((titles.length - 1) / tableRow + 1));
     }
 

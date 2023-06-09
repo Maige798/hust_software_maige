@@ -4,11 +4,16 @@ import javax.swing.*;
 import java.awt.*;
 
 public class UI_ItemSelectionPanel extends JPanel {
+    public UI_TermLibraryPanel termLibraryPanel;
+
     public Color Orange = new Color(246, 154, 113);
     public Color Blue = new Color(64, 0, 128);
+
     public JLabel label;
-    public JTextField field1;
+
+    public JTextField textField;
     public JButton selectButton;
+
     public UI_ItemSelectionPanel() {
         setLayout(null);
         setBackground(Orange);
@@ -17,17 +22,24 @@ public class UI_ItemSelectionPanel extends JPanel {
         label.setFont(new Font("思源黑体", Font.BOLD, 25));
         label.setForeground(Blue);
 
-        field1 = new JTextField(8);
-        field1.setFont(new Font(null, Font.PLAIN, 20));
+        textField = new JTextField(8);
+        textField.setFont(new Font(null, Font.PLAIN, 20));
 
         selectButton = new JButton("筛选");
+        selectButton.addActionListener(e -> OnSelectButtonDown());
 
         add(label);
-        add(field1);
+        add(textField);
         add(selectButton);
 
         label.setBounds(10, 0, 200, 30);
-        field1.setBounds(140, 40, 300, 30);
+        textField.setBounds(140, 40, 300, 30);
         selectButton.setBounds(500, 40, 100, 30);
+    }
+
+    private void OnSelectButtonDown(){
+        String text=textField.getText();
+        termLibraryPanel.UpdateMessagesByCurrentLibrary(text);
+        termLibraryPanel.UpdateTableItems();
     }
 }
