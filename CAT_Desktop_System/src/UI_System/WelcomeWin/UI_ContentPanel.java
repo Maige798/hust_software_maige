@@ -10,6 +10,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class UI_ContentPanel extends JPanel {
+    public static final int tableRow=5;
+
     public JFrame frame;
 
     public JLabel welcomeLabel;
@@ -35,7 +37,7 @@ public class UI_ContentPanel extends JPanel {
             System.out.println(ProjectManager.instance.currentProject);
         });
 
-        table = new JTable(5, 1);
+        table = new JTable(tableRow, 1);
         table.setRowHeight(50);
 
         this.add(welcomeLabel);
@@ -46,7 +48,7 @@ public class UI_ContentPanel extends JPanel {
         welcomeLabel.setBounds(40, 30, 100, 30);
         createButton.setBounds(160, 30, 60, 30);
         openButton.setBounds(230, 30, 60, 30);
-        table.setBounds(40, 90, 260, 300);
+        table.setBounds(40, 90, 260, 50 * tableRow);
         SetUpTable();
     }
 
@@ -55,19 +57,19 @@ public class UI_ContentPanel extends JPanel {
     }
 
     public void UpdateTable(String[] messages) {
-        for (int i = 0; i < messages.length; i++)
+        for (int i = 0; i < Integer.min(messages.length, tableRow); i++)
             table.setValueAt(messages[i], i, 0);
     }
 
     private void OnOpenButtonDown() {
         int number = table.getSelectedRow();
         ProjectManager.OpenProject(ProjectManager.GetProject((String) table.getValueAt(number, 0)));
-        FileSystemWindow window =new FileSystemWindow();
+        new FileSystemWindow();
         frame.dispose();
     }
 
     private void OnCreateButtonDown() {
-        CreateProjectInterface createProjectInterface = new CreateProjectInterface();
+        new CreateProjectInterface();
         frame.dispose();
     }
 }
