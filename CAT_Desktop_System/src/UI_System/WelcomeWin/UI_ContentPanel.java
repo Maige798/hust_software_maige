@@ -26,9 +26,7 @@ public class UI_ContentPanel extends JPanel {
 
         createButton = new JButton("新建项目");
         createButton.setMargin(new Insets(0, 0, 0, 0));
-        createButton.addActionListener(e -> {
-            OnCreateButtonDown();
-        });
+        createButton.addActionListener(e -> OnCreateButtonDown());
 
         openButton = new JButton("打开");
         openButton.setMargin(new Insets(0, 0, 0, 0));
