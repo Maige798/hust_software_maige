@@ -1,7 +1,6 @@
 package UI_System;
 
-import ProjectSystem.ProjectManager;
-import UI_System.TermLibInpu.UI_TermLibInputContent;
+import UI_System.TermLibInput.UI_TermLibInputContent;
 
 import javax.swing.*;
 import java.awt.*;

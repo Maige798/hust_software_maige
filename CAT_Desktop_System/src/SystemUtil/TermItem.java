@@ -34,6 +34,14 @@ public class TermItem {
         return content.toString();
     }
 
+    // 以字符串的形式返回所有Term
+    public String GetTermsContent() {
+        StringBuilder builder = new StringBuilder();
+        for (Sentence sentence : termList)
+            builder.append("[").append(sentence.language.name).append("]").append(sentence.text).append(" ");
+        return builder.toString();
+    }
+
     // 当一个新条目使用语言未出现在termList中时，在termList中添加此新条目
     public void AddTerm(Sentence sentence) {
         for (Sentence listItem : termList) {

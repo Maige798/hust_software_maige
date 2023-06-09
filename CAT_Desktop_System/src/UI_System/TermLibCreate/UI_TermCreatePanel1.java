@@ -1,4 +1,4 @@
-package UI_System.TermLibCre;
+package UI_System.TermLibCreate;
 
 import ProjectSystem.ProjectManager;
 import TermLibrarySystem.TermLibrary;

@@ -29,6 +29,7 @@ public class TermLibraryWindow extends JFrame {
 
         contentPanel = new UI_TermLibWin_ContentPanel(this);
         setContentPane(contentPanel);
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 }

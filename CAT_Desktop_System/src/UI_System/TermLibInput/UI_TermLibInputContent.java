@@ -1,9 +1,8 @@
-package UI_System.TermLibInpu;
+package UI_System.TermLibInput;
 
 import ProjectSystem.ProjectManager;
 import TermLibrarySystem.TermLibrary;
 import TermLibrarySystem.TermLibraryManager;
-import UI_System.TermLibCre.UI_TermCreatePanel1;
 
 import javax.swing.*;
 import java.awt.*;

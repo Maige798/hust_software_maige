@@ -256,4 +256,25 @@ public class TermLibrary {
         results[1] = message.substring(pointer + 1);
         return results;
     }
+
+    // 获得全部术语条目的title
+    public String[] GetAllTitles() {
+        String[] titles = new String[itemsList.size()];
+        for (int i = 0; i < itemsList.size(); i++)
+            titles[i] = itemsList.get(i).title;
+        return titles;
+    }
+
+    // 获得全部术语条目的术语
+    public String[] GetAllTerms() {
+        String[] contents = new String[itemsList.size()];
+        for (int i = 0; i < itemsList.size(); i++)
+            contents[i] = itemsList.get(i).GetTermsContent();
+        return contents;
+    }
+
+    // 获得itemsList的长度
+    public int GetItemsListLength() {
+        return itemsList.size();
+    }
 }
