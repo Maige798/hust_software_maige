@@ -125,6 +125,15 @@ public class ProjectManager {
         instance.currentProject = project;
     }
 
+    public static void OpenProject(String name) {
+        for (CAT_Project project : instance.projectList) {
+            if (project.name.equals(name)) {
+                OpenProject(project);
+                break;
+            }
+        }
+    }
+
     public static void TranslateFile(TranslationFile translationFile) {
         if (instance.currentTranslationFile != null)
             TranslationFileManager.SaveFile(instance.currentTranslationFile);
