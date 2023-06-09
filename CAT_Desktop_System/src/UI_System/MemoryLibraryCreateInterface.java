@@ -14,7 +14,6 @@ public class MemoryLibraryCreateInterface extends JFrame {
     public void init() {
         setSize(600, 350);
         setTitle("记忆库创建");
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         setResizable(false);
 

@@ -1,5 +1,16 @@
 package UI_System.GeneralWin;
 
+import FileSystem.TranslationFile;
+import FileSystem.TranslationFileManager;
+import MemoryLibrarySystem.MemoryLibraryManager;
+import ProjectSystem.CAT_Project;
+import ProjectSystem.ProjectManager;
+import SystemUtil.TranslationItem;
+import TermLibrarySystem.TermLibrary;
+import TermLibrarySystem.TermLibraryManager;
+import UI_System.MemoryLibraryImportInterface;
+import UI_System.TermLibraryInputInterface;
+
 import javax.swing.*;
 
 public class UI_JMenuBar extends JMenuBar {
@@ -17,8 +28,8 @@ public class UI_JMenuBar extends JMenuBar {
 
         deriveItem = new JMenuItem("导出");
         saveItem = new JMenuItem("保存项目");
-        addMemoryLibraryItem = new JMenuItem("添加记忆库");
-        addTermLibraryItem = new JMenuItem("添加术语库");
+        addMemoryLibraryItem = new JMenuItem("记忆库导入");
+        addTermLibraryItem = new JMenuItem("术语库导入");
 
         add(fileMenu);
         add(projectMenu);
@@ -29,9 +40,36 @@ public class UI_JMenuBar extends JMenuBar {
         projectMenu.add(addTermLibraryItem);
 
         deriveItem.addActionListener(e -> OnDeriveItemDown());
+        saveItem.addActionListener(e -> OnSaveItemDown());
+        addMemoryLibraryItem.addActionListener(e -> OnAddMemoryLibraryItemDown());
+        addTermLibraryItem.addActionListener(e -> OnAddTermLibraryItemDown());
     }
 
     private void OnDeriveItemDown() {
         System.out.println("This is file menu");
+    }
+
+    private void OnSaveItemDown() {
+        if (ProjectManager.instance.currentProject != null) {
+            CAT_Project project = ProjectManager.instance.currentProject;
+            ProjectManager.SaveProject(project);
+            if (project.memoryLibrary != null)
+                MemoryLibraryManager.SaveLibrary(project.memoryLibrary);
+            if (!project.termLibraryList.isEmpty())
+                for (TermLibrary library : project.termLibraryList)
+                    TermLibraryManager.SaveLibrary(library);
+            if (!project.translationFileList.isEmpty())
+                for (TranslationFile file : project.translationFileList)
+                    TranslationFileManager.SaveFile(file);
+            ProjectManager.SaveProjectList();
+        }
+    }
+
+    private void OnAddMemoryLibraryItemDown(){
+        MemoryLibraryImportInterface window=new MemoryLibraryImportInterface();
+    }
+
+    private void OnAddTermLibraryItemDown() {
+        TermLibraryInputInterface window = new TermLibraryInputInterface();
     }
 }
