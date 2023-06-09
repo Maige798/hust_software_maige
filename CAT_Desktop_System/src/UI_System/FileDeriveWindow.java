@@ -17,7 +17,7 @@ public class FileDeriveWindow extends JFrame {
         setBackground(Color.decode("#EAECF2"));
         setResizable(false);    //窗口设置
 
-        JPanel panel = new UI_FileDerivePanel();
+        JPanel panel = new UI_FileDerivePanel(this);
 
         setContentPane(panel);
         setLocationRelativeTo(null);

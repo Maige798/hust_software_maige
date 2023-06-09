@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UI_FileDerivePanel extends JPanel {
+    public JFrame frame;
+
     public JLabel label;
 
     public JButton deriveButton;
@@ -21,7 +23,9 @@ public class UI_FileDerivePanel extends JPanel {
 
     public TextField saveField;
 
-    public UI_FileDerivePanel() {
+    public UI_FileDerivePanel(JFrame frame) {
+        this.frame=frame;
+
         this.setLayout(null);
         deriveButton = new JButton("导出");
         deriveButton.addActionListener(e -> OnDeriveButtonDown());
@@ -67,6 +71,7 @@ public class UI_FileDerivePanel extends JPanel {
             String name = nameField.getText();
             String save = saveField.getText();
             TranslationFileManager.DeriveFile(ProjectManager.instance.currentTranslationFile, save, name);
+            frame.dispose();
         }
     }
 
