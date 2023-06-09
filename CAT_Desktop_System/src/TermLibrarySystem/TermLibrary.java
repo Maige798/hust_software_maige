@@ -43,6 +43,11 @@ public class TermLibrary {
         itemsList.removeIf(term -> term.equals(termItem));
     }
 
+    // 删除与title相同的术语条目
+    public void RemoveItem(String title) {
+        itemsList.removeIf(item -> item.title.equals(title));
+    }
+
     // 编辑一条术语条目
     public void EditItem(int num, TermItem newItem) {
         itemsList.set(num, newItem);
@@ -271,10 +276,5 @@ public class TermLibrary {
         for (int i = 0; i < itemsList.size(); i++)
             contents[i] = itemsList.get(i).GetTermsContent();
         return contents;
-    }
-
-    // 获得itemsList的长度
-    public int GetItemsListLength() {
-        return itemsList.size();
     }
 }

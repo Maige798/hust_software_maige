@@ -2,6 +2,7 @@ package UI_System.TermLibWin;
 
 import ProjectSystem.ProjectManager;
 import TermLibrarySystem.TermLibrary;
+import TermLibrarySystem.TermLibraryManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,7 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class UI_TermLibraryPanel extends JPanel {
-    public static final int tableRow=18;
+    public static final int tableRow = 18;
 
     public Color Green = new Color(204, 255, 128);
     public Color Blue = new Color(64, 0, 128);
@@ -68,12 +69,17 @@ public class UI_TermLibraryPanel extends JPanel {
         label.setBounds(10, 5, 200, 40);
         bookPrint.setBounds(660, 450, 40, 20);
         table.setBounds(30, 50, 740, 378);
+
         formerPage.setBounds(570, 450, 80, 20);
+        formerPage.addActionListener(e -> OnFormerPageButtonDown());
         nextPage.setBounds(690, 450, 80, 20);
+        nextPage.addActionListener(e -> OnNextPageButtonDown());
+
         changeButton.setBounds(90, 450, 90, 20);
         cancelButton.setBounds(310, 450, 90, 20);
         saveButton.setBounds(420, 450, 90, 20);
         deleteButton.setBounds(200, 450, 90, 20);
+        deleteButton.addActionListener(e -> OnDeleteButtonDown());
         UpDateLibraries();
     }
 
@@ -87,13 +93,12 @@ public class UI_TermLibraryPanel extends JPanel {
         if (num < libraries.size())
             currentLibrary = libraries.get(num);
         currentPage = 0; // 每次打开新术语库时回到首页
-        UpdateItems();
+        UpdateMessagesByCurrentLibrary();
+        UpdateTableItems();
     }
 
-    public void UpdateItems() {
+    public void UpdateTableItems() {
         if (currentLibrary != null) {
-            titles = currentLibrary.GetAllTitles();
-            contents = currentLibrary.GetAllTerms();
             for (int i = 0; i < tableRow; i++) {
                 table.setValueAt("", i, 0);
                 table.setValueAt("", i, 1);
@@ -105,6 +110,13 @@ public class UI_TermLibraryPanel extends JPanel {
                 table.setValueAt(currentPageContents[i], i, 1);
             }
             UpdateBookPrint();
+        }
+    }
+
+    private void UpdateMessagesByCurrentLibrary() {
+        if (currentLibrary != null) {
+            titles = currentLibrary.GetAllTitles();
+            contents = currentLibrary.GetAllTerms();
         }
     }
 
@@ -121,6 +133,26 @@ public class UI_TermLibraryPanel extends JPanel {
     }
 
     public void UpdateBookPrint() {
-        bookPrint.setText((currentPage + 1) + "/" + (currentLibrary.GetItemsListLength() - 1) / tableRow);
+        bookPrint.setText((currentPage + 1) + "/" + ((titles.length - 1) / tableRow + 1));
+    }
+
+    private void OnFormerPageButtonDown() {
+        if (currentPage > 0)
+            currentPage--;
+        UpdateTableItems();
+    }
+
+    private void OnNextPageButtonDown() {
+        if (currentPage < (titles.length - 1) / tableRow)
+            currentPage++;
+        UpdateTableItems();
+    }
+
+    private void OnDeleteButtonDown() {
+        int index = currentPage * tableRow + table.getSelectedRow();
+        currentLibrary.RemoveItem(titles[index]);
+        TermLibraryManager.SaveLibrary(currentLibrary);
+        UpdateMessagesByCurrentLibrary();
+        UpdateTableItems();
     }
 }
