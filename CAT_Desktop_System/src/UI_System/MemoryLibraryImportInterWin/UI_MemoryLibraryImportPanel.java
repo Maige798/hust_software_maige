@@ -41,6 +41,7 @@ public class UI_MemoryLibraryImportPanel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFileChooser fileChooser = new JFileChooser();
+                fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
                 int option = fileChooser.showOpenDialog(new UI_MemoryLibraryImportPanel());
                 if (option == JFileChooser.APPROVE_OPTION) {
                     memoryLibPaths.add(fileChooser.getSelectedFile().getAbsolutePath());
