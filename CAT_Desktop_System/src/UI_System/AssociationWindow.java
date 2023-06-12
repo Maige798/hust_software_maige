@@ -5,7 +5,6 @@ import java.awt.*;
 
 public class AssociationWindow extends JFrame {
     public static final int tableRow = 9;
-    public Color Green = new Color(61, 232, 213);
     public JPanel AssociationPanel;
     public JTextField textField;
 
