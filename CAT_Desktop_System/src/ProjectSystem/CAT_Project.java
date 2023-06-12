@@ -29,7 +29,7 @@ public class CAT_Project {
 
     }
 
-    public CAT_Project(String name, String save,Language originLanguage,Language targetLanguage) {
+    public CAT_Project(String name, String save, Language originLanguage, Language targetLanguage) {
         this.name = name;
         this.save = save;
         this.originLanguage = originLanguage;
@@ -100,7 +100,7 @@ public class CAT_Project {
         this.translationFileList.removeIf(translationFile -> translationFile.equals(tranFile));
     }
 
-    public TranslationFile GetTranslationFile(int num){
+    public TranslationFile GetTranslationFile(int num) {
         return translationFileList.get(num);
     }
 
@@ -123,5 +123,12 @@ public class CAT_Project {
         for (int i = 0; i < termLibraryList.size(); i++)
             names[i] = termLibraryList.get(i).name;
         return names;
+    }
+
+    public String GetAttributeMessage() {
+        return "名称：" + this.name + "\r\n"
+                + "存储路径：" + this.save + "\r\n"
+                + "源语言：" + this.originLanguage.name + "\r\n"
+                + "目标语言：" + this.targetLanguage.name + "\r\n";
     }
 }

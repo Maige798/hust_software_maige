@@ -9,9 +9,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class UI_FileListPanel extends JPanel {
     public JFrame frame;
+
+    public UI_ProjectDetailsPanel projectDetailsPanel;
 
     public Color Green = new Color(61, 232, 213);
     public Color Blue = new Color(52, 89, 183);
@@ -48,6 +51,7 @@ public class UI_FileListPanel extends JPanel {
         table.setRowHeight(25);
         table.setGridColor(new Color(192, 192, 192));
         table.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+        table.getSelectionModel().addListSelectionListener(e -> UpdateProjectDetailsPanel());
 
         formerPage = new JButton("上一页");
         formerPage.addActionListener(e -> OnFormerPageButtonDown());
@@ -130,5 +134,13 @@ public class UI_FileListPanel extends JPanel {
         ProjectManager.OpenProject(names.get(index));
         FileSystemWindow window=new FileSystemWindow();
         frame.dispose();
+    }
+
+    private void UpdateProjectDetailsPanel() {
+        int index = currentPageNum * tableRow + table.getSelectedRow();
+        if (index < names.size())
+            projectDetailsPanel.SetTextField(Objects.requireNonNull(ProjectManager.GetProject(names.get(index))).GetAttributeMessage());
+        else
+            projectDetailsPanel.SetTextField("");
     }
 }
