@@ -30,10 +30,10 @@ public class EditHelper {
 
     public static String[] GetWrongWords(String message) {
         List<String> wrongWordsList = new ArrayList<>();
-        String[] messages = message.split(" ");
+        String[] messages = message.split("[^A-Za-z-']");
         for (String s : messages)
             if (!IsCorrect(s))
-                wrongWordsList.add(DealWithWord(s));
+                wrongWordsList.add(s);
         return wrongWordsList.toArray(new String[0]);
     }
 
@@ -50,25 +50,12 @@ public class EditHelper {
     }
 
     public static boolean IsCorrect(String message) {
-        String text = DealWithWord(message);
+        if (message.equals(""))
+            return true;
         for (String word : instance.EnglishWords)
-            if (text.equals(word))
+            if (message.toLowerCase().equals(word))
                 return true;
         return false;
-    }
-
-    public static String DealWithWord(String word) {
-        while (IsSeparator(word.substring(word.length() - 1)))
-            word = word.substring(0, word.length() - 1);
-        return word.toLowerCase();
-    }
-
-    private static boolean IsSeparator(String c) {
-        return switch (c) {
-            case "，", "。", "？", "！", "：", "；", "…",
-                    ",", ".", "?", "!", ":", ";" -> true;
-            default -> false;
-        };
     }
 
     public void SetUpDictionary() {
