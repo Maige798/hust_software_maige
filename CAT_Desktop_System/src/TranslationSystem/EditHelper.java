@@ -34,8 +34,7 @@ public class EditHelper {
         for (String s : messages)
             if (!IsCorrect(s))
                 wrongWordsList.add(DealWithWord(s));
-        String[] wrongWords = wrongWordsList.toArray(new String[0]);
-        return wrongWords;
+        return wrongWordsList.toArray(new String[0]);
     }
 
     public static String EnglishAssociate(String message) {
