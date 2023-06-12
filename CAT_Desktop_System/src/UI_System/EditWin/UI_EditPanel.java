@@ -3,7 +3,9 @@ package UI_System.EditWin;
 import FileSystem.TranslationFileManager;
 import MemoryLibrarySystem.MemoryLibraryManager;
 import ProjectSystem.ProjectManager;
+import SystemUtil.Language;
 import SystemUtil.TranslationItem;
+import TranslationSystem.EditHelper;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,6 +16,7 @@ import java.util.Arrays;
 public class UI_EditPanel extends JPanel {
     public UI_MemoryLibraryPanel memoryLibraryPanel;
     public UI_TermLibraryPanel termLibraryPanel;
+    public UI_EditorSpellCheckPanel spellCheckPanel;
 
     public Color BlueColor = new Color(128, 255, 255);
 
@@ -34,7 +37,7 @@ public class UI_EditPanel extends JPanel {
     public JButton startMachineTranslation;
     public JButton formerPageButton;
     public JButton nextPageButton;
-    public JButton openButton;
+    public JButton associateButton;
 
     public UI_EditPanel() {
 
@@ -72,18 +75,19 @@ public class UI_EditPanel extends JPanel {
                     focusNum = itemNumber;
                     UpdateMemoryLibraryMessage();
                     UpdateTermLibraryMessage();
+                    SpellCheck(texts[itemNumber * 2 + 1].getText());
                 }
 
                 @Override
                 public void focusLost(FocusEvent e) {
-
+                    spellCheckPanel.SetText("");
                 }
             });
         }
 
-        openButton = new JButton("打开");
+        associateButton = new JButton("自动完成 (输入联想)");
         confirmTranslationButton = new JButton("确认翻译");
-        startMachineTranslation = new JButton("开始机械翻译");
+        startMachineTranslation = new JButton("机器翻译");
 
         formerPageButton = new JButton("上一页");
         nextPageButton = new JButton("下一页");
@@ -101,7 +105,7 @@ public class UI_EditPanel extends JPanel {
             add(textField);
         }
 
-        add(openButton);
+        add(associateButton);
         add(confirmTranslationButton);
         add(startMachineTranslation);
         add(formerPageButton);
@@ -127,10 +131,10 @@ public class UI_EditPanel extends JPanel {
             texts[i].setBounds(415, yFirst + (i - 1) * 20, 320, 30);
         }
 
-        openButton.setBounds(415, 15, 50, 20);
-        confirmTranslationButton.setBounds(485, 15, 100, 20);
+        associateButton.setBounds(570, 15, 160, 20);
+        confirmTranslationButton.setBounds(470, 15, 90, 20);
         confirmTranslationButton.addActionListener(e -> OnConfirmTranslationButtonDown());
-        startMachineTranslation.setBounds(605, 15, 130, 20);
+        startMachineTranslation.setBounds(240, 15, 100, 20);
 
 
         formerPageButton.setBounds(505, 380, 90, 20);
@@ -225,6 +229,12 @@ public class UI_EditPanel extends JPanel {
             }
             UpdateItemFields();
             TranslationFileManager.SaveFile(ProjectManager.instance.currentTranslationFile);
+        }
+    }
+
+    public void SpellCheck(String text) {
+        if (ProjectManager.instance.currentTranslationFile.targetLanguage.EqualsTo(Language.English)) {
+            spellCheckPanel.SetText(EditHelper.EnglishSpellCheck(text));
         }
     }
 }

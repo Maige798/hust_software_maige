@@ -3,18 +3,18 @@ package UI_System.EditWin;
 import javax.swing.*;
 import java.awt.*;
 
-public class UI_EditorInformationPanel extends JPanel {
+public class UI_EditorSpellCheckPanel extends JPanel {
     public JLabel label;
     public JTextArea textArea;
     public Color YellowColor = new Color(163, 189, 96);
 
-    public UI_EditorInformationPanel() {
+    public UI_EditorSpellCheckPanel() {
 
         setLayout(null);
 
         setBackground(Color.yellow);
 
-        label = new JLabel("项目信息");
+        label = new JLabel("拼写检查");
         label.setBounds(25, 50, 100, 50);
         add(label);
 
@@ -24,6 +24,10 @@ public class UI_EditorInformationPanel extends JPanel {
 
         add(textArea);
 
-        textArea.setBounds(25,100,150,200);
+        textArea.setBounds(25, 100, 150, 200);
+    }
+
+    public void SetText(String text) {
+        textArea.setText(text);
     }
 }
