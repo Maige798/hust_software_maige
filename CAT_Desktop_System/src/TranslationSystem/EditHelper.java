@@ -23,7 +23,7 @@ public class EditHelper {
         else {
             StringBuilder builder = new StringBuilder();
             for (int i = 0; i < wrongWords.length; i++)
-                builder.append(i).append(".").append(wrongWords[i]).append("\r\n");
+                builder.append(i + 1).append(".").append(wrongWords[i]).append("\r\n");
             return builder.toString();
         }
     }
@@ -60,7 +60,7 @@ public class EditHelper {
     public static String DealWithWord(String word) {
         while (IsSeparator(word.substring(word.length() - 1)))
             word = word.substring(0, word.length() - 1);
-        return word;
+        return word.toLowerCase();
     }
 
     private static boolean IsSeparator(String c) {

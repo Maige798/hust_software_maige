@@ -75,7 +75,8 @@ public class UI_EditPanel extends JPanel {
                     focusNum = itemNumber;
                     UpdateMemoryLibraryMessage();
                     UpdateTermLibraryMessage();
-                    SpellCheck(texts[itemNumber * 2 + 1].getText());
+                    if (!texts[itemNumber * 2 + 1].getText().equals(""))
+                        SpellCheck(texts[itemNumber * 2 + 1].getText());
                 }
 
                 @Override
