@@ -12,8 +12,7 @@ import java.io.IOException;
 
 public class Test {
     public static void main(String[] args) {
-        //TestSpellCheck();
-        TestAssociate();
+        TestAutoComplete();
     }
 
     public static void TestSpellCheck(){
@@ -22,6 +21,11 @@ public class Test {
                 " but with the right mindset and determination," +
                 " we can overbcome any obstacle that comes our way.";
         System.out.println(EditHelper.EnglishSpellCheck(text));
+    }
+
+    public static void TestAutoComplete() {
+        String text = "Remember,li";
+        System.out.println(EditHelper.AutoComplete(text, "life"));
     }
 
     public static void TestAssociate(){

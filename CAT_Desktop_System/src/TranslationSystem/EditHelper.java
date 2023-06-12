@@ -49,6 +49,12 @@ public class EditHelper {
         }
     }
 
+    public static String AutoComplete(String source,String replace) {
+        String[] sources = source.split("[^A-Za-z-']");
+        int index = source.indexOf(sources[sources.length - 1]);
+        return source.substring(0, index) + replace;
+    }
+
     public static boolean IsCorrect(String message) {
         if (message.equals(""))
             return true;

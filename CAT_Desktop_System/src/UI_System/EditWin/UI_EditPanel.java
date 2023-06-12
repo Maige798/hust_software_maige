@@ -6,6 +6,7 @@ import ProjectSystem.ProjectManager;
 import SystemUtil.Language;
 import SystemUtil.TranslationItem;
 import TranslationSystem.EditHelper;
+import UI_System.AssociationWindow;
 
 import javax.swing.*;
 import java.awt.*;
@@ -29,7 +30,7 @@ public class UI_EditPanel extends JPanel {
     public int currentPageNum = 0;
     public JLabel bookPrint;
     public JLabel[] states;
-    public TextField[] texts;        //数组长度16，偶数左，奇数右
+    public JTextField[] texts;        //数组长度16，偶数左，奇数右
     int focusNum = -1; // 初始化为-1
     TranslationItem[] translationItems;
 
@@ -63,9 +64,9 @@ public class UI_EditPanel extends JPanel {
         if (ProjectManager.instance.currentProject != null && ProjectManager.instance.currentTranslationFile != null)
             translationItems = ProjectManager.instance.currentTranslationFile.GetPureTranslationItem();
 
-        texts = new TextField[2 * itemFieldNum];
+        texts = new JTextField[2 * itemFieldNum];
         for (int i = 0; i < texts.length; i++) {
-            texts[i] = new TextField(8);
+            texts[i] = new JTextField(8);
             int num = i;
             texts[i].addFocusListener(new FocusListener() {
                 public final int itemNumber = num / 2;
@@ -102,7 +103,7 @@ public class UI_EditPanel extends JPanel {
             add(jLabel);
         }
 
-        for (TextField textField : texts) {
+        for (JTextField textField : texts) {
             add(textField);
         }
 
@@ -133,6 +134,8 @@ public class UI_EditPanel extends JPanel {
         }
 
         associateButton.setBounds(570, 15, 160, 20);
+        associateButton.addActionListener(e -> OnAssociateButtonDown());
+
         confirmTranslationButton.setBounds(470, 15, 90, 20);
         confirmTranslationButton.addActionListener(e -> OnConfirmTranslationButtonDown());
         startMachineTranslation.setBounds(240, 15, 100, 20);
@@ -237,5 +240,14 @@ public class UI_EditPanel extends JPanel {
         if (ProjectManager.instance.currentTranslationFile.targetLanguage.EqualsTo(Language.English)) {
             spellCheckPanel.SetText(EditHelper.EnglishSpellCheck(text));
         }
+    }
+
+    public void AutoComplete(String text) {
+        JTextField textField = texts[2 * focusNum + 1];
+        textField.setText(EditHelper.AutoComplete(textField.getText(), text));
+    }
+
+    private void OnAssociateButtonDown() {
+        new AssociationWindow(this, texts[2 * focusNum + 1].getText());
     }
 }
