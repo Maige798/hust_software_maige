@@ -7,6 +7,7 @@ import SystemUtil.Language;
 import SystemUtil.TranslationItem;
 import TranslationSystem.EditHelper;
 import UI_System.AssociationWindow;
+import UI_System.GeneralWin.UI_WarningWindow;
 
 import javax.swing.*;
 import java.awt.*;
@@ -248,6 +249,9 @@ public class UI_EditPanel extends JPanel {
     }
 
     private void OnAssociateButtonDown() {
-        new AssociationWindow(this, texts[2 * focusNum + 1].getText());
+        if (ProjectManager.instance.currentTranslationFile.targetLanguage.EqualsTo(Language.English))
+            new AssociationWindow(this, texts[2 * focusNum + 1].getText());
+        else
+            new UI_WarningWindow("Sorry, only English-Target projects can use Association");
     }
 }
