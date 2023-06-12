@@ -39,7 +39,7 @@ public class EditHelper {
     }
 
     public static String EnglishAssociate(String message) {
-        String[] associationWords = GetAssociationWords(message);
+        String[] associationWords = GetEnglishAssociationWords(message);
         if (associationWords.length == 0)
             return "No Advice";
         else {
@@ -84,7 +84,7 @@ public class EditHelper {
         }
     }
 
-    public static String[] GetAssociationWords(String message) {
+    public static String[] GetEnglishAssociationWords(String message) {
         String[] messages = message.split(" ");
         String target = messages[messages.length - 1];
         List<String> associationList = new ArrayList<>();
