@@ -36,6 +36,7 @@ public class UI_TermCreatePanel1 extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFileChooser fileChooser = new JFileChooser();
+                fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
                 int option = fileChooser.showOpenDialog(new UI_TermCreatePanel1());
                 if (option == JFileChooser.APPROVE_OPTION) {
                     filePaths.add(fileChooser.getSelectedFile().getAbsolutePath());
