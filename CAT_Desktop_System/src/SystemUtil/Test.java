@@ -5,13 +5,29 @@ import FileSystem.TranslationFileManager;
 import MemoryLibrarySystem.*;
 import TermLibrarySystem.TermLibrary;
 import TermLibrarySystem.TermLibraryManager;
+import TranslationSystem.EditHelper;
+import TranslationSystem.Translator;
 
 import java.io.FileReader;
 import java.io.IOException;
 
 public class Test {
     public static void main(String[] args) {
+        //TestSpellCheck();
+        TestAssociate();
+    }
 
+    public static void TestSpellCheck(){
+        String text="Renenber," +
+                " life mey not always be a bed of roses," +
+                " but with the right mindset and determination," +
+                " we can overbcome any obstacle that comes our way.";
+        System.out.println(EditHelper.EnglishSpellCheck(text));
+    }
+
+    public static void TestAssociate(){
+        String text="Remember, li";
+        System.out.println(EditHelper.EnglishAssociate(text));
     }
 
     public static void TestMemoryLibraryRead(){
