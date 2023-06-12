@@ -71,11 +71,11 @@ public class EditHelper {
     }
 
     public static String[] GetEnglishAssociationWords(String message) {
-        String[] messages = message.split(" ");
+        String[] messages = message.split("[^A-Za-z-']");
         String target = messages[messages.length - 1];
         List<String> associationList = new ArrayList<>();
         for (String word : instance.EnglishWords)
-            if (word.indexOf(target)==0)
+            if (word.indexOf(target) == 0)
                 associationList.add(word);
         return associationList.toArray(new String[0]);
     }

@@ -25,7 +25,7 @@ public class Test {
     }
 
     public static void TestAssociate(){
-        String text="Remember, li";
+        String text="Remember,li";
         System.out.println(EditHelper.EnglishAssociate(text));
     }
 
