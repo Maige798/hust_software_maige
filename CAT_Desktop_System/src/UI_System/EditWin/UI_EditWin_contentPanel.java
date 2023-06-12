@@ -6,7 +6,6 @@ import javax.swing.*;
 
 public class UI_EditWin_contentPanel extends JPanel {
     public JFrame frame;
-
     public UI_EditorSpellCheckPanel EditorSpellCheckPanel;
     public UI_InterfaceSwitchingPanel InterfaceSwitchingPanel;
     public UI_EditPanel EditPanel;
