@@ -6,7 +6,6 @@ import MemoryLibrarySystem.*;
 import TermLibrarySystem.TermLibrary;
 import TermLibrarySystem.TermLibraryManager;
 import TranslationSystem.EditHelper;
-import TranslationSystem.Translator;
 
 import java.io.FileReader;
 import java.io.IOException;
