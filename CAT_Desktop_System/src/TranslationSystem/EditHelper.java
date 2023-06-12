@@ -50,7 +50,7 @@ public class EditHelper {
     }
 
     public static String AutoComplete(String source,String replace) {
-        String[] sources = source.split("[^A-Za-z-']");
+        String[] sources = source.split("[^A-Za-z-']+");
         int index = source.indexOf(sources[sources.length - 1]);
         return source.substring(0, index) + replace;
     }
@@ -77,7 +77,7 @@ public class EditHelper {
     }
 
     public static String[] GetEnglishAssociationWords(String message) {
-        String[] messages = message.split("[^A-Za-z-']");
+        String[] messages = message.split("[^A-Za-z-']+");
         String target = messages[messages.length - 1];
         List<String> associationList = new ArrayList<>();
         for (String word : instance.EnglishWords)
