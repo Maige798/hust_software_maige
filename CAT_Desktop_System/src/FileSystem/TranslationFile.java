@@ -18,7 +18,7 @@ public class TranslationFile {
     public List<TranslationItem> paragraphsList = new ArrayList<>();
 
     // 构造方法
-    public TranslationFile(){
+    public TranslationFile() {
 
     }
 
@@ -38,7 +38,7 @@ public class TranslationFile {
         this.targetLanguage = targetLanguage;
     }
 
-    public void AddItem(TranslationItem item){
+    public void AddItem(TranslationItem item) {
         this.paragraphsList.add(item);
     }
 
@@ -49,7 +49,7 @@ public class TranslationFile {
         paragraphsList.get(num).SetTranslation(this.targetLanguage, text);
     }
 
-    public void TranslateParagraph(TranslationItem item,String text) {
+    public void TranslateParagraph(TranslationItem item, String text) {
         for (TranslationItem translationItem : paragraphsList) {
             if (translationItem.equals(item)) {
                 if (translationItem.translation == null)
@@ -153,37 +153,37 @@ public class TranslationFile {
 
     // 根据条目内容，拆分language和text生成一个Sentence
     private static Sentence DealWithSentence(String message) {
-        Sentence sentence=new Sentence();
-        String[] strings=BreakSentence(message); // 这里strings.length必定为2
-        sentence.language=Language.GetLanguage(strings[0]);
-        sentence.text=strings[1];
+        Sentence sentence = new Sentence();
+        String[] strings = BreakSentence(message); // 这里strings.length必定为2
+        sentence.language = Language.GetLanguage(strings[0]);
+        sentence.text = strings[1];
         return sentence;
     }
 
     // 将信息中的[语言]与内容分开
-    private static String[] BreakSentence(String message){
-        String[] results=new String[2];
-        char[] messages=message.toCharArray();
-        int pointer=0;
-        while (messages[pointer]!=' ')
+    private static String[] BreakSentence(String message) {
+        String[] results = new String[2];
+        char[] messages = message.toCharArray();
+        int pointer = 0;
+        while (messages[pointer] != ' ')
             pointer++;
-        results[0]=message.substring(1,pointer-1);
-        results[1]=message.substring(pointer+1);
+        results[0] = message.substring(1, pointer - 1);
+        results[1] = message.substring(pointer + 1);
         return results;
     }
 
     // 向paragraphsList中新增一条TranslationItem
-    private void DivideNewParagraph(Language language,String text) {
+    private void DivideNewParagraph(Language language, String text) {
         paragraphsList.add(new TranslationItem(language, text));
     }
 
     // 根据获取的文本内容生成paragraphList
     public void SetUpParagraphs(String message) {
-        char[] messages=message.toCharArray();
-        int pointer=0;
+        char[] messages = message.toCharArray();
+        int pointer = 0;
         boolean flag = false; // 上一个符号为\r时为true
         StringBuffer buffer = new StringBuffer();
-        while (pointer<messages.length) {
+        while (pointer < messages.length) {
             buffer.append(messages[pointer]);
             if (isSeparator(messages[pointer]) == 1) {
                 this.DivideNewParagraph(this.originLanguage, buffer.toString());
@@ -193,7 +193,7 @@ public class TranslationFile {
                 buffer.deleteCharAt(buffer.length() - 1);
                 if (!buffer.isEmpty()) {
                     this.DivideNewParagraph(this.originLanguage, buffer.toString());
-                    buffer.delete(0,buffer.length());
+                    buffer.delete(0, buffer.length());
                 }
                 this.DivideNewParagraph(Language.Default, String.valueOf(messages[pointer]));
                 flag = false;
@@ -201,7 +201,7 @@ public class TranslationFile {
                 buffer.deleteCharAt(buffer.length() - 1);
                 if (!buffer.isEmpty()) {
                     this.DivideNewParagraph(this.originLanguage, buffer.toString());
-                    buffer.delete(0,buffer.length());
+                    buffer.delete(0, buffer.length());
                 }
                 buffer.delete(0, buffer.length());
                 buffer.append(messages[pointer]);
@@ -218,10 +218,10 @@ public class TranslationFile {
     }
 
     // 将paragraphsList中的translation合并为一个字符串
-    public String GetMergedParagraphs(){
-        StringBuffer buffer=new StringBuffer();
-        for(TranslationItem item:this.paragraphsList){
-            if(item.translation!=null)
+    public String GetMergedParagraphs() {
+        StringBuffer buffer = new StringBuffer();
+        for (TranslationItem item : this.paragraphsList) {
+            if (item.translation != null)
                 buffer.append(item.translation.text);
             else
                 buffer.append(item.origin.text);
@@ -239,5 +239,27 @@ public class TranslationFile {
             case '\n' -> 4; // 换行符
             default -> 0; // 不用分段
         };
+    }
+
+    // 获得当前文件完成度
+    public double GetCompleteness() {
+        int allNumber = 0;
+        int completeNumber = 0;
+        for (TranslationItem item : this.paragraphsList) {
+            if (!item.origin.language.EqualsTo(Language.Default)) {
+                allNumber++;
+                if (item.translation != null && !item.translation.text.equals(""))
+                    completeNumber++;
+            }
+        }
+        return (double) completeNumber / (double) allNumber;
+    }
+
+    public String GetAttributeMessage() {
+        return "名称：" + this.name + "\r\n" +
+                "存储路径：" + this.save + "\r\n" +
+                "源语言：" + this.originLanguage.name + "\r\n" +
+                "目标语言：" + this.targetLanguage.name + "\r\n" +
+                "完成状态：" + String.format("%.2f", 100 * GetCompleteness()) + "%\r\n";
     }
 }
