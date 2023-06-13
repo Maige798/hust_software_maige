@@ -1,3 +1,11 @@
+/**
+ * 类名：UI_TermLibInputContent
+ * 1.开发人员：阮泽同
+ * 实现功能：与内核交互，导入术语库
+ * 2.开发人员：
+ * 实现功能：
+ */
+
 package UI_System.TermLibInput;
 
 import ProjectSystem.ProjectManager;

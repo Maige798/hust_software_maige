@@ -1,6 +1,13 @@
+/**
+ * 类名：UI_FileListPanel
+ * 1.开发人员：阮泽同
+ * 实现功能：与项目信息面板的交互，切换至创建项目界面
+ * 2.开发人员：
+ * 实现功能：
+ */
+
 package UI_System.ProjectWin;
 
-import FileSystem.TranslationFile;
 import ProjectSystem.CAT_Project;
 import ProjectSystem.ProjectManager;
 import UI_System.CreateProjectInterface;

@@ -1,3 +1,11 @@
+/**
+ * 类名：TermLibraryInputInterface
+ * 1.开发人员：
+ * 实现功能：
+ * 2.开发人员：
+ * 实现功能：
+ */
+
 package UI_System;
 
 import UI_System.TermLibInput.UI_TermLibInputContent;
@@ -26,7 +34,6 @@ public class TermLibraryInputInterface extends JFrame {
     }
 
     public static void main(String[] args) {
-        // ProjectManager.OpenProject(ProjectManager.GetProject(1));
         TermLibraryInputInterface me = new TermLibraryInputInterface();
     }
 }

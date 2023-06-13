@@ -1,3 +1,11 @@
+/**
+ * 类名：AssociationWindow
+ * 1.开发人员：阮泽同
+ * 实现功能：与内核交互，获取并以当前文本为信息，在字典中匹配的单词，实现与编辑界面交互并自动完成（填入联想词汇）的功能
+ * 2.开发人员：
+ * 实现功能：
+ */
+
 package UI_System;
 
 import TranslationSystem.EditHelper;

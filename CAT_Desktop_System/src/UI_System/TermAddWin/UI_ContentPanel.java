@@ -1,3 +1,11 @@
+/**
+ * 类名：UI_ContentPanel
+ * 1.开发人员：阮泽同
+ * 实现功能：与内核交互，添加术语条目
+ * 2.开发人员：
+ * 实现功能：
+ */
+
 package UI_System.TermAddWin;
 
 import ProjectSystem.ProjectManager;

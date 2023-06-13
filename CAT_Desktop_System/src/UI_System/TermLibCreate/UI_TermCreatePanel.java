@@ -1,3 +1,11 @@
+/**
+ * 类名：UI_TermCreatePanel
+ * 1.开发人员：阮泽同
+ * 实现功能：与内核交互，创建术语库
+ * 2.开发人员：
+ * 实现功能：
+ */
+
 package UI_System.TermLibCreate;
 
 import ProjectSystem.ProjectManager;
@@ -10,7 +18,7 @@ import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UI_TermCreatePanel1 extends JPanel {
+public class UI_TermCreatePanel extends JPanel {
     public JLabel termLibNameLabel;
     public JLabel savePathLabel;
     public TextField nameField;
@@ -20,7 +28,7 @@ public class UI_TermCreatePanel1 extends JPanel {
 
     public JButton createButton;
 
-    public UI_TermCreatePanel1() {
+    public UI_TermCreatePanel() {
         this.setLayout(null);
 
         //创建三对标签文本框并设置位置
@@ -37,7 +45,7 @@ public class UI_TermCreatePanel1 extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 JFileChooser fileChooser = new JFileChooser();
                 fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-                int option = fileChooser.showOpenDialog(new UI_TermCreatePanel1());
+                int option = fileChooser.showOpenDialog(new UI_TermCreatePanel());
                 if (option == JFileChooser.APPROVE_OPTION) {
                     filePaths.add(fileChooser.getSelectedFile().getAbsolutePath());
                     System.out.println(filePaths.get(0));

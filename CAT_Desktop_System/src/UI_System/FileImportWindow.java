@@ -1,3 +1,11 @@
+/**
+ * 类名：FileImportWindow
+ * 1.开发人员：阮泽同
+ * 实现功能：与内核交互，向当前项目中导入新的翻译文件
+ * 2.开发人员：
+ * 实现功能：
+ */
+
 package UI_System;
 
 import FileSystem.TranslationFile;

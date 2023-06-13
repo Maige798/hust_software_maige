@@ -1,3 +1,11 @@
+/**
+ * 类名：UI_TermLibraryListPanel
+ * 1.开发人员：阮泽同
+ * 实现功能：与内核交互，获取并展示当前项目术语库，实现翻页、打开术语库功能
+ * 2.开发人员：
+ * 实现功能：
+ */
+
 package UI_System.TermLibWin;
 
 import ProjectSystem.ProjectManager;

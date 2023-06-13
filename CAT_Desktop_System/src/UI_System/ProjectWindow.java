@@ -1,3 +1,11 @@
+/**
+ * 类名：ProjectWindow
+ * 1.开发人员：
+ * 实现功能：
+ * 2.开发人员：
+ * 实现功能：
+ */
+
 package UI_System;
 
 import ProjectSystem.ProjectManager;

@@ -1,3 +1,11 @@
+/**
+ * 类名：UI_ItemSelectionPanel
+ * 1.开发人员：阮泽同
+ * 实现功能：与术语库面板交互，筛选条目
+ * 2.开发人员：
+ * 实现功能：
+ */
+
 package UI_System.TermLibWin;
 
 import javax.swing.*;

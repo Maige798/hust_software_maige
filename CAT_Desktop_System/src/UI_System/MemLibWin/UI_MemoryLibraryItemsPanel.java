@@ -1,3 +1,11 @@
+/**
+ * 类名：UI_MemoryLibraryItemsPanel
+ * 1.开发人员：阮泽同
+ * 实现功能：实现与内核的交互，展示记忆条目，翻页，记忆条目编辑、删除、筛选功能
+ * 2.开发人员：
+ * 实现功能：
+ */
+
 package UI_System.MemLibWin;
 
 import MemoryLibrarySystem.MemoryLibraryManager;

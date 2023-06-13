@@ -1,5 +1,5 @@
 /**
- * 类名：
+ * 类名：UI_InterfaceSwitchingPanel
  * 1.开发人员：阮泽同
  * 实现功能：页面切换功能
  * 2.开发人员：

@@ -1,3 +1,8 @@
+/**
+ * 类名：MachineTranslationWindow
+ * 实现功能：没有功能，各大网站好像均不提供免费的机翻服务，故只能在此界面留下搜狗翻译的网址，让用户自行搜索并使用机器翻译
+ */
+
 package UI_System;
 
 import javax.swing.*;

@@ -1,3 +1,11 @@
+/**
+ * 类名：UI_TermLibraryPanel
+ * 1.开发人员：阮泽同
+ * 实现功能：展示术语条目，术语筛选、删除功能、翻页功能
+ * 2.开发人员：
+ * 实现功能：
+ */
+
 package UI_System.TermLibWin;
 
 import ProjectSystem.ProjectManager;

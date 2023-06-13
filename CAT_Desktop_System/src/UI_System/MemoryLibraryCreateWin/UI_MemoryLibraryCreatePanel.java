@@ -1,7 +1,14 @@
+/**
+ * 类名：UI_MemoryLibraryCreatePanel
+ * 1.开发人员：阮泽同
+ * 实现功能：实现与内核的交互，创建项目
+ * 2.开发人员：
+ * 实现功能：
+ */
+
 package UI_System.MemoryLibraryCreateWin;
 
 import MemoryLibrarySystem.MemoryLibraryManager;
-import ProjectSystem.ProjectManager;
 import SystemUtil.Language;
 
 import javax.swing.*;
@@ -80,13 +87,13 @@ public class UI_MemoryLibraryCreatePanel extends JPanel {
                 int option = fileChooser.showOpenDialog(new UI_MemoryLibraryCreatePanel());
                 if (option == JFileChooser.APPROVE_OPTION) {
                     memoryLibPaths.add(fileChooser.getSelectedFile().getAbsolutePath());
-                    UpdateSavePathButton(memoryLibPaths);
+                    UpdateSavePathButton();
                 }
             }
         });
     }
 
-    private void UpdateSavePathButton(List<String> fileNames) {
+    private void UpdateSavePathButton() {
         saveField.setText(memoryLibPaths.get(memoryLibPaths.size() - 1));
     }
 

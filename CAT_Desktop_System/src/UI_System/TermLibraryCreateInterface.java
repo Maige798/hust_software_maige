@@ -1,19 +1,19 @@
+/**
+ * 类名：TermLibraryCreateInterface
+ * 1.开发人员：
+ * 实现功能：
+ * 2.开发人员：
+ * 实现功能：
+ */
+
 package UI_System;
 
 import ProjectSystem.ProjectManager;
-import UI_System.TermLibCreate.UI_TermCreatePanel1;
+import UI_System.TermLibCreate.UI_TermCreatePanel;
 
 import javax.swing.*;
 
 public class TermLibraryCreateInterface extends JFrame {
-    //左右侧边框50，上下边框30
-    //上方文本框区域：标签：宽100高50
-    //文本框：宽350高50   按钮：宽100高50
-
-    //下方列表区域：标签：宽100高50 x:50 y:30+(50+50)*3
-    //列表：列宽450 行高30 五行
-    //下方按钮：
-
     public TermLibraryCreateInterface() {
         init();
     }
@@ -25,7 +25,7 @@ public class TermLibraryCreateInterface extends JFrame {
         setResizable(false);
 
         //创建上方文本框
-        JPanel panel1 = new UI_TermCreatePanel1();
+        JPanel panel1 = new UI_TermCreatePanel();
 
         setContentPane(panel1);
 

@@ -1,3 +1,11 @@
+/**
+ * 类名：EditorWindow
+ * 1.开发人员：
+ * 实现功能：
+ * 2.开发人员：
+ * 实现功能：
+ */
+
 package UI_System;
 
 import ProjectSystem.CAT_Project;
