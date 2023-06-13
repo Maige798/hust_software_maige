@@ -220,7 +220,7 @@ public class UI_EditPanel extends JPanel {
 
     private void UpdateMemoryLibraryMessage() {
         int index = focusNum + itemFieldNum * currentPageNum;
-        if (index < translationItems.length)
+        if (index < translationItems.length && ProjectManager.instance.currentProject.memoryLibrary != null)
             memoryLibraryPanel.SetTextArea(
                     ProjectManager.instance.currentProject.memoryLibrary.Match(translationItems[index].origin.text));
         else
@@ -229,7 +229,7 @@ public class UI_EditPanel extends JPanel {
 
     private void UpdateTermLibraryMessage() {
         int index = focusNum + itemFieldNum * currentPageNum;
-        if (index < translationItems.length)
+        if (index < translationItems.length && !ProjectManager.instance.currentProject.termLibraryList.isEmpty())
             termLibraryPanel.SetTextArea(
                     ProjectManager.instance.currentProject.GetTermLibraryMessages(translationItems[index].origin.text));
         else

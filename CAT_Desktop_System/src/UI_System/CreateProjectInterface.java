@@ -24,8 +24,7 @@ public class CreateProjectInterface extends JFrame {
         setBackground(Color.decode("#EAECF2"));
         setResizable(false);
 
-        UI_ContentPanel contentPanel = new UI_ContentPanel();
-        contentPanel.frame = this;
+        UI_ContentPanel contentPanel = new UI_ContentPanel(this);
 
         setContentPane(contentPanel);
         setLocationRelativeTo(null);

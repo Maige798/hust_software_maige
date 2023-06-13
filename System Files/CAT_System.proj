@@ -6,3 +6,7 @@
 	<save> C:\Users\123\Desktop\testCreateProject\testP.catp
 }
 
+@Project {
+	<save> C:\Users\123\Desktop\testCreateProject\NewProject.catp
+}
+

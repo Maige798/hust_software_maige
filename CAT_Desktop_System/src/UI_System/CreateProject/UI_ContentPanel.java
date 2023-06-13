@@ -13,7 +13,8 @@ public class UI_ContentPanel extends JPanel {
 
     public UI_FileListPanel panel2 = new UI_FileListPanel();
 
-    public UI_ContentPanel() {
+    public UI_ContentPanel(JFrame frame) {
+        this.frame = frame;
         this.setLayout(null);
 
         this.add(panel2);
