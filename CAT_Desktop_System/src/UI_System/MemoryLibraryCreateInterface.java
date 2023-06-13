@@ -12,8 +12,10 @@ import UI_System.MemoryLibraryCreateWin.UI_MemoryLibraryCreatePanel;
 import javax.swing.*;
 
 public class MemoryLibraryCreateInterface extends JFrame {
+    public MemoryLibraryImportInterface importInterface;
 
-    public MemoryLibraryCreateInterface() {
+    public MemoryLibraryCreateInterface(MemoryLibraryImportInterface importInterface) {
+        this.importInterface=importInterface;
         init();
     }
 
@@ -23,15 +25,10 @@ public class MemoryLibraryCreateInterface extends JFrame {
 
         setResizable(false);
 
-        JPanel panel = new UI_MemoryLibraryCreatePanel();
+        JPanel panel = new UI_MemoryLibraryCreatePanel(this);
 
         setContentPane(panel);
         setLocationRelativeTo(null);
         setVisible(true);
-    }
-
-    public static void main(String[] args) {
-        ProjectManager.OpenProject(ProjectManager.GetProject(1));
-        MemoryLibraryCreateInterface me = new MemoryLibraryCreateInterface();
     }
 }

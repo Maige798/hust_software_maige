@@ -11,26 +11,27 @@ package UI_System.MemoryLibraryImportInterWin;
 import MemoryLibrarySystem.MemoryLibraryManager;
 import ProjectSystem.ProjectManager;
 import UI_System.MemoryLibraryCreateInterface;
+import UI_System.MemoryLibraryImportInterface;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.util.ArrayList;
-import java.util.List;
 
 public class UI_MemoryLibraryImportPanel extends JPanel {
-    JLabel memoryLibraryImportLabel = new JLabel();
+    public MemoryLibraryImportInterface importInterface;
 
-    TextField createTextField = new TextField();
+    public JLabel memoryLibraryImportLabel = new JLabel();
 
-    JButton browseButton = new JButton();
-    List<String> memoryLibPaths = new ArrayList<>();
-    JButton createButton = new JButton();
+    public TextField createTextField = new TextField();
 
-    JButton importButton = new JButton();
+    public JButton browseButton = new JButton();
+    public JButton createButton = new JButton();
+
+    public JButton importButton = new JButton();
 
 
-    public UI_MemoryLibraryImportPanel() {
+    public UI_MemoryLibraryImportPanel(MemoryLibraryImportInterface importInterface) {
+        this.importInterface = importInterface;
         this.setLayout(null);
 
         memoryLibraryImportLabel.setText("记忆库导入");
@@ -49,10 +50,10 @@ public class UI_MemoryLibraryImportPanel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFileChooser fileChooser = new JFileChooser();
-                fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-                int option = fileChooser.showOpenDialog(new UI_MemoryLibraryImportPanel());
+                fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+                int option = fileChooser.showOpenDialog(new UI_MemoryLibraryImportPanel(importInterface));
                 if (option == JFileChooser.APPROVE_OPTION) {
-                    createTextField.setText(fileChooser.getSelectedFile().getAbsolutePath() + "\\");
+                    createTextField.setText(fileChooser.getSelectedFile().getAbsolutePath());
                 }
             }
         });
@@ -77,11 +78,12 @@ public class UI_MemoryLibraryImportPanel extends JPanel {
                 ProjectManager.instance.currentProject.SetMemoryLibrary(MemoryLibraryManager.LoadLibrary(save));
                 ProjectManager.SaveProject(ProjectManager.instance.currentProject);
                 System.out.println(ProjectManager.instance.currentProject.memoryLibrary);
+                importInterface.dispose();
             }
         }
     }
 
     private void OnCreateButtonDown() {
-        MemoryLibraryCreateInterface window = new MemoryLibraryCreateInterface();
+        new MemoryLibraryCreateInterface(importInterface);
     }
 }

@@ -13,6 +13,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MemoryLibraryImportInterface extends JFrame {
+    public UI_MemoryLibraryImportPanel panel;
+
     public MemoryLibraryImportInterface() {
         init();
     }
@@ -25,7 +27,7 @@ public class MemoryLibraryImportInterface extends JFrame {
         setBackground(Color.decode("#EAECF2"));
         setResizable(false);    //窗口设置
 
-        JPanel panel = new UI_MemoryLibraryImportPanel();
+        panel = new UI_MemoryLibraryImportPanel(this);
 
         setContentPane(panel);
         setLocationRelativeTo(null);

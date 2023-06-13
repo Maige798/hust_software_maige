@@ -10,31 +10,34 @@ package UI_System.MemoryLibraryCreateWin;
 
 import MemoryLibrarySystem.MemoryLibraryManager;
 import SystemUtil.Language;
+import UI_System.MemoryLibraryCreateInterface;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 public class UI_MemoryLibraryCreatePanel extends JPanel {
-    JLabel memoryLibraryNameLabel = new JLabel();
-    TextField nameField = new TextField();
+    public MemoryLibraryCreateInterface frame;
 
-    JButton createButton = new JButton();
+    public JLabel memoryLibraryNameLabel = new JLabel();
+    public TextField nameField = new TextField();
 
-    JLabel savePath = new JLabel();
-    TextField saveField = new TextField();
+    public JButton createButton = new JButton();
 
-    JButton browseButton = new JButton();
+    public JLabel savePath = new JLabel();
+    public TextField saveField = new TextField();
+
+    public JButton browseButton = new JButton();
 
     public JLabel beginLabel;
     public JComboBox<String> originLanguageComboBox;
     public JLabel goalLabel;
     public JComboBox<String> targetLanguageComboBox;
 
-    public UI_MemoryLibraryCreatePanel() {
+    public UI_MemoryLibraryCreatePanel(MemoryLibraryCreateInterface frame) {
+        this.frame=frame;
+
         this.setLayout(null);
 
         memoryLibraryNameLabel.setText("记忆库名称");
@@ -82,10 +85,10 @@ public class UI_MemoryLibraryCreatePanel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFileChooser fileChooser = new JFileChooser();
-                fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
-                int option = fileChooser.showOpenDialog(new UI_MemoryLibraryCreatePanel());
+                fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+                int option = fileChooser.showOpenDialog(new UI_MemoryLibraryCreatePanel(frame));
                 if (option == JFileChooser.APPROVE_OPTION) {
-                    saveField.setText(fileChooser.getSelectedFile().getAbsolutePath());
+                    saveField.setText(fileChooser.getSelectedFile().getAbsolutePath() + "\\");
                 }
             }
         });
@@ -98,6 +101,8 @@ public class UI_MemoryLibraryCreatePanel extends JPanel {
             Language origin = Language.GetLanguage((String) originLanguageComboBox.getSelectedItem());
             Language target = Language.GetLanguage((String) targetLanguageComboBox.getSelectedItem());
             MemoryLibraryManager.CreateMemoryLibrary(name, save, origin, target);
+            frame.importInterface.panel.createTextField.setText(save + name + ".mlib");
+            frame.dispose();
         }
     }
 
