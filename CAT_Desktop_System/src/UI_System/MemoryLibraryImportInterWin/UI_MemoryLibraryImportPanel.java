@@ -52,8 +52,7 @@ public class UI_MemoryLibraryImportPanel extends JPanel {
                 fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
                 int option = fileChooser.showOpenDialog(new UI_MemoryLibraryImportPanel());
                 if (option == JFileChooser.APPROVE_OPTION) {
-                    memoryLibPaths.add(fileChooser.getSelectedFile().getAbsolutePath());
-                    UpdateSavePathButton(memoryLibPaths);
+                    createTextField.setText(fileChooser.getSelectedFile().getAbsolutePath() + "\\");
                 }
             }
         });
@@ -69,10 +68,6 @@ public class UI_MemoryLibraryImportPanel extends JPanel {
         importButton.setMargin(new Insets(0, 0, 0, 0));
         importButton.setBounds(300, 250, 100, 30);
         importButton.addActionListener(e -> OnImportButtonDown());
-    }
-
-    private void UpdateSavePathButton(List<String> fileNames) {
-        createTextField.setText(fileNames.get(fileNames.size() - 1));
     }
 
     private void OnImportButtonDown() {

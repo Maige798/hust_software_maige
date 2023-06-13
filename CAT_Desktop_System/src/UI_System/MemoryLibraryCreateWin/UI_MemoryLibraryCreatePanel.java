@@ -82,7 +82,7 @@ public class UI_MemoryLibraryCreatePanel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFileChooser fileChooser = new JFileChooser();
-                fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+                fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
                 int option = fileChooser.showOpenDialog(new UI_MemoryLibraryCreatePanel());
                 if (option == JFileChooser.APPROVE_OPTION) {
                     saveField.setText(fileChooser.getSelectedFile().getAbsolutePath());
