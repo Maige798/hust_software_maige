@@ -1,3 +1,9 @@
+/**
+ * 类名：CAT_Project
+ * 开发人员：阮泽同
+ * 实现功能：翻译项目的基本属性和方法，包括记忆库、术语库、翻译文件管理等
+ */
+
 package ProjectSystem;
 
 import FileSystem.TranslationFile;

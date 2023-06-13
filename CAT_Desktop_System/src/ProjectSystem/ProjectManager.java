@@ -1,3 +1,9 @@
+/**
+ * 类名：ProjectManager
+ * 开发人员：阮泽同
+ * 实现功能：项目管理功能，包括项目文件的导入、导出、初始化、打开、保存等功能
+ */
+
 package ProjectSystem;
 
 import FileSystem.TranslationFile;
