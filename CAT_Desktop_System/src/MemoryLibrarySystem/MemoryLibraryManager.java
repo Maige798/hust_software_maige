@@ -1,3 +1,9 @@
+/**
+ * 类名：MemoryLibraryManager
+ * 开发人员：阮泽同
+ * 实现功能：记忆库管理功能，包括记忆库创建、导入、保存等功能
+ */
+
 package MemoryLibrarySystem;
 
 import SystemUtil.CAT_FileController;
@@ -50,25 +56,6 @@ public class MemoryLibraryManager {
         }
     }
 
-    // 旧版本，暂时弃用
-    public static MemoryLibrary Old_LoadLibrary(String save) {
-        File file = new File(save);
-        MemoryLibrary library = null;
-        try {
-            int charGet; // 读取的字符
-            StringBuffer buffer=new StringBuffer();
-            FileReader in=new FileReader(file);
-            while ((charGet= in.read())!=-1){
-                buffer.append((char) charGet);
-            }
-            library=new MemoryLibrary(save);
-            library.SetUpLibrary(buffer.toString());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        instance.memoryLibraryList.add(library);
-        return library;
-    }
 
     public static MemoryLibrary LoadLibrary(String save) {
         CAT_FileItem[] items = CAT_FileController.ReadFile(save);

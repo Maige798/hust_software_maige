@@ -1,3 +1,9 @@
+/**
+ * 类名：MemoryLibrary
+ * 开发人员：阮泽同
+ * 实现功能：记忆库基本属性和方法，包括记忆条目增添、删除、编辑、筛选、匹配、初始化等功能
+ */
+
 package MemoryLibrarySystem;
 
 import SystemUtil.*;
