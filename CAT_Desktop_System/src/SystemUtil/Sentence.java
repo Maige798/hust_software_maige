@@ -1,3 +1,9 @@
+/**
+ * 类名：Sentence
+ * 开发人员：阮泽同
+ * 实现功能：基本类，封装Language与String
+ */
+
 package SystemUtil;
 
 public class Sentence implements Comparable {

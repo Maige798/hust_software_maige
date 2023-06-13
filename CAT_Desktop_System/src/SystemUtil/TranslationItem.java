@@ -1,3 +1,9 @@
+/**
+ * 类名：TranslationItem
+ * 开发人员：阮泽同
+ * 实现功能：基本类，生成记忆条目与翻译条目对象，封装两个Sentence
+ */
+
 package SystemUtil;
 
 public class TranslationItem {

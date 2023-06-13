@@ -1,3 +1,9 @@
+/**
+ * 类名：FileItem
+ * 开发人员：阮泽同
+ * 实现功能：基本类，用于FileController存储读取的信息
+ */
+
 package SystemUtil;
 
 import java.util.ArrayList;

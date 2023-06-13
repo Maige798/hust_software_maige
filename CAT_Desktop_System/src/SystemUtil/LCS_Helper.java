@@ -1,3 +1,9 @@
+/**
+ * 类名：LCS_Helper
+ * 开发人员：阮泽同
+ * 实现功能：工具类，实现计算共同子序列长度与相似度功能，用于实现记忆库匹配功能
+ */
+
 package SystemUtil;
 
 public class LCS_Helper {

@@ -1,3 +1,9 @@
+/**
+ * 类名：CAT_FileController
+ * 开发人员：阮泽同
+ * 实现功能：工具类，实现所有系统文件的读取功能，用于初始化项目、翻译文件、记忆库、术语库等对象
+ */
+
 package SystemUtil;
 
 import java.io.File;

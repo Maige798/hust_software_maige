@@ -1,3 +1,9 @@
+/**
+ * 类名：TermItem
+ * 开发人员：阮泽同
+ * 实现功能：基本类，用于生成术语条目对象，封装一个String与一个List<Sentence>
+ */
+
 package SystemUtil;
 
 import java.util.ArrayList;

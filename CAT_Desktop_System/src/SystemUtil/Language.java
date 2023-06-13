@@ -1,3 +1,9 @@
+/**
+ * 类名：Language
+ * 开发人员：阮泽同
+ * 实现功能：基本枚举类，枚举所有语言，并提供相应方法
+ */
+
 package SystemUtil;
 
 public enum Language {
