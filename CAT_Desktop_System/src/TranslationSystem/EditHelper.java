@@ -1,3 +1,9 @@
+/**
+ * 类名：EditorHelper
+ * 开发人员：阮泽同
+ * 实现功能：实现对字典条目的读取，（英语）拼写检查与自动完成（输入联想）功能
+ */
+
 package TranslationSystem;
 
 import java.io.FileReader;

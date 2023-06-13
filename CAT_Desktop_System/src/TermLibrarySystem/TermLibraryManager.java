@@ -1,3 +1,9 @@
+/**
+ * 类名：TermLibraryManager
+ * 开发人员：阮泽同
+ * 实现功能：术语库管理功能，包括术语库创建、导入、保存等功能
+ */
+
 package TermLibrarySystem;
 
 import SystemUtil.CAT_FileController;

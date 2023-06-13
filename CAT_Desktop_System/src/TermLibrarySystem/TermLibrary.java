@@ -1,3 +1,9 @@
+/**
+ * 类名：TermLibrary
+ * 开发人员：阮泽同
+ * 实现功能：术语库基本属性和方法，包括术语条目增添、删除、编辑、筛选、匹配、初始化等功能
+ */
+
 package TermLibrarySystem;
 
 import SystemUtil.*;
