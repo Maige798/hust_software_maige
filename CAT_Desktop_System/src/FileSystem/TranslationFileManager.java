@@ -1,3 +1,9 @@
+/**
+ * 类名：TranslationFile
+ * 开发人员：阮泽同
+ * 实现功能：翻译文件的管理，包括导入、导出、保存翻译文件等
+ */
+
 package FileSystem;
 
 import SystemUtil.*;
@@ -76,16 +82,6 @@ public class TranslationFileManager {
         TranslationFile translationFile = new TranslationFile();
         translationFile.SetUpTranslationFile(items);
         return translationFile;
-    }
-
-    private static void SetUpParagraph(TranslationFile translationFile) {
-        // maybe this method is useless
-    }
-
-    // 文档分段，这个方法貌似没用，暂时丢弃
-    private static Sentence[] DivideParagraphs(String content) {
-        // maybe this method is useless
-        return null;
     }
 
     // 文档合并

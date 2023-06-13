@@ -1,3 +1,9 @@
+/**
+ * 类名：TranslationFile
+ * 开发人员：阮泽同
+ * 完成功能：翻译文件的导入、导出、文档分段等功能
+ * */
+
 package FileSystem;
 
 import SystemUtil.CAT_FileItem;
