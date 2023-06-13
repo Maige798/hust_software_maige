@@ -26,9 +26,15 @@ public class UI_MemoryLibraryDetailsPanel extends JPanel {
         textArea = new JTextArea();
         textArea.setBackground(YellowColor);
         textArea.setEditable(false);
+        textArea.setWrapStyleWord(true);
+        textArea.setLineWrap(true);
 
         add(textArea);
 
         textArea.setBounds(25,100,150,200);
+    }
+
+    public void SetText(String text) {
+        textArea.setText(text);
     }
 }

@@ -124,129 +124,6 @@ public class MemoryLibrary {
         return "MaxValue:" + maxValue + "\n" + item.translation.text;
     }
 
-    // 根据获取的存储的信息生成对象（旧方法，暂时弃用）
-    public void SetUpLibrary(String message){
-        char[] messages=message.toCharArray();
-        int pointer=0;
-        StringBuilder buffer=new StringBuilder();
-        while (pointer<messages.length){
-            if (messages[pointer]=='@') {
-                pointer++; // 指向@下一个字符
-                while (Character.isLetter(messages[pointer])) {
-                    buffer.append(messages[pointer]);
-                    pointer++;
-                }
-                if (buffer.toString().equals("TranItem")) { // 匹配到@TranItem
-                    TranslationItem item = new TranslationItem();
-                    buffer.delete(0, buffer.length());
-                    while (messages[pointer]!='<')
-                        pointer++; // 省去{至<中的字符
-                    pointer++; // 指向<下一个字符
-                    while (messages[pointer]!='>') {
-                        buffer.append(messages[pointer]);
-                        pointer++;
-                    }
-                    if (buffer.toString().equals("ori")) { // 匹配到<ori>
-                        buffer.delete(0, buffer.length());
-                        while (messages[pointer]!='[')
-                            pointer++; // 省去>至[之间的字符]
-                        pointer++; // 指向[下一个字符
-                        while (messages[pointer]!=']') {
-                            buffer.append(messages[pointer]);
-                            pointer++;
-                        }
-                        pointer++;
-                        item.origin.language = Language.GetLanguage(buffer.toString());
-                        buffer.delete(0, buffer.length());
-                        if(messages[pointer]==' ')
-                            pointer++; // 省去]与内容之间的空格
-                        while (messages[pointer]!='\r') {
-                            buffer.append(messages[pointer]);
-                            pointer++;
-                        }
-                        item.origin.text = buffer.toString();
-                        buffer.delete(0, buffer.length());
-                        while (messages[pointer] != '<' && messages[pointer] != '}')
-                            pointer++;
-                        if (messages[pointer] == '<') {
-                            pointer++;
-                            while (messages[pointer] != '>') {
-                                buffer.append(messages[pointer]);
-                                pointer++;
-                            }
-                            if (buffer.toString().equals("tran")) { // 匹配到<tran>
-                                buffer.delete(0, buffer.length());
-                                while (messages[pointer] != '[')
-                                    pointer++; // 省去>至[之间的字符]
-                                pointer++;
-                                while (messages[pointer] != ']') {
-                                    buffer.append(messages[pointer]);
-                                    pointer++;
-                                }
-                                pointer++;
-                                item.translation.language = Language.GetLanguage(buffer.toString());
-                                buffer.delete(0, buffer.length());
-                                if(messages[pointer]==' ')
-                                    pointer++;
-                                while (messages[pointer] != '\r') {
-                                    buffer.append(messages[pointer]);
-                                    pointer++;
-                                }
-                                item.translation.text = buffer.toString();
-                            } else if (buffer.toString().equals("blank")) {
-                                item.translation = null;
-                            } else {
-                                System.err.println("Wrong in item:" + buffer);
-                            }
-                        }
-                    } else {
-                        System.err.println("Wrong in item:" + buffer);
-                    }
-                    this.itemsList.add(item);
-                } else if (buffer.toString().equals("Blank")) { // 匹配到@Blank
-                    TranslationItem item = new TranslationItem();
-                    item.origin = new Sentence(Language.Default, " ");
-                    item.translation = new Sentence(Language.Default, " ");
-                    this.itemsList.add(item);
-                } else if (buffer.toString().equals("Table")) { // 匹配到@Table
-                    TranslationItem item = new TranslationItem();
-                    item.origin = new Sentence(Language.Default, "\t");
-                    item.translation = new Sentence(Language.Default, "\t");
-                    this.itemsList.add(item);
-                } else if (buffer.toString().equals("Return")) { // 匹配到@Return
-                    TranslationItem item = new TranslationItem();
-                    item.origin = new Sentence(Language.Default, "\r\n");
-                    item.translation = new Sentence(Language.Default, "\r\n");
-                    this.itemsList.add(item);
-                } else if (buffer.toString().equals("Name")) { // 匹配到@Name
-                    buffer.delete(0, buffer.length());
-                    while (messages[pointer] != '{')
-                        pointer++; // 省略{
-                    pointer++;
-                    while (messages[pointer] != '}') {
-                        buffer.append(messages[pointer]);
-                        pointer++;
-                    }
-                    this.name = buffer.toString();
-                } else if (buffer.toString().equals("Save")) { // 匹配到@Save
-                    buffer.delete(0, buffer.length());
-                    while (messages[pointer] != '{')
-                        pointer++; // 省略{
-                    pointer++;
-                    while (messages[pointer] != '}') {
-                        buffer.append(messages[pointer]);
-                        pointer++;
-                    }
-                    this.save = buffer.toString();
-                } else {
-                    System.err.println("Wrong in type:" + buffer);
-                }
-                buffer.delete(0, buffer.length());
-            }
-            pointer++;
-        }
-    }
-
     // 根据获得的文件条目生成对象
     public void SetUpLibrary(CAT_FileItem[] items) {
         for (CAT_FileItem item : items) {
@@ -321,5 +198,13 @@ public class MemoryLibrary {
             }
         }
         return buffer.toString();
+    }
+
+    public String GetAttributeMessage() {
+        return "名称：" + this.name + "\r\n"
+                + "存储路径：" + this.save + "\r\n"
+                + "源语言：" + this.originLanguage.name + "\r\n"
+                + "翻译语言：" + this.translationLanguage + "\r\n"
+                + "记忆条目数：" + this.itemsList.size() + "\r\n";
     }
 }

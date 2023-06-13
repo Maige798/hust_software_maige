@@ -238,7 +238,7 @@ public class TranslationFile {
     // 判断遇到该符号是否需要分段
     private static int isSeparator(char c) {
         return switch (c) {
-            case '，', '。', '？', '！', '：', '；', '…',
+            case '，', '。', '？', '！', '：', '；', '…', '、',
                     ',', '.', '?', '!', ':', ';' -> 1; // 纯标点符号
             case ' ', '\t' -> 2; // 空格符
             case '\r' -> 3; // 回车符

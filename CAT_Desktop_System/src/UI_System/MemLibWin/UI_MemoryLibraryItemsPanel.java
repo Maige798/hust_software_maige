@@ -17,6 +17,8 @@ import java.awt.*;
 import java.util.Arrays;
 
 public class UI_MemoryLibraryItemsPanel extends JPanel {
+    public UI_MemoryLibraryDetailsPanel memoryLibraryDetailsPanel;
+
     public Color Green = new Color(204, 255, 128);
     public Color Blue = new Color(64, 0, 128);
 
@@ -36,7 +38,8 @@ public class UI_MemoryLibraryItemsPanel extends JPanel {
 
     public TranslationItem[] currentMemoryLibraryItems;
 
-    public UI_MemoryLibraryItemsPanel() {
+    public UI_MemoryLibraryItemsPanel(UI_MemoryLibraryDetailsPanel memoryLibraryDetailsPanel) {
+        this.memoryLibraryDetailsPanel=memoryLibraryDetailsPanel;
         setLayout(null);
         setBackground(Green);
 
@@ -98,6 +101,7 @@ public class UI_MemoryLibraryItemsPanel extends JPanel {
     public void UpdateItemTable() {
         UpdateItemTableByCurrentPage(GetCurrentPageItems());
         UpdateBookPrint();
+        UpdateMemoryLibraryDetailsPanel();
     }
 
     private void UpdateItemTableByCurrentPage(TranslationItem[] items) {
@@ -155,5 +159,9 @@ public class UI_MemoryLibraryItemsPanel extends JPanel {
         }
         currentMemoryLibraryItems = ProjectManager.instance.currentProject.memoryLibrary.GetAllItems();
         UpdateItemTable();
+    }
+
+    private void UpdateMemoryLibraryDetailsPanel() {
+        memoryLibraryDetailsPanel.SetText(ProjectManager.instance.currentProject.memoryLibrary.GetAttributeMessage());
     }
 }

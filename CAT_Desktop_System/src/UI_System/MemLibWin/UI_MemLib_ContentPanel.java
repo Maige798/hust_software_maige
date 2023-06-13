@@ -12,13 +12,13 @@ import UI_System.GeneralWin.UI_InterfaceSwitchingPanel;
 import javax.swing.*;
 
 public class UI_MemLib_ContentPanel extends JPanel {
-    public JFrame jFrame;
+    public JFrame frame;
 
     //创建翻译记忆库列表
-    public JPanel MemoryLibraryListPanel;
+    public UI_MemoryLibraryDetailsPanel memoryLibraryDetailsPanel;
 
     //创建主界面切换栏
-    public JPanel InterfaceSwitchingPanel;
+    public UI_InterfaceSwitchingPanel InterfaceSwitchingPanel;
 
     //创建记忆库条目栏
     public UI_MemoryLibraryItemsPanel MemoryLibraryItemsPanel;
@@ -27,20 +27,21 @@ public class UI_MemLib_ContentPanel extends JPanel {
     public UI_ItemSelectionPanel ItemSelectionPanel;
 
     public UI_MemLib_ContentPanel(JFrame frame) {
-        MemoryLibraryListPanel = new UI_MemoryLibraryDetailsPanel();
+        this.frame = frame;
+        memoryLibraryDetailsPanel = new UI_MemoryLibraryDetailsPanel();
         InterfaceSwitchingPanel = new UI_InterfaceSwitchingPanel(frame, UI_InterfaceSwitchingPanel.MemoryLibrary_WIN_Index);
-        MemoryLibraryItemsPanel = new UI_MemoryLibraryItemsPanel();
+        MemoryLibraryItemsPanel = new UI_MemoryLibraryItemsPanel(memoryLibraryDetailsPanel);
         ItemSelectionPanel = new UI_ItemSelectionPanel();
         ItemSelectionPanel.SetItemsPanel(MemoryLibraryItemsPanel);
 
         setLayout(null);
 
-        add(MemoryLibraryListPanel);
+        add(memoryLibraryDetailsPanel);
         add(InterfaceSwitchingPanel);
         add(MemoryLibraryItemsPanel);
         add(ItemSelectionPanel);
 
-        MemoryLibraryListPanel.setBounds(0, 0, 200, 400);
+        memoryLibraryDetailsPanel.setBounds(0, 0, 200, 400);
         InterfaceSwitchingPanel.setBounds(0, 400, 200, 250);
         MemoryLibraryItemsPanel.setBounds(200, 100, 800, 500);
         ItemSelectionPanel.setBounds(200, 0, 800, 150);
