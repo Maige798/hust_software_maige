@@ -14,8 +14,6 @@ import ProjectSystem.ProjectManager;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.util.ArrayList;
-import java.util.List;
 
 public class UI_FileDerivePanel extends JPanel {
     public JFrame frame;
@@ -25,7 +23,6 @@ public class UI_FileDerivePanel extends JPanel {
     public JButton deriveButton;
 
     public JButton browseButton;
-    public List<String> filePaths = new ArrayList<>();
 
     public TextField nameField;
 
@@ -46,9 +43,7 @@ public class UI_FileDerivePanel extends JPanel {
                 fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
                 int option = fileChooser.showOpenDialog(null);
                 if (option == JFileChooser.APPROVE_OPTION) {
-                    filePaths.add(fileChooser.getSelectedFile().getAbsolutePath());
-                    System.out.println(filePaths.get(0));
-                    UpdateSavePathButton();
+                    saveField.setText(fileChooser.getSelectedFile().getAbsolutePath()+"\\");
                 }
             }
         });
@@ -68,10 +63,6 @@ public class UI_FileDerivePanel extends JPanel {
         browseButton.setBounds(400, 200, 70, 40);
         nameField.setBounds(40, 100, 300, 40);
         saveField.setBounds(40, 200, 300, 40);
-    }
-
-    private void UpdateSavePathButton() {
-        saveField.setText(filePaths.get(filePaths.size() - 1) + "\\");
     }
 
     private void OnDeriveButtonDown() {

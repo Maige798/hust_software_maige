@@ -34,7 +34,6 @@ public class UI_FileListPanel extends JPanel {
 
     public int currentPage = 0;
     public List<String> fileNames = new ArrayList<>();
-    public List<String> filePaths = new ArrayList<>();
     public JTable fileTable = new JTable(tableSize, 1);
     public JButton formerPage = new JButton();
     public JTextField pageNumber = new JTextField();
@@ -149,12 +148,10 @@ public class UI_FileListPanel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFileChooser fileChooser = new JFileChooser();
+                fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
                 int option = fileChooser.showOpenDialog(new UI_FileListPanel());
-                if (option == JFileChooser.APPROVE_OPTION) {
-                    filePaths.add(fileChooser.getSelectedFile().getAbsolutePath());
-                    System.out.println(filePaths.get(0));
-                    UpdateSavePathButton();
-                }
+                if (option == JFileChooser.APPROVE_OPTION)
+                    savePathField.setText(fileChooser.getSelectedFile().getAbsolutePath() + "\\");
             }
         });
 
@@ -247,10 +244,6 @@ public class UI_FileListPanel extends JPanel {
         for (int i = 0; i < names.length; i++)
             fileTable.setValueAt(names[i], i, 0);
         UpdatePageNumber();
-    }
-
-    private void UpdateSavePathButton() {
-        savePathField.setText(filePaths.get(filePaths.size() - 1));
     }
 
     private void OnDeleteButtonDown(String selectedString) {

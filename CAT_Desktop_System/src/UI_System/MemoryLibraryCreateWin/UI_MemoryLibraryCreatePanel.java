@@ -28,7 +28,6 @@ public class UI_MemoryLibraryCreatePanel extends JPanel {
     TextField saveField = new TextField();
 
     JButton browseButton = new JButton();
-    List<String> memoryLibPaths = new ArrayList<>();
 
     public JLabel beginLabel;
     public JComboBox<String> originLanguageComboBox;
@@ -86,15 +85,10 @@ public class UI_MemoryLibraryCreatePanel extends JPanel {
                 fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
                 int option = fileChooser.showOpenDialog(new UI_MemoryLibraryCreatePanel());
                 if (option == JFileChooser.APPROVE_OPTION) {
-                    memoryLibPaths.add(fileChooser.getSelectedFile().getAbsolutePath());
-                    UpdateSavePathButton();
+                    saveField.setText(fileChooser.getSelectedFile().getAbsolutePath());
                 }
             }
         });
-    }
-
-    private void UpdateSavePathButton() {
-        saveField.setText(memoryLibPaths.get(memoryLibPaths.size() - 1));
     }
 
     private void OnCreateButtonDown() {
