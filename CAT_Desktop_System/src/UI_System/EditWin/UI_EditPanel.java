@@ -1,3 +1,11 @@
+/**
+ * 类名：
+ * 1.开发人员：阮泽同
+ * 实现功能：与内核交互，与记忆库术语库面板交互，翻页功能，拼写检查功能
+ * 2.开发人员：
+ * 实现功能：
+ */
+
 package UI_System.EditWin;
 
 import FileSystem.TranslationFileManager;

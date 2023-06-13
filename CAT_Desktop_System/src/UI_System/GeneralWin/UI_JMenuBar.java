@@ -1,3 +1,11 @@
+/**
+ * 类名：
+ * 1.开发人员：阮泽同
+ * 实现功能：实现与内核的交互
+ * 2.开发人员：
+ * 实现功能：
+ */
+
 package UI_System.GeneralWin;
 
 import FileSystem.TranslationFile;

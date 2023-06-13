@@ -1,3 +1,11 @@
+/**
+ * 类名：
+ * 1.开发人员：阮泽同
+ * 实现功能：与内核交互，实现导出功能
+ * 2.开发人员：
+ * 实现功能：
+ */
+
 package UI_System.FileDeriveWin;
 
 import FileSystem.TranslationFileManager;

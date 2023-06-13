@@ -1,3 +1,11 @@
+/**
+ * 类名：
+ * 1.开发人员：阮泽同
+ * 实现功能：与内核交互，列表翻页
+ * 2.开发人员：
+ * 实现功能：
+ */
+
 package UI_System.CreateProject;
 
 import FileSystem.TranslationFile;
@@ -195,7 +203,6 @@ public class UI_FileListPanel extends JPanel {
         else return !Objects.equals(targetLanguageComboBox.getSelectedItem(), Language.Default.name);
     }
 
-    // 将
     private void LoadTranslationFiles(CAT_Project project, Language origin, Language target) {
         for (String save : fileNames) {
             TranslationFile file = TranslationFileManager.ReadFile(GetPureName(save), save, origin, target);

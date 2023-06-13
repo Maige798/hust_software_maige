@@ -1,7 +1,12 @@
-package UI_System.EditWin;
+/**
+ * 类名：
+ * 1.开发人员：
+ * 实现功能：
+ * 2.开发人员：
+ * 实现功能：
+ */
 
-import UI_System.EditorWindow;
-import UI_System.MemLibWin.UI_MemoryLibraryItemsPanel;
+package UI_System.EditWin;
 
 import javax.swing.*;
 import java.awt.*;

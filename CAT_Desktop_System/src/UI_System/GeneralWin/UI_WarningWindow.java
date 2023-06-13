@@ -1,8 +1,12 @@
+/**
+ * 类名：UI_WaringWindow
+ * 开发人员：阮泽同
+ * 实现功能：工具窗口，用于弹出一个含有指定信息的警告窗口
+ */
+
 package UI_System.GeneralWin;
 
 import javax.swing.*;
-import javax.swing.text.SimpleAttributeSet;
-import javax.swing.text.StyleConstants;
 import java.awt.*;
 
 public class UI_WarningWindow extends JFrame {
