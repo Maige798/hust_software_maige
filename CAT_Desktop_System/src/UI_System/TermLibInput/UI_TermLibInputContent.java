@@ -12,6 +12,7 @@ import ProjectSystem.ProjectManager;
 import TermLibrarySystem.TermLibrary;
 import TermLibrarySystem.TermLibraryManager;
 import UI_System.TermLibraryCreateInterface;
+import UI_System.TermLibraryInputInterface;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,20 +21,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UI_TermLibInputContent extends JPanel {
-    JLabel memoryLibraryImportLabel = new JLabel();
+    public TermLibraryInputInterface inputInterface;
 
-    TextField createTextField = new TextField();
+   public JLabel memoryLibraryImportLabel = new JLabel();
 
-    JButton browseButton = new JButton();
+   public TextField createTextField = new TextField();
 
-    JButton createButton = new JButton();
+  public   JButton browseButton = new JButton();
 
-    JButton importButton = new JButton();
+   public JButton createButton = new JButton();
+
+   public JButton importButton = new JButton();
 
     public List<String> filePaths = new ArrayList<>();
 
 
-    public UI_TermLibInputContent() {
+    public UI_TermLibInputContent(TermLibraryInputInterface inputInterface) {
+        this.inputInterface=inputInterface;
         this.setLayout(null);
 
         memoryLibraryImportLabel.setText("术语库导入");
@@ -51,7 +55,7 @@ public class UI_TermLibInputContent extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFileChooser fileChooser = new JFileChooser();
-                int option = fileChooser.showOpenDialog(new UI_TermLibInputContent());
+                int option = fileChooser.showOpenDialog(new UI_TermLibInputContent(inputInterface));
                 if (option == JFileChooser.APPROVE_OPTION) {
                     filePaths.add(fileChooser.getSelectedFile().getAbsolutePath());
                     System.out.println(filePaths.get(0));
@@ -78,6 +82,7 @@ public class UI_TermLibInputContent extends JPanel {
         if (!createTextField.getText().equals("")) {
             TermLibrary library = TermLibraryManager.LoadLibrary(createTextField.getText());
             ProjectManager.instance.currentProject.AddTermLibrary(library);
+            inputInterface.dispose();
         }
     }
 
@@ -86,6 +91,6 @@ public class UI_TermLibInputContent extends JPanel {
     }
 
     private void OnCreateButtonDown() {
-        TermLibraryCreateInterface window = new TermLibraryCreateInterface();
+        new TermLibraryCreateInterface(inputInterface);
     }
 }

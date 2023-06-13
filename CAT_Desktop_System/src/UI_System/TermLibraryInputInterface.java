@@ -12,6 +12,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class TermLibraryInputInterface extends JFrame {
+    public UI_TermLibInputContent panel;
+
     public TermLibraryInputInterface() {
         init();
     }
@@ -24,7 +26,7 @@ public class TermLibraryInputInterface extends JFrame {
         setBackground(Color.decode("#EAECF2"));
         setResizable(false);    //窗口设置
 
-        JPanel panel = new UI_TermLibInputContent();
+        panel = new UI_TermLibInputContent(this);
 
         setContentPane(panel);
         setLocationRelativeTo(null);

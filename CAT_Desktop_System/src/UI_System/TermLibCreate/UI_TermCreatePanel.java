@@ -11,6 +11,7 @@ package UI_System.TermLibCreate;
 import ProjectSystem.ProjectManager;
 import TermLibrarySystem.TermLibrary;
 import TermLibrarySystem.TermLibraryManager;
+import UI_System.TermLibraryCreateInterface;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,6 +20,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UI_TermCreatePanel extends JPanel {
+    public TermLibraryCreateInterface createInterface;
+
     public JLabel termLibNameLabel;
     public JLabel savePathLabel;
     public TextField nameField;
@@ -27,7 +30,8 @@ public class UI_TermCreatePanel extends JPanel {
 
     public JButton createButton;
 
-    public UI_TermCreatePanel() {
+    public UI_TermCreatePanel(TermLibraryCreateInterface createInterface) {
+        this.createInterface = createInterface;
         this.setLayout(null);
 
         //创建三对标签文本框并设置位置
@@ -44,9 +48,9 @@ public class UI_TermCreatePanel extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 JFileChooser fileChooser = new JFileChooser();
                 fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-                int option = fileChooser.showOpenDialog(new UI_TermCreatePanel());
+                int option = fileChooser.showOpenDialog(new UI_TermCreatePanel(createInterface));
                 if (option == JFileChooser.APPROVE_OPTION) {
-                    saveField.setText(fileChooser.getSelectedFile().getAbsolutePath()+"\\");
+                    saveField.setText(fileChooser.getSelectedFile().getAbsolutePath() + "\\");
                 }
             }
         });
@@ -78,6 +82,8 @@ public class UI_TermCreatePanel extends JPanel {
             TermLibrary library = TermLibraryManager.CreateTermLibrary(name, save);
             ProjectManager.instance.currentProject.AddTermLibrary(library);
             ProjectManager.SaveProject(ProjectManager.instance.currentProject);
+            createInterface.inputInterface.panel.createTextField.setText(save + name + ".tlib");
+            createInterface.dispose();
         }
     }
 

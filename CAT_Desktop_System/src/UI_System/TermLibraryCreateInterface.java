@@ -12,7 +12,10 @@ import UI_System.TermLibCreate.UI_TermCreatePanel;
 import javax.swing.*;
 
 public class TermLibraryCreateInterface extends JFrame {
-    public TermLibraryCreateInterface() {
+    public TermLibraryInputInterface inputInterface;
+
+    public TermLibraryCreateInterface(TermLibraryInputInterface inputInterface) {
+        this.inputInterface = inputInterface;
         init();
     }
 
@@ -23,16 +26,11 @@ public class TermLibraryCreateInterface extends JFrame {
         setResizable(false);
 
         //创建上方文本框
-        JPanel panel1 = new UI_TermCreatePanel();
+        JPanel panel1 = new UI_TermCreatePanel(this);
 
         setContentPane(panel1);
 
         setLocationRelativeTo(null);
         setVisible(true);
-    }
-
-    public static void main(String[] args) {
-        ProjectManager.OpenProject(ProjectManager.GetProject(1));
-        TermLibraryCreateInterface me = new TermLibraryCreateInterface();
     }
 }
