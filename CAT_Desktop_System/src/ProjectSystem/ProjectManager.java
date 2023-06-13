@@ -11,6 +11,7 @@ import FileSystem.TranslationFileManager;
 import SystemUtil.CAT_FileController;
 import SystemUtil.CAT_FileItem;
 import SystemUtil.Language;
+import UI_System.WelcomeWindow;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -19,6 +20,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProjectManager {
+    public static void main(String[] args) {
+        new WelcomeWindow();
+    }
+
     public static final String fileName = "CAT_System.proj"; // 项目管理器的文件名称
     public static final String listSavePath = "System Files\\"; // 项目管理器文件的存储路径
     // 绝对路径：D:\hust_software_maige\CAT_Desktop_System\src\System_File\
