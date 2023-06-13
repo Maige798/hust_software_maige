@@ -3,17 +3,17 @@ package UI_System.FileSysWin;
 import FileSystem.TranslationFile;
 import ProjectSystem.ProjectManager;
 import UI_System.EditorWindow;
+import UI_System.FileImportWindow;
+import UI_System.FileSystemWindow;
 
 import javax.swing.*;
 import javax.swing.table.TableColumn;
 import java.awt.*;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
 import java.util.ArrayList;
 import java.util.List;
 
 public class UI_FileListPanel extends JPanel {
-    public JFrame frame;
+    public FileSystemWindow frame;
 
     public UI_FileDetailsPanel fileDetailsPanel;
 
@@ -25,14 +25,15 @@ public class UI_FileListPanel extends JPanel {
     public JLabel label;
     public JLabel bookPrint;
 
-    public List<String> names=new ArrayList<>();
-    public List<String> saves=new ArrayList<>();
+    public List<String> names = new ArrayList<>();
+    public List<String> saves = new ArrayList<>();
 
     public JTable table;
     public JButton formerPage;
     public JButton nextPage;
 
     public JButton openButton;
+    public JButton importButton;
 
     public int currentPageNum = 0;
 
@@ -63,6 +64,8 @@ public class UI_FileListPanel extends JPanel {
 
         openButton = new JButton("打开");
         openButton.addActionListener(e -> OnOpenFileButtonDown());
+        importButton = new JButton("导入");
+        importButton.addActionListener(e -> OnImportButtonDown());
 
         add(label);
         add(bookPrint);
@@ -70,15 +73,24 @@ public class UI_FileListPanel extends JPanel {
         add(formerPage);
         add(nextPage);
         add(openButton);
+        add(importButton);
 
         label.setBounds(10, 5, 200, 40);
         bookPrint.setBounds(615, 370, 40, 20);
         table.setBounds(30, 50, 740, 300);
         formerPage.setBounds(500, 370, 90, 20);
         nextPage.setBounds(655, 370, 90, 20);
-        openButton.setBounds(280, 370, 80, 20);
 
+        openButton.setBounds(350, 370, 80, 20);
+        importButton.setBounds(200, 370, 80, 20);
+
+        UpdateNamesAndSaves();
+    }
+
+    public void UpdateNamesAndSaves() {
         if (ProjectManager.instance.currentProject != null) {
+            names.clear();
+            saves.clear();
             for (TranslationFile file : ProjectManager.instance.currentProject.translationFileList) {
                 names.add(file.name);
                 saves.add(file.save);
@@ -88,17 +100,21 @@ public class UI_FileListPanel extends JPanel {
     }
 
     private List<String> GetCurrentPageNameItems() {
-        return names.subList(currentPageNum * tableRow, Integer.min((currentPageNum + 1) * tableRow,names.size()));
+        return names.subList(currentPageNum * tableRow, Integer.min((currentPageNum + 1) * tableRow, names.size()));
     }
+
     private List<String> GetCurrentPageSaveItems() {
-        return saves.subList(currentPageNum * tableRow, Integer.min((currentPageNum + 1) * tableRow,names.size()));
+        return saves.subList(currentPageNum * tableRow, Integer.min((currentPageNum + 1) * tableRow, names.size()));
     }
-    private void UpdateFileTable(){
-        UpdateFileItemTableByCurrentPage(GetCurrentPageNameItems(),GetCurrentPageSaveItems());
+
+    private void UpdateFileTable() {
+        UpdateFileItemTableByCurrentPage();
         UpDateBookPrint();
     }
 
-    public void UpdateFileItemTableByCurrentPage(List<String> names,List<String> saves){
+    public void UpdateFileItemTableByCurrentPage() {
+        List<String> names = GetCurrentPageNameItems();
+        List<String> saves = GetCurrentPageSaveItems();
         if (names.size() > tableRow)
             System.err.println("Expected length: <=12, actual length: " + names.size());
         for (int i = 0; i < tableRow; i++) {
@@ -111,7 +127,7 @@ public class UI_FileListPanel extends JPanel {
         }
     }
 
-    private void UpDateBookPrint(){
+    private void UpDateBookPrint() {
         bookPrint.setText((currentPageNum + 1) + "/" + (names.size() / tableRow + 1));
     }
 
@@ -144,5 +160,9 @@ public class UI_FileListPanel extends JPanel {
             EditorWindow window = new EditorWindow();
             frame.dispose();
         }
+    }
+
+    private void OnImportButtonDown() {
+        new FileImportWindow(frame);
     }
 }

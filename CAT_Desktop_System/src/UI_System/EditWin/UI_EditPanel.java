@@ -8,6 +8,7 @@ import SystemUtil.TranslationItem;
 import TranslationSystem.EditHelper;
 import UI_System.AssociationWindow;
 import UI_System.GeneralWin.UI_WarningWindow;
+import UI_System.MachineTranslationWindow;
 
 import javax.swing.*;
 import java.awt.*;
@@ -125,7 +126,6 @@ public class UI_EditPanel extends JPanel {
         }
 
         int yFirst = 55;
-        int ySecond = 55;
         for (int i = 0; i < texts.length; i += 2) {
             texts[i].setBounds(45, yFirst + i * 20, 320, 30);
             texts[i].setEditable(false);
@@ -140,7 +140,7 @@ public class UI_EditPanel extends JPanel {
         confirmTranslationButton.setBounds(470, 15, 90, 20);
         confirmTranslationButton.addActionListener(e -> OnConfirmTranslationButtonDown());
         startMachineTranslation.setBounds(240, 15, 100, 20);
-
+        startMachineTranslation.addActionListener(e -> OnStartMachineTranslationButtonDown());
 
         formerPageButton.setBounds(505, 380, 90, 20);
         formerPageButton.addActionListener(e -> OnFormerPageButtonDown());
@@ -212,14 +212,20 @@ public class UI_EditPanel extends JPanel {
 
     private void UpdateMemoryLibraryMessage() {
         int index = focusNum + itemFieldNum * currentPageNum;
-        memoryLibraryPanel.SetTextArea(
-                ProjectManager.instance.currentProject.memoryLibrary.Match(translationItems[index].origin.text));
+        if (index < translationItems.length)
+            memoryLibraryPanel.SetTextArea(
+                    ProjectManager.instance.currentProject.memoryLibrary.Match(translationItems[index].origin.text));
+        else
+            memoryLibraryPanel.SetTextArea("");
     }
 
     private void UpdateTermLibraryMessage() {
         int index = focusNum + itemFieldNum * currentPageNum;
-        termLibraryPanel.SetTextArea(
-                ProjectManager.instance.currentProject.GetTermLibraryMessages(translationItems[index].origin.text));
+        if (index < translationItems.length)
+            termLibraryPanel.SetTextArea(
+                    ProjectManager.instance.currentProject.GetTermLibraryMessages(translationItems[index].origin.text));
+        else
+            memoryLibraryPanel.SetTextArea("");
     }
 
     public void UseTranslateResult(String message) {
@@ -253,5 +259,9 @@ public class UI_EditPanel extends JPanel {
             new AssociationWindow(this, texts[2 * focusNum + 1].getText());
         else
             new UI_WarningWindow("Sorry, only English-Target projects can use Association");
+    }
+
+    private void OnStartMachineTranslationButtonDown(){
+        new MachineTranslationWindow();
     }
 }

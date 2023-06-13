@@ -1,0 +1,50 @@
+@Name {
+	<name> 文本2.txt
+}
+
+@Save {
+	<save> System Files\Translation Files\文本2.txt.tran
+}
+
+@Language {
+	<ori> Chinese
+	<tran> English
+}
+
+@Table
+
+@TranItem {
+	<ori> [Chinese] 核糖体识别稀有密码子对应tRNA的时间要比优势密码子的时间稍长,
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 这一特征可能使核糖体在扫描翻译mRNA序列的过程中出现扫描速率不均，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 甚至停顿导致翻译提前终止，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 这种生物学现象在原核生物以及病毒与宿主细胞共进化的研究中较为明显。
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 因此，
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 优势密码子可加快翻译延伸的速率,
+	<blank>
+}
+
+@TranItem {
+	<ori> [Chinese] 而稀有密码子能减缓翻译延伸的速率。
+	<blank>
+}
+

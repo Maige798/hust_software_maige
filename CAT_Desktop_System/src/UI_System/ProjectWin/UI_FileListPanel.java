@@ -3,6 +3,7 @@ package UI_System.ProjectWin;
 import FileSystem.TranslationFile;
 import ProjectSystem.CAT_Project;
 import ProjectSystem.ProjectManager;
+import UI_System.CreateProjectInterface;
 import UI_System.FileSystemWindow;
 
 import javax.swing.*;
@@ -33,6 +34,7 @@ public class UI_FileListPanel extends JPanel {
     public JButton nextPage;
 
     public JButton openProject;
+    public JButton createProject;
 
     public int currentPageNum = 0;
 
@@ -60,6 +62,8 @@ public class UI_FileListPanel extends JPanel {
 
         openProject = new JButton("打开");
         openProject.addActionListener(e -> OnOpenProjectButtonDown());
+        createProject=new JButton("新建");
+        createProject.addActionListener(e -> OnCreateButtonDown());
 
         add(label);
         add(bookPrint);
@@ -67,6 +71,7 @@ public class UI_FileListPanel extends JPanel {
         add(formerPage);
         add(nextPage);
         add(openProject);
+        add(createProject);
 
         label.setBounds(10, 5, 200, 40);
         bookPrint.setBounds(615, 370, 40, 20);
@@ -74,7 +79,8 @@ public class UI_FileListPanel extends JPanel {
         formerPage.setBounds(500, 370, 90, 20);
         nextPage.setBounds(655, 370, 90, 20);
 
-        openProject.setBounds(300, 370, 90, 20);
+        openProject.setBounds(350, 370, 90, 20);
+        createProject.setBounds(200,370, 90, 20);
 
         if (ProjectManager.instance.projectList != null) {
             for (CAT_Project project : ProjectManager.instance.projectList) {
@@ -142,5 +148,10 @@ public class UI_FileListPanel extends JPanel {
             projectDetailsPanel.SetTextField(Objects.requireNonNull(ProjectManager.GetProject(names.get(index))).GetAttributeMessage());
         else
             projectDetailsPanel.SetTextField("");
+    }
+
+    private void OnCreateButtonDown(){
+        new CreateProjectInterface();
+        frame.dispose();
     }
 }

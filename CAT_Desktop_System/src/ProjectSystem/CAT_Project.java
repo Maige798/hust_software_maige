@@ -7,11 +7,9 @@ import MemoryLibrarySystem.MemoryLibraryManager;
 import SystemUtil.CAT_FileItem;
 import SystemUtil.Language;
 import SystemUtil.TermItem;
-import SystemUtil.TranslationItem;
 import TermLibrarySystem.TermLibrary;
 import TermLibrarySystem.TermLibraryManager;
 
-import java.sql.SQLData;
 import java.util.ArrayList;
 import java.util.List;
 
