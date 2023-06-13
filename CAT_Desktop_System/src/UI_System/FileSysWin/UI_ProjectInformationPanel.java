@@ -1,5 +1,7 @@
 package UI_System.FileSysWin;
 
+import ProjectSystem.ProjectManager;
+
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -11,7 +13,6 @@ public class UI_ProjectInformationPanel extends JPanel {
     public Color YellowColor = new Color(163, 189, 96);
 
     public UI_ProjectInformationPanel() {
-
         setLayout(null);
 
         setBackground(Color.yellow);
@@ -23,9 +24,18 @@ public class UI_ProjectInformationPanel extends JPanel {
         textArea = new JTextArea();
         textArea.setBackground(YellowColor);
         textArea.setEditable(false);
+        textArea.setLineWrap(true);
+        textArea.setWrapStyleWord(true);
 
         add(textArea);
 
         textArea.setBounds(25,100,150,200);
+
+        SetUpTextArea();
+    }
+
+    public void SetUpTextArea(){
+        if(ProjectManager.instance.currentProject!=null)
+            textArea.setText(ProjectManager.instance.currentProject.GetAttributeMessage());
     }
 }

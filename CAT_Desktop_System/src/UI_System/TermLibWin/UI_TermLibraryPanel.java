@@ -23,10 +23,8 @@ public class UI_TermLibraryPanel extends JPanel {
     public TermLibrary currentLibrary;
     public JTable table;
 
-    public JButton changeButton;
     public JButton deleteButton;
-    public JButton cancelButton;
-    public JButton saveButton;
+
 
     public int currentPage;
     public JLabel bookPrint;
@@ -48,10 +46,7 @@ public class UI_TermLibraryPanel extends JPanel {
         table.setGridColor(new Color(192, 192, 192));
         table.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 
-        changeButton = new JButton("修改");
         deleteButton = new JButton("删除");
-        cancelButton = new JButton("取消更改");
-        saveButton = new JButton("保存更改");
 
         formerPage = new JButton("上一页");
         nextPage = new JButton("下一页");
@@ -59,9 +54,6 @@ public class UI_TermLibraryPanel extends JPanel {
         add(label);
         add(bookPrint);
         add(table);
-        add(changeButton);
-        add(cancelButton);
-        add(saveButton);
         add(deleteButton);
         add(formerPage);
         add(nextPage);
@@ -75,10 +67,7 @@ public class UI_TermLibraryPanel extends JPanel {
         nextPage.setBounds(690, 450, 80, 20);
         nextPage.addActionListener(e -> OnNextPageButtonDown());
 
-        changeButton.setBounds(90, 450, 90, 20);
-        cancelButton.setBounds(310, 450, 90, 20);
-        saveButton.setBounds(420, 450, 90, 20);
-        deleteButton.setBounds(200, 450, 90, 20);
+        deleteButton.setBounds(400, 450, 90, 20);
         deleteButton.addActionListener(e -> OnDeleteButtonDown());
         UpDateLibraries();
     }

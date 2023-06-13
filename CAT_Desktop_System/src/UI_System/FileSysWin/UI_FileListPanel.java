@@ -7,11 +7,15 @@ import UI_System.EditorWindow;
 import javax.swing.*;
 import javax.swing.table.TableColumn;
 import java.awt.*;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.util.ArrayList;
 import java.util.List;
 
 public class UI_FileListPanel extends JPanel {
     public JFrame frame;
+
+    public UI_FileDetailsPanel fileDetailsPanel;
 
     public Color Green = new Color(61, 232, 213);
     public Color Blue = new Color(52, 89, 183);
@@ -50,6 +54,7 @@ public class UI_FileListPanel extends JPanel {
         TableColumn tableColumn = table.getColumnModel().getColumn(1);
         tableColumn.setPreferredWidth(250);
         table.doLayout();
+        table.getSelectionModel().addListSelectionListener(e -> UpdateFileDetailsPanel());
 
         formerPage = new JButton("上一页");
         formerPage.addActionListener(e -> OnFormerPageButtonDown());
@@ -124,11 +129,18 @@ public class UI_FileListPanel extends JPanel {
         }
     }
 
+    private void UpdateFileDetailsPanel() {
+        int index = currentPageNum * tableRow + table.getSelectedRow();
+        if (index < names.size())
+            fileDetailsPanel.SetText(ProjectManager.instance.currentProject.GetTranslationFile(index).GetAttributeMessage());
+        else
+            fileDetailsPanel.SetText("");
+    }
+
     private void OnOpenFileButtonDown() {
         int index = currentPageNum * tableRow + table.getSelectedRow();
         if (index < names.size()) {
             ProjectManager.TranslateFile(ProjectManager.instance.currentProject.GetTranslationFile(index));
-            System.out.println(ProjectManager.instance.currentTranslationFile);
             EditorWindow window = new EditorWindow();
             frame.dispose();
         }

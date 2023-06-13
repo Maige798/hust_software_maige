@@ -3,7 +3,12 @@ package UI_System.EditWin;
 import FileSystem.TranslationFileManager;
 import MemoryLibrarySystem.MemoryLibraryManager;
 import ProjectSystem.ProjectManager;
+import SystemUtil.Language;
 import SystemUtil.TranslationItem;
+import TranslationSystem.EditHelper;
+import UI_System.AssociationWindow;
+import UI_System.GeneralWin.UI_WarningWindow;
+import UI_System.MachineTranslationWindow;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,6 +19,7 @@ import java.util.Arrays;
 public class UI_EditPanel extends JPanel {
     public UI_MemoryLibraryPanel memoryLibraryPanel;
     public UI_TermLibraryPanel termLibraryPanel;
+    public UI_EditorSpellCheckPanel spellCheckPanel;
 
     public Color BlueColor = new Color(128, 255, 255);
 
@@ -26,7 +32,7 @@ public class UI_EditPanel extends JPanel {
     public int currentPageNum = 0;
     public JLabel bookPrint;
     public JLabel[] states;
-    public TextField[] texts;        //数组长度16，偶数左，奇数右
+    public JTextField[] texts;        //数组长度16，偶数左，奇数右
     int focusNum = -1; // 初始化为-1
     TranslationItem[] translationItems;
 
@@ -34,7 +40,7 @@ public class UI_EditPanel extends JPanel {
     public JButton startMachineTranslation;
     public JButton formerPageButton;
     public JButton nextPageButton;
-    public JButton openButton;
+    public JButton associateButton;
 
     public UI_EditPanel() {
 
@@ -60,9 +66,9 @@ public class UI_EditPanel extends JPanel {
         if (ProjectManager.instance.currentProject != null && ProjectManager.instance.currentTranslationFile != null)
             translationItems = ProjectManager.instance.currentTranslationFile.GetPureTranslationItem();
 
-        texts = new TextField[2 * itemFieldNum];
+        texts = new JTextField[2 * itemFieldNum];
         for (int i = 0; i < texts.length; i++) {
-            texts[i] = new TextField(8);
+            texts[i] = new JTextField(8);
             int num = i;
             texts[i].addFocusListener(new FocusListener() {
                 public final int itemNumber = num / 2;
@@ -72,18 +78,20 @@ public class UI_EditPanel extends JPanel {
                     focusNum = itemNumber;
                     UpdateMemoryLibraryMessage();
                     UpdateTermLibraryMessage();
+                    if (!texts[itemNumber * 2 + 1].getText().equals(""))
+                        SpellCheck(texts[itemNumber * 2 + 1].getText());
                 }
 
                 @Override
                 public void focusLost(FocusEvent e) {
-
+                    spellCheckPanel.SetText("");
                 }
             });
         }
 
-        openButton = new JButton("打开");
+        associateButton = new JButton("自动完成 (输入联想)");
         confirmTranslationButton = new JButton("确认翻译");
-        startMachineTranslation = new JButton("开始机械翻译");
+        startMachineTranslation = new JButton("机器翻译");
 
         formerPageButton = new JButton("上一页");
         nextPageButton = new JButton("下一页");
@@ -97,11 +105,11 @@ public class UI_EditPanel extends JPanel {
             add(jLabel);
         }
 
-        for (TextField textField : texts) {
+        for (JTextField textField : texts) {
             add(textField);
         }
 
-        add(openButton);
+        add(associateButton);
         add(confirmTranslationButton);
         add(startMachineTranslation);
         add(formerPageButton);
@@ -118,7 +126,6 @@ public class UI_EditPanel extends JPanel {
         }
 
         int yFirst = 55;
-        int ySecond = 55;
         for (int i = 0; i < texts.length; i += 2) {
             texts[i].setBounds(45, yFirst + i * 20, 320, 30);
             texts[i].setEditable(false);
@@ -127,11 +134,13 @@ public class UI_EditPanel extends JPanel {
             texts[i].setBounds(415, yFirst + (i - 1) * 20, 320, 30);
         }
 
-        openButton.setBounds(415, 15, 50, 20);
-        confirmTranslationButton.setBounds(485, 15, 100, 20);
-        confirmTranslationButton.addActionListener(e -> OnConfirmTranslationButtonDown());
-        startMachineTranslation.setBounds(605, 15, 130, 20);
+        associateButton.setBounds(570, 15, 160, 20);
+        associateButton.addActionListener(e -> OnAssociateButtonDown());
 
+        confirmTranslationButton.setBounds(470, 15, 90, 20);
+        confirmTranslationButton.addActionListener(e -> OnConfirmTranslationButtonDown());
+        startMachineTranslation.setBounds(240, 15, 100, 20);
+        startMachineTranslation.addActionListener(e -> OnStartMachineTranslationButtonDown());
 
         formerPageButton.setBounds(505, 380, 90, 20);
         formerPageButton.addActionListener(e -> OnFormerPageButtonDown());
@@ -226,5 +235,27 @@ public class UI_EditPanel extends JPanel {
             UpdateItemFields();
             TranslationFileManager.SaveFile(ProjectManager.instance.currentTranslationFile);
         }
+    }
+
+    public void SpellCheck(String text) {
+        if (ProjectManager.instance.currentTranslationFile.targetLanguage.EqualsTo(Language.English)) {
+            spellCheckPanel.SetText(EditHelper.EnglishSpellCheck(text));
+        }
+    }
+
+    public void AutoComplete(String text) {
+        JTextField textField = texts[2 * focusNum + 1];
+        textField.setText(EditHelper.AutoComplete(textField.getText(), text));
+    }
+
+    private void OnAssociateButtonDown() {
+        if (ProjectManager.instance.currentTranslationFile.targetLanguage.EqualsTo(Language.English))
+            new AssociationWindow(this, texts[2 * focusNum + 1].getText());
+        else
+            new UI_WarningWindow("Sorry, only English-Target projects can use Association");
+    }
+
+    private void OnStartMachineTranslationButtonDown(){
+        new MachineTranslationWindow();
     }
 }
