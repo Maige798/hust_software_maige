@@ -25,7 +25,7 @@ public class FileSystemWindow extends JFrame {
     public void init() {
         //窗口设置
         setSize(1000, 650);
-        setTitle("编辑器");
+        setTitle("项目文件");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBackground(Color.decode("#EAECF2"));
         setResizable(false);

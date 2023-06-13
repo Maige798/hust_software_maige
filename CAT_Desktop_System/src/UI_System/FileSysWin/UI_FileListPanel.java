@@ -3,17 +3,17 @@ package UI_System.FileSysWin;
 import FileSystem.TranslationFile;
 import ProjectSystem.ProjectManager;
 import UI_System.EditorWindow;
+import UI_System.FileImportWindow;
+import UI_System.FileSystemWindow;
 
 import javax.swing.*;
 import javax.swing.table.TableColumn;
 import java.awt.*;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
 import java.util.ArrayList;
 import java.util.List;
 
 public class UI_FileListPanel extends JPanel {
-    public JFrame frame;
+    public FileSystemWindow frame;
 
     public UI_FileDetailsPanel fileDetailsPanel;
 
@@ -84,7 +84,13 @@ public class UI_FileListPanel extends JPanel {
         openButton.setBounds(350, 370, 80, 20);
         importButton.setBounds(200, 370, 80, 20);
 
+        UpdateNamesAndSaves();
+    }
+
+    public void UpdateNamesAndSaves() {
         if (ProjectManager.instance.currentProject != null) {
+            names.clear();
+            saves.clear();
             for (TranslationFile file : ProjectManager.instance.currentProject.translationFileList) {
                 names.add(file.name);
                 saves.add(file.save);
@@ -102,11 +108,13 @@ public class UI_FileListPanel extends JPanel {
     }
 
     private void UpdateFileTable() {
-        UpdateFileItemTableByCurrentPage(GetCurrentPageNameItems(), GetCurrentPageSaveItems());
+        UpdateFileItemTableByCurrentPage();
         UpDateBookPrint();
     }
 
-    public void UpdateFileItemTableByCurrentPage(List<String> names, List<String> saves) {
+    public void UpdateFileItemTableByCurrentPage() {
+        List<String> names = GetCurrentPageNameItems();
+        List<String> saves = GetCurrentPageSaveItems();
         if (names.size() > tableRow)
             System.err.println("Expected length: <=12, actual length: " + names.size());
         for (int i = 0; i < tableRow; i++) {
@@ -155,6 +163,6 @@ public class UI_FileListPanel extends JPanel {
     }
 
     private void OnImportButtonDown() {
-
+        new FileImportWindow(frame);
     }
 }
