@@ -2,8 +2,8 @@
  * 类名：UI_TermCreatePanel
  * 1.开发人员：阮泽同
  * 实现功能：与内核交互，创建术语库
- * 2.开发人员：
- * 实现功能：
+ * 2.开发人员：刘闯
+ * 实现功能：创建术语库创建界面的内容面板
  */
 
 package UI_System.TermLibCreate;

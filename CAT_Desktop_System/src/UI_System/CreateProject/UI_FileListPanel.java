@@ -2,8 +2,8 @@
  * 类名：UI_FileListPanel
  * 1.开发人员：阮泽同
  * 实现功能：与内核交互，列表翻页
- * 2.开发人员：
- * 实现功能：
+ * 2.开发人员：刘闯
+ * 实现功能：实现创建项目界面面板组件
  */
 
 package UI_System.CreateProject;

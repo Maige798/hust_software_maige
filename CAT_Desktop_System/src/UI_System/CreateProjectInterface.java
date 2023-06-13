@@ -1,9 +1,7 @@
 /**
  * 类名：CreateProjectInterface
- * 1.开发人员：
- * 实现功能：
- * 2.开发人员：
- * 实现功能：
+ * 开发人员：刘闯
+ * 实现功能：创建创建项目界面
  */
 
 package UI_System;

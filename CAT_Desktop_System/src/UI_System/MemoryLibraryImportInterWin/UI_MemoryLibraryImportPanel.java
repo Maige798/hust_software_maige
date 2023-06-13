@@ -2,8 +2,8 @@
  * 类名：UI_MemoryLibraryImportPanel
  * 1.开发人员：阮泽同
  * 实现功能：实现与内核的交互，导入记忆库
- * 2.开发人员：
- * 实现功能：
+ * 2.开发人员：刘闯
+ * 实现功能：创建记忆库导入界面的内容面板
  */
 
 package UI_System.MemoryLibraryImportInterWin;

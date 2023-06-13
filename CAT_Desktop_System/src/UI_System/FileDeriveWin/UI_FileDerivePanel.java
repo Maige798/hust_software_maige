@@ -2,8 +2,8 @@
  * 类名：UI_FileDerivePanel
  * 1.开发人员：阮泽同
  * 实现功能：与内核交互，实现导出功能
- * 2.开发人员：
- * 实现功能：
+ * 2.开发人员：刘闯
+ * 实现功能：实现文件界面内容面板的界面
  */
 
 package UI_System.FileDeriveWin;

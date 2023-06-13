@@ -2,8 +2,8 @@
  * 类名：UI_MemoryLibraryCreatePanel
  * 1.开发人员：阮泽同
  * 实现功能：实现与内核的交互，创建项目
- * 2.开发人员：
- * 实现功能：
+ * 2.开发人员：刘闯
+ * 实现功能：实现记忆库创建界面的内容面板
  */
 
 package UI_System.MemoryLibraryCreateWin;

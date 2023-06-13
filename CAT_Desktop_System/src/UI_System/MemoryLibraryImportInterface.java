@@ -1,9 +1,7 @@
 /**
  * 类名：MemoryLibraryImportInterface
- * 1.开发人员：
- * 实现功能：
- * 2.开发人员：
- * 实现功能：
+ * 开发人员：刘闯
+ * 实现功能：创建记忆库导入界面
  */
 
 package UI_System;

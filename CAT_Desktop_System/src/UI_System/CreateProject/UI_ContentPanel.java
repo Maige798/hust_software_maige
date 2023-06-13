@@ -1,7 +1,7 @@
 /**
  * 类名：UI_ContentPanel
- * 开发人员：
- * 实现功能：
+ * 开发人员：刘闯
+ * 实现功能：实现创建项目界面内容面板
  */
 
 package UI_System.CreateProject;

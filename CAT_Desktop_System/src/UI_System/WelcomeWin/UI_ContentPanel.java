@@ -1,3 +1,7 @@
+/**
+ * 人员：刘闯
+ * 实现功能：创建欢迎界面的内容面板
+ */
 package UI_System.WelcomeWin;
 
 import ProjectSystem.CAT_Project;
