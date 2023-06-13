@@ -18,7 +18,7 @@ public class FileDeriveWindow extends JFrame {
 
     public void init() {
         setSize(520, 350);
-        setTitle("文件界面");
+        setTitle("文件导出");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBackground(Color.decode("#EAECF2"));
         setResizable(false);    //窗口设置

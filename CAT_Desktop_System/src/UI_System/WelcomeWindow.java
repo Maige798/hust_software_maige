@@ -18,7 +18,7 @@ public class WelcomeWindow extends JFrame {
 
     public void init() {
         setSize(350, 400);
-        setTitle("记忆库导入");
+        setTitle("计算机辅助翻译桌面系统");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBackground(Color.decode("#EAECF2"));
         setResizable(false);

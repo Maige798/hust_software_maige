@@ -32,7 +32,7 @@ public class FileImportWindow extends JFrame {
     public void init() {
         //窗口设置
         setSize(500, 350);
-        setTitle("记忆库导入");
+        setTitle("文件导入");
 
         setBackground(Color.decode("#EAECF2"));
         setResizable(false);

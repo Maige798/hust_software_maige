@@ -1,6 +1,6 @@
 /**
  * TermLibraryCreateInterface
- * 1.开发人员：刘闯
+ * 开发人员：刘闯
  * 实现功能：创建术语库创建界面
  */
 

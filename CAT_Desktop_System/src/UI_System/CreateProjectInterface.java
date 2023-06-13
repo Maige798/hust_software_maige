@@ -19,7 +19,7 @@ public class CreateProjectInterface extends JFrame {
     public void init() {
         //窗口设置
         setSize(750, 480);
-        setTitle("记忆库导入");
+        setTitle("创建项目");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBackground(Color.decode("#EAECF2"));
         setResizable(false);

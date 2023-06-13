@@ -22,7 +22,7 @@ public class TermAddWindow extends JFrame {
     public void init() {
         //窗口设置
         setSize(350, 250);
-        setTitle("术语添加");
+        setTitle("添加术语");
         setBackground(Color.decode("#EAECF2"));
         setResizable(false);
 
