@@ -1,9 +1,7 @@
 /**
  * 类名：FileSystemWindow
- * 1.开发人员：
- * 实现功能：
- * 2.开发人员：
- * 实现功能：
+ * 开发人员：王琢玉
+ * 实现功能：设计实现文件框架，将文件各个面板的内容合并到contentPanel上来
  */
 
 package UI_System;

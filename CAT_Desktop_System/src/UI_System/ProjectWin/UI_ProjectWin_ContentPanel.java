@@ -1,9 +1,7 @@
 /**
  * 类名：UI_ProjectWin_ContentPanel
- * 1.开发人员：
- * 实现功能：
- * 2.开发人员：
- * 实现功能：
+ * 开发人员：王琢玉
+ * 实现功能：相对于框架独立设计文件框架中的文件总内容面板，并合并其余面板，构成展示面板
  */
 
 package UI_System.ProjectWin;

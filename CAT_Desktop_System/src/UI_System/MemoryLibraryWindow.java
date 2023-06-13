@@ -1,9 +1,7 @@
 /**
  * 类名：MemoryLibraryWindow
- * 1.开发人员：
- * 实现功能：
- * 2.开发人员：
- * 实现功能：
+ * 开发人员：王琢玉
+ * 实现功能：设计实现记忆库管理框架，将和记忆库相关的面板汇集到contentPanel上来展示
  */
 
 package UI_System;

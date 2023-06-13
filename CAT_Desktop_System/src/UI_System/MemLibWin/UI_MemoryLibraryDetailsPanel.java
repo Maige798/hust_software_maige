@@ -1,9 +1,7 @@
 /**
  * 类名：UI_MemoryLibraryDetailsPanel
- * 1.开发人员：
- * 实现功能：
- * 2.开发人员：
- * 实现功能：
+ * 开发人员：王琢玉
+ * 实现功能：相对于框架独立设计术语库框架中的记记忆库细节面板，并添加定位相关组件
  */
 
 package UI_System.MemLibWin;

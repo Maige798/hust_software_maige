@@ -1,9 +1,7 @@
 /**
  * 类名：UI_ProjectDetailsPanel
- * 1.开发人员：
- * 实现功能：
- * 2.开发人员：
- * 实现功能：
+ * 开发人员：王琢玉
+ * 实现功能：相对于框架独立设计文件框架中的项目信息面板，并添加定位相关组件
  */
 
 package UI_System.ProjectWin;
