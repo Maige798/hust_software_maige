@@ -1,3 +1,8 @@
+/**
+ * 类名：Test
+ * 功能：测试类，存放各种类型的测试方法，手动测试各类
+ */
+
 package SystemUtil;
 
 import FileSystem.TranslationFile;

@@ -1,11 +1,15 @@
+/**
+ * 类名：ProjectManagerTest
+ * 测试：项目载入与项目列表读取
+ */
+
 package ProjectSystem;
 
 import MemoryLibrarySystem.MemoryLibraryManager;
-import SystemUtil.CAT_FileItem;
 import TermLibrarySystem.TermLibraryManager;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ProjectManagerTest {
 

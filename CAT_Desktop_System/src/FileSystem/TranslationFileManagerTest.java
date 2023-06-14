@@ -1,11 +1,13 @@
+/**
+ * 类名：TranslationFileManagerTest
+ * 测试：翻译文件的导入功能
+ */
+
 package FileSystem;
 
 import org.junit.jupiter.api.Test;
 
-import java.io.FileReader;
-import java.io.IOException;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TranslationFileManagerTest {
 

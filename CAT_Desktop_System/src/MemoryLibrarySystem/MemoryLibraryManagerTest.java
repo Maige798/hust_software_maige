@@ -1,3 +1,8 @@
+/**
+ * 类名：MemoryLibraryManagerTest
+ * 测试：记忆库导入与记忆条目匹配功能
+ */
+
 package MemoryLibrarySystem;
 
 import org.junit.jupiter.api.Test;
