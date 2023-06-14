@@ -1,14 +1,14 @@
 /**
- * 人员：刘闯
+ * 1.开发人员：阮泽同
+ * 实现功能：展示系统最顶部的5条翻译项目的记录，并与内核交互打开或新建项目
+ * 2.开发人员：刘闯
  * 实现功能：创建欢迎界面的内容面板
  */
 package UI_System.WelcomeWin;
 
-import ProjectSystem.CAT_Project;
 import ProjectSystem.ProjectManager;
 import UI_System.CreateProjectInterface;
 import UI_System.FileSystemWindow;
-import UI_System.ProjectWindow;
 
 import javax.swing.*;
 import java.awt.*;

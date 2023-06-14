@@ -30,8 +30,4 @@ public class WelcomeWindow extends JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
     }
-
-    public static void main(String[] args) {
-        WelcomeWindow me = new WelcomeWindow();
-    }
 }

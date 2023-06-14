@@ -32,8 +32,4 @@ public class TermLibraryInputInterface extends JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
     }
-
-    public static void main(String[] args) {
-        TermLibraryInputInterface me = new TermLibraryInputInterface();
-    }
 }

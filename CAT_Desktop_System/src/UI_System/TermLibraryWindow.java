@@ -10,18 +10,11 @@ import UI_System.GeneralWin.UI_JMenuBar;
 import UI_System.TermLibWin.UI_TermLibWin_ContentPanel;
 
 import javax.swing.*;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 
 public class TermLibraryWindow extends JFrame {
     public UI_TermLibWin_ContentPanel contentPanel;
     public JMenuBar menuBar;
-
-    public static void main(String[] args) {
-        TermLibraryWindow windows = new TermLibraryWindow();
-        windows.setVisible(true);
-    }
 
     public TermLibraryWindow() {
         setSize(1000, 650);
