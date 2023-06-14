@@ -30,8 +30,4 @@ public class CreateProjectInterface extends JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
     }
-
-    public static void main(String[] args) {
-        CreateProjectInterface me = new CreateProjectInterface();
-    }
 }

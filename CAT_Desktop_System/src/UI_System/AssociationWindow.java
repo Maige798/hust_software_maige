@@ -14,7 +14,6 @@ import UI_System.EditWin.UI_EditPanel;
 import javax.swing.*;
 import java.awt.*;
 import java.util.Arrays;
-import java.util.List;
 
 public class AssociationWindow extends JFrame {
     public static final int tableRow = 9;
@@ -33,10 +32,6 @@ public class AssociationWindow extends JFrame {
     public JButton nextPageButton;
     public JButton confirmButton;
     public JLabel bookPrint;
-
-    public static void main(String[] args) {
-        AssociationWindow win = new AssociationWindow(null,"Remember,li");
-    }
 
     public AssociationWindow(UI_EditPanel editPanel,String message) {
         this.message = message;
