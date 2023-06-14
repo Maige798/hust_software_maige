@@ -28,7 +28,6 @@ public class CAT_Project {
     public List<TermLibrary> termLibraryList = new ArrayList<>(); // 项目使用的术语库列表
     public List<TranslationFile> translationFileList = new ArrayList<>(); // 项目的翻译文件列表
 
-    // Getters and Setters
     private CAT_Project() {
 
     }

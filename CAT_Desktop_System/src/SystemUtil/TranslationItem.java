@@ -55,6 +55,4 @@ public class TranslationItem {
     public void SetTranslation(Language language, String text) {
         this.translation = new Sentence(language, text);
     }
-
-
 }

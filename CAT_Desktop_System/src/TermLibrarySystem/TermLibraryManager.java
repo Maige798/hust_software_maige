@@ -8,11 +8,8 @@ package TermLibrarySystem;
 
 import SystemUtil.CAT_FileController;
 import SystemUtil.CAT_FileItem;
-import SystemUtil.Sentence;
-import SystemUtil.TermItem;
 
 import java.io.File;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -47,25 +44,6 @@ public class TermLibraryManager {
         }
         SaveLibrary(termLibrary);
         return termLibrary;
-    }
-
-    // 导入术语库，旧方法，弃用
-    private static TermLibrary Old_LoadLibrary(String save) {
-        File file = new File(save);
-        TermLibrary library = null;
-        try (FileReader in = new FileReader(file)) {
-            int charGet; // 读取的字符
-            StringBuffer buffer = new StringBuffer();
-            while ((charGet = in.read()) != -1) {
-                buffer.append((char) charGet);
-            }
-            library = new TermLibrary(null, save);
-            library.SetUpLibrary(buffer.toString());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        instance.termLibraryList.add(library);
-        return library;
     }
 
     public static TermLibrary LoadLibrary(String save) {
