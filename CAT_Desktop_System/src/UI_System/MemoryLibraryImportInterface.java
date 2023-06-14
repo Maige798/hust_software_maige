@@ -6,7 +6,6 @@
 
 package UI_System;
 
-import ProjectSystem.ProjectManager;
 import UI_System.MemoryLibraryImportInterWin.UI_MemoryLibraryImportPanel;
 
 import javax.swing.*;
@@ -32,10 +31,5 @@ public class MemoryLibraryImportInterface extends JFrame {
         setContentPane(panel);
         setLocationRelativeTo(null);
         setVisible(true);
-    }
-
-    public static void main(String[] args) {
-        ProjectManager.OpenProject(ProjectManager.GetProject(1));
-        MemoryLibraryImportInterface me = new MemoryLibraryImportInterface();
     }
 }

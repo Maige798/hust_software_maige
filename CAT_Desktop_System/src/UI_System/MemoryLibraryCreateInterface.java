@@ -6,7 +6,6 @@
 
 package UI_System;
 
-import ProjectSystem.ProjectManager;
 import UI_System.MemoryLibraryCreateWin.UI_MemoryLibraryCreatePanel;
 
 import javax.swing.*;

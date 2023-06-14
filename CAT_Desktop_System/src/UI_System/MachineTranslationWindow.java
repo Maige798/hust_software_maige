@@ -39,8 +39,4 @@ public class MachineTranslationWindow extends JFrame {
 
         textField.setEditable(false);
     }
-
-    public static void main(String[] args) {
-        new MachineTranslationWindow();
-    }
 }
