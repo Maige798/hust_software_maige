@@ -86,10 +86,6 @@ public class FileImportWindow extends JFrame {
         }
     }
 
-    public static void main(String[] args) {
-        new FileImportWindow(null);
-    }
-
     private String GetPureName(String save) {
         String[] messages = save.split("\\\\");
         return messages[messages.length - 1];

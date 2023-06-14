@@ -9,8 +9,6 @@ package UI_System.FileSysWin;
 import ProjectSystem.ProjectManager;
 
 import javax.swing.*;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 
 public class UI_ProjectInformationPanel extends JPanel {

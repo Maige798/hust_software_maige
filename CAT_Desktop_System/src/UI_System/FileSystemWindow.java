@@ -6,9 +6,6 @@
 
 package UI_System;
 
-import FileSystem.TranslationFile;
-import ProjectSystem.CAT_Project;
-import ProjectSystem.ProjectManager;
 import UI_System.FileSysWin.UI_FileSysWin_ContentPanel;
 import UI_System.GeneralWin.UI_JMenuBar;
 
@@ -18,11 +15,6 @@ import java.awt.*;
 public class FileSystemWindow extends JFrame {
     public UI_FileSysWin_ContentPanel FileSysWin_ContentPanel;
     public JMenuBar menuBar;
-
-    public static void main(String[] args) {
-        ProjectManager.OpenProject(ProjectManager.GetProject(1));
-        FileSystemWindow win = new FileSystemWindow();
-    }
 
     public FileSystemWindow() {
         init();
