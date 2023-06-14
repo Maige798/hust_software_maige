@@ -6,11 +6,8 @@
 
 package UI_System;
 
-import ProjectSystem.CAT_Project;
-import ProjectSystem.ProjectManager;
 import UI_System.GeneralWin.UI_JMenuBar;
 import UI_System.MemLibWin.UI_MemLib_ContentPanel;
-
 
 import javax.swing.*;
 import java.awt.*;
@@ -22,18 +19,6 @@ public class MemoryLibraryWindow extends JFrame {
 
     //创建内容面板
     public JPanel ContentPanel;
-
-    public static void main(String[] args) {
-        ProjectManager.OpenProject(ProjectManager.GetProject(0));
-        MemoryLibraryWindow windows = new MemoryLibraryWindow();
-    }
-
-    public static void test() {
-        String myFile = "D:\\hust_software_maige\\CAT_Desktop_System\\src\\ProjectSystem\\MyProject.catp";
-        CAT_Project project = ProjectManager.LoadProject(myFile);
-        ProjectManager.OpenProject(project);
-        MemoryLibraryWindow windows = new MemoryLibraryWindow();
-    }
 
     public MemoryLibraryWindow() {
         init();

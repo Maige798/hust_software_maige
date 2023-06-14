@@ -1,14 +1,14 @@
 /**
  * 类名：UI_ItemSelectionPanel
- * 开发人员：王琢玉
+ * 1.开发人员：阮泽同
+ * 实现功能：与内核交互，读取用户输入并据此对记忆条目面板的条目进行筛选
+ * 2.开发人员：王琢玉
  * 实现功能：相对于框架独立设计术语库框架中的记忆库条目选择面板，并添加定位相关组件
-
  */
 
 package UI_System.MemLibWin;
 
 import ProjectSystem.ProjectManager;
-import SystemUtil.TranslationItem;
 
 import javax.swing.*;
 import java.awt.*;
