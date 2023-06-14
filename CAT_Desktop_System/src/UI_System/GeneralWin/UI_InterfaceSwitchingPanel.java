@@ -1,7 +1,9 @@
 /**
  * 类名：UI_InterfaceSwitchingPanel
- * 开发人员：阮泽同
- * 实现功能：页面切换功能
+ * 1.开发人员：阮泽同
+ * 实现功能：实现各页面切换功能
+ * 2.开发人员：刘闯
+ * 实现功能：设计测试并开发界面切换面板
  */
 
 package UI_System.GeneralWin;

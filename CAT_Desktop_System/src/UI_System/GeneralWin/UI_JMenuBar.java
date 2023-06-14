@@ -2,8 +2,8 @@
  * 类名：UI_JMenuBar
  * 1.开发人员：阮泽同
  * 实现功能：实现与内核的交互
- * 2.开发人员：
- * 实现功能：
+ * 2.开发人员：刘闯
+ * 实现功能：设计、开发与测试顶部导航栏
  */
 
 package UI_System.GeneralWin;
@@ -13,7 +13,6 @@ import FileSystem.TranslationFileManager;
 import MemoryLibrarySystem.MemoryLibraryManager;
 import ProjectSystem.CAT_Project;
 import ProjectSystem.ProjectManager;
-import SystemUtil.TranslationItem;
 import TermLibrarySystem.TermLibrary;
 import TermLibrarySystem.TermLibraryManager;
 import UI_System.FileDeriveWindow;
