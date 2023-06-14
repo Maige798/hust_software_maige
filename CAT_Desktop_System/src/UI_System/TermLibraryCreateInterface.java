@@ -6,7 +6,6 @@
 
 package UI_System;
 
-import ProjectSystem.ProjectManager;
 import UI_System.TermLibCreate.UI_TermCreatePanel;
 
 import javax.swing.*;

@@ -6,11 +6,10 @@
 
 package UI_System;
 
+import UI_System.TermAddWin.UI_ContentPanel;
+
 import javax.swing.*;
 import java.awt.*;
-
-import ProjectSystem.ProjectManager;
-import UI_System.TermAddWin.UI_ContentPanel;
 
 public class TermAddWindow extends JFrame {
     public UI_ContentPanel contentPanel;
@@ -31,10 +30,5 @@ public class TermAddWindow extends JFrame {
         setContentPane(contentPanel);
         setLocationRelativeTo(null);
         setVisible(true);
-    }
-
-    public static void main(String[] args) {
-        ProjectManager.OpenProject(ProjectManager.GetProject(1));
-        TermAddWindow me = new TermAddWindow();
     }
 }

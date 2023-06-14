@@ -16,8 +16,6 @@ import UI_System.TermLibraryCreateInterface;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.util.ArrayList;
-import java.util.List;
 
 public class UI_TermCreatePanel extends JPanel {
     public TermLibraryCreateInterface createInterface;
