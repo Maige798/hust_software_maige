@@ -1,7 +1,6 @@
 /**
  * 类名：UI_ProjectInformationPanel
- * 开发人员：
- * 实现功能：……，美化布局
+ * 实现功能：本来这里是用来展示一些项目信息的，但是最后没有用上
  */
 
 package UI_System.ProjectWin;
