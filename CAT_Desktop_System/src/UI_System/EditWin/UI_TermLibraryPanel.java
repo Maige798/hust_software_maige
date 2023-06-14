@@ -7,7 +7,6 @@
 package UI_System.EditWin;
 
 import UI_System.TermAddWindow;
-import UI_System.TermLibraryWindow;
 
 import javax.swing.*;
 import java.awt.*;

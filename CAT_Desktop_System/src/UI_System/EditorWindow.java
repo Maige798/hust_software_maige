@@ -6,8 +6,6 @@
 
 package UI_System;
 
-import ProjectSystem.CAT_Project;
-import ProjectSystem.ProjectManager;
 import UI_System.EditWin.UI_EditWin_contentPanel;
 import UI_System.GeneralWin.UI_JMenuBar;
 
@@ -16,13 +14,6 @@ import java.awt.*;
 
 public class EditorWindow extends JFrame {
     public UI_EditWin_contentPanel EditWin_contentPanel;
-
-    public static void main(String[] args) {
-        CAT_Project project= ProjectManager.GetProject(1);
-        ProjectManager.OpenProject(project);
-        ProjectManager.TranslateFile(project.GetTranslationFile(0));
-        EditorWindow win = new EditorWindow();
-    }
 
     public EditorWindow() {
         init();
